@@ -1,2 +1,5 @@
 ## Conversational Chatbot
-### A project for the 2017 AMOS Project in collaboration with Actano
+### A project for the 2017 AMOS Course in collaboration with Actano
+
+Description
+-------
