@@ -9,6 +9,7 @@ services:
       - 5000
   rasa_core:
     container_name: core
+    entrypoint: python -m rasa_core.server -d models/dialogue -u models/nlu/current
     build: rasa-core
     ports:
       - 5005:5005
