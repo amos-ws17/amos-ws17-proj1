@@ -22,3 +22,23 @@ Hard - Almost impossible to integrate
 |   |   |   |   |
 
 *) Q/A - Question Answer
+
+
+**Collection of data sets:** (Maybe) 
+It contain multiple datasets
+*"WikiMovies Dataset":* It contain many categories such as (language of movie, director of movie, rate ,etc.) we can make this category as an intent.
+
+**Q/A from CNN/Daily Mail articles:**
+
+**Q/A Wikipedia:**
+
+**Q/A Popular websites (StackOverflow):** 
+
+**Q/A Trivia:**
+ It contains texts as question only, there is no type of conversation
+
+**Q/A Different :** 
+It is a good candidate. We can pick one of the Q/A domain and use it. It is almost structured as RSA NLU need.
+
+**Other popular data sets (Movie dialogues etc):** 
+It contains a metadata-rich collection of fictional conversations extracted from raw movie scripts, and we can not structure it in a useful way that train Rasa NLU model. Although consist of  rich knowledge, but we can not extract one topic from it!
