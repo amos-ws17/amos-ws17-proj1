@@ -11,7 +11,7 @@ Hard - Almost impossible to integrate
 
 | Topic  | Data format  | Integration Complexity  | Link |
 |---|---|---|---|
-| booking a hotel (Frames) | JSON | Medium | https://datasets.maluuba.com/Frames/dl|
+| book a hotel (Frames) | JSON | Medium | https://datasets.maluuba.com/Frames/dl|
 | Restaurant search | JSON | Easy | https://github.com/RasaHQ/rasa_nlu/blob/master/data/examples/rasa/demo-rasa.json |
 | Collection of data sets | Similar to CSV | Medium | https://research.fb.com/downloads/babi/ |
 | Q/A from CNN/Daily Mail articles | Txt | Medium | https://github.com/deepmind/rc-data |
