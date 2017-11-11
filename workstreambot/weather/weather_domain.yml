@@ -4,22 +4,17 @@ slots:
     type: text
   date:
     type: text
-  condition:
-    type: text
 
 # intents are what the user can send
 intents:
  - greet
  - inform
  - thankyou
- - deny
- - affirm
 
 # entities are how bot interprets the user intents
 entities:
  - location
  - date
- - condition
 
 # templates are static responses to actions
 templates:
@@ -31,25 +26,23 @@ utter_default:
   - "What are we doing"
 utter_ask_howcanhelp:
   - "how can I help you?"
-utter_ask_location:
-  - "in which city or what zip code"
 utter_on_it:
   - "I'm on it"
+utter_ask_location:
+  - "in which city or what zip code"
 utter_ack_dosearch:
   - "ok let me see what I can find"
 utter_ask_helpmore:
   - "is there anything more that I can help with?"
-utter_ask_date:
-  - "for which date?"
 
 # actions must be named after an utterance or specified in a file
 actions:
   - utter_greet
   - utter_goodbye
   - utter_default
-  - utter_ask_location
+  - utter_ask_howcanhelp
   - utter_on_it
-  - utter_ask_helpmore
+  - utter_ask_location
   - utter_ack_dosearch
-  - utter_ask_date
+  - utter_ask_helpmore
   - bot.ActionSearchWeather
