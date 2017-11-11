@@ -11,6 +11,8 @@ intents:
  - greet
  - inform
  - thankyou
+ - deny
+ - affirm
 
 entities:
  - location
@@ -18,20 +20,31 @@ entities:
  - condition
 
 templates:
+utter_greet:
+  - "hey there!"
+utter_goodbye:
+  - "Aloha"
+utter_default:
+  - "What are we doing"
 utter_ask_howcanhelp:
   - "how can I help you?"
 utter_ask_location:
-  - "in which city?"
-utter_ask_zip:
-  - "what is your zip code"
+  - "in which city or what zip code"
 utter_on_it:
   - "I'm on it"
 utter_ack_dosearch:
   - "ok let me see what I can find"
+utter_ask_helpmore:
+  - "is there anything more that I can help with?"
 
 
 actions:
   - utter_greet
+  - utter_goodbye
+  - utter_default
   - utter_ask_location
-  - utter_ask_zip
   - utter_on_it
+  - utter_ask_helpmore
+  - utter_ack_dosearch
+  - bot.ActionSearchWeather
+  - bot.ActionSuggest
