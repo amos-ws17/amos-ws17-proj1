@@ -1,3 +1,4 @@
+# slots are the criterion for the weather target
 slots:
   location:
     type: text
@@ -6,7 +7,7 @@ slots:
   condition:
     type: text
 
-
+# intents are what the user can send
 intents:
  - greet
  - inform
@@ -14,11 +15,13 @@ intents:
  - deny
  - affirm
 
+# entities are how bot interprets the user intents 
 entities:
  - location
  - date
  - condition
 
+# templates are static responses to actions
 templates:
 utter_greet:
   - "hey there!"
@@ -37,7 +40,7 @@ utter_ack_dosearch:
 utter_ask_helpmore:
   - "is there anything more that I can help with?"
 
-
+# actions must be named after an utterance or specified in a file
 actions:
   - utter_greet
   - utter_goodbye
