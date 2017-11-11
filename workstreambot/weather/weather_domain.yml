@@ -15,7 +15,7 @@ intents:
  - deny
  - affirm
 
-# entities are how bot interprets the user intents 
+# entities are how bot interprets the user intents
 entities:
  - location
  - date
@@ -53,4 +53,3 @@ actions:
   - utter_ack_dosearch
   - utter_ask_date
   - bot.ActionSearchWeather
-  - bot.ActionSuggest
