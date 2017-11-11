@@ -39,6 +39,8 @@ utter_ack_dosearch:
   - "ok let me see what I can find"
 utter_ask_helpmore:
   - "is there anything more that I can help with?"
+utter_ask_date:
+  - "for which date?"
 
 # actions must be named after an utterance or specified in a file
 actions:
@@ -49,5 +51,6 @@ actions:
   - utter_on_it
   - utter_ask_helpmore
   - utter_ack_dosearch
+  - utter_ask_date
   - bot.ActionSearchWeather
   - bot.ActionSuggest
