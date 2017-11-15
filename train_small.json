@@ -1,0 +1,174 @@
+{
+  "rasa_nlu_data": {
+    "regex_features": [
+      {
+        "name": "date",
+        "pattern": "[0-9]{2}[-]{1}[0-9]{2}[-]{1}[0-9]{4}"
+      }
+    ],
+    "entity_synonyms": [
+      {
+        "value": "Berlin",
+        "synonyms": [
+          "berlin"
+        ]
+      }
+    ],
+    "common_examples": [
+      {
+        "text": "hey",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "howdy",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hey there",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hello",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hi",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "good morning",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "good evening",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "dear sir",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "in Berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "Berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "What will the weather be in Berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 28,
+            "end": 33,
+            "value": "Berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will it be like in Berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 29,
+            "value": "Berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "What will the weather forecast be in Berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 42,
+            "value": "Berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "What's the forecast for Berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 29,
+            "value": "Berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "What will the weather be like on 01-01-2018",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 33,
+            "end": 56,
+            "value": "01-01-2018",
+            "entity": "date"
+          }
+        ]
+      },
+      {
+        "text": "What will the weather be like on 02-02-2018",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 33,
+            "end": 44,
+            "value": "02-02-2018",
+            "entity": "date"
+          }
+        ]
+      },
+      {
+        "text": "What will it feel like on 03-03-2018",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 26,
+            "end": 32,
+            "value": "03-03-2018",
+            "entity": "date"
+          }
+        ]
+      },
+      {
+        "text": "What will it feel like on 01-01-2018 in Berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 26,
+            "end": 35,
+            "value": "01-01-2018",
+            "entity": "date"
+          },
+          {
+            "start": 40,
+            "end": 45,
+            "value": "Berlin",
+            "entity": "location"
+          }
+        ]
+      }
+    ]
+  }
+}
