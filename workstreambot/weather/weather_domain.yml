@@ -18,21 +18,28 @@ entities:
 
 # templates are static responses to actions
 templates:
-utter_greet:
+  utter_greet:
   - "hey there!"
-utter_goodbye:
+
+  utter_goodbye:
   - "Aloha"
-utter_default:
+
+  utter_default:
   - "What are we doing"
-utter_ask_howcanhelp:
+
+  utter_ask_howcanhelp:
   - "how can I help you?"
-utter_on_it:
+
+  utter_on_it:
   - "I'm on it"
-utter_ask_location:
+
+  utter_ask_location:
   - "in which city or what zip code"
-utter_ack_dosearch:
+
+  utter_ack_dosearch:
   - "ok let me see what I can find"
-utter_ask_helpmore:
+
+  utter_ask_helpmore:
   - "is there anything more that I can help with?"
 
 # actions must be named after an utterance or specified in a file

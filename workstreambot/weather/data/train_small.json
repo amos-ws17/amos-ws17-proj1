@@ -61,7 +61,7 @@
         "entities": [
           {
             "start": 3,
-            "end": 8,
+            "end": 9,
             "value": "Berlin",
             "entity": "location"
           }
@@ -73,7 +73,7 @@
         "entities": [
           {
             "start": 28,
-            "end": 33,
+            "end": 34,
             "value": "Berlin",
             "entity": "location"
           }
@@ -85,7 +85,7 @@
         "entities": [
           {
             "start": 24,
-            "end": 29,
+            "end": 30,
             "value": "Berlin",
             "entity": "location"
           }
@@ -97,7 +97,7 @@
         "entities": [
           {
             "start": 37,
-            "end": 42,
+            "end": 43,
             "value": "Berlin",
             "entity": "location"
           }
@@ -109,7 +109,7 @@
         "entities": [
           {
             "start": 24,
-            "end": 29,
+            "end": 30,
             "value": "Berlin",
             "entity": "location"
           }
@@ -121,7 +121,7 @@
         "entities": [
           {
             "start": 33,
-            "end": 56,
+            "end": 43,
             "value": "01-01-2018",
             "entity": "date"
           }
@@ -133,7 +133,7 @@
         "entities": [
           {
             "start": 33,
-            "end": 44,
+            "end": 43,
             "value": "02-02-2018",
             "entity": "date"
           }
@@ -145,7 +145,7 @@
         "entities": [
           {
             "start": 26,
-            "end": 32,
+            "end": 36,
             "value": "03-03-2018",
             "entity": "date"
           }
@@ -157,13 +157,13 @@
         "entities": [
           {
             "start": 26,
-            "end": 35,
+            "end": 36,
             "value": "01-01-2018",
             "entity": "date"
           },
           {
             "start": 40,
-            "end": 45,
+            "end": 46,
             "value": "Berlin",
             "entity": "location"
           }
