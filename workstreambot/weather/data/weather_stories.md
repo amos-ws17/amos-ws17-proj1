@@ -5,7 +5,7 @@
 * _inform[location=berlin]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _thankyou
   - utter_goodbye
@@ -17,7 +17,7 @@
 * _inform[date=1january]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _thankyou
   - utter_goodbye
@@ -31,7 +31,7 @@
   - utter_ask_location
 * _inform[location=berlin]
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _thankyou
   - utter_goodbye
@@ -43,12 +43,12 @@
 * _inform[date=1january]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 *_inform[location=berlin]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _thankyou
   - utter_goodbye
@@ -60,12 +60,12 @@
 * _inform[location=berlin]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 *_inform[location=berlin]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _thankyou
   - utter_goodbye
@@ -77,12 +77,12 @@
 * _inform[location=berlin]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 *_inform[date=1january]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _thankyou
   - utter_goodbye
@@ -94,12 +94,12 @@
 * _inform[date=1january]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 *_inform[date=1january]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _thankyou
   - utter_goodbye  
@@ -113,12 +113,12 @@
   - utter_ask_location
 * _inform[location=berlin]
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _inform[location=berlin]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _thankyou
   - utter_goodbye
@@ -132,12 +132,12 @@
   - utter_ask_location
 * _inform[location=berlin]
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _inform[date=1january]
   - utter_on_it
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _thankyou
   - utter_goodbye
@@ -151,14 +151,14 @@
   - utter_ask_location
 * _inform[location=berlin]
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _inform[date=1january]
   - utter_on_it
   - utter_ask_location
 * _inform[location=berlin]
   - utter_ack_dosearch
-  - bot.ActionSearchWeather
+  - action_search_weather
   - utter_ask_helpmore
 * _thankyou
   - utter_goodbye
