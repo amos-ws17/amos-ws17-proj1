@@ -116,6 +116,66 @@
         ]
       },
       {
+        "text": "in Hamburg",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "Hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "What will the weather be in Hamburg",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 28,
+            "end": 35,
+            "value": "Hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will it be like in Hamburg",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 31,
+            "value": "Hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "What will the weather forecast be in Hamburg",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 44,
+            "value": "Hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "What's the forecast for Hamburg",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 31,
+            "value": "Hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "What will the weather be like on 01-01-2018",
         "intent": "inform",
         "entities": [
@@ -165,6 +225,24 @@
             "start": 40,
             "end": 46,
             "value": "Berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "What will it feel like on 01-01-2018 in Hamburg",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 26,
+            "end": 36,
+            "value": "01-01-2018",
+            "entity": "date"
+          },
+          {
+            "start": 40,
+            "end": 47,
+            "value": "Hamburg",
             "entity": "location"
           }
         ]
