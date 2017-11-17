@@ -85,3 +85,20 @@
   - utter_ask_helpmore
 * _goodbye
   - utter_goodbye
+
+## override informs path
+* _greet
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=berlin,date=01-01-2017]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _inform[location=new york]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _goodbye
+  - utter_goodbye

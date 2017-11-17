@@ -34,7 +34,7 @@ templates:
   - "I'm on it!"
 
   utter_ask_location:
-  - "For which city are you looking?"
+  - "In which city or zip code are you interested?"
 
   utter_ack_dosearch:
   - "Ok let me see what I can find."

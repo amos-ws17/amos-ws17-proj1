@@ -48,6 +48,66 @@
         "entities": []
       },
       {
+        "text": "in 10249",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "10249",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will the weather be in 10249?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 28,
+            "end": 33,
+            "value": "10249",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will it be like in 10249?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 29,
+            "value": "10249",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will the weather forecast be in 10249?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 42,
+            "value": "10249",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what's the forecast for 10249?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 29,
+            "value": "10249",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "in berlin",
         "intent": "inform",
         "entities": [
@@ -440,6 +500,24 @@
             "end": 36,
             "value": "03-03-2018",
             "entity": "date"
+          }
+        ]
+      },
+      {
+        "text": "what will it feel like on 01-01-2018 in 10249?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 26,
+            "end": 36,
+            "value": "01-01-2018",
+            "entity": "date"
+          },
+          {
+            "start": 40,
+            "end": 45,
+            "value": "10249",
+            "entity": "location"
           }
         ]
       },
