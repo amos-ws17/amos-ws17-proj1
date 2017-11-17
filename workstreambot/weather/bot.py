@@ -10,5 +10,5 @@ class ActionSearchWeather(Action):
         return 'action_search_weather'
     # the run executes when the action is called 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("here's what the wheather looks like")
+        dispatcher.utter_message("Here's what the wheather looks like")
         return []
