@@ -2,15 +2,17 @@ from .apiClient import APIClient
 from model.weather import Weather
 
 class YahooClient(object):
-    # define the base Yahoo weather API URL
-    baseurl = "https://query.yahooapis.com/v1/public/yql"
+    # define the base url for the API
+    baseurl = "https://query.yahooapis.com"
+    # define the path 
+    path = "/v1/public/yql"
 
     # function that gets the current weather for a given city
     def fetch_weather_for_city(self, city):
         # define paramater with string formatting where the s is substituted by the city paramater
-        param = "?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='%s')and u='c'&format=json" % (city)
+        query = "?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='%s')and u='c'&format=json" % (city)
         # construct the final url by passing the paramaters and formatting the request
-        finalURL = self.baseurl + param
+        finalURL = self.baseurl + self.path + query
         # init APIClient
         api = APIClient()
         # make the url call and retrieve a json Response
