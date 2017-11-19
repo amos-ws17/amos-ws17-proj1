@@ -1,0 +1,16 @@
+language: python
+
+branches:
+  only:
+    - travis-test
+
+python:
+  - "3.5"
+
+services:
+  - docker
+  - docker-compose
+
+before_script: cd rasa-compose
+
+script: docker-compose up
