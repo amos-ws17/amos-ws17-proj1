@@ -1,5 +1,5 @@
 import time
-from network.YahooClient import YahooClient
+from network.yahooClient import YahooClient
 from rasa_core.actions import Action
 
 
