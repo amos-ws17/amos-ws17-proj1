@@ -1,4 +1,5 @@
 
+import time
 
 from rasa_core.actions import Action
 
@@ -10,5 +11,11 @@ class ActionSearchWeather(Action):
         return 'action_search_weather'
     # the run executes when the action is called 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("Here's what the wheather looks like")
+        location = tracker.get_slot('location')
+        date = tracker.get_slot('date')
+
+        if str(date) == "None":
+           date = time.strftime("%d-%m-%Y")
+
+        dispatcher.utter_message("Here's what the wheather looks like in " + str(location) + " on " + str(date))
         return []
