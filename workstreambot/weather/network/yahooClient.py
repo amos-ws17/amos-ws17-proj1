@@ -8,7 +8,7 @@ class YahooClient(object):
     # function that gets the current weather for a given city
     def fetch_weather_for_city(self, city):
         # define paramater with string formatting where the s is substituted by the city paramater
-        param = "?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='%s')&format=json" % (city)
+        param = "?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='%s')and u='c'&format=json" % (city)
         # construct the final url by passing the paramaters and formatting the request
         finalURL = self.baseurl + param
         # init APIClient
@@ -17,7 +17,7 @@ class YahooClient(object):
         jsonResponse = api.fetch(finalURL)
         # check if the jsonResponse contains an object and pass it to the weather model
         if int(jsonResponse['query']['count']) > 0:
-            # init Weather 
+            # init Weather
             weatherModel = Weather(jsonResponse['query']['results']['channel'])
             # return the weather model
             return weatherModel
