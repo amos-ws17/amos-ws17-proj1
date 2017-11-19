@@ -10,14 +10,21 @@ class ActionSearchWeather(Action):
         return 'action_search_weather'
     # the run executes when the action is called
     def run(self, dispatcher, tracker, domain):
+        # get the location entity from the console
         location = tracker.get_slot('location')
-        date = tracker.get_slot('date')
-
+        # init the weather Client
         weatherClient = YahooClient()
-        print(weatherClient.fetch_weather_for_city(str(location)))
+        # fetch the weather data
+        weather = weatherClient.fetch_weather_for_city(str(location))
+        # get the weather factors
+        title = weather.text()
+        condition = weather.condition()
+        conditionTitle = condition.text()
+        conditionTemp = condition.temp()
+        conditionDate = condition.date()
 
-        if str(date) == "None":
-           date = time.strftime("%d-%m-%Y")
+        #if str(date) == "None":
+           #date = time.strftime("%d-%m-%Y")
 
-        dispatcher.utter_message("Here's what the wheather looks like in " + str(location) + " on " + str(date))
+        dispatcher.utter_message(title + '\n' + "It is " + conditionTitle + '\n' + "The currrent temperature is " + conditionTemp + '\n' + "Last updated " + conditionDate)
         return []
