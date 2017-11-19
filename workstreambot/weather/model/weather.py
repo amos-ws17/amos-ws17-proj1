@@ -1,4 +1,5 @@
 from .condition import Condition
+from .forecast import Forecast
 
 class Weather(object):
     # init method
@@ -20,3 +21,9 @@ class Weather(object):
     # Parse the condition of the city
     def condition(self):
         return Condition(self._weather_data['item']['condition'])
+
+    # Parse the forecast for the upcoming days
+    def forecast(self):
+        forecasts = []
+        [forecasts.append(Forecast(day)) for day in self._weather_data['item']['forecast']]
+        return forecasts

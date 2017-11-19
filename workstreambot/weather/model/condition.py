@@ -8,9 +8,6 @@ class Condition(object):
     # parse the current date and time
     def date(self):
         return self._condition_data['date']
-    # parse the condition code for this forecast
-    def code(self):
-        return self._condition_data['code']
     # parse the current temperature
     def temp(self):
         return self._condition_data['temp']
