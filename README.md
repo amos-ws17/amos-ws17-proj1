@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+pip install requests 
 ```
 
 ### Installing
@@ -52,29 +52,35 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
+## Models
 
-Add additional notes about how to deploy this on a live system
+* [Weather Model](https://github.com/amos-ws17/amos-ws17-proj1/wiki/Weather-bot) whose data is provided by [Yahoo](https://developer.yahoo.com/weather/documentation.html) - Weather API Documentation
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Python](https://docs.python.org/3/) - Python 3 Documentation
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* **Billie Thompson** - *Readme Template* - [PurpleBooth](https://github.com/PurpleBooth)
+
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+For the versions available, see the [tags on this repository](https://github.com/amos-ws17/amos-ws17-proj1/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* Lukas Kleine Büning
+* Etjen Ymeraj 
+* Daniel Dimitrov
+* Radoslav Vlaskovski 
+* Veselin Popov
+* Omar Abada
+* Marah Halawa
+* Erik Zöllner 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the contributing section
 
 ## License
 
@@ -84,4 +90,3 @@ This project is licensed under the Apache 2.0 License - see the [LICENSE.md](LIC
 
 * Hat tip to anyone who's code was used
 * Inspiration
-* The readme template from PurpleBooth
