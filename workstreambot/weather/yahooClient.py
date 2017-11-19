@@ -1,4 +1,5 @@
 import requests
+from model.weather import Weather
 
 class YahooClient(object):
     # define the base Yahoo weather API URL
@@ -12,11 +13,17 @@ class YahooClient(object):
         finalURL = self.baseurl + param
         # make the url call and retrieve a json Response
         jsonResponse = self.fetch(finalURL)
-        # return the json response
-        return jsonResponse
+        # check if the jsonResponse contains an object and pass it to the weather model
+        if int(jsonResponse['query']['count']) > 0:
+            weatherModel = Weather(jsonResponse['query']['results']['channel'])
+            # return the weather model
+            return weatherModel
+        else:
+            # return the json response
+            return jsonResponse
 
 
-    # function that makes the call to the yahoo api
+    # function that makes the call to an api
     def fetch(self, url):
         # get method
         r = requests.get(url)
