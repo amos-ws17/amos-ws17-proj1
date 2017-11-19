@@ -52,4 +52,4 @@ actions:
   - utter_ask_location
   - utter_ack_dosearch
   - utter_ask_helpmore
-  - bot.ActionSearchWeather
+  - action.ActionSearchWeather
