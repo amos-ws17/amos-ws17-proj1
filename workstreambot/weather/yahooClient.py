@@ -1,6 +1,6 @@
 import requests
 
-class yahooClient(object):
+class YahooClient(object):
     # define the base Yahoo weather API URL
     baseurl = "https://query.yahooapis.com/v1/public/yql"
 
