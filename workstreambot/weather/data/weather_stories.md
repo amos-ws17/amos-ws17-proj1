@@ -10,11 +10,11 @@
 * _goodbye
   - utter_goodbye
 
-## weather in location for date path
+## weather in location for time path
 * _greet
   - utter_greet
   - utter_ask_howcanhelp
-* _inform[location=berlin,date=01-01-2017]
+* _inform[location=berlin,time=01-01-2017]
   - utter_on_it
   - utter_ack_dosearch
   - action_search_weather
@@ -41,7 +41,7 @@
 * _greet
   - utter_greet
   - utter_ask_howcanhelp
-* _inform[date=01-01-2017]
+* _inform[time=01-01-2017]
   - utter_on_it
   - utter_ask_location
 * _inform[location=berlin]
@@ -61,7 +61,7 @@
   - utter_ack_dosearch
   - action_search_weather
   - utter_ask_helpmore
-* _inform[date=01-01-2017]
+* _inform[time=01-01-2017]
   - utter_on_it
   - utter_ack_dosearch
   - action_search_weather
@@ -90,7 +90,7 @@
 * _greet
   - utter_greet
   - utter_ask_howcanhelp
-* _inform[location=berlin,date=01-01-2017]
+* _inform[location=berlin,time=01-01-2017]
   - utter_on_it
   - utter_ack_dosearch
   - action_search_weather

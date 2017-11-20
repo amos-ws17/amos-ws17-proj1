@@ -2,7 +2,7 @@
 slots:
   location:
     type: text
-  date:
+  time:
     type: text
 
 # intents are what the user can send
@@ -14,7 +14,7 @@ intents:
 # entities are how bot interprets the user intents
 entities:
  - location
- - date
+ - time
 
 # templates are static responses to actions
 templates:
@@ -34,7 +34,7 @@ templates:
   - "I'm on it!"
 
   utter_ask_location:
-  - "In which city or zip code are you interested?"
+  - "Please enter the city you're interested in."
 
   utter_ack_dosearch:
   - "Ok let me see what I can find."

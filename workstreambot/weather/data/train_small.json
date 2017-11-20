@@ -2,7 +2,7 @@
   "rasa_nlu_data": {
     "regex_features": [
       {
-        "name": "date",
+        "name": "time",
         "pattern": "[0-9]{2}[-]{1}[0-9]{2}[-]{1}[0-9]{4}"
       }
     ],
@@ -60,54 +60,6 @@
         ]
       },
       {
-        "text": "what will the weather be in 10249?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 28,
-            "end": 33,
-            "value": "10249",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will it be like in 10249?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 24,
-            "end": 29,
-            "value": "10249",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather forecast be in 10249?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 37,
-            "end": 42,
-            "value": "10249",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what's the forecast for 10249?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 24,
-            "end": 29,
-            "value": "10249",
-            "entity": "location"
-          }
-        ]
-      },
-      {
         "text": "in berlin",
         "intent": "inform",
         "entities": [
@@ -132,7 +84,31 @@
         ]
       },
       {
+        "text": "what will the weather be in berlin next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 28,
+            "end": 34,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what will it be like in berlin?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 30,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will it be like in berlin next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -156,7 +132,31 @@
         ]
       },
       {
+        "text": "what will the weather forecast be in berlin next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 43,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what's the forecast for berlin?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 30,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what's the forecast for berlin next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -192,7 +192,31 @@
         ]
       },
       {
+        "text": "what will the weather be in hamburg next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 28,
+            "end": 35,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what will it be like in hamburg?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 31,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will it be like in hamburg next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -216,7 +240,31 @@
         ]
       },
       {
+        "text": "what will the weather forecast be in hamburg next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 44,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what's the forecast for hamburg?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 31,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what's the forecast for hamburg next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -252,7 +300,31 @@
         ]
       },
       {
+        "text": "what will the weather be in new york next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 28,
+            "end": 36,
+            "value": "new york",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what will it be like in new york?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 32,
+            "value": "new york",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will it be like in new york next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -276,7 +348,31 @@
         ]
       },
       {
+        "text": "what will the weather forecast be in new york next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 45,
+            "value": "new york",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what's the forecast for new york?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 32,
+            "value": "new york",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what's the forecast for new york next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -312,7 +408,31 @@
         ]
       },
       {
+        "text": "what will the weather be in buenos aires next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 28,
+            "end": 40,
+            "value": "buenos aires",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what will it be like in buenos aires?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 36,
+            "value": "buenos aires",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will it be like in buenos aires next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -336,7 +456,31 @@
         ]
       },
       {
+        "text": "what will the weather forecast be in buenos aires next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 49,
+            "value": "buenos aires",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what's the forecast for buenos aires?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 36,
+            "value": "buenos aires",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what's the forecast for buenos aires next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -372,7 +516,31 @@
         ]
       },
       {
+        "text": "what will the weather be in frankfurt am main next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 28,
+            "end": 45,
+            "value": "frankfurt am main",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what will it be like in frankfurt am main?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 41,
+            "value": "frankfurt am main",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will it be like in frankfurt am main next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -396,7 +564,31 @@
         ]
       },
       {
+        "text": "what will the weather forecast be in frankfurt am main next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 54,
+            "value": "frankfurt am main",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what's the forecast for frankfurt am main?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 41,
+            "value": "frankfurt am main",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what's the forecast for frankfurt am main next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -432,7 +624,31 @@
         ]
       },
       {
+        "text": "what will the weather be in palma de mallorca next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 28,
+            "end": 45,
+            "value": "palma de mallorca",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what will it be like in palma de mallorca?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 41,
+            "value": "palma de mallorca",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will it be like in palma de mallorca next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -456,7 +672,31 @@
         ]
       },
       {
+        "text": "what will the weather forecast be in palma de mallorca next monday?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 54,
+            "value": "palma de mallorca",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "what's the forecast for palma de mallorca?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 41,
+            "value": "palma de mallorca",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what's the forecast for palma de mallorca next monday?",
         "intent": "inform",
         "entities": [
           {
@@ -475,7 +715,7 @@
             "start": 33,
             "end": 43,
             "value": "01-01-2018",
-            "entity": "date"
+            "entity": "time"
           }
         ]
       },
@@ -487,7 +727,7 @@
             "start": 33,
             "end": 43,
             "value": "02-02-2018",
-            "entity": "date"
+            "entity": "time"
           }
         ]
       },
@@ -499,25 +739,7 @@
             "start": 26,
             "end": 36,
             "value": "03-03-2018",
-            "entity": "date"
-          }
-        ]
-      },
-      {
-        "text": "what will it feel like on 01-01-2018 in 10249?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 26,
-            "end": 36,
-            "value": "01-01-2018",
-            "entity": "date"
-          },
-          {
-            "start": 40,
-            "end": 45,
-            "value": "10249",
-            "entity": "location"
+            "entity": "time"
           }
         ]
       },
@@ -529,7 +751,7 @@
             "start": 26,
             "end": 36,
             "value": "01-01-2018",
-            "entity": "date"
+            "entity": "time"
           },
           {
             "start": 40,
@@ -547,7 +769,7 @@
             "start": 26,
             "end": 36,
             "value": "01-01-2018",
-            "entity": "date"
+            "entity": "time"
           },
           {
             "start": 40,
@@ -565,7 +787,7 @@
             "start": 26,
             "end": 36,
             "value": "01-01-2018",
-            "entity": "date"
+            "entity": "time"
           },
           {
             "start": 40,
@@ -583,7 +805,7 @@
             "start": 26,
             "end": 36,
             "value": "01-01-2018",
-            "entity": "date"
+            "entity": "time"
           },
           {
             "start": 40,
@@ -601,7 +823,7 @@
             "start": 26,
             "end": 36,
             "value": "01-01-2018",
-            "entity": "date"
+            "entity": "time"
           },
           {
             "start": 40,
@@ -619,7 +841,7 @@
             "start": 26,
             "end": 36,
             "value": "01-01-2018",
-            "entity": "date"
+            "entity": "time"
           },
           {
             "start": 40,
