@@ -12,15 +12,9 @@ intents:
  - goodbye
 
 # entities are how bot interprets the user intents
-# number, volume, temperature, distance and phone-number only for debug message suppression
 entities:
  - location
  - time
- - number
- - volume
- - temperature
- - distance
- - phone-number
 
 # templates are static responses to actions
 templates:
