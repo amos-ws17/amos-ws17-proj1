@@ -26,18 +26,18 @@ class ActionSearchWeather(Action):
            conditionDesc = condition.getConditionDescription()
            conditionTemp = condition.getConditionCurrentTemperature()
            conditionDate = condition.getLastUpdatedConditionDate()
-           dispatcher.utter_message(description + '\n' + "It is " + conditionDesc + '\n' + "The currrent temperature is " + conditionTemp + ' C\n' + "Last updated " + conditionDate)
+           dispatcher.utter_message(description + '\nCondition: ' + conditionDesc + '\nThe currrent temperature is ' + conditionTemp + ' degree\nLast updated ' + conditionDate)
         else:
            date = datetime.strptime(date, '%Y-%m-%dT%H:%M:%S.%fZ')
            for num in range(0, len(weather.getWeatherForecastFactors())):
               forecast = weather.getWeatherForecastFactors()[num]
               if date.strftime('%d %b %Y') == forecast.getLastUpdatedForecastDate():
                  # get the weather factors
-                 description = weather.description()
+                 description = weather.getWeatherDescription()
                  forecastDesc = forecast.getForecastDescription()
                  forecastHigh = forecast.getForecastHighTemperature()
                  forecastLow = forecast.getForecastLowTemperature()
                  forecastDate = forecast.getLastUpdatedForecastDate()
-                 dispatcher.utter_message(description + ' on ' + forecastDate + '\n' + "It is " + forecastDesc + '\n' + "The temperature is between " + forecastLow + ' and ' + forecastHigh)
+                 dispatcher.utter_message(description + ' on ' + forecastDate + '\nCondition: ' + forecastDesc + '\nThe temperature is between ' + forecastLow + ' and ' + forecastHigh + ' degree')
 
         return []
