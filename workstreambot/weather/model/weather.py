@@ -7,23 +7,23 @@ class Weather(object):
         self._weather_data = weather_data
 
     # Parse the name of the city
-    def title(self):
+    def getWeatherTitle(self):
         return self._weather_data['title']
 
     # Parse the description of the city
-    def description(self):
+    def getWeatherDescription(self):
         return self._weather_data['description']
 
     # Parse the date when the weather was last retrieved
-    def date(self):
+    def getLastUpdatedWeatherDate(self):
         return self._weather_data['lastBuildDate']
 
     # Parse the condition of the city
-    def condition(self):
+    def getWeatherConditionFactors(self):
         return Condition(self._weather_data['item']['condition'])
 
     # Parse the forecast for the upcoming days
-    def forecast(self):
+    def getWeatherForecastFactors(self):
         forecasts = []
         [forecasts.append(Forecast(day)) for day in self._weather_data['item']['forecast']]
         return forecasts

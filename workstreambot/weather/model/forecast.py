@@ -3,14 +3,14 @@ class Forecast(object):
     def __init__(self, forecast_data):
         self._forecast_data = forecast_data
     # parse the description of the forecast
-    def text(self):
+    def getForecastDescription(self):
         return self._forecast_data['text']
     # parse the date to which the forecast applies
-    def date(self):
+    def getLastUpdatedForecastDate(self):
         return self._forecast_data['date']
     # the forecasted high temperature for this day
-    def high(self):
+    def getForecastHighTemperature(self):
         return self._forecast_data['high']
     # the forecasted low temperature for this day
-    def low(self):
+    def getForecastLowTemperature(self):
         return self._forecast_data['low']
