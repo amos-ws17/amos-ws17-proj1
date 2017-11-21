@@ -1,6 +1,13 @@
 {
-  "pipeline": "spacy_sklearn",
-  "path" : "./models",
+  "pipeline": ["nlp_spacy", 
+    "tokenizer_spacy", 
+    "intent_featurizer_spacy", 
+    "intent_entity_featurizer_regex", 
+    "ner_crf", 
+    "ner_synonyms", 
+    "intent_classifier_sklearn",
+    "ner_duckling"],
+  "path" : "./project",
   "project": "nlu",
   "data" : "./data/train_small.json"
 }
