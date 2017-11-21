@@ -7,8 +7,6 @@ slots:
     type: text
   type_made:
     type: text
-  type_specific:
-    type: text
   info:
     type: text
 
@@ -19,12 +17,12 @@ intents:
  - inform
  - thankyou
  - request_info
+ - 
 
 entities:
  - location
- - paid
+ - price
  - type
- - type_made
  - type_specific
  - info
 
@@ -50,6 +48,8 @@ templates:
     - "do you prefer paid or free sights?"
   utter_yourewelcomed:
     - "i am happy to assist you. have a nice day!"
+  utter_ask_helpmore:
+    - "is there anything more that I can help with?"
   utter_ask_howcanhelp:
     - "how can I help you?"
   utter_on_it: 
