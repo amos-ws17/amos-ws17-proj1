@@ -1,7 +1,7 @@
 slots:
   location:
     type: text
-  paid:
+  price:
     type: text
   type:
     type: text
@@ -17,7 +17,6 @@ intents:
  - inform
  - thankyou
  - request_info
- - 
 
 entities:
  - location
@@ -44,7 +43,7 @@ templates:
     - "in which city?"
   utter_ask_type:
     - "are you looking for outdoors, indoors or both indoor and outdoor sights?"
-  utter_ask_paid:
+  utter_ask_price:
     - "do you prefer paid or free sights?"
   utter_yourewelcomed:
     - "i am happy to assist you. have a nice day!"
