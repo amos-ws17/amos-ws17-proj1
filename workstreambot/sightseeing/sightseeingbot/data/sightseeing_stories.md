@@ -48,6 +48,20 @@
  - utter_yourewelcomed
  - utter_goodbye
 
+  ## story_sightseeing_44
+* _greet[]
+ - utter_greet
+ - utter_ask_howcanhelp
+* _inform[location=berlin]
+ - utter_ack_dosearch
+ - action_searchsights
+ - action_suggest
+* _affirm[]
+ - utter_ask_helpmore
+* _thankyou[]
+ - utter_yourewelcomed
+ - utter_goodbye
+
   ## story_sightseeing_4
 * _greet[]
  - utter_greet
@@ -407,6 +421,29 @@
  - utter_yourewelcomed
  - utter_goodbye
 
+
+ ## story_sightseeing_43
+* _greet[]
+ - utter_greet
+ - utter_ask_howcanhelp
+* _inform[type=outdoors]
+ - utter_ask_location
+* _inform[location=berlin]
+ - utter_ask_price
+* _inform[price=cheap]
+ - utter_ack_dosearch
+ - action_searchsights
+ - action_suggest
+* _deny[]
+ - utter_ack_findalternatives
+ - action_search_restaurants
+ - action_suggest
+* _affirm[]
+ - utter_ask_helpmore
+* _thankyou[]
+ - utter_yourewelcomed
+ - utter_goodbye
+
  ## story_sightseeing_21
 * _greet[]
  - utter_greet
@@ -720,3 +757,147 @@
 * _thankyou[]
  - utter_yourewelcomed
  - utter_goodbye
+
+
+
+
+ <!-- LOCATION & TYPE_SPECIFIC given -->
+
+## story_sightseeing_35
+* _greet[]
+ - utter_greet
+ - utter_ask_howcanhelp
+* _inform[location=berlin,type_specific=museum]
+ - utter_ack_dosearch
+ - action_searchsights
+ - action_suggest
+* _deny[]
+ - utter_ack_findalternatives
+ - action_search_restaurants
+ - action_suggest
+* _affirm[]
+ - utter_ask_helpmore
+* _deny[]
+ - utter_yourewelcomed
+ - utter_goodbye
+
+ ## story_sightseeing_36
+* _greet[]
+ - utter_greet
+ - utter_ask_howcanhelp
+* _inform[location=berlin,type_specific=museum]
+ - utter_ack_dosearch
+ - action_searchsights
+ - action_suggest
+* _affirm[]
+ - utter_ask_helpmore
+* _deny[]
+ - utter_yourewelcomed
+ - utter_goodbye
+
+ ## story_sightseeing_37
+* _greet[]
+ - utter_greet
+ - utter_ask_howcanhelp
+* _inform[location=berlin,type_specific=museum]
+ - utter_ack_dosearch
+ - action_searchsights
+ - action_suggest
+* _affirm[]
+ - utter_ask_helpmore
+* _thankyou[]
+ - utter_yourewelcomed
+ - utter_goodbye
+
+  ## story_sightseeing_38
+* _greet[]
+ - utter_greet
+ - utter_ask_howcanhelp
+* _inform[location=berlin,type_specific=museum]
+ - utter_ack_dosearch
+ - action_searchsights
+ - action_suggest
+* _affirm[]
+ - utter_ask_helpmore
+* _request_info[info=closing_time]
+ - action_suggest
+* _request_info[info=opening_time]
+ - action_suggest
+* _thankyou[]
+ - utter_yourewelcomed
+ - utter_goodbye
+
+   ## story_sightseeing_39
+* _greet[]
+ - utter_greet
+ - utter_ask_howcanhelp
+* _inform[location=berlin,type_specific=stadium]
+ - utter_ack_dosearch
+ - action_searchsights
+ - action_suggest
+* _affirm[]
+ - utter_ask_helpmore
+* _request_info[info=closing_time]
+ - action_suggest
+* _request_info[info=opening_time]
+ - action_suggest
+* _request_info[info=rating]
+ - action_suggest
+* _thankyou[]
+ - utter_yourewelcomed
+ - utter_goodbye
+
+  ## story_sightseeing_40
+* _greet[]
+ - utter_greet
+ - utter_ask_howcanhelp
+* _inform[location=berlin,type_specific=aquarium]
+ - utter_ack_dosearch
+ - action_searchsights
+ - action_suggest
+* _affirm[]
+ - utter_ask_helpmore
+* _thankyou[]
+ - utter_yourewelcomed
+ - utter_goodbye
+
+  ## story_sightseeing_41
+* _greet[]
+ - utter_greet
+ - utter_ask_howcanhelp
+* _inform[location=berlin,type_specific=zoo]
+ - utter_ack_dosearch
+ - action_searchsights
+ - action_suggest
+* _affirm[]
+ - utter_ask_helpmore
+* _thankyou[]
+ - utter_yourewelcomed
+ - utter_goodbye
+
+   ## story_sightseeing_42
+* _greet[]
+ - utter_greet
+ - utter_ask_howcanhelp
+* _inform[location=berlin,type_specific=monument]
+ - utter_ack_dosearch
+ - action_searchsights
+ - action_suggest
+* _request_info[info=opening_time]
+ - action_suggest
+* _thankyou[]
+ - utter_yourewelcomed
+ - utter_goodbye
+
+    ## story_sightseeing_45
+* _greet[]
+ - utter_greet
+ - utter_ask_howcanhelp
+* _inform[location=berlin,type_specific=castle]
+ - utter_ack_dosearch
+ - action_searchsights
+ - action_suggest
+* _thankyou[]
+ - utter_yourewelcomed
+ - utter_goodbye
+
