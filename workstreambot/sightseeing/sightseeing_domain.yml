@@ -16,16 +16,15 @@ intents:
  - deny
  - inform
  - thankyou
- - request_info
+ - request_address
+ - request_hours
+ - request_phone
 
 entities:
  - location
  - price
  - type
  - type_specific
- - hours
- - Phone
- - address
 
 templates:
   utter_greet:
