@@ -1,4 +1,4 @@
-{
+﻿{
   "rasa_nlu_data": {
     "common_examples": [
       {
@@ -52,9 +52,9 @@
             "entity": "location"
           }
         ]
-      }, 
+      },
       {
-        "text": "What is the popular park in berlin?",
+        "text": "what is the popular park in berlin?",
         "intent": "inform",
         "entities": [
           {
@@ -72,7 +72,7 @@
         ]
       },
       {
-        "text": "What is the famous museum in berlin?",
+        "text": "what is the famous museum in berlin?",
         "intent": "inform",
         "entities": [
           {
@@ -90,7 +90,7 @@
         ]
       },
       {
-        "text": "What is the famous park?",
+        "text": "what is the famous park?",
         "intent": "inform",
         "entities": [
           {
@@ -102,7 +102,7 @@
         ]
       },
       {
-        "text": "What is the popular museum?",
+        "text": "what is the popular museum?",
         "intent": "inform",
         "entities": [
           {
@@ -114,7 +114,7 @@
         ]
       },
       {
-        "text": "I need some recommendations for indoor places in berlin",
+        "text": "i need some recommendations for indoor places in berlin",
         "intent": "inform",
         "entities": [
           {
@@ -132,7 +132,7 @@
         ]
       },
       {
-        "text": "I need some recommendations for outdoor places in berlin",
+        "text": "i need some recommendations for outdoor places in berlin",
         "intent": "inform",
         "entities": [
           {
@@ -150,7 +150,7 @@
         ]
       },
       {
-        "text": "I need some recommendations for outdoor places",
+        "text": "i need some recommendations for outdoor places",
         "intent": "inform",
         "entities": [
           {
@@ -162,7 +162,7 @@
         ]
       },
       {
-        "text": "I need some recommendations for indoor places",
+        "text": "i need some recommendations for indoor places",
         "intent": "inform",
         "entities": [
           {
@@ -198,25 +198,25 @@
         ]
       },
       {
-        "text": "free",
+        "text": "moderately cheap",
         "intent": "inform",
         "entities": [
           {
             "start": 0,
-            "end": 4,
-            "value": "free",
+            "end": 16,
+            "value": "moderately cheap",
             "entity": "price"
           }
         ]
       },
       {
-        "text": "moderate",
+        "text": "moderately expensive",
         "intent": "inform",
         "entities": [
           {
             "start": 0,
-            "end": 8,
-            "value": "moderate",
+            "end": 20,
+            "value": "moderately expensive",
             "entity": "price"
           }
         ]
@@ -234,12 +234,12 @@
         ]
       },
       {
-        "text": "Can you recommend somewhere else?",
+        "text": "can you recommend somewhere else?",
         "intent": "deny",
         "entities": []
       },
       {
-        "text": "Can you suggest another place?",
+        "text": "can you suggest another place?",
         "intent": "deny",
         "entities": []
       },
@@ -249,7 +249,7 @@
         "entities": []
       },
       {
-        "text": "That sounds like a great plan",
+        "text": "that sounds like a great plan",
         "intent": "affirm",
         "entities": []
       },
@@ -279,21 +279,232 @@
         "entities": []
       },
       {
-        "text": "When is it open?",
-        "intent": "request_hours",
+        "text": "when is it open?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 11,
+            "end": 15,
+            "value": "open",
+            "entity": "info"
+          }
+        ]
+      },
+      {
+        "text": "what is its address?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "address",
+            "entity": "info"
+          }
+        ]
+      },
+      {
+        "text": "what is its phone number?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 12,
+            "end": 24,
+            "value": "phone number",
+            "entity": "info"
+          }
+        ]
+      },
+      {
+        "text": "what is its opening time?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 12,
+            "end": 24,
+            "value": "opening time",
+            "entity": "info"
+          }
+        ]
+      },
+      {
+        "text": "what is its closing time?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 12,
+            "end": 24,
+            "value": "closing time",
+            "entity": "info"
+          }
+        ]
+      },
+      {
+        "text": "where is it",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "where",
+            "entity": "info"
+          }
+        ]
+      },
+      {
+        "text": "what's its rating?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 11,
+            "end": 17,
+            "value": "rating",
+            "entity": "info"
+          }
+        ]
+      },
+      {
+        "text": "how is it rated?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 10,
+            "end": 15,
+            "value": "rated",
+            "entity": "info"
+          }
+        ]
+      },
+      {
+        "text": "sounds good",
+        "intent": "affirm",
         "entities": []
       },
       {
-        "text": "What is its address?",
-        "intent": "request_address",
+        "text": "nice i like it",
+        "intent": "affirm",
         "entities": []
       },
       {
-        "text": "What is its phone number?",
-        "intent": "request_phone",
+        "text": "no thanks",
+        "intent": "deny",
         "entities": []
+      },
+      {
+        "text": "yes",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "what is the best place to visit in new york",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 35,
+            "end": 43,
+            "value": "new york",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "I like this brandemburger gate",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "i like this eiffel tower",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "i don't like it",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "i don't like it. can you recommend something else?",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "next",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "i don't fancy it",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "give me another suggestion",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "this museum is cool",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "i will visit this",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "i would like to visit an outdoor attraction in basel",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 47,
+            "end": 52,
+            "value": "basel",
+            "entity": "location"
+          },
+          {
+            "start": 25,
+            "end": 32,
+            "value": "outdoor",
+            "entity": "type"
+          }
+        ]
+      },
+      {
+        "text": "can you recommend me a museum in berlin?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 33,
+            "end": 39,
+            "value": "berlin",
+            "entity": "location"
+          },
+          {
+            "start": 23,
+            "end": 29,
+            "value": "museum",
+            "entity": "type_specific"
+          }
+        ]
+      },
+      {
+        "text": "what is the best palace in berlin?",
+        "intent": "",
+        "entities": [
+          {
+            "start": 27,
+            "end": 33,
+            "value": "berlin",
+            "entity": "location"
+          },
+          {
+            "start": 17,
+            "end": 23,
+            "value": "palace",
+            "entity": "type_specific"
+          }
+        ]
       }
-
     ]
   }
 }

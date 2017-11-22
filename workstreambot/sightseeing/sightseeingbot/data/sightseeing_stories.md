@@ -375,7 +375,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=indoors]
+* _inform[type=indoor]
  - utter_ask_location
 * _inform[location=berlin]
  - utter_ask_price
@@ -401,7 +401,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=outdoors]
+* _inform[type=outdoor]
  - utter_ask_location
 * _inform[location=berlin]
  - utter_ask_price
@@ -426,7 +426,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=outdoors]
+* _inform[type=outdoor]
  - utter_ask_location
 * _inform[location=berlin]
  - utter_ask_price
@@ -448,7 +448,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=indoors]
+* _inform[type=indoor]
  - utter_ask_location
 * _inform[location=berlin]
  - utter_ask_price
@@ -466,7 +466,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=outdoors]
+* _inform[type=outdoor]
  - utter_ask_location
 * _inform[location=berlin]
  - utter_ask_price
@@ -494,7 +494,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=outdoors]
+* _inform[type=outdoor]
  - utter_ask_location
 * _inform[location=berlin]
  - utter_ask_price
@@ -514,7 +514,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=outdoors]
+* _inform[type=outdoor]
  - utter_ask_location
 * _inform[location=berlin]
  - utter_ask_price
@@ -530,7 +530,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=outdoors]
+* _inform[type=outdoor]
  - utter_ask_location
 * _inform[location=berlin]
  - utter_ask_price
@@ -566,7 +566,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=indoors]
+* _inform[type=indoor]
  - utter_ask_location
 * _inform[location=berlin]
  - utter_ask_price
@@ -596,7 +596,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=indoors, location=berlin]
+* _inform[type=indoor, location=berlin]
  - utter_ask_price
 * _inform[price=expensive]
  - utter_ack_dosearch
@@ -620,7 +620,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=indoors, location=berlin]
+* _inform[type=indoor, location=berlin]
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
@@ -642,7 +642,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=indoors, location=berlin]
+* _inform[type=indoor, location=berlin]
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
@@ -658,7 +658,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=indoors, location=berlin]
+* _inform[type=indoor, location=berlin]
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
@@ -684,7 +684,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=outdoors, location=berlin]
+* _inform[type=outdoor, location=berlin]
  - utter_ask_price
 * _inform[price=expensive]
  - utter_ack_dosearch
@@ -702,7 +702,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=outdoors, location=berlin]
+* _inform[type=outdoor, location=berlin]
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
@@ -716,7 +716,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=indoors, location=berlin]
+* _inform[type=indoor, location=berlin]
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
@@ -738,7 +738,7 @@
 * _greet[]
  - utter_greet
  - utter_ask_howcanhelp
-* _inform[type=outdoors, location=berlin]
+* _inform[type=outdoor, location=berlin]
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
