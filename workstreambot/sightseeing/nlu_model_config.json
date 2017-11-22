@@ -9,5 +9,5 @@
   ],
   "path" : "./models",
   "project": "nlu",
-  "data" : "./data/franken_data.json"
+  "data" : "./data/sightseeing.json"
 }
