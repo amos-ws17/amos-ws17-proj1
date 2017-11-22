@@ -23,7 +23,9 @@ entities:
  - price
  - type
  - type_specific
- - info
+ - hours
+ - Phone
+ - address
 
 templates:
   utter_greet:
