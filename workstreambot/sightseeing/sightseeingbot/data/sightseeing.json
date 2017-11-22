@@ -339,18 +339,6 @@
         ]
       },
       {
-        "text": "where is it",
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 0,
-            "end": 5,
-            "value": "address",
-            "entity": "info"
-          }
-        ]
-      },
-      {
         "text": "what's its rating?",
         "intent": "request_info",
         "entities": [
@@ -502,6 +490,18 @@
             "end": 23,
             "value": "palace",
             "entity": "type_specific"
+          }
+        ]
+      },
+      {
+        "text": "where is it?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "address",
+            "entity": "info"
           }
         ]
       }
