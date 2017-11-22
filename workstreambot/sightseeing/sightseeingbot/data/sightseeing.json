@@ -279,13 +279,13 @@
         "entities": []
       },
       {
-        "text": "when is it open?",
+        "text": "when is it opened?",
         "intent": "request_info",
         "entities": [
           {
             "start": 11,
-            "end": 15,
-            "value": "open",
+            "end": 17,
+            "value": "opening time",
             "entity": "info"
           }
         ]
@@ -309,7 +309,7 @@
           {
             "start": 12,
             "end": 24,
-            "value": "phone number",
+            "value": "phone num",
             "entity": "info"
           }
         ]
@@ -345,7 +345,7 @@
           {
             "start": 0,
             "end": 5,
-            "value": "where",
+            "value": "address",
             "entity": "info"
           }
         ]
@@ -369,7 +369,7 @@
           {
             "start": 10,
             "end": 15,
-            "value": "rated",
+            "value": "rating",
             "entity": "info"
           }
         ]
@@ -489,7 +489,7 @@
       },
       {
         "text": "what is the best palace in berlin?",
-        "intent": "",
+        "intent": "inform",
         "entities": [
           {
             "start": 27,

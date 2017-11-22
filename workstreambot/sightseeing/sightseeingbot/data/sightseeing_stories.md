@@ -42,7 +42,7 @@
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -72,9 +72,9 @@
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -90,9 +90,9 @@
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
@@ -126,7 +126,7 @@
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -140,7 +140,7 @@
  - utter_ack_dosearch
  - action_searchsights
  - action_suggest
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -247,9 +247,9 @@
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -323,7 +323,7 @@
  - utter_ask_helpmore
 * _request_info[info=rating]
  - action_suggest
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -341,7 +341,7 @@
  - utter_ack_dosearch
  - action_searchsights
  - action_suggest
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -361,7 +361,7 @@
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -391,7 +391,7 @@
  - utter_ask_helpmore
 * _request_info[info=rating]
  - action_suggest
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -415,7 +415,7 @@
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -484,7 +484,7 @@
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
-* _request_info[info=phone_num]
+* _request_info[info=phone num]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -504,7 +504,7 @@
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -556,7 +556,7 @@
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
-* _request_info[info=phone_num]
+* _request_info[info=phone num]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -578,11 +578,11 @@
  - utter_ask_helpmore
 * _request_info[info=rating]
  - action_suggest
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
-* _request_info[info=phone_num]
+* _request_info[info=phone num]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -608,7 +608,7 @@
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
@@ -632,7 +632,7 @@
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -692,7 +692,7 @@
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -746,13 +746,13 @@
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
-* _request_info[info=phone_num]
+* _request_info[info=phone num]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -819,9 +819,9 @@
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -837,9 +837,9 @@
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
-* _request_info[info=closing_time]
+* _request_info[info=closing time]
  - action_suggest
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
@@ -883,7 +883,7 @@
  - utter_ack_dosearch
  - action_searchsights
  - action_suggest
-* _request_info[info=opening_time]
+* _request_info[info=opening time]
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed

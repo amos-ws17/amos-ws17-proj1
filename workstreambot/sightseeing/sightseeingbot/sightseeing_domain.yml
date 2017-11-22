@@ -16,7 +16,7 @@ intents:
  - deny
  - inform
  - thankyou
- - rquest_info
+ - request_info
 
 entities:
  - location
