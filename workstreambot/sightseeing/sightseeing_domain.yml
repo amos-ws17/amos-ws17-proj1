@@ -5,7 +5,7 @@ slots:
     type: text
   type:
     type: text
-  type_made:
+  type_specific:
     type: text
   info:
     type: text
@@ -28,45 +28,34 @@ entities:
 templates:
   utter_greet:
     - "hey there!"
+  utter_ask_howcanhelp:
+    - "how can I help you?"
+  utter_ask_location:
+    - "where do you want me to search?"
+  utter_ask_price:
+    - "do you prefer cheap, moderately cheap, moderately expensive, expensive or does price matter to you?"
+  utter_ack_dosearch: 
+    - "ok let me see what I can find"
+  utter_ack_findalternatives:
+    - "ok let me see what else there is"
+  utter_ask_helpmore:
+    - "is there anything more that I can help with?"
+  utter_yourewelcomed:
+    - "i am happy to assist you. have a nice day!"
   utter_goodbye:
     - "goodbye :("
     - "Bye-bye"
   utter_default:
     - "default message"
-  utter_ack_dosearch: 
-    - "ok let me see what I can find"
-  utter_ack_findalternatives:
-    - "ok let me see what else there is"
-  utter_ask_typemade: 
-    - "what kind of sights do you want to see - manmade, natural or both?"
-  utter_ask_location:
-    - "in which city?"
-  utter_ask_type:
-    - "are you looking for outdoors, indoors or both indoor and outdoor sights?"
-  utter_ask_price:
-    - "do you prefer paid or free sights?"
-  utter_yourewelcomed:
-    - "i am happy to assist you. have a nice day!"
-  utter_ask_helpmore:
-    - "is there anything more that I can help with?"
-  utter_ask_howcanhelp:
-    - "how can I help you?"
-  utter_on_it: 
-    - "I'm on it"
 
 actions:
   - utter_greet
-  - utter_goodbye
-  - utter_default
-  - utter_ack_dosearch
-  - utter_ack_findalternatives
-  - utter_ack_makereservation
-  - utter_ask_cuisine
-  - utter_ask_helpmore
   - utter_ask_howcanhelp
   - utter_ask_location
-  - utter_ask_moreupdates
   - utter_ask_price
-  - utter_on_it
-  - bot.ActionSearchSights
-  - bot.ActionSuggest
+  - utter_ack_dosearch
+  - utter_ack_findalternatives
+  - utter_ask_helpmore
+  - utter_ack_yourewelcomed
+  - utter_goodbye
+  - utter_default
