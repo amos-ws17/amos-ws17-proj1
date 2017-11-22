@@ -265,17 +265,17 @@
       },
       {
         "text": "no thank you",
-        "intent": "thankyou",
+        "intent": "deny",
         "entities": []
       },
       {
         "text": "no thanks",
-        "intent": "thankyou",
+        "intent": "deny",
         "entities": []
       },
       {
         "text": "no",
-        "intent": "thankyou",
+        "intent": "deny",
         "entities": []
       },
       {
