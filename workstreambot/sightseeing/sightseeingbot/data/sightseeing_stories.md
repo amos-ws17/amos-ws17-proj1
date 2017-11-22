@@ -10,7 +10,7 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -177,7 +177,7 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -199,15 +199,15 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -287,11 +287,11 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -313,11 +313,11 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -385,7 +385,7 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -411,7 +411,7 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
@@ -436,7 +436,7 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -476,11 +476,11 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -540,19 +540,19 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -604,7 +604,7 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -628,7 +628,7 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
@@ -666,11 +666,11 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -724,7 +724,7 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -773,7 +773,7 @@
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_search_restaurants
+ - action_searchsights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
