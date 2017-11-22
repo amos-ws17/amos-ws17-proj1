@@ -16,21 +16,43 @@ pip install requests
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Install a virtualenv in a desired location
 
 ```
-Give the example
+sudo pip install virtualenv
+#cd to our desired location
+virtualenv -p python venv
 ```
 
-And repeat
+Start your venv
 
 ```
-until finished
+source venv/bin/activate
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Install Rasa NLU
+
+```
+pip install rasa_nlu
+```
+
+Install libraries (spaCy, sklearn, duckling)
+
+```
+pip install -U spacy
+python -m spacy download en
+pip install -U scikit-learn scipy sklearn-crfsuite
+python -m pip install duckling
+```
+
+Install Rasa Core
+
+```
+pip install rasa_core
+```
+
+Now you should be able to run the [weather bot](https://github.com/amos-ws17/amos-ws17-proj1/wiki/Weather-bot).
+For more details on installing Rasa take a look into the [Rasa NLU](http://nlu.rasa.ai/installation.html) and [Rasa Core](https://core.rasa.ai/installation.html) documentation.
 
 ## Running the tests
 
