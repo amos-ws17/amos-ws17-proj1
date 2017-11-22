@@ -51,7 +51,7 @@ Install Rasa Core
 pip install rasa_core
 ```
 
-Now you should be able to run the [weather bot](https://github.com/amos-ws17/amos-ws17-proj1/wiki/Weather-bot).
+Now you should be able to run the [weather bot](https://github.com/amos-ws17/amos-ws17-proj1/wiki/Weather-bot).  
 For more details on installing Rasa take a look into the [Rasa NLU](http://nlu.rasa.ai/installation.html) and [Rasa Core](https://core.rasa.ai/installation.html) documentation.
 
 ## Running the tests
@@ -100,7 +100,6 @@ For the versions available, see the [tags on this repository](https://github.com
 * Veselin Popov
 * Omar Abada
 * Marah Halawa
-* Erik Zöllner 
 
 See also the contributing section
 
