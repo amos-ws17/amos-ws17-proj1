@@ -60,7 +60,7 @@ actions:
   - utter_ack_dosearch
   - utter_ack_findalternatives
   - utter_ask_helpmore
-  - utter_ack_yourewelcomed
+  - utter_yourewelcomed
   - utter_goodbye
   - utter_default
   - action_suggest
