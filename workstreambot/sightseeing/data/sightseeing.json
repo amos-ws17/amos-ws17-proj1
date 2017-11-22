@@ -1,0 +1,299 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "hey",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "howdy",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hey there",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hello",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hi",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "good morning",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "good evening",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "dear sir",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "where should I start my sightseeing in berlin?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 39,
+            "end": 45,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      }, 
+      {
+        "text": "What is the popular park in berlin?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 24,
+            "value": "park",
+            "entity": "type_specific"
+          },
+          {
+            "start": 28,
+            "end": 34,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "What is the famous museum in berlin?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 25,
+            "value": "museum",
+            "entity": "type_specific"
+          },
+          {
+            "start": 29,
+            "end": 35,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "What is the famous park?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 23,
+            "value": "park",
+            "entity": "type_specific"
+          }
+        ]
+      },
+      {
+        "text": "What is the popular museum?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 26,
+            "value": "museum",
+            "entity": "type_specific"
+          }
+        ]
+      },
+      {
+        "text": "I need some recommendations for indoor places in berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 32,
+            "end": 38,
+            "value": "indoor",
+            "entity": "type"
+          },
+          {
+            "start": 49,
+            "end": 55,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "I need some recommendations for outdoor places in berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 32,
+            "end": 39,
+            "value": "outdoor",
+            "entity": "type"
+          },
+          {
+            "start": 50,
+            "end": 56,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "I need some recommendations for outdoor places",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 32,
+            "end": 39,
+            "value": "outdoor",
+            "entity": "type"
+          }
+        ]
+      },
+      {
+        "text": "I need some recommendations for indoor places",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 32,
+            "end": 38,
+            "value": "indoor",
+            "entity": "type"
+          }
+        ]
+      },
+      {
+        "text": "in berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 9,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "cheap",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "cheap",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "free",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "free",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "moderate",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "moderate",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "expensive",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "expensive",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "Can you recommend somewhere else?",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "Can you suggest another place?",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "great!",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "That sounds like a great plan",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "thank you",
+        "intent": "thankyou",
+        "entities": []
+      },
+      {
+        "text": "thanks",
+        "intent": "thankyou",
+        "entities": []
+      },
+      {
+        "text": "no thank you",
+        "intent": "thankyou",
+        "entities": []
+      },
+      {
+        "text": "no thanks",
+        "intent": "thankyou",
+        "entities": []
+      },
+      {
+        "text": "no",
+        "intent": "thankyou",
+        "entities": []
+      },
+      {
+        "text": "When is it open?",
+        "intent": "request_hours",
+        "entities": []
+      },
+      {
+        "text": "What is its address?",
+        "intent": "request_address",
+        "entities": []
+      },
+      {
+        "text": "What is its phone number?",
+        "intent": "request_phone",
+        "entities": []
+      }
+
+    ]
+  }
+}
