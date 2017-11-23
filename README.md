@@ -74,6 +74,8 @@ Give an example
 ## Built With
 
 * [Python](https://docs.python.org/3/) - Python 3 Documentation
+* [Rasa NLU](https://nlu.rasa.ai/index.html) - Rasa NLU Documentation
+* [Rasa Core](https://core.rasa.ai/index.html) - Rasa Core Documentation
 
 ## Contributing
 
