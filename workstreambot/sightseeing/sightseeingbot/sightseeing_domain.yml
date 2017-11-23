@@ -1,0 +1,67 @@
+slots:
+  location:
+    type: text
+  price:
+    type: text
+  type:
+    type: text
+  type_specific:
+    type: text
+  info:
+    type: text
+
+intents:
+ - greet
+ - affirm
+ - deny
+ - inform
+ - thankyou
+ - request_info
+
+entities:
+ - location
+ - price
+ - type
+ - type_specific
+ - info
+
+templates:
+  utter_greet:
+    - "hey there!"
+  utter_ask_howcanhelp:
+    - "how can I help you?"
+  utter_ask_location:
+    - "where do you want me to search?"
+  utter_ask_price:
+    - "do you prefer cheap, moderately cheap, moderately expensive, expensive or does price matter to you?"
+  utter_ack_dosearch: 
+    - "ok let me see what I can find"
+  utter_ack_findalternatives:
+    - "ok let me see what else there is"
+  utter_ask_helpmore:
+    - "is there anything more that I can help with?"
+  utter_yourewelcomed:
+    - "i am happy to assist you. have a nice day!"
+  utter_goodbye:
+    - "goodbye :("
+    - "Bye-bye"
+  utter_default:
+    - "default message"
+  action_suggest:
+    - "i suggest you to visit brandemburger gate"
+  action_searchsights:
+    - "searching for sights"
+
+actions:
+  - utter_greet
+  - utter_ask_howcanhelp
+  - utter_ask_location
+  - utter_ask_price
+  - utter_ack_dosearch
+  - utter_ack_findalternatives
+  - utter_ask_helpmore
+  - utter_yourewelcomed
+  - utter_goodbye
+  - utter_default
+  - action_suggest
+  - action_searchsights
