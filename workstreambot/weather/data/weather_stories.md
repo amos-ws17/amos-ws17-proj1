@@ -1,5 +1,5 @@
-## one time simple path 1              <!-- name of the story - just for debugging -->
-* _greet              
+## weather in location path
+* _greet
   - utter_greet
   - utter_ask_howcanhelp
 * _inform[location=berlin]
@@ -7,71 +7,71 @@
   - utter_ack_dosearch
   - action_search_weather
   - utter_ask_helpmore
-* _thankyou
+* _goodbye
   - utter_goodbye
 
-## one time simple path 2             <!-- name of the story - just for debugging -->
-* _greet              
+## weather in location on time path
+* _greet
   - utter_greet
   - utter_ask_howcanhelp
-* _inform[date=1january]
+* _inform[location=berlin,time=2017-01-01]
   - utter_on_it
   - utter_ack_dosearch
   - action_search_weather
   - utter_ask_helpmore
-* _thankyou
+* _goodbye
   - utter_goodbye
 
-## one time path with extension 1            <!-- this is already the start of the next story -->
-* _greet              
+## ask for location path 1
+* _greet
   - utter_greet
-  - utter_ask_howcanhelp           			 <!-- action of the bot to execute -->
-* _inform[date=1january]
+  - utter_ask_howcanhelp
+* _inform[]
   - utter_on_it
   - utter_ask_location
 * _inform[location=berlin]
+  - utter_on_it
   - utter_ack_dosearch
   - action_search_weather
   - utter_ask_helpmore
-* _thankyou
+* _goodbye
   - utter_goodbye
 
-## multiple time simple path 1              <!-- name of the story - just for debugging -->
-* _greet              
+## ask for location path 2
+* _greet
   - utter_greet
   - utter_ask_howcanhelp
-* _inform[date=1january]
+* _inform[time=2017-01-01]
   - utter_on_it
-  - utter_ack_dosearch
-  - action_search_weather
-  - utter_ask_helpmore
-*_inform[location=berlin]
-  - utter_on_it
-  - utter_ack_dosearch
-  - action_search_weather
-  - utter_ask_helpmore
-* _thankyou
-  - utter_goodbye
-  
-## multiple time simple path 2              <!-- name of the story - just for debugging -->
-* _greet              
-  - utter_greet
-  - utter_ask_howcanhelp
+  - utter_ask_location
 * _inform[location=berlin]
   - utter_on_it
   - utter_ack_dosearch
   - action_search_weather
   - utter_ask_helpmore
-*_inform[location=berlin]
-  - utter_on_it
-  - utter_ack_dosearch
-  - action_search_weather
-  - utter_ask_helpmore
-* _thankyou
+* _goodbye
   - utter_goodbye
 
-## multiple time simple path 3              <!-- name of the story - just for debugging -->
-* _greet              
+## ask for location path 3
+* _greet
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[time=2017-01-01]
+  - utter_on_it
+  - utter_ask_location
+* _inform[]
+    - utter_on_it
+  - utter_ask_location
+* _inform[location=berlin]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _goodbye
+  - utter_goodbye
+
+## remember location path
+* _greet
   - utter_greet
   - utter_ask_howcanhelp
 * _inform[location=berlin]
@@ -79,86 +79,96 @@
   - utter_ack_dosearch
   - action_search_weather
   - utter_ask_helpmore
-*_inform[date=1january]
+* _inform[time=2017-01-01]
   - utter_on_it
   - utter_ack_dosearch
   - action_search_weather
   - utter_ask_helpmore
-* _thankyou
+* _goodbye
   - utter_goodbye
-  
-## multiple time simple path 4              <!-- name of the story - just for debugging -->
-* _greet              
+
+## override location path 1
+* _greet
   - utter_greet
   - utter_ask_howcanhelp
-* _inform[date=1january]
-  - utter_on_it
-  - utter_ack_dosearch
-  - action_search_weather
-  - utter_ask_helpmore
-*_inform[date=1january]
-  - utter_on_it
-  - utter_ack_dosearch
-  - action_search_weather
-  - utter_ask_helpmore
-* _thankyou
-  - utter_goodbye  
-  
-## multiple time path with extension 1            <!-- this is already the start of the next story -->
-* _greet              
-  - utter_greet
-  - utter_ask_howcanhelp           			 <!-- action of the bot to execute -->
-* _inform[date=1january]
-  - utter_on_it
-  - utter_ask_location
-* _inform[location=berlin]
-  - utter_ack_dosearch
-  - action_search_weather
-  - utter_ask_helpmore
 * _inform[location=berlin]
   - utter_on_it
   - utter_ack_dosearch
   - action_search_weather
   - utter_ask_helpmore
-* _thankyou
+* _inform[location=new york]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _goodbye
   - utter_goodbye
-  
-## multiple time path with extension 2            <!-- this is already the start of the next story -->
-* _greet              
+
+## override location path 2
+* _greet
   - utter_greet
-  - utter_ask_howcanhelp           			 <!-- action of the bot to execute -->
-* _inform[date=1january]
-  - utter_on_it
-  - utter_ask_location
-* _inform[location=berlin]
-  - utter_ack_dosearch
-  - action_search_weather
-  - utter_ask_helpmore
-* _inform[date=1january]
+  - utter_ask_howcanhelp
+* _inform[location=berlin,time=2017-01-01]
   - utter_on_it
   - utter_ack_dosearch
   - action_search_weather
   - utter_ask_helpmore
-* _thankyou
+* _inform[location=new york]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _goodbye
   - utter_goodbye
-  
-## multiple time path with extension 3            <!-- this is already the start of the next story -->
-* _greet              
+
+## override time path 1
+* _greet
   - utter_greet
-  - utter_ask_howcanhelp           			 <!-- action of the bot to execute -->
-* _inform[date=1january]
+  - utter_ask_howcanhelp
+* _inform[time=2017-01-01]
+  - utter_on_it
+  - utter_ask_location
+* _inform[time=2017-12-01]
   - utter_on_it
   - utter_ask_location
 * _inform[location=berlin]
-  - utter_ack_dosearch
-  - action_search_weather
-  - utter_ask_helpmore
-* _inform[date=1january]
   - utter_on_it
-  - utter_ask_location
-* _inform[location=berlin]
   - utter_ack_dosearch
   - action_search_weather
   - utter_ask_helpmore
-* _thankyou
+* _goodbye
+  - utter_goodbye
+
+## override time path 2
+* _greet
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=berlin,time=2017-01-01]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _inform[time=2017-12-01]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _goodbye
+  - utter_goodbye
+
+## override path
+* _greet
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=berlin,time=2017-01-01]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _inform[location=new york,time=2017-12-01]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _goodbye
   - utter_goodbye
