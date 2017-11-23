@@ -6,14 +6,6 @@ A project for the 2017 AMOS Course in collaboration with Actano
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-pip install requests 
-```
-
 ### Installing
 
 Install a virtualenv in a desired location
@@ -36,9 +28,10 @@ Install Rasa NLU
 pip install rasa_nlu
 ```
 
-Install libraries (spaCy, sklearn, duckling)
+Install necessary libraries
 
 ```
+pip install requests 
 pip install -U spacy
 python -m spacy download en
 pip install -U scikit-learn scipy sklearn-crfsuite
