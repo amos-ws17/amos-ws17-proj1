@@ -11,6 +11,13 @@ services:
   - docker
   - docker-compose
 
-before_script: cd rasa-compose
-
-script: docker-compose up
+jobs:
+  include:
+    - stage: build weather image
+      script:
+      - cd workstreambot/weather
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t amoschatbot/chatbot .
+      - docker images
+      - docker tag chatbot amoschatbot/chatbot
+      - docker push amoschatbot/chatbot
