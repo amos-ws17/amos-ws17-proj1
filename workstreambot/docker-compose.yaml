@@ -2,7 +2,7 @@ version: '3'
 services:
   rasa_core:
     container_name: weatherbot
-    entrypoint: python -m rasa_core.server -d project/dialogue -u models/nlu/current
+    entrypoint: python -m rasa_core.server -d project/dialogue -u project/nlu/current
     build: weather
     ports:
       - 5005:5005
