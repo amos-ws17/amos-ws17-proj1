@@ -19,5 +19,5 @@ jobs:
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - docker build -t amoschatbot/chatbot .
       - docker images
-      - docker tag chatbot amoschatbot/chatbot
+      - docker tag weatherbot amoschatbot/weatherbot
       - docker push amoschatbot/chatbot
