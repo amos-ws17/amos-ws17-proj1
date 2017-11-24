@@ -3,6 +3,7 @@ language: python
 branches:
   only:
     - dev
+    - master
 
 python:
   - "3.5"
