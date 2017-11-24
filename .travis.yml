@@ -13,14 +13,13 @@ services:
 
 jobs:
   include:
-    - stage: Build the weather bot
+    - stage: Test
+      script:
+        - echo "No tests yet"
+
+    - stage: Build and push the weather bot
       script:
       - cd workstreambot/weather
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - docker build -t amoschatbot/chatbot:latest .
-    - stage: Test
-      script:
-        - echo "No tests yet"
-    - stage: Push the bot to dockerhub
-      script: 
-        - docker push amoschatbot/weatherbot
+      - docker push amoschatbot/weatherbot
