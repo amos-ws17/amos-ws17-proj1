@@ -2,9 +2,9 @@
 
 The docker-compose file launches 2 services:
 
-- the rasa nlu server reachable at port 5000 (also outside of the containers)
+- The weatherbot
 
-- the a docker container with installed rasa core which launches the rasa core server by training the simple bot. It can also launch another example, but you have to change the data folder in the Dockerfile by editing the name of the DATA_SRC environment variable
+- The sightseeing bot
 
 Run the docker compose file using the following command:
 ```bash
