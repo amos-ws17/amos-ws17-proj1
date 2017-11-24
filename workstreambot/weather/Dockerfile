@@ -10,9 +10,12 @@ WORKDIR /rasa_core
 RUN pip install -r requirements.txt && pip install -e . && pip install klein && pip install rasa_nlu &&\
     pip install spacy sklearn sklearn_crfsuite && python -m spacy download en && pip install flask
 
-ENV DATA_SRC moodbot
-WORKDIR /rasa_core/examples/${DATA_SRC}
+RUN mkdir weather_bot
 
-RUN python -m rasa_nlu.train -c nlu_model_config.json --fixed_model_name current && python -m rasa_core.train -s data/stories.md -d domain.yml -o models/dialogue
+ADD . /rasa_core/weather_bot
 
-ENTRYPOINT python -m rasa_core.server -d models/dialogue -u models/nlu/current
+WORKDIR /rasa_core/weather_bot
+
+RUN python -m rasa_nlu.train -c nlu_model_config.json --fixed_model_name current && python -m rasa_core.train -s data/weather_stories.md -d weather_domain.yml -o project/dialogue
+
+ENTRYPOINT python -m rasa_core.server -d mod/dialogue -u models/nlu/current
