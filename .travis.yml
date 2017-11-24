@@ -17,7 +17,5 @@ jobs:
       script:
       - cd workstreambot/weather
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-      - docker build -t amoschatbot/chatbot .
-      - docker images
-      - docker tag weatherbot amoschatbot/weatherbot
+      - docker build -t amoschatbot/chatbot:latest .
       - docker push amoschatbot/chatbot
