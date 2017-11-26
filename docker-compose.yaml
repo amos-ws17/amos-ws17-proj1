@@ -2,7 +2,7 @@ version: '3'
 services:
   weatherbot:
     container_name: weatherbot
-    build: weather
+    image: amoschatbot/weatherbot
     ports:
       - 5012:5002
       - 5015:5005
@@ -14,7 +14,7 @@ services:
 
   sightseeingbot:
     container_name: sightseeingbot
-    build: sightseeing
+    image: amoschatbot/sightseeingbot
     ports:
       - 5022:5002
       - 5025:5005

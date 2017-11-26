@@ -10,3 +10,4 @@ WORKDIR /rasa_core
 RUN pip install -r requirements.txt && pip install -e . && pip install klein && pip install rasa_nlu &&\
     pip install spacy sklearn sklearn_crfsuite && python -m spacy download en && pip install flask
 
+ADD . rasa_core/

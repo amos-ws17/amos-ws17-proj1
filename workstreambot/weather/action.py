@@ -42,6 +42,6 @@ class ActionSearchWeather(Action):
                  forecastDate = forecast.getLastUpdatedForecastDate()
                  message = description + ' on ' + forecastDate + '\nCondition: ' + forecastDesc + '\nThe temperature is between ' + forecastLow + ' and ' + forecastHigh + ' degree'
 
-        print message
+        print(message)
         dispatcher.utter_message(message)
         return [SlotSet("action_search_weather_result", message)]
