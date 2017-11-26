@@ -18,7 +18,7 @@ entities:
  - cuisine
 
 templates:
- utter_greet:
+  utter_greet:
     - "Hey there!"
   utter_goodbye:
     - "Bye-bye"
