@@ -27,6 +27,6 @@ jobs:
     - stage:
       script:
       - cd workstreambot/sightseeing
-      - docker login -u="DOCKER_USERNAME" -p="DOCKER_PASSWORD"
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - docker build -t amoschatbot/sightseeingbot:latest .
       - docker push amoschatbot/sightseeingbot
