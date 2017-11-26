@@ -1,0 +1,51 @@
+slots:
+  cuisine:
+    type: text
+  location:
+    type: text
+  price:
+    type: text
+
+intents:
+ - greet
+ - affirm
+ - deny
+ - inform
+
+entities:
+ - location
+ - price
+ - cuisine
+
+templates:
+  utter_greet:
+    - "hey there!"
+  utter_goodbye:
+    - "goodbye :("
+    - "Bye-bye"
+  utter_ack_dosearch: 
+    - "ok let me see what I can find"
+  utter_ask_cuisine: 
+    - "what kind of cuisine would you like?"
+  utter_ask_helpmore:
+    - "do you want to change your preferences"
+  utter_ask_location:
+    - "in which city?"
+  utter_ask_price: 
+    - "in which price range?"
+  utter_on_it: 
+    - "I'm on it"
+  utter_suggest: 
+    - "my suggestion for you would be to go to Amrit"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ack_dosearch
+  - utter_ask_cuisine
+  - utter_ask_helpmore
+  - utter_ask_location
+  - utter_ask_price
+  - utter_on_it
+  - bot.ActionSearchRestaurants
+  - bot.ActionSuggest
