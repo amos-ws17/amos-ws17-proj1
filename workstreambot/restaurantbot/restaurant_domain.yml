@@ -18,25 +18,29 @@ entities:
  - cuisine
 
 templates:
-  utter_greet:
-    - "hey there!"
+ utter_greet:
+    - "Hey there!"
   utter_goodbye:
-    - "goodbye :("
     - "Bye-bye"
-  utter_ack_dosearch: 
-    - "ok let me see what I can find"
-  utter_ask_cuisine: 
-    - "what kind of cuisine would you like?"
+  utter_ack_dosearch:
+    - "I'm searching"
   utter_ask_helpmore:
-    - "do you want to change your preferences"
+    - "Do you want to change your preferences?"
   utter_ask_location:
-    - "in which city?"
-  utter_ask_price: 
-    - "in which price range?"
-  utter_on_it: 
+    - "In which city would you like to find a restaurant?"
+  utter_ask_cuisine:
+    - text: "What kind of cuisine would you like and in which price range should it be?"
+      buttons:
+      - title: "cheap"
+        payload: "cheap"
+      - title: "expensive"
+        payload: "expensive"
+  utter_yourewelcomed:
+    - "It was a pleasure for me to help you"
+  utter_suggest:
+    - "I suggest you to visit QUE PASA."
+  utter_on_it:
     - "I'm on it"
-  utter_suggest: 
-    - "my suggestion for you would be to go to Amrit"
 
 actions:
   - utter_greet
@@ -45,7 +49,8 @@ actions:
   - utter_ask_cuisine
   - utter_ask_helpmore
   - utter_ask_location
-  - utter_ask_price
+  - utter_yourewelcomed
   - utter_on_it
+  - utter_suggest
   - bot.ActionSearchRestaurants
   - bot.ActionSuggest
