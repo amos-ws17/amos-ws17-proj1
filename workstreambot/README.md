@@ -10,12 +10,16 @@ Run the docker compose file using the following command:
 ```bash
 docker-compose up
 ```
-
-You can do the rasa nlu tutorial also from outside the container (for Windows docker might not be able to expose the port so you will have to also go inside the container). The rasa core tutorials have to be executed inside the rasa core container using the following command:
+The weather bot exposes a REST API at port **5012**, example:
 
 ```bash
-docker exec -ti $CONTAINER_ID$ bash
+curl -X POST http://localhost:5012/bot/default/execute?query=hey
 ```
-In the future we can use this to train any data set and directly connecting it with our nodejs server.
+
+The sightseeing bot exposes a REST API at port **5022**, example:
+
+```bash
+curl -X POST http://localhost:5022/bot/default/execute?query=hey
+```
 
 Note for Windows you can use: https://www.docker.com/products/docker-toolbox

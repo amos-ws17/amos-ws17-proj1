@@ -24,3 +24,9 @@ jobs:
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - docker build -t amoschatbot/weatherbot:latest .
       - docker push amoschatbot/weatherbot
+    - stage:
+      script:
+      - cd workstreambot/sightseeing
+      - docker login -u="DOCKER_USERNAME" -p="DOCKER_PASSWORD"
+      - docker build -t amoschatbot/sightseeingbot:latest .
+      - docker push amoschatbot/sightseeingbot
