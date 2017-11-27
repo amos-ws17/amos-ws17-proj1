@@ -1,5 +1,6 @@
 import foursquareConstants
 from apiClient import APIClient
+from model.venue import Venue
 
 class FoursquareClient(object):
     # define the base url for the API
@@ -21,5 +22,12 @@ class FoursquareClient(object):
         api = APIClient()
         # make the url call and retrieve a json Response
         jsonResponse = api.fetch(searchURL, parameters)
-        #
-        print(jsonResponse)
+        # check if the jsonResponse contains an object and pass it to the venue model
+        if len(jsonResponse['response']['venues']) > 0:
+            venues = []
+            [venues.append(Venue(place)) for place in jsonResponse['response']['venues']]
+            # return the venue model
+            print(venues)
+        else:
+            # return the jsonResponse
+            return jsonResponse
