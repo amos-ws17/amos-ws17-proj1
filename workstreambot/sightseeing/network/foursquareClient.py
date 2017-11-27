@@ -1,23 +1,23 @@
-import foursquareConstants
-from apiClient import APIClient
+import network.foursquareConstants as C
+from network.apiClient import APIClient
 from model.venue import Venue
 
 class FoursquareClient(object):
     # define the base url for the API
-    baseurl = foursquareConstants.foursquareGeneralKeys['Scheme'] + foursquareConstants.foursquareGeneralKeys['Host'] + foursquareConstants.foursquareGeneralKeys['Path']
-    # function that gets the current weather for a given city
+    baseurl = C.foursquareGeneralKeys['Scheme'] + C.foursquareGeneralKeys['Host'] + C.foursquareGeneralKeys['Path']
+    # function that gets the current venues for a given city
     def fetch_venues_for_city(self, city, venues):
         # define parameters
-        parameters = {foursquareConstants.foursquareGeneralKeys['Client']: foursquareConstants.foursquareGeneralKeysValues['Client_ID'],
-                      foursquareConstants.foursquareGeneralKeys['Secret']: foursquareConstants.foursquareGeneralKeysValues['Secret_ID'],
-                      foursquareConstants.foursquareGeneralKeys['Version']: foursquareConstants.foursquareGeneralKeysValues['Version_ID'],
-                      foursquareConstants.foursquareParamterKeys['Near']: city,
-                      foursquareConstants.foursquareParamterKeys['Intent']: foursquareConstants.foursquareParamterKeysValues['Intent_ID'],
-                      foursquareConstants.foursquareParamterKeys['Radius']: foursquareConstants.foursquareParamterKeysValues['Radius_ID'],
-                      foursquareConstants.foursquareParamterKeys['Query']: venues,
-                      foursquareConstants.foursquareParamterKeys['Limit']: foursquareConstants.foursquareParamterKeysValues['Limit_ID']}
+        parameters = {C.foursquareGeneralKeys['Client']: C.foursquareGeneralKeysValues['Client_ID'],
+                      C.foursquareGeneralKeys['Secret']: C.foursquareGeneralKeysValues['Secret_ID'],
+                      C.foursquareGeneralKeys['Version']: C.foursquareGeneralKeysValues['Version_ID'],
+                      C.foursquareParamterKeys['Near']: city,
+                      C.foursquareParamterKeys['Intent']: C.foursquareParamterKeysValues['Intent_ID'],
+                      C.foursquareParamterKeys['Radius']: C.foursquareParamterKeysValues['Radius_ID'],
+                      C.foursquareParamterKeys['Query']: venues,
+                      C.foursquareParamterKeys['Limit']: C.foursquareParamterKeysValues['Limit_ID']}
         # add the method to the url
-        searchURL = self.baseurl + foursquareConstants.foursquareMethodKeys['Search']
+        searchURL = self.baseurl + C.foursquareMethodKeys['Search']
         # init APIClient
         api = APIClient()
         # make the url call and retrieve a json Response
