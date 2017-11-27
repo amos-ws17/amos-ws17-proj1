@@ -24,10 +24,12 @@ class FoursquareClient(object):
         jsonResponse = api.fetch(searchURL, parameters)
         # check if the jsonResponse contains an object and pass it to the venue model
         if len(jsonResponse['response']['venues']) > 0:
+            # empty array to store the venues dictionary
             venues = []
+            # init a venue model with an object and pass that to the array
             [venues.append(Venue(place)) for place in jsonResponse['response']['venues']]
-            # return the venue model
-            print(venues)
+            # return the array of all venue models
+            return venues
         else:
             # return the jsonResponse
             return jsonResponse
