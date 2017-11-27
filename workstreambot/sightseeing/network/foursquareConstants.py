@@ -14,6 +14,6 @@ foursquareMethodKeys = {'Search': '/search'}
 foursquareParamterKeys = {'Near': 'near', 'Intent': 'intent', 'Radius': 'radius', 'Query': 'query', 'Limit': 'limit'}
 
 # foursquare parameter keys values
-foursquareParamterKeysValues = {'Intent_ID': 'checkin', 'Radius_ID': 500, 'Limit_ID': 5}
+foursquareParamterKeysValues = {'Intent_ID': 'checkin', 'Radius_ID': 5000, 'Limit_ID': 5}
 
 # v=YYYYMMDD

@@ -2,9 +2,9 @@ import requests
 
 class APIClient(object):
     # function that makes the call to an api
-    def fetch(self, url):
+    def fetch(self, url, parameters):
         # get method
-        r = requests.get(url)
+        r = requests.get(url, params=parameters)
         # check if you got a 200 response code
         if not r.ok:
             r.raise_for_status()

@@ -1,5 +1,5 @@
 import foursquareConstants
-import requests
+from apiClient import APIClient
 
 class FoursquareClient(object):
     # define the base url for the API
@@ -17,6 +17,9 @@ class FoursquareClient(object):
                       foursquareConstants.foursquareParamterKeys['Limit']: foursquareConstants.foursquareParamterKeysValues['Limit_ID']}
         # add the method to the url
         searchURL = self.baseurl + foursquareConstants.foursquareMethodKeys['Search']
-        # construct final url
-        finalURL = requests.get(searchURL, params=parameters)
-        print(finalURL.url)
+        # init APIClient
+        api = APIClient()
+        # make the url call and retrieve a json Response
+        jsonResponse = api.fetch(searchURL, parameters)
+        #
+        print(jsonResponse)
