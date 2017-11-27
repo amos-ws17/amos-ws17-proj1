@@ -15,5 +15,3 @@ foursquareParamterKeys = {'Near': 'near', 'Intent': 'intent', 'Radius': 'radius'
 
 # foursquare parameter keys values
 foursquareParamterKeysValues = {'Intent_ID': 'checkin', 'Radius_ID': 5000, 'Limit_ID': 5}
-
-# v=YYYYMMDD
