@@ -1,7 +1,7 @@
 import network.foursquareConstants as C
 from network.apiClient import APIClient
 from model.venue import Venue
-from model.venueTips import VenueTips
+from model.tips import Tips
 
 class FoursquareClient(object):
     # define the base url for the API
@@ -51,8 +51,8 @@ class FoursquareClient(object):
         if int(jsonResponse['response']['tips']['count']) > 0:
             # empty array to store the tips dictionary
             tips = []
-            # init a venue tip model with an object and pass that to the array
-            [tips.append(VenueTips(tip)) for tip in jsonResponse['response']['tips']['items']]
+            # init a tip model with an object and pass that to the array
+            [tips.append(Tips(tip)) for tip in jsonResponse['response']['tips']['items']]
             # return the array of all venue models
             return tips
         else:

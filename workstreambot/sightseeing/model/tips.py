@@ -1,4 +1,4 @@
-class VenueTips(object):
+class Tips(object):
     # init method
     def __init__(self, tips_data):
         self._tips_data = tips_data
