@@ -48,9 +48,7 @@ templates:
   utter_default:
     - "default message"
   action_suggest:
-    - "i suggest you to visit brandemburger gate"
-  action_searchsights:
-    - "searching for sights"
+    - "Do you like it?"
 
 actions:
   - utter_greet
@@ -64,4 +62,4 @@ actions:
   - utter_goodbye
   - utter_default
   - action_suggest
-  - action_searchsights
+  - action.ActionSearchSights
