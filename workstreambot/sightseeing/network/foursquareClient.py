@@ -7,17 +7,22 @@ from model.similar import Similar
 class FoursquareClient(object):
     # define the base url for the API
     baseurl = C.foursquareGeneralKeys['Scheme'] + C.foursquareGeneralKeys['Host'] + C.foursquareGeneralKeys['Path']
-    # function that gets the current venues for a given city
-    def fetch_venues_for_city(self, city, venues):
-        # define parameters
-        parameters = {C.foursquareGeneralKeys['Client']: C.foursquareGeneralKeysValues['Client_ID'],
+    # define the base parameters for the API
+    baseparameters = {C.foursquareGeneralKeys['Client']: C.foursquareGeneralKeysValues['Client_ID'],
                       C.foursquareGeneralKeys['Secret']: C.foursquareGeneralKeysValues['Secret_ID'],
                       C.foursquareGeneralKeys['Version']: C.foursquareGeneralKeysValues['Version_ID'],
-                      C.foursquareParamterKeys['Near']: city,
-                      C.foursquareParamterKeys['Intent']: C.foursquareParamterKeysValues['Intent_ID'],
-                      C.foursquareParamterKeys['Radius']: C.foursquareParamterKeysValues['Radius_ID'],
-                      C.foursquareParamterKeys['Query']: venues,
                       C.foursquareParamterKeys['Limit']: C.foursquareParamterKeysValues['Limit_ID']}
+
+    # function that gets the current venues for a given city
+    def fetch_venues_for_city(self, city, venues):
+        # define extra parameters
+        extra = {C.foursquareParamterKeys['Near']: city,
+                 C.foursquareParamterKeys['Intent']: C.foursquareParamterKeysValues['Intent_ID'],
+                 C.foursquareParamterKeys['Radius']: C.foursquareParamterKeysValues['Radius_ID'],
+                 C.foursquareParamterKeys['Query']: venues}
+        # concatenate with base parameters
+        parameters = dict(self.baseparameters)
+        parameters.update(extra)
         # add the method to the url
         searchURL = self.baseurl + C.foursquareMethodKeys['Search']
         # init APIClient
@@ -39,10 +44,7 @@ class FoursquareClient(object):
     # function that gets the current tips for a given venue
     def fetch_tips_for_venue(self, venue_id):
         # define parameters
-        parameters = {C.foursquareGeneralKeys['Client']: C.foursquareGeneralKeysValues['Client_ID'],
-                      C.foursquareGeneralKeys['Secret']: C.foursquareGeneralKeysValues['Secret_ID'],
-                      C.foursquareGeneralKeys['Version']: C.foursquareGeneralKeysValues['Version_ID'],
-                      C.foursquareParamterKeys['Limit']: C.foursquareParamterKeysValues['Limit_ID']}
+        parameters = self.baseparameters
         # add the method to the url
         tipsURL = self.baseurl + C.foursquareMethodKeys['Venue_ID'] + venue_id + C.foursquareMethodKeys['Tips']
         # init APIClient
@@ -64,10 +66,7 @@ class FoursquareClient(object):
     # function that gets the similar venues for a given venue
     def fetch_similar_for_venue(self, venue_id):
         # define parameters
-        parameters = {C.foursquareGeneralKeys['Client']: C.foursquareGeneralKeysValues['Client_ID'],
-                      C.foursquareGeneralKeys['Secret']: C.foursquareGeneralKeysValues['Secret_ID'],
-                      C.foursquareGeneralKeys['Version']: C.foursquareGeneralKeysValues['Version_ID'],
-                      C.foursquareParamterKeys['Limit']: C.foursquareParamterKeysValues['Limit_ID']}
+        parameters = self.baseparameters
         # add the method to the url
         similarURL = self.baseurl + C.foursquareMethodKeys['Venue_ID'] + venue_id + C.foursquareMethodKeys['Similar']
         # init APIClient
