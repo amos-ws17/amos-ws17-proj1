@@ -52,5 +52,4 @@ actions:
   - utter_yourewelcomed
   - utter_on_it
   - utter_suggest
-  - bot.ActionSearchRestaurants
-  - bot.ActionSuggest
+  - action.ActionSuggest

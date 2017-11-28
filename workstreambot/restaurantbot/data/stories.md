@@ -7,7 +7,7 @@
 * _inform[cuisine=mexican,price=cheap]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
@@ -21,7 +21,7 @@
 * _inform[cuisine=mexican,price=expensive]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
@@ -35,7 +35,7 @@
 * _inform[cuisine=mexican]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
@@ -49,7 +49,7 @@
 * _inform[cuisine=mexican,price=cheap]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _deny 
@@ -65,7 +65,7 @@
 * _inform[cuisine=mexican,price=expensive]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _deny 
@@ -81,7 +81,7 @@
 * _inform[cuisine=mexican]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _deny 
@@ -97,7 +97,7 @@
 * _inform[cuisine=mexican]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _affirm
@@ -105,7 +105,7 @@
 * _inform[cuisine=mexican]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
@@ -119,7 +119,7 @@
 * _inform[cuisine=mexican]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _affirm
@@ -127,7 +127,7 @@
 * _inform[cuisine=mexican,price=expensive]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
@@ -141,7 +141,7 @@
 * _inform[cuisine=mexican]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _affirm
@@ -149,7 +149,7 @@
 * _inform[cuisine=mexican,price=cheap]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
@@ -163,7 +163,7 @@
 * _inform[cuisine=mexican,price=cheap]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _affirm
@@ -171,7 +171,7 @@
 * _inform[cuisine=mexican,price=cheap]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
@@ -185,7 +185,7 @@
 * _inform[cuisine=mexican,price=cheap]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _affirm
@@ -193,7 +193,7 @@
 * _inform[cuisine=mexican,price=expensive]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
@@ -207,7 +207,7 @@
 * _inform[cuisine=mexican,price=cheap]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _affirm
@@ -215,7 +215,7 @@
 * _inform[cuisine=mexican]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
@@ -229,7 +229,7 @@
 * _inform[cuisine=mexican,price=expensive]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _affirm
@@ -237,7 +237,7 @@
 * _inform[cuisine=mexican]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
@@ -251,7 +251,7 @@
 * _inform[cuisine=mexican,price=expensive]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _affirm
@@ -259,7 +259,7 @@
 * _inform[cuisine=mexican,price=cheap]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
@@ -273,7 +273,7 @@
 * _inform[cuisine=mexican,price=expensive]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _deny
   - utter_ask_helpmore
 * _affirm
@@ -281,7 +281,7 @@
 * _inform[cuisine=mexican,price=expensive]
   - utter_on_it
   - utter_ack_dosearch
-  - utter_suggest
+  - action_suggest
 * _affirm
   - utter_yourewelcomed
   - utter_goodbye
