@@ -1,7 +1,6 @@
 from datetime import datetime
 from network.yahooClient import YahooClient
 from rasa_core.actions import Action
-from rasa_core.events import SlotSet
 
 
 
@@ -44,4 +43,4 @@ class ActionSearchWeather(Action):
 
         print(message)
         dispatcher.utter_message(message)
-        return [SlotSet("action_search_weather_result", message)]
+        return []
