@@ -27,7 +27,7 @@ class ActionSearchSights(Action):
             v_address = venue.getRecommendedVenueAddress()
             v_price = venue.getRecommendedVenuePriceCategory()
             v_rating = venue.getRecommendedVenueRating()
-            message = v_name +  '\nContact: ' + v_contact +  '\nAddress: ' + v_address +  '\nPrice Category: ' + v_price +  '\nRating: ' + v_rating
+            message = v_name +  '\nContact: ' + v_contact +  '\nAddress: ' +  '\nPrice Category: ' + v_price +  '\nRating: ' + str(v_rating)                           
 
         print(message)
         dispatcher.utter_message(message)
