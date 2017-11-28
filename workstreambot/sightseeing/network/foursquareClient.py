@@ -3,6 +3,7 @@ from network.apiClient import APIClient
 from model.venue import Venue
 from model.tips import Tips
 from model.similar import Similar
+from model.recommendation import Recommendation
 
 class FoursquareClient(object):
     # define the base url for the API
@@ -13,7 +14,7 @@ class FoursquareClient(object):
                       C.foursquareGeneralKeys['Version']: C.foursquareGeneralKeysValues['Version_ID'],
                       C.foursquareParamterKeys['Limit']: C.foursquareParamterKeysValues['Limit_ID']}
 
-    # function that gets the current venues for a given city
+    # function that gets the current venues matching a term for a given city
     def fetch_venues_for_city(self, city, venues):
         # define extra parameters
         extra = {C.foursquareParamterKeys['Near']: city,
@@ -40,6 +41,35 @@ class FoursquareClient(object):
         else:
             # return the jsonResponse
             return jsonResponse
+
+    # function that gets the venues matching a criteria for a given city
+    def fetch_recommendations_for_city(self, city, criteria):
+        # define extra parameters
+        extra = {C.foursquareParamterKeys['Near']: city,
+                 C.foursquareParamterKeys['Intent']: C.foursquareParamterKeysValues['Intent_ID'],
+                 C.foursquareParamterKeys['Radius']: C.foursquareParamterKeysValues['Radius_ID'],
+                 C.foursquareParamterKeys['Query']: criteria}
+        # concatenate with base parameters
+        parameters = dict(self.baseparameters)
+        parameters.update(extra)
+        # add the method to the url
+        exploreURL = self.baseurl + C.foursquareMethodKeys['Explore']
+        # init APIClient
+        api = APIClient()
+        # make the url call and retrieve a json Response
+        jsonResponse = api.fetch(exploreURL, parameters)
+        # check if the jsonResponse contains an object and pass it to the recommendation model
+        if len(jsonResponse['response']['groups'][0]['items']) > 0:
+            # empty array to store the recommendations dictionary
+            recommendations = []
+            # init a recommendation model with an object and pass that to the array
+            [recommendations.append(Recommendation(place)) for place in jsonResponse['response']['groups'][0]['items']]
+            # return the array of all recommendations models
+            return recommendations
+        else:
+            # return the jsonResponse
+            return jsonResponse
+
 
     # function that gets the current tips for a given venue
     def fetch_tips_for_venue(self, venue_id):
