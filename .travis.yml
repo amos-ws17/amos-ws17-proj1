@@ -14,19 +14,31 @@ services:
 
 jobs:
   include:
-    - stage: Test
+    - stage: test
       script:
         - echo "No tests yet"
 
-    - stage: Build and push the weather bot
+    - stage: build weatherbot
       script:
       - cd workstreambot/weather
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - docker build -t amoschatbot/weatherbot:latest .
       - docker push amoschatbot/weatherbot
-    - stage:
+    - stage: build sightseeinbgot
       script:
       - cd workstreambot/sightseeing
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - docker build -t amoschatbot/sightseeingbot:latest .
       - docker push amoschatbot/sightseeingbot
+    - stage: release
+      script:
+      - cd workstreambot
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - bash release.sh
+  stages:
+    - name: build weatherbot
+      if: branch = dev
+    - name: build sightseeingbot
+      if: branch = dev
+    - name: release
+      if: branch = master
