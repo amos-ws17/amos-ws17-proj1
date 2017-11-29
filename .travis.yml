@@ -15,6 +15,7 @@ services:
 jobs:
   include:
     - stage: test
+      if: branch = master
       script:
         - echo "No tests yet"
 
@@ -35,10 +36,3 @@ jobs:
       - cd workstreambot
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - bash release.sh
-  stages:
-    - name: build weatherbot
-      if: branch = dev
-    - name: build sightseeingbot
-      if: branch = dev
-    - name: release
-      if: branch = master
