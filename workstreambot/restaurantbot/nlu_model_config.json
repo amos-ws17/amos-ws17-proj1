@@ -8,6 +8,6 @@
     "ner_synonyms"
   ],
   "path" : "./project",
-  "project": "nlu",
+  "project": "./nlu",
   "data" : "./data/train_nlu.json"
 }

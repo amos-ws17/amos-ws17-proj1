@@ -5,6 +5,9 @@ from model.tips import Tips
 from model.similar import Similar
 from model.recommendation import Recommendation
 
+#import foursquareConstants as C
+#from apiClient import APIClient
+
 class FoursquareClient(object):
     # define the base url for the API
     baseurl = C.foursquareGeneralKeys['Scheme'] + C.foursquareGeneralKeys['Host'] + C.foursquareGeneralKeys['Path']
@@ -12,43 +15,28 @@ class FoursquareClient(object):
     baseparameters = {C.foursquareGeneralKeys['Client']: C.foursquareGeneralKeysValues['Client_ID'],
                       C.foursquareGeneralKeys['Secret']: C.foursquareGeneralKeysValues['Secret_ID'],
                       C.foursquareGeneralKeys['Version']: C.foursquareGeneralKeysValues['Version_ID'],
-                      C.foursquareParamterKeys['Limit']: C.foursquareParamterKeysValues['Limit_ID']}
+                      C.foursquareParameterKeys['Limit']: C.foursquareParameterKeysValues['Limit_ID']}
+                      
+    # function that converts price to a number
+    def convert_price(self, price):
+        if (price == 'cheap'):
+            return 1
+        elif (price == 'expensive'):
+            return 4
+        elif (price == 'moderately expensive'):
+            return 3
+        elif (price == 'moderately cheap'):
+            return 2
 
-    # function that gets the current venues matching a term for a given city
-    def fetch_venues_for_city(self, city, venues):
-        # define extra parameters
-        extra = {C.foursquareParamterKeys['Near']: city,
-                 C.foursquareParamterKeys['Intent']: C.foursquareParamterKeysValues['Intent_ID'],
-                 C.foursquareParamterKeys['Radius']: C.foursquareParamterKeysValues['Radius_ID'],
-                 C.foursquareParamterKeys['Query']: venues}
-        # concatenate with base parameters
-        parameters = dict(self.baseparameters)
-        parameters.update(extra)
-        # add the method to the url
-        searchURL = self.baseurl + C.foursquareMethodKeys['Search']
-        # init APIClient
-        api = APIClient()
-        # make the url call and retrieve a json Response
-        jsonResponse = api.fetch(searchURL, parameters)
-        # check if the jsonResponse contains an object and pass it to the venue model
-        if len(jsonResponse['response']['venues']) > 0:
-            # empty array to store the venues dictionary
-            venues = []
-            # init a venue model with an object and pass that to the array
-            [venues.append(Venue(place)) for place in jsonResponse['response']['venues']]
-            # return the array of all venue models
-            return venues
-        else:
-            # return the jsonResponse
-            return jsonResponse
+
 
     # function that gets the venues matching a criteria for a given city
-    def fetch_recommendations_for_city(self, city, criteria):
+    def fetch_recommendations_for_city(self, city, price, cuisine):
         # define extra parameters
-        extra = {C.foursquareParamterKeys['Near']: city,
-                 C.foursquareParamterKeys['Intent']: C.foursquareParamterKeysValues['Intent_ID'],
-                 C.foursquareParamterKeys['Radius']: C.foursquareParamterKeysValues['Radius_ID'],
-                 C.foursquareParamterKeys['Query']: criteria}
+        extra = {C.foursquareParameterKeys['Near']: city,
+				C.foursquareParameterKeys['Radius']: C.foursquareParameterKeysValues['Radius_ID'],
+				C.foursquareParameterKeys['Query']: cuisine,
+				C.foursquareParameterKeys['Price']: self.convert_price(price)}
         # concatenate with base parameters
         parameters = dict(self.baseparameters)
         parameters.update(extra)
@@ -56,8 +44,12 @@ class FoursquareClient(object):
         exploreURL = self.baseurl + C.foursquareMethodKeys['Explore']
         # init APIClient
         api = APIClient()
+        print (exploreURL)
+        print (parameters)
         # make the url call and retrieve a json Response
         jsonResponse = api.fetch(exploreURL, parameters)
+        
+        print (jsonResponse)
         # check if the jsonResponse contains an object and pass it to the recommendation model
         if len(jsonResponse['response']['groups'][0]['items']) > 0:
             # empty array to store the recommendations dictionary
@@ -70,6 +62,7 @@ class FoursquareClient(object):
             # return the jsonResponse
             return jsonResponse
 
+    
 
     # function that gets the current tips for a given venue
     def fetch_tips_for_venue(self, venue_id):
@@ -93,24 +86,7 @@ class FoursquareClient(object):
             # return the jsonResponse
             return jsonResponse
 
-    # function that gets the similar venues for a given venue
-    def fetch_similar_for_venue(self, venue_id):
-        # define parameters
-        parameters = self.baseparameters
-        # add the method to the url
-        similarURL = self.baseurl + C.foursquareMethodKeys['Venue_ID'] + venue_id + C.foursquareMethodKeys['Similar']
-        # init APIClient
-        api = APIClient()
-        # make the url call and retrieve a json Response
-        jsonResponse = api.fetch(similarURL, parameters)
-        # check if the jsonResponse contains an object and pass it to the similar model
-        if int(jsonResponse['response']['similarVenues']['count']) > 0:
-            # empty array to store the similar venues dictionary
-            similar = []
-            # init a tip model with an object and pass that to the array
-            [similar.append(Similar(s)) for s in jsonResponse['response']['similarVenues']['items']]
-            # return the array of all similar models
-            return similar
-        else:
-            # return the jsonResponse
-            return jsonResponse
+    
+
+#restaurantClient = FoursquareClient()
+#venues = restaurantClient.fetch_recommendations_for_city('berlin', 'cheap', 'italian')

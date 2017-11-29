@@ -11,7 +11,7 @@ foursquareGeneralKeysValues = {'Client_ID': 'GYTGHQQS50VIJE1HYNU5LAXAKUKRHWXQGZS
 foursquareMethodKeys = {'Search': '/search', 'Explore': '/explore', 'Venue_ID': '/', 'Tips': '/tips', 'Similar': '/similar' }
 
 # foursquare parameter keys
-foursquareParamterKeys = {'Near': 'near', 'Intent': 'intent', 'Radius': 'radius', 'Query': 'query', 'Limit': 'limit'}
+foursquareParameterKeys = {'Near': 'near', 'Radius': 'radius', 'Query': 'query', 'Limit': 'limit', 'Price': 'price'}
 
 # foursquare parameter keys values
-foursquareParamterKeysValues = {'Intent_ID': 'checkin', 'Radius_ID': 5000, 'Limit_ID': 5}
+foursquareParameterKeysValues = {'Radius_ID': 5000, 'Limit_ID': 5}

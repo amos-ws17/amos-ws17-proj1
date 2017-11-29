@@ -1,0 +1,26 @@
+{
+  "features": [
+    "intent_greet", 
+    "intent_affirm", 
+    "intent_deny", 
+    "intent_inform", 
+    "entity_location", 
+    "entity_price", 
+    "entity_cuisine", 
+    "slot_cuisine_0", 
+    "slot_location_0", 
+    "slot_price_0", 
+    "prev_action_listen", 
+    "prev_action_restart", 
+    "prev_utter_greet", 
+    "prev_utter_goodbye", 
+    "prev_utter_ack_dosearch", 
+    "prev_utter_ask_cuisine", 
+    "prev_utter_ask_helpmore", 
+    "prev_utter_ask_location", 
+    "prev_utter_yourewelcomed", 
+    "prev_utter_on_it", 
+    "prev_utter_suggest", 
+    "prev_action_suggest"
+  ]
+}
