@@ -23,3 +23,10 @@ services:
       - 5022
       - 5025
       - 5020
+  restaurantbot:
+    container_name: restaurantbot
+    build: restaurant
+    ports:
+      - 5032:5002
+    expose:
+      - 5032

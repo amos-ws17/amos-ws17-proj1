@@ -32,6 +32,13 @@ jobs:
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - docker build -t amoschatbot/sightseeingbot:latest .
       - docker push amoschatbot/sightseeingbot
+    - stage: build restaurantbot
+      if: branch = dev
+      script:
+      - cd workstreambot/restaurant
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t amoschatbot/restaurantbot:latest .
+      - docker push amoschatbot/restaurantbot
     - stage: release
       if: branch = master
       script:
