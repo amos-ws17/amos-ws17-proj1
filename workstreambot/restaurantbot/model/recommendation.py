@@ -19,7 +19,10 @@ class Recommendation(object):
 
     # Parse the address of the recommended venue
     def getRecommendedVenueAddress(self):
-        return self._explore_data['venue']['location']['address']
+        if 'location' in self._explore_data['venue']:
+            return self._explore_data['venue']['location']['address']
+        return ("No address category available")
+        
 
     # Parse the price category of the recommended venue
     def getRecommendedVenuePriceCategory(self):

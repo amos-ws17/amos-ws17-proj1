@@ -5,9 +5,6 @@ from model.tips import Tips
 from model.similar import Similar
 from model.recommendation import Recommendation
 
-#import foursquareConstants as C
-#from apiClient import APIClient
-
 class FoursquareClient(object):
     # define the base url for the API
     baseurl = C.foursquareGeneralKeys['Scheme'] + C.foursquareGeneralKeys['Host'] + C.foursquareGeneralKeys['Path']
@@ -22,9 +19,9 @@ class FoursquareClient(object):
         if (price == 'cheap'):
             return 1
         elif (price == 'expensive'):
-            return 4
-        elif (price == 'moderately expensive'):
             return 3
+        elif (price == 'very expensive'):
+            return 4
         elif (price == 'moderately cheap'):
             return 2
 
@@ -44,12 +41,8 @@ class FoursquareClient(object):
         exploreURL = self.baseurl + C.foursquareMethodKeys['Explore']
         # init APIClient
         api = APIClient()
-        print (exploreURL)
-        print (parameters)
         # make the url call and retrieve a json Response
         jsonResponse = api.fetch(exploreURL, parameters)
-        
-        print (jsonResponse)
         # check if the jsonResponse contains an object and pass it to the recommendation model
         if len(jsonResponse['response']['groups'][0]['items']) > 0:
             # empty array to store the recommendations dictionary
@@ -62,31 +55,4 @@ class FoursquareClient(object):
             # return the jsonResponse
             return jsonResponse
 
-    
 
-    # function that gets the current tips for a given venue
-    def fetch_tips_for_venue(self, venue_id):
-        # define parameters
-        parameters = self.baseparameters
-        # add the method to the url
-        tipsURL = self.baseurl + C.foursquareMethodKeys['Venue_ID'] + venue_id + C.foursquareMethodKeys['Tips']
-        # init APIClient
-        api = APIClient()
-        # make the url call and retrieve a json Response
-        jsonResponse = api.fetch(tipsURL, parameters)
-        # check if the jsonResponse contains an object and pass it to the tip model
-        if int(jsonResponse['response']['tips']['count']) > 0:
-            # empty array to store the tips dictionary
-            tips = []
-            # init a tip model with an object and pass that to the array
-            [tips.append(Tips(tip)) for tip in jsonResponse['response']['tips']['items']]
-            # return the array of all tips models
-            return tips
-        else:
-            # return the jsonResponse
-            return jsonResponse
-
-    
-
-#restaurantClient = FoursquareClient()
-#venues = restaurantClient.fetch_recommendations_for_city('berlin', 'cheap', 'italian')
