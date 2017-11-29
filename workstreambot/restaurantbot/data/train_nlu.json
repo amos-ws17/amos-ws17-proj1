@@ -42,6 +42,10 @@
         "text": "yes, i like it", 
         "intent": "affirm"
       },
+	  {
+        "text": "i like it", 
+        "intent": "affirm"
+      },
       {
         "text": "it is fine", 
         "intent": "affirm"
@@ -80,6 +84,38 @@
       },
 	  {
         "text": "another suggestion please", 
+        "intent": "deny"
+      },
+	  {
+        "text": "another suggestion", 
+        "intent": "deny"
+      },
+	  {
+        "text": "that place sucks", 
+        "intent": "deny"
+      },
+	  {
+        "text": "some other place", 
+        "intent": "deny"
+      },
+	  {
+        "text": "suggestion", 
+        "intent": "deny"
+      },
+	  {
+        "text": "suggest", 
+        "intent": "deny"
+      },
+	  {
+        "text": "find something else", 
+        "intent": "deny"
+      },
+	  {
+        "text": "another place", 
+        "intent": "deny"
+      },
+	  {
+        "text": "find another one", 
         "intent": "deny"
       },
       {
@@ -547,6 +583,222 @@
             "end": 6,
             "value": "berlin",
             "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "mexican and cheap",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "mexican",
+            "entity": "cuisine"
+          },
+          {
+            "start": 12,
+            "end": 17,
+            "value": "cheap",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "indian and cheap",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "indian",
+            "entity": "cuisine"
+          },
+          {
+            "start": 11,
+            "end": 16,
+            "value": "cheap",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "italian and cheap",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "italian",
+            "entity": "cuisine"
+          },
+          {
+            "start": 12,
+            "end": 17,
+            "value": "cheap",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "chinese and cheap",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "chinese",
+            "entity": "cuisine"
+          },
+          {
+            "start": 12,
+            "end": 17,
+            "value": "cheap",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "vietnamese and cheap",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "vietnamese",
+            "entity": "cuisine"
+          },
+          {
+            "start": 15,
+            "end": 20,
+            "value": "cheap",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "american and cheap",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "american",
+            "entity": "cuisine"
+          },
+          {
+            "start": 13,
+            "end": 18,
+            "value": "cheap",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "mexican and expensive",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "mexican",
+            "entity": "cuisine"
+          },
+          {
+            "start": 12,
+            "end": 21,
+            "value": "expensive",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "indian and expensive",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "indian",
+            "entity": "cuisine"
+          },
+          {
+            "start": 11,
+            "end": 20,
+            "value": "expensive",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "italian and expensive",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "italian",
+            "entity": "cuisine"
+          },
+          {
+            "start": 12,
+            "end": 21,
+            "value": "expensive",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "chinese and expensive",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "chinese",
+            "entity": "cuisine"
+          },
+          {
+            "start": 12,
+            "end": 21,
+            "value": "expensive",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "vietnamese and expensive",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "vietnamese",
+            "entity": "cuisine"
+          },
+          {
+            "start": 15,
+            "end": 24,
+            "value": "expensive",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "american and expensive",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "american",
+            "entity": "cuisine"
+          },
+          {
+            "start": 13,
+            "end": 22,
+            "value": "expensive",
+            "entity": "price"
           }
         ]
       }
