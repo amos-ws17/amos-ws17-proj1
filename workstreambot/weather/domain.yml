@@ -1,0 +1,55 @@
+# slots are the criterion for the weather target
+slots:
+  location:
+    type: text
+  time:
+    type: text
+
+# intents are what the user can send
+intents:
+ - greet
+ - inform
+ - goodbye
+
+# entities are how bot interprets the user intents
+entities:
+ - location
+ - time
+
+# templates are static responses to actions
+templates:
+  utter_greet:
+  - "Hey there!"
+
+  utter_goodbye:
+  - "Aloha"
+
+  utter_default:
+  - "What are we doing?"
+
+  utter_ask_howcanhelp:
+  - "How can I help you?"
+
+  utter_on_it:
+  - "I'm on it!"
+
+  utter_ask_location:
+  - "Please enter the city you're interested in."
+
+  utter_ack_dosearch:
+  - "Ok let me see what I can find."
+
+  utter_ask_helpmore:
+  - "Is there anything more that I can help with?"
+
+# actions must be named after an utterance or specified in a file
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_default
+  - utter_ask_howcanhelp
+  - utter_on_it
+  - utter_ask_location
+  - utter_ack_dosearch
+  - utter_ask_helpmore
+  - action.ActionSearchWeather
