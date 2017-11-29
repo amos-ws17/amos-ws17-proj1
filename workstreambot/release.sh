@@ -20,7 +20,5 @@ docker push amoschatbot/weatherbot:$version
 docker push amoschatbot/sightseeingbot:$version
 
 # Tag release 
-#git tag -a "$version" -m "version: $version"
-#git push --tags
-
-
+git tag -a "$version" -m "version: $version"
+git push --tags
