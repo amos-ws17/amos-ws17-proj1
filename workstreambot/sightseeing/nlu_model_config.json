@@ -7,7 +7,7 @@
     "ner_crf",
     "ner_synonyms"
   ],
-  "path" : "./models",
+  "path" : "./project",
   "project": "nlu",
-  "data" : "./data/sightseeing_nlu_dataset.json"
+  "data" : "./data/train_full.json"
 }

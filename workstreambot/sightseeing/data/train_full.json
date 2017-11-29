@@ -504,6 +504,24 @@
             "entity": "info"
           }
         ]
+      },
+      {
+        "text": "can you recommend me a monument in berlin?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 23,
+            "end": 31,
+            "value": "monument",
+            "entity": "type_specific"
+          },
+          {
+            "start": 35,
+            "end": 41,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
       }
     ]
   }
