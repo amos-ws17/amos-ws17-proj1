@@ -3,7 +3,7 @@
     "regex_features": [
       {
         "name": "time",
-        "pattern": "([0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2})?(next\\s[a-zA-Z]\\w+day)"
+        "pattern": "[0-9]{2}[-]{1}[0-9]{2}[-]{1}[0-9]{4}"
       }
     ],
     "common_examples": [
@@ -168,122 +168,14 @@
         ]
       },
       {
-        "text": "in new york",
+        "text": "what will the weather be like on 2017-01-01?",
         "intent": "inform",
         "entities": [
           {
-            "start": 3,
-            "end": 11,
-            "value": "new york",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather be in new york?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 28,
-            "end": 36,
-            "value": "new york",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will it be like in new york?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 24,
-            "end": 32,
-            "value": "new york",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather forecast be in new york?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 37,
-            "end": 45,
-            "value": "new york",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what's the forecast for new york?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 24,
-            "end": 32,
-            "value": "new york",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "in buenos aires",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 3,
-            "end": 15,
-            "value": "buenos aires",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather be in buenos aires?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 28,
-            "end": 40,
-            "value": "buenos aires",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will it be like in buenos aires?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 24,
-            "end": 36,
-            "value": "buenos aires",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather forecast be in buenos aires?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 37,
-            "end": 49,
-            "value": "buenos aires",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what's the forecast for buenos aires?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 24,
-            "end": 36,
-            "value": "buenos aires",
-            "entity": "location"
+            "start": 33,
+            "end": 43,
+            "value": "2017-01-01",
+            "entity": "time"
           }
         ]
       },
@@ -306,102 +198,6 @@
           {
             "start": 26,
             "end": 36,
-            "value": "2017-01-01",
-            "entity": "time"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather be like next monday?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 30,
-            "end": 41,
-            "value": "next monday",
-            "entity": "time"
-          }
-        ]
-      },
-      {
-        "text": "what will it feel like next monday?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 23,
-            "end": 34,
-            "value": "next monday",
-            "entity": "time"
-          }
-        ]
-      },
-      {
-        "text": "what will it feel like in berlin on 2017-01-01?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 26,
-            "end": 32,
-            "value": "berlin",
-            "entity": "location"
-          },
-          {
-            "start": 36,
-            "end": 46,
-            "value": "2017-01-01",
-            "entity": "time"
-          }
-        ]
-      },
-      {
-        "text": "what will it feel like in hamburg on 2017-01-01?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 26,
-            "end": 33,
-            "value": "hamburg",
-            "entity": "location"
-          },
-          {
-            "start": 37,
-            "end": 47,
-            "value": "2017-01-01",
-            "entity": "time"
-          }
-        ]
-      },
-      {
-        "text": "what will it feel like in new york on 2017-01-01?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 26,
-            "end": 34,
-            "value": "new york",
-            "entity": "location"
-          },
-          {
-            "start": 38,
-            "end": 48,
-            "value": "2017-01-01",
-            "entity": "time"
-          }
-        ]
-      },
-      {
-        "text": "what will it feel like in buenos aires on 2017-01-01?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 26,
-            "end": 38,
-            "value": "buenos aires",
-            "entity": "location"
-          },
-          {
-            "start": 42,
-            "end": 52,
             "value": "2017-01-01",
             "entity": "time"
           }
@@ -440,114 +236,6 @@
             "end": 47,
             "value": "hamburg",
             "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will it feel like on 2017-01-01 in new york?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 26,
-            "end": 36,
-            "value": "2017-01-01",
-            "entity": "time"
-          },
-          {
-            "start": 40,
-            "end": 48,
-            "value": "new york",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will it feel like on 2017-01-01 in buenos aires?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 26,
-            "end": 36,
-            "value": "2017-01-01",
-            "entity": "time"
-          },
-          {
-            "start": 40,
-            "end": 52,
-            "value": "buenos aires",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather be in berlin next monday?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 28,
-            "end": 34,
-            "value": "berlin",
-            "entity": "location"
-          },
-          {
-            "start": 35,
-            "end": 46,
-            "value": "next monday",
-            "entity": "time"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather be in hamburg next monday?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 28,
-            "end": 35,
-            "value": "hamburg",
-            "entity": "location"
-          },
-          {
-            "start": 36,
-            "end": 47,
-            "value": "next monday",
-            "entity": "time"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather be in new york next monday?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 28,
-            "end": 36,
-            "value": "new york",
-            "entity": "location"
-          },
-          {
-            "start": 37,
-            "end": 48,
-            "value": "next monday",
-            "entity": "time"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather be in buenos aires next monday?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 28,
-            "end": 40,
-            "value": "buenos aires",
-            "entity": "location"
-          },
-          {
-            "start": 41,
-            "end": 52,
-            "value": "next monday",
-            "entity": "time"
           }
         ]
       },

@@ -6,11 +6,11 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -24,7 +24,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -38,7 +38,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -54,7 +54,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -68,7 +68,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -86,7 +86,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -106,7 +106,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -122,7 +122,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -138,7 +138,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _request_info[info=opening time]
  - action_suggest
@@ -152,7 +152,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -173,11 +173,11 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -195,19 +195,19 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -225,7 +225,7 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -243,7 +243,7 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -265,7 +265,7 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
@@ -283,15 +283,15 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -309,15 +309,15 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -339,7 +339,7 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _request_info[info=opening time]
  - action_suggest
@@ -357,7 +357,7 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
@@ -381,11 +381,11 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -407,11 +407,11 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
@@ -432,11 +432,11 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -454,7 +454,7 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -472,15 +472,15 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -500,7 +500,7 @@
  - utter_ask_price
 * _inform[price=expensive]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
@@ -520,7 +520,7 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -536,23 +536,23 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -572,7 +572,7 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -600,11 +600,11 @@
  - utter_ask_price
 * _inform[price=expensive]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -624,11 +624,11 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
@@ -646,7 +646,7 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -662,15 +662,15 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -688,7 +688,7 @@
  - utter_ask_price
 * _inform[price=expensive]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _request_info[info=rating]
  - action_suggest
@@ -706,7 +706,7 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed
@@ -720,11 +720,11 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -742,7 +742,7 @@
  - utter_ask_price
 * _inform[price=cheap]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -769,11 +769,11 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin,type_specific=museum]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _deny[]
  - utter_ack_findalternatives
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -787,7 +787,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin,type_specific=museum]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -801,7 +801,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin,type_specific=museum]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -815,7 +815,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin,type_specific=museum]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -833,7 +833,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin,type_specific=stadium]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -853,7 +853,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin,type_specific=aquarium]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -867,7 +867,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin,type_specific=zoo]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _affirm[]
  - utter_ask_helpmore
@@ -881,7 +881,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin,type_specific=monument]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _request_info[info=opening time]
  - action_suggest
@@ -895,7 +895,7 @@
  - utter_ask_howcanhelp
 * _inform[location=berlin,type_specific=castle]
  - utter_ack_dosearch
- - action_searchsights
+ - action_search_sights
  - action_suggest
 * _thankyou[]
  - utter_yourewelcomed

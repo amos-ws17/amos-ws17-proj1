@@ -1,0 +1,47 @@
+language: python
+
+branches:
+  only:
+    - dev
+    - master
+
+python:
+  - "3.5"
+
+services:
+  - docker
+  - docker-compose
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - echo "No tests yet"
+
+    - stage: build weatherbot
+      if: branch = dev
+      script:
+      - cd workstreambot/weather
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t amoschatbot/weatherbot:latest .
+      - docker push amoschatbot/weatherbot
+    - stage: build sightseeinbgot
+      if: branch = dev
+      script:
+      - cd workstreambot/sightseeing
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t amoschatbot/sightseeingbot:latest .
+      - docker push amoschatbot/sightseeingbot
+    - stage: build restaurantbot
+      if: branch = dev
+      script:
+      - cd workstreambot/restaurant
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t amoschatbot/restaurantbot:latest .
+      - docker push amoschatbot/restaurantbot
+    - stage: release
+      if: branch = master
+      script:
+      - cd workstreambot
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - bash release.sh
