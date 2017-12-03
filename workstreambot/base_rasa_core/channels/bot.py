@@ -22,8 +22,7 @@ class BotOutput(OutputChannel):
 
     def send_text_message(self, recipient_id, message):
         data = {}
-        data['info_message'] = json.loads(message)
-        self.messages.append(json.dumps(data))
+        self.messages.append(message)
 
 
 class BotInput(HttpInputComponent):
@@ -60,12 +59,9 @@ class BotInput(HttpInputComponent):
 
             first = True
             data = {}
+            data['info_messages'] = []
             for i in range(0, len(self.out_channel.messages)):
-               if first:
-                   data['info_messages'] = json.loads(self.out_channel.messages[i])
-                   first = False
-               else:
-                   data['info_messages'].append(json.loads(self.out_channel.messages[i]))
+               data['info_messages'].append(json.loads(self.out_channel.messages[i]))
 
             self.out_channel.messages[:] = []
 
