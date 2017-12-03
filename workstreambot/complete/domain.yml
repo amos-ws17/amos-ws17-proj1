@@ -1,0 +1,100 @@
+# slots are the criterion for the weather target
+slots:
+  cuisine:
+    type: text
+  location:
+    type: text
+  price:
+    type: text
+  time:
+    type: text
+  type:
+    type: text
+  type_specific:
+    type: text
+
+# intents are what the user can send
+intents:
+  - greet
+  - affirm
+  - deny
+  - inform
+  - inform_restaurant
+  - inform_sightseeing
+  - inform_weather
+
+# entities are how bot interprets the user intents
+entities:
+  - cuisine
+  - location
+  - price
+  - time
+  - type
+  - type_specific
+
+# templates are static responses to actions
+templates:
+  utter_greet:
+  - "Hey there!"
+
+  utter_ask_howcanhelp:
+  - "How can I help you?"
+
+  utter_ask_location:
+  - "Please enter the city you're interested in."
+
+  utter_ask_cuisine:
+  - text: "What kind of cuisine would you like and in which price range should it be?"
+      buttons:
+      - title: "cheap"
+        payload: "cheap"
+      - title: "expensive"
+        payload: "expensive"
+
+  utter_ask_price:
+  - "Do you prefer cheap, moderately cheap, moderately expensive, expensive or does price matter to you?"
+
+  utter_ack_dosearch:
+  - "Ok let me see what I can find."
+
+  action_search_restaurant:
+  - "That's what I found. (restaurant)"
+
+  action_search_sights:
+  - "That's what I found. (sights)"
+
+  action_search_weather:
+  - "That's what I found. (weather)"
+
+  utter_suggest:
+  - "Do you like it?"
+
+  action_ack_findalternatives:
+  - "Maybe this is better."
+
+  utter_ask_helpmore:
+  - "Is there anything more that I can help with?"
+
+  utter_yourewelcomed:
+  - "I am happy to assist you. Have a nice day!"
+
+  utter_goodbye:
+  - "Goodbye :("
+  - "Bye-bye"
+
+# actions must be named after an utterance or specified in a file
+actions:
+  - utter_greet
+  - utter_ask_howcanhelp
+  - utter_ask_location
+  - utter_ask_cuisine
+  - utter_ask_price
+  - utter_ack_dosearch
+  - action_search_restaurant
+  - action_search_sights
+  - action_search_weather
+  - utter_suggest
+  - action_ack_findalternatives
+  - utter_ask_helpmore
+  - utter_yourewelcomed
+  - utter_goodbye
