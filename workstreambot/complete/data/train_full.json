@@ -82,11 +82,6 @@
         "entities": []
       },
       {
-        "text": "thank you",
-        "intent": "thankyou",
-        "entities": []
-      },
-      {
         "text": "sounds good",
         "intent": "affirm",
         "entities": []
@@ -1140,7 +1135,7 @@
       },
       {
         "text": "i would like to visit an outdoor attraction in basel",
-        "intent": "inform",
+        "intent": "inform_sightseeing",
         "entities": [
           {
             "start": 47,
@@ -1158,7 +1153,7 @@
       },
       {
         "text": "can you recommend me a museum in berlin?",
-        "intent": "inform",
+        "intent": "inform_sightseeing",
         "entities": [
           {
             "start": 33,
@@ -1176,7 +1171,7 @@
       },
       {
         "text": "what is the best palace in berlin?",
-        "intent": "inform",
+        "intent": "inform_sightseeing",
         "entities": [
           {
             "start": 27,
