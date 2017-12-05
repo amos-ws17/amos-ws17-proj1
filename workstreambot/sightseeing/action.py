@@ -1,7 +1,8 @@
 from datetime import datetime
 from network.foursquareClient import FoursquareClient
 from rasa_core.actions import Action
-from rasa_core.events import SlotSet
+
+import json
 
 
 class ActionSearchSights(Action):
@@ -34,8 +35,186 @@ class ActionSearchSights(Action):
         v_price = self.venues[self.recNr].getRecommendedVenuePriceCategory()
         v_rating = self.venues[self.recNr].getRecommendedVenueRating()
         self.recNr += 1
-        message = v_name +  '\nContact: ' + v_contact +  '\nAddress: ' + v_address +  '\nPrice Category: ' + v_price +  '\nRating: ' + str(v_rating)                           
-        dispatcher.utter_message(message)
-        return [SlotSet("action_search_sights_result", message)]
+
+        data = {}
+        data['action_name'] = self.name()
+        data['response'] = v_name +  '\nContact: ' + v_contact +  '\nAddress: ' + v_address +  '\nPrice Category: ' + v_price +  '\nRating: ' + str(v_rating)
+        data['slots'] = tracker.current_slot_values()
+        data['sender'] = tracker.sender_id
+        data['message'] = tracker.latest_message.parse_data
+        data['paused'] = tracker.is_paused()
+
+        dispatcher.utter_message(json.dumps(data))
+        return []
+
+class ActionGreet(Action):
+    def name(self):
+        return 'utter_greet'
+
+    def run(self, dispatcher, tracker, domain):
+        data = {}
+        data['action_name'] = self.name()
+
+        data['response'] = 'Hey there!'
+        data['slots'] = tracker.current_slot_values()
+        data['sender'] = tracker.sender_id
+        data['message'] = tracker.latest_message.parse_data
+        data['paused'] = tracker.is_paused()
+
+        dispatcher.utter_message(json.dumps(data))
+        return []
 
 
+class ActionGoodbye(Action):
+    def name(self):
+        return 'utter_goodbye'
+
+    def run(self, dispatcher, tracker, domain):
+        data = {}
+        data['action_name'] = self.name()
+
+        data['response'] = 'Bye-bye'
+        data['slots'] = tracker.current_slot_values()
+        data['sender'] = tracker.sender_id
+        data['message'] = tracker.latest_message.parse_data
+        data['paused'] = tracker.is_paused()
+
+        dispatcher.utter_message(json.dumps(data))
+        return []
+
+
+class ActionAskHowCanIHelp(Action):
+    def name(self):
+        return 'utter_ask_howcanhelp'
+
+    def run(self, dispatcher, tracker, domain):
+        data = {}
+        data['action_name'] = self.name()
+
+        data['response'] = 'How can I help you?'
+        data['slots'] = tracker.current_slot_values()
+        data['sender'] = tracker.sender_id
+        data['message'] = tracker.latest_message.parse_data
+        data['paused'] = tracker.is_paused()
+
+        dispatcher.utter_message(json.dumps(data))
+        return []
+
+class ActionAskLocation(Action):
+    def name(self):
+        return 'utter_ask_location'
+
+    def run(self, dispatcher, tracker, domain):
+        data = {}
+        data['action_name'] = self.name()
+
+        data['response'] = "Where do you want me to search?"
+        data['slots'] = tracker.current_slot_values()
+        data['sender'] = tracker.sender_id
+        data['message'] = tracker.latest_message.parse_data
+        data['paused'] = tracker.is_paused()
+
+        dispatcher.utter_message(json.dumps(data))
+        return []
+
+class ActionAskPrice(Action):
+    def name(self):
+        return 'utter_ask_price'
+
+    def run(self, dispatcher, tracker, domain):
+        data = {}
+        data['action_name'] = self.name()
+
+        data['response'] = "Do you prefer cheap, moderately cheap, moderately expensive, expensive or does price matter to you?"
+        data['slots'] = tracker.current_slot_values()
+        data['sender'] = tracker.sender_id
+        data['message'] = tracker.latest_message.parse_data
+        data['paused'] = tracker.is_paused()
+
+        dispatcher.utter_message(json.dumps(data))
+        return []
+
+class ActionAckDoSearch(Action):
+    def name(self):
+        return 'utter_ack_dosearch'
+
+    def run(self, dispatcher, tracker, domain):
+        data = {}
+        data['action_name'] = self.name()
+
+        data['response'] = "Ok let me see what I can find."
+        data['slots'] = tracker.current_slot_values()
+        data['sender'] = tracker.sender_id
+        data['message'] = tracker.latest_message.parse_data
+        data['paused'] = tracker.is_paused()
+
+        dispatcher.utter_message(json.dumps(data))
+        return []
+
+class ActionSuggest(Action):
+    def name(self):
+        return 'action_suggest'
+
+    def run(self, dispatcher, tracker, domain):
+        data = {}
+        data['action_name'] = self.name()
+
+        data['response'] = "Do you like it?"
+        data['slots'] = tracker.current_slot_values()
+        data['sender'] = tracker.sender_id
+        data['message'] = tracker.latest_message.parse_data
+        data['paused'] = tracker.is_paused()
+
+        dispatcher.utter_message(json.dumps(data))
+        return []
+
+class ActionFindAlternatives(Action):
+    def name(self):
+        return 'utter_ack_findalternatives'
+
+    def run(self, dispatcher, tracker, domain):
+        data = {}
+        data['action_name'] = self.name()
+
+        data['response'] = "Ok let me see what else there is"
+        data['slots'] = tracker.current_slot_values()
+        data['sender'] = tracker.sender_id
+        data['message'] = tracker.latest_message.parse_data
+        data['paused'] = tracker.is_paused()
+
+        dispatcher.utter_message(json.dumps(data))
+        return []
+
+class ActionYoureWelcomed(Action):
+    def name(self):
+        return 'utter_yourewelcomed'
+
+    def run(self, dispatcher, tracker, domain):
+        data = {}
+        data['action_name'] = self.name()
+
+        data['response'] = "I am happy to assist you. have a nice day!"
+        data['slots'] = tracker.current_slot_values()
+        data['sender'] = tracker.sender_id
+        data['message'] = tracker.latest_message.parse_data
+        data['paused'] = tracker.is_paused()
+
+        dispatcher.utter_message(json.dumps(data))
+        return []
+
+class ActionAskHelpMore(Action):
+    def name(self):
+        return 'utter_ask_helpmore'
+
+    def run(self, dispatcher, tracker, domain):
+        data = {}
+        data['action_name'] = self.name()
+
+        data['response'] = "Is there anything more that I can help with?"
+        data['slots'] = tracker.current_slot_values()
+        data['sender'] = tracker.sender_id
+        data['message'] = tracker.latest_message.parse_data
+        data['paused'] = tracker.is_paused()
+
+        dispatcher.utter_message(json.dumps(data))
+        return []
