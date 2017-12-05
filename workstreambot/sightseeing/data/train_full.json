@@ -504,6 +504,90 @@
             "entity": "info"
           }
         ]
+      },
+      {
+        "text": "can you recommend me a monument in berlin?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 23,
+            "end": 31,
+            "value": "monument",
+            "entity": "type_specific"
+          },
+          {
+            "start": 35,
+            "end": 41,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "recommend me a monument in berlin.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 23,
+            "value": "monument",
+            "entity": "type_specific"
+          },
+          {
+            "start": 27,
+            "end": 33,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "recommend me a museum in berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 21,
+            "value": "museum",
+            "entity": "type_specific"
+          },
+          {
+            "start": 25,
+            "end": 31,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "recommend me a palace in berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 21,
+            "value": "palace",
+            "entity": "type_specific"
+          },
+          {
+            "start": 25,
+            "end": 31,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
       }
     ]
   }

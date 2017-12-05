@@ -31,7 +31,7 @@ class ActionSearchWeather(Action):
            conditionDesc = condition.getConditionDescription()
            conditionTemp = condition.getConditionCurrentTemperature()
            conditionDate = condition.getLastUpdatedConditionDate()
-           
+
            data['response'] = description + '\nCondition: ' + conditionDesc + '\nThe currrent temperature is ' + conditionTemp + ' degree\nLast updated ' + conditionDate
            data['slots'] = tracker.current_slot_values()
            data['sender'] = tracker.sender_id

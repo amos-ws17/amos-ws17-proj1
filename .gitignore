@@ -1,3 +1,6 @@
+logs/
+project/
 workstreambot/weather/logs
 workstreambot/weather/project
+
 *.pyc
