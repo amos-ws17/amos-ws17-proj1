@@ -32,77 +32,20 @@ entities:
  - type
  - type_specific
 
-# templates are static responses to actions
-templates:
-  utter_greet:
-  - "Hey there!"
-
-  utter_ask_how_can_help:
-  - "How can I help you?"
-
-  utter_ask_cuisine:
-  - "What kind of cuisine would you like?"
-
-  utter_ask_location:
-  - "Please enter the city you're interested in."
-
-  utter_ask_price:
-  - text: "In which price range should it be?"
-    buttons:
-    - title: "cheap"
-      payload: "cheap"
-    - title: "moderately cheap"
-      payload: "moderately cheap"
-    - title: "moderately expensive"
-      payload: "moderately expensive"
-    - title: "expensive"
-      payload: "expensive"
-
-  utter_ack_do_search:
-  - "Ok let me see what I can find."
-
-  action_suggest_restaurant:
-  - "That's what I found. (restaurant)"
-
-  action_suggest_sights:
-  - "That's what I found. (sights)"
-
-  action_suggest_weather:
-  - "That's what I found. (weather)"
-
-  utter_like_it:
-  - "Do you like it?"
-
-  action_find_alternative_restaurant:
-  - "Maybe this is better. (restaurant)"
-
-  action_find_alternative_sight:
-  - "Maybe this is better. (sight)"
-
-  utter_ask_help_more:
-  - "Is there anything more that I can help with?"
-
-  utter_youre_welcomed:
-  - "I am happy to assist you. Have a nice day!"
-
-  utter_goodbye:
-  - "Goodbye"
-  - "Bye-bye"
-
 # actions must be named after an utterance or specified in a file
 actions:
-  - utter_greet
-  - utter_ask_how_can_help
-  - utter_ask_cuisine
-  - utter_ask_location
-  - utter_ask_price
-  - utter_ack_do_search
-  - action_suggest_restaurant
-  - action_suggest_sights
-  - action_suggest_weather
-  - utter_like_it
-  - action_find_alternative_restaurant
-  - action_find_alternative_sight
-  - utter_ask_help_more
-  - utter_youre_welcomed
-  - utter_goodbye
+  - action.UtterGreet
+  - action.UtterAskHowCanHelp
+  - action.UtterAskCuisine
+  - action.UtterAskLocation
+  - action.UtterAskPrice
+  - action.UtterAckDoSearch
+  - action.ActionSuggestRestaurant
+  - action.ActionSuggestSights
+  - action.ActionSuggestWeather
+  - action.UtterLikeIt
+  - action.ActionFindAlternativeRestaurant
+  - action.ActionFindAlternativeSight
+  - action.UtterAskHelpMore
+  - action.UtterYoureWelcomed
+  - action.UtterGoodbye
