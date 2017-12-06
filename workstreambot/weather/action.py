@@ -2,14 +2,15 @@ from datetime import datetime
 from network.yahooClient import YahooClient
 from mongo_persistance.database_handler import MongoDBHandler
 from rasa_core.actions import Action
+import copy
 
 import json
 
 
 class ActionPersisting(Action):
     def persist(self, data, conv_id):
-        handler = MongoDBHandler()
-        handler.write_data(data, conv_id, "weatherbot")
+        handler = MongoDBHandler(mongo_ip="mongo")
+        handler.write_data(copy.deepcopy(data), conv_id, "weatherbot")
 
 class ActionSearchWeather(ActionPersisting):
     # the name should match the action to the utterance
