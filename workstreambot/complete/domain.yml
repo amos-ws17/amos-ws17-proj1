@@ -1,0 +1,51 @@
+# slots are the criterion for the weather target
+slots:
+  cuisine:
+    type: text
+  location:
+    type: text
+  price:
+    type: text
+  time:
+    type: text
+  type:
+    type: text
+  type_specific:
+    type: text
+
+# intents are what the user can send
+intents:
+ - greet
+ - affirm
+ - deny
+ - inform
+ - inform_restaurant
+ - inform_sightseeing
+ - inform_weather
+
+# entities are how bot interprets the user intents
+entities:
+ - cuisine
+ - location
+ - price
+ - time
+ - type
+ - type_specific
+
+# actions must be named after an utterance or specified in a file
+actions:
+  - action.UtterGreet
+  - action.UtterAskHowCanHelp
+  - action.UtterAskCuisine
+  - action.UtterAskLocation
+  - action.UtterAskPrice
+  - action.UtterAckDoSearch
+  - action.ActionSuggestRestaurant
+  - action.ActionSuggestSights
+  - action.ActionSuggestWeather
+  - action.UtterLikeIt
+  - action.ActionFindAlternativeRestaurant
+  - action.ActionFindAlternativeSight
+  - action.UtterAskHelpMore
+  - action.UtterYoureWelcomed
+  - action.UtterGoodbye
