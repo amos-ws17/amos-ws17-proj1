@@ -4,6 +4,7 @@ branches:
   only:
     - dev
     - master
+    - http-connection
 
 python:
   - "3.5"
@@ -17,7 +18,13 @@ jobs:
     - stage: test
       script:
         - echo "No tests yet"
-
+    - stage: build rasa base
+      if: branch = http-connection
+      script:
+      - cd workstreambot/base_rasa_core
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t amoschatbot/rasabase:latest .
+      - docker push amoschatbot/rasabase
     - stage: build weatherbot
       if: branch = dev
       script:
