@@ -1,11 +1,17 @@
 from datetime import datetime
 from network.yahooClient import YahooClient
+from mongo_persistance.database_handler import MongoDBHandler
 from rasa_core.actions import Action
 
 import json
 
 
-class ActionSearchWeather(Action):
+class ActionPersisting(Action):
+    def persist(self, data, conv_id):
+        handler = MongoDBHandler()
+        handler.write_data(data, conv_id, "weatherbot")
+
+class ActionSearchWeather(ActionPersisting):
     # the name should match the action to the utterance
     def name(self):
         return 'action_search_weather'
@@ -37,6 +43,7 @@ class ActionSearchWeather(Action):
            data['sender'] = tracker.sender_id
            data['message'] = tracker.latest_message.parse_data
            data['paused'] = tracker.is_paused()
+           self.persist(data, tracker.sender_id)
         else:
            date = datetime.strptime(date, '%Y-%m-%dT%H:%M:%S.%fZ')
            for num in range(0, len(weather.getWeatherForecastFactors())):
@@ -54,12 +61,13 @@ class ActionSearchWeather(Action):
                  data['sender'] = tracker.sender_id
                  data['message'] = tracker.latest_message.parse_data
                  data['paused'] = tracker.is_paused()
+                 self.persist(data, tracker.sender_id)
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
 
-class ActionGreet(Action):
+class ActionGreet(ActionPersisting):
     def name(self):
         return 'utter_greet'
 
@@ -72,12 +80,13 @@ class ActionGreet(Action):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
+        self.persist(data, tracker.sender_id)
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
 
-class ActionGoodbye(Action):
+class ActionGoodbye(ActionPersisting):
     def name(self):
         return 'utter_goodbye'
 
@@ -90,12 +99,13 @@ class ActionGoodbye(Action):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
+        self.persist(data, tracker.sender_id)
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
 
-class ActionAskHowCanIHelp(Action):
+class ActionAskHowCanIHelp(ActionPersisting):
     def name(self):
         return 'utter_ask_howcanhelp'
 
@@ -108,12 +118,13 @@ class ActionAskHowCanIHelp(Action):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
+        self.persist(data, tracker.sender_id)
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
 
-class ActionOnIt(Action):
+class ActionOnIt(ActionPersisting):
     def name(self):
         return 'utter_on_it'
 
@@ -126,12 +137,13 @@ class ActionOnIt(Action):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
+        self.persist(data, tracker.sender_id)
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
 
-class ActionAskLocation(Action):
+class ActionAskLocation(ActionPersisting):
     def name(self):
         return 'utter_ask_location'
 
@@ -144,12 +156,13 @@ class ActionAskLocation(Action):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
+        self.persist(data, tracker.sender_id)
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
 
-class ActionAckDoSearch(Action):
+class ActionAckDoSearch(ActionPersisting):
     def name(self):
         return 'utter_ack_dosearch'
 
@@ -162,12 +175,13 @@ class ActionAckDoSearch(Action):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
+        self.persist(data, tracker.sender_id)
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
 
-class ActionAskHelpMore(Action):
+class ActionAskHelpMore(ActionPersisting):
     def name(self):
         return 'utter_ask_helpmore'
 
@@ -180,6 +194,7 @@ class ActionAskHelpMore(Action):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
+        self.persist(data, tracker.sender_id)
 
         dispatcher.utter_message(json.dumps(data))
         return []

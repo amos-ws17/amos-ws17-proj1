@@ -4,10 +4,10 @@ from pymongo import MongoClient
 class MongoDBHandler:
 
 
-    def __init__(self, mongo_ip="192.168.99.100", mongo_port=27017):
+    def __init__(self, mongo_ip="localhost", mongo_port=27017):
         self.mongo_ip = mongo_ip
         self.mongo_port = mongo_port
-        self.client =  MongoClient("192.168.99.100", 27017)
+        self.client =  MongoClient(mongo_ip, mongo_port)
 
     def get_client(self):
         return self.client
