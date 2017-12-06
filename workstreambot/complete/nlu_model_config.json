@@ -9,5 +9,5 @@
     "ner_duckling"],
   "path" : "./project",
   "project": "nlu",
-  "data" : "./data/train_full.json"
+  "data" : "./data/training_data_full.json"
 }
