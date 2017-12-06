@@ -6,7 +6,25 @@ A project for the 2017 AMOS Course in collaboration with Actano
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Installing
+### Deployment
+
+To deploy the system make sure you have docker and git installed. If you do, clone this repository with:
+
+```
+git clone https://github.com/amos-ws17/amos-ws17-proj1.git
+```
+
+Then navigate to the newly created _amos-ws17-proj1_ folder and type in the following command to start deploy the bots:
+
+```
+docker-compose up
+```
+Now all bots are running and are accesssible on those ports:
+* **Weather bot:** 5012, 5015, 5010
+* **Sightseeing bot:** 5022, 5025, 5020
+* **Restaurant bot:** 5032
+
+### Manual installation and deployment
 
 Install a virtualenv in a desired location
 
