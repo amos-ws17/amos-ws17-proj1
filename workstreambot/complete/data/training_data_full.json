@@ -1471,6 +1471,11 @@
         ]
       },
       {
+        "text": "i want a restaurant",
+        "intent": "inform_restaurant",
+        "entities": []
+      },
+      {
         "text": "i would like to try a cheap vietnamese cuisine, in berlin",
         "intent": "inform_restaurant",
         "entities": [
@@ -1785,6 +1790,11 @@
         ]
       },
       {
+        "text": "give me some nice place",
+        "intent": "inform_sightseeing",
+        "entities": []
+      },
+      {
         "text": "i would like to visit an outdoor attraction in basel",
         "intent": "inform_sightseeing",
         "entities": [
@@ -1898,6 +1908,11 @@
             "entity": "time"
           }
         ]
+      },
+      {
+        "text": "what is the weather like?",
+        "intent": "inform_weather",
+        "entities": []
       },
       {
         "text": "what will the weather be like on 2017-01-01?",
