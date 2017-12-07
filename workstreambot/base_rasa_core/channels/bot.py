@@ -21,7 +21,8 @@ class BotOutput(OutputChannel):
         self.messages = []
 
     def send_text_message(self, recipient_id, message):
-        self.messages.append((recipient_id, message))
+        data = {}
+        self.messages.append(message)
 
 
 class BotInput(HttpInputComponent):
@@ -56,13 +57,15 @@ class BotInput(HttpInputComponent):
 
             on_new_message(user_msg)
 
-            message = ''
+            first = True
+            data = {}
+            data['info_messages'] = []
             for i in range(0, len(self.out_channel.messages)):
-               message += self.out_channel.messages[i][1] + '\n'
+               data['info_messages'].append(json.loads(self.out_channel.messages[i]))
 
             self.out_channel.messages[:] = []
 
-            return message
+            return json.dumps(data)
 
 
         return webhook

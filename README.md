@@ -6,31 +6,64 @@ A project for the 2017 AMOS Course in collaboration with Actano
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+### Deployment
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+To deploy the system make sure you have docker and git installed. If you do, clone this repository with:
 
 ```
-Give the example
+git clone https://github.com/amos-ws17/amos-ws17-proj1.git
 ```
 
-And repeat
+Then navigate to the newly created _amos-ws17-proj1_ folder and type in the following command to start deploy the bots:
 
 ```
-until finished
+docker-compose up
+```
+Now all bots are running and are accesssible on those ports:
+* **Weather bot:** 5012, 5015, 5010
+* **Sightseeing bot:** 5022, 5025, 5020
+* **Restaurant bot:** 5032
+
+### Manual installation and deployment
+
+Install a virtualenv in a desired location
+
+```
+sudo pip install virtualenv
+#cd to our desired location
+virtualenv -p python venv
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Start your venv
+
+```
+source venv/bin/activate
+```
+
+Install Rasa NLU
+
+```
+pip install rasa_nlu
+```
+
+Install necessary libraries
+
+```
+pip install requests 
+pip install -U spacy
+python -m spacy download en
+pip install -U scikit-learn scipy sklearn-crfsuite
+python -m pip install duckling
+```
+
+Install Rasa Core
+
+```
+pip install rasa_core
+```
+
+Now you should be able to run the [weather bot](https://github.com/amos-ws17/amos-ws17-proj1/wiki/Weather-bot).  
+For more details on installing Rasa take a look into the [Rasa NLU](http://nlu.rasa.ai/installation.html) and [Rasa Core](https://core.rasa.ai/installation.html) documentation.
 
 ## Running the tests
 
@@ -52,36 +85,42 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
+## Models
 
-Add additional notes about how to deploy this on a live system
+* [Weather Model](https://github.com/amos-ws17/amos-ws17-proj1/wiki/Weather-bot) whose data is provided by [Yahoo](https://developer.yahoo.com/weather/documentation.html) - Weather API Documentation
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Python](https://docs.python.org/3/) - Python 3 Documentation
+* [Rasa NLU](https://nlu.rasa.ai/index.html) - Rasa NLU Documentation
+* [Rasa Core](https://core.rasa.ai/index.html) - Rasa Core Documentation
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* **Billie Thompson** - *Readme Template* - [PurpleBooth](https://github.com/PurpleBooth)
+
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+For the versions available, see the [tags on this repository](https://github.com/amos-ws17/amos-ws17-proj1/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* Lukas Kleine Büning
+* Etjen Ymeraj 
+* Daniel Dimitrov
+* Radoslav Vlaskovski 
+* Veselin Popov
+* Omar Abada
+* Marah Halawa
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the contributing section
 
 ## License
 
-This project is licensed under the Apache 2.0 License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used
 * Inspiration
-* The readme template from PurpleBooth

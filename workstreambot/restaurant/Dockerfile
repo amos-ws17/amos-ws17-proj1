@@ -6,7 +6,7 @@ ADD . /rasa_core/restaurant_bot
 
 WORKDIR /rasa_core/restaurant_bot
 
-#RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 RUN python -m rasa_nlu.train -c nlu_model_config.json --fixed_model_name current && python -m rasa_core.train -s data/stories.md -d domain.yml -o project/dialogue
 
