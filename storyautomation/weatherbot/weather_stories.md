@@ -1,0 +1,720 @@
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=yesterday]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=today]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=tomorrow]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=2017-12-12]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=2017-12-13]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=2017-12-14]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=yesterday]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=today]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=tomorrow]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=2017-12-12]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=2017-12-13]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=2017-12-14]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=yesterday]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=today]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=tomorrow]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=2017-12-12]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=2017-12-13]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=2017-12-14]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=yesterday]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=today]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=tomorrow]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=2017-12-12]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=2017-12-13]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=2017-12-14]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=yesterday]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=today]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=tomorrow]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=2017-12-12]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=2017-12-13]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=2017-12-14]
+  - utter_on_it
+  - utter_ask_location
+* _inform[location]
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=yesterday]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=today]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=tomorrow]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=2017-12-12]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=2017-12-13]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Berlin,date=2017-12-14]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=yesterday]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=today]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=tomorrow]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=2017-12-12]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=2017-12-13]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Paris,date=2017-12-14]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=yesterday]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=today]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=tomorrow]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=2017-12-12]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=2017-12-13]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Sofia,date=2017-12-14]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=yesterday]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=today]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=tomorrow]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=2017-12-12]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=2017-12-13]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Madrid,date=2017-12-14]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=yesterday]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=today]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=tomorrow]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=2017-12-12]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=2017-12-13]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
+* _greet[]
+  - utter_greet
+  - utter_ask_howcanhelp
+* _inform[location=Rome,date=2017-12-14]
+  - utter_on_it
+  - utter_ack_dosearch
+  - action_search_weather
+  - utter_ask_helpmore
+* _thankyou[]
+  - utter_goodbye
+
