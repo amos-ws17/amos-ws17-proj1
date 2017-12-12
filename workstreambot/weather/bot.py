@@ -41,7 +41,9 @@ if __name__ == '__main__':
     interpreter = load_nlu(directory)
     nlu_response = interpreter.parse(u"What will the weather be in Berlin?") # should return the same dict as the HTTP api would (without emulation).
 
-    print nlu_response
+    print (nlu_response['entities'][0])
+    print (nlu_response['intent'])
+    print (nlu_response['text'])
+    print (nlu_response['intent_ranking'][0])
 
     train_dialogue()
-
