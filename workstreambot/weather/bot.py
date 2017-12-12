@@ -37,17 +37,22 @@ def load_nlu(model_directory):
     return interpreter
 
 if __name__ == '__main__':
+    #train nlu
     directory = train_nlu()
+    #train dialogue
+    agent = train_dialogue()
+
+    #parse user input
     interpreter = load_nlu(directory)
     nlu_jsonResponse = interpreter.parse("What will the weather be in Berlin?") # should return the same dict as the HTTP api would (without emulation).
 
+    entities = []
+
     if len(nlu_jsonResponse['entities']) > 0:
-        entities = []
+
         for e in nlu_jsonResponse['entities']:
             entity = e['entity'] + "=" + e['value']
             entities.append(entity)
 
-        entity_list = list(entities)
-
-        agent = train_dialogue()
-        print agent.handle_message('_' + nlu_jsonResponse['intent']['name'] + entity_list)
+    #handle user input
+    print agent.handle_message('_' + nlu_jsonResponse['intent']['name'] + '[' + ','.join(map(str,entities)) + ']')
