@@ -1,27 +1,4 @@
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 from __future__ import unicode_literals
-
-import argparse
-import logging
-
-import sys
-import warnings
-
-from rasa_core import utils
-from rasa_core.actions import Action
-from rasa_core.agent import Agent
-from rasa_core.channels.console import ConsoleInputChannel
-from rasa_core.interpreter import RasaNLUInterpreter
-from rasa_core.policies.keras_policy import KerasPolicy
-from rasa_core.policies.memoization import MemoizationPolicy
-
-from .apiClient import APIClient
-
-
-logger = logging.getLogger(__name__)
-
 
 def train_nlu():
     from rasa_nlu.converters import load_data
@@ -35,10 +12,21 @@ def train_nlu():
 
     return model_directory
 
-def initialAPICall():
-        # init APIClient
-        api = APIClient()
-        # make the url call and retrieve a json Response
-        jsonResponse = api.fetch("http://localhost:5000/parse?project=nlu&q=hey")
-        # print
-        print(jsonResponse)
+def train_dialogue():
+    from rasa_core.agent import Agent
+    from rasa_core.policies.keras_policy import KerasPolicy
+    from rasa_core.policies.memoization import MemoizationPolicy
+
+    domain_file="domain.yml"
+    model_path="models/dialogue"
+    stories_file="data/stories.md"
+
+    agent = Agent(domain_file, policies=[MemoizationPolicy(), KerasPolicy()])
+    agent.train(stories_file)
+    agent.persist(model_path)
+
+    return agent
+
+if __name__ == '__main__':
+    train_nlu()
+    train_dialogue()
