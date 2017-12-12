@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from rasa_nlu.model import Metadata, Interpreter
 
 def train_nlu():
     from rasa_nlu.converters import load_data
@@ -27,6 +28,16 @@ def train_dialogue():
 
     return agent
 
+def load_nlu(model_directory):
+    from rasa_nlu.model import Metadata, Interpreter
+
+    # where `model_directory points to the folder the model is persisted in
+    interpreter = Interpreter.load(model_directory, RasaNLUConfig(“nlu_model_config.json”))
+
+    return interpreter
+
 if __name__ == '__main__':
-    train_nlu()
+    directory = train_nlu()
+    interpreter = load_nlu(directory)
+    interpreter.parse(u"Hey") # should return the same dict as the HTTP api would (without emulation).
     train_dialogue()
