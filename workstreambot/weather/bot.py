@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from rasa_core.agent import Agent
 
 def train_nlu():
     from rasa_nlu.converters import load_data
@@ -13,7 +14,6 @@ def train_nlu():
     return model_directory
 
 def train_dialogue():
-    from rasa_core.agent import Agent
     from rasa_core.policies.keras_policy import KerasPolicy
     from rasa_core.policies.memoization import MemoizationPolicy
 
@@ -39,11 +39,13 @@ def load_nlu(model_directory):
 if __name__ == '__main__':
     directory = train_nlu()
     interpreter = load_nlu(directory)
-    nlu_response = interpreter.parse(u"What will the weather be in Berlin?") # should return the same dict as the HTTP api would (without emulation).
+    nlu_response = interpreter.parse("What will the weather be in Berlin?") # should return the same dict as the HTTP api would (without emulation).
 
-    print (nlu_response['entities'][0])
-    print (nlu_response['intent'])
-    print (nlu_response['text'])
-    print (nlu_response['intent_ranking'][0])
+    print (nlu_response['entities'])
+    print (nlu_response['intent']['name'])
+    #print (nlu_response['text'])
+    #print (nlu_response['intent_ranking'][0])
 
-    train_dialogue()
+    agent = train_dialogue()
+
+    print agent.handle_message('_' + nlu_response['intent']['name'] + '[' + nlu_response['entities'][0]['entity'] + '=' + nlu_response['entities'][0]['value'] + ']')
