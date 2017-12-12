@@ -1,9 +1,9 @@
 from __future__ import unicode_literals
+from rasa_nlu.config import RasaNLUConfig
 from rasa_core.agent import Agent
 
 def train_nlu():
     from rasa_nlu.converters import load_data
-    from rasa_nlu.config import RasaNLUConfig
     from rasa_nlu.model import Trainer
 
     training_data = load_data('data/train_full.json')
@@ -13,22 +13,21 @@ def train_nlu():
 
     return model_directory
 
-def train_dialogue():
+def train_dialogue(topic):
     from rasa_core.policies.keras_policy import KerasPolicy
     from rasa_core.policies.memoization import MemoizationPolicy
 
-    domain_file="domain.yml"
-    model_path="models/dialogue"
-    stories_file="data/stories.md"
+    domain_file = topic + "domain.yml"
+    model_path = topic + "models/dialogue"
+    stories_file = topic + "data/stories.md"
 
     agent = Agent(domain_file, policies=[MemoizationPolicy(), KerasPolicy()])
     agent.train(stories_file)
     agent.persist(model_path)
 
-    return agent
+    return model_path
 
-def load_nlu(model_directory):
-    from rasa_nlu.config import RasaNLUConfig
+def load_interpreter(model_directory):
     from rasa_nlu.model import Metadata, Interpreter
 
     # where `model_directory points to the folder the model is persisted in
@@ -36,14 +35,21 @@ def load_nlu(model_directory):
 
     return interpreter
 
+def load_agent(model_path):
+    return Agent.load(model_path)
+
 if __name__ == '__main__':
     #train nlu
-    directory = train_nlu()
+    #model_path = train_nlu()
     #train dialogue
-    agent = train_dialogue()
+    topic = ""
+    #dialogue_path = train_dialogue(topic)
+
+    model_path = "models/nlu/default/current"
+    dialogue_path = topic + "models/dialogue"
 
     #parse user input
-    interpreter = load_nlu(directory)
+    interpreter = load_interpreter(model_path)
     nlu_jsonResponse = interpreter.parse("What will the weather be in Berlin?") # should return the same dict as the HTTP api would (without emulation).
 
     entities = []
@@ -55,4 +61,5 @@ if __name__ == '__main__':
             entities.append(entity)
 
     #handle user input
+    agent = load_agent(dialogue_path)
     print agent.handle_message('_' + nlu_jsonResponse['intent']['name'] + '[' + ','.join(map(str,entities)) + ']')
