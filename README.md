@@ -88,6 +88,8 @@ Give an example
 ## Models
 
 * [Weather Model](https://github.com/amos-ws17/amos-ws17-proj1/wiki/Weather-bot) whose data is provided by [Yahoo](https://developer.yahoo.com/weather/documentation.html) - Weather API Documentation
+* Sightseeing Model whose data is provided by [Foursquare](https://developer.foursquare.com/docs) - Foursquare API Documentation
+* Restaurant Model whose data is provided by [Foursquare](https://developer.foursquare.com/docs) - Foursquare API Documentation
 
 ## Built With
 
