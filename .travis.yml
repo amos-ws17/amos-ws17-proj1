@@ -4,7 +4,7 @@ branches:
   only:
     - dev
     - master
-    - http-connection
+    - persistance_integration
 
 python:
   - "3.5"
@@ -19,7 +19,7 @@ jobs:
       script:
         - echo "No tests yet"
     - stage: build rasa base
-      if: branch = http-connection
+      if: branch = persistance_integration
       script:
       - cd workstreambot/base_rasa_core
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
