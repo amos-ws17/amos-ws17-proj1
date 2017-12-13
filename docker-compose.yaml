@@ -16,7 +16,7 @@ services:
   sightseeingbot:
     container_name: sightseeingbot
     image: amoschatbot/sightseeingbot
-    entrypoint: python -m rasa_core.run -d models/dialogue -u project/nlu/current -c bot --persistence redis
+    entrypoint: python -m rasa_core.run -d models/dialogue -u project/nlu/current -c bot
     ports:
       - 5022:5002
       - 5025:5005
@@ -28,7 +28,7 @@ services:
   restaurantbot:
     container_name: restaurantbot
     image: amoschatbot/restaurantbot
-    entrypoint: python -m rasa_core.run -d project/dialogue -u project/nlu/current -c bot --persistence redis
+    entrypoint: python -m rasa_core.run -d project/dialogue -u project/nlu/current -c bot
     ports:
       - 5032:5002
     expose:
