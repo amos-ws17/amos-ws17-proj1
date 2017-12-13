@@ -2,7 +2,7 @@ version: '3'
 services:
   weatherbot:
     container_name: weatherbot
-    entrypoint: python -m rasa_core.run -d project/dialogue -u project/nlu/current -c bot --persistence redis
+    entrypoint: python -m rasa_core.run -d project/dialogue -u project/nlu/current -c bot --persistence redis --redis 172.17.0.2
     image: amoschatbot/weatherbot
     ports:
       - 5012:5002
@@ -33,3 +33,8 @@ services:
       - 5032:5002
     expose:
       - 5032
+
+networks:
+  default:
+    external:
+      name: redis-network
