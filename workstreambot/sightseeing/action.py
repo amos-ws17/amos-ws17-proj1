@@ -2,16 +2,10 @@ from datetime import datetime
 from network.foursquareClient import FoursquareClient
 from rasa_core.actions import Action
 import copy
-from mongo_persistance.database_handler import MongoDBHandler
 
 import json
 
-class ActionPersisting(Action):
-    def persist(self, data, conv_id):
-        handler = MongoDBHandler(mongo_ip="mongo")
-        handler.write_data(copy.deepcopy(data), conv_id, "sightseeingbot")
-
-class ActionSearchSights(ActionPersisting):
+class ActionSearchSights(Action):
     
     def __init__(self):
         self.recNr = 0
@@ -49,12 +43,12 @@ class ActionSearchSights(ActionPersisting):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
-        self.persist(data, tracker.sender_id)
+        
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
-class ActionGreet(ActionPersisting):
+class ActionGreet(Action):
     def name(self):
         return 'utter_greet'
 
@@ -67,13 +61,13 @@ class ActionGreet(ActionPersisting):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
-        self.persist(data, tracker.sender_id)
+        
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
 
-class ActionGoodbye(ActionPersisting):
+class ActionGoodbye(Action):
     def name(self):
         return 'utter_goodbye'
 
@@ -86,13 +80,13 @@ class ActionGoodbye(ActionPersisting):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
-        self.persist(data, tracker.sender_id)
+        
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
 
-class ActionAskHowCanIHelp(ActionPersisting):
+class ActionAskHowCanIHelp(Action):
     def name(self):
         return 'utter_ask_howcanhelp'
 
@@ -105,12 +99,12 @@ class ActionAskHowCanIHelp(ActionPersisting):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
-        self.persist(data, tracker.sender_id)
+        
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
-class ActionAskLocation(ActionPersisting):
+class ActionAskLocation(Action):
     def name(self):
         return 'utter_ask_location'
 
@@ -123,12 +117,12 @@ class ActionAskLocation(ActionPersisting):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
-        self.persist(data, tracker.sender_id)
+        
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
-class ActionAskPrice(ActionPersisting):
+class ActionAskPrice(Action):
     def name(self):
         return 'utter_ask_price'
 
@@ -141,12 +135,12 @@ class ActionAskPrice(ActionPersisting):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
-        self.persist(data, tracker.sender_id)
+        
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
-class ActionAckDoSearch(ActionPersisting):
+class ActionAckDoSearch(Action):
     def name(self):
         return 'utter_ack_dosearch'
 
@@ -159,12 +153,12 @@ class ActionAckDoSearch(ActionPersisting):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
-        self.persist(data, tracker.sender_id)
+        
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
-class ActionSuggest(ActionPersisting):
+class ActionSuggest(Action):
     def name(self):
         return 'action_suggest'
 
@@ -177,12 +171,12 @@ class ActionSuggest(ActionPersisting):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
-        self.persist(data, tracker.sender_id)
+        
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
-class ActionFindAlternatives(ActionPersisting):
+class ActionFindAlternatives(Action):
     def name(self):
         return 'utter_ack_findalternatives'
 
@@ -195,12 +189,12 @@ class ActionFindAlternatives(ActionPersisting):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
-        self.persist(data, tracker.sender_id)
+        
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
-class ActionYoureWelcomed(ActionPersisting):
+class ActionYoureWelcomed(Action):
     def name(self):
         return 'utter_yourewelcomed'
 
@@ -213,12 +207,12 @@ class ActionYoureWelcomed(ActionPersisting):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
-        self.persist(data, tracker.sender_id)
+        
 
         dispatcher.utter_message(json.dumps(data))
         return []
 
-class ActionAskHelpMore(ActionPersisting):
+class ActionAskHelpMore(Action):
     def name(self):
         return 'utter_ask_helpmore'
 
@@ -231,7 +225,7 @@ class ActionAskHelpMore(ActionPersisting):
         data['sender'] = tracker.sender_id
         data['message'] = tracker.latest_message.parse_data
         data['paused'] = tracker.is_paused()
-        self.persist(data, tracker.sender_id)
+        
 
         dispatcher.utter_message(json.dumps(data))
         return []
