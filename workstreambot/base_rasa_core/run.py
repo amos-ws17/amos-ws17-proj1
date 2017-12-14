@@ -15,6 +15,9 @@ from rasa_core.channels.facebook import FacebookInput
 from rasa_core.channels.rest import HttpInputChannel
 from rasa_core.utils import read_yaml_file
 from rasa_core.channels.bot import BotInput
+from rasa_core.tracker_store import *
+from rasa_core.domain import TemplateDomain
+import os
 
 logger = logging.getLogger()  # get the root logger
 
@@ -58,6 +61,15 @@ def create_argument_parser():
             default="cmdline",
             choices=["facebook", "cmdline", "bot"],
             help="service to connect to")
+    parser.add_argument(
+        '-r', '--redis',
+        default="localhost",
+        help="redis host ip")
+    parser.add_argument(
+        '-pe', '--persistence',
+        choices=["memory", "redis"],
+        default="memory",
+        help="persistence type")
 
     return parser
 
@@ -101,14 +113,19 @@ def create_input_channel(channel, port, credentials_file):
 
 
 def main(model_directory, nlu_model=None, channel=None, port=None,
-         credentials_file=None):
+         credentials_file=None, redis_ip="localhost", persistence_type="memory"):
     """Run the agent."""
 
     log = logging.getLogger('werkzeug')
     log.setLevel(logging.WARN)
 
     logger.info("Rasa process starting")
-    agent = Agent.load(model_directory, nlu_model)
+    if persistence_type == "memory":
+        agent = Agent.load(model_directory, nlu_model)
+    else:
+        domain = TemplateDomain.load(os.path.join(model_directory, "domain.yml"))
+        redis_tracker_store = RedisTrackerStore(domain=domain, host=redis_ip)
+        agent = Agent.load(model_directory, nlu_model, tracker_store=redis_tracker_store)
 
     logger.info("Finished loading agent, starting input channel & server.")
     if channel:
@@ -129,4 +146,6 @@ if __name__ == '__main__':
          cmdline_args.nlu,
          cmdline_args.connector,
          cmdline_args.port,
-         cmdline_args.credentials)
+         cmdline_args.credentials,
+         cmdline_args.redis,
+         cmdline_args.persistence)
