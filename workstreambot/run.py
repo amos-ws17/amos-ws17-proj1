@@ -5,7 +5,7 @@ import utils
 nlu_model_path = 'models/nlu/default/current'
 dialogue_path = '/models/dialogue'
 
-topic_switching_intent_prefix = 'inform'
+topic_switching_intent_prefix = 'inform_'
 
 current_dialogue = None
 
@@ -47,8 +47,12 @@ def run(interpreter, agents):
     global current_dialogue
 
     for topic in agents:
-        if topic_switching_intent_prefix == nlu_jsonResponse['intent']['name']:
-            current_dialogue = topic
+        topic_switching_intent = topic_switching_intent_prefix + topic
+
+        if topic_switching_intent == nlu_jsonResponse['intent']['name']:
+            if current_dialogue != topic:
+                current_dialogue = topic
+                #TODO Restart current dialogue
 
     # handle user input
     print agents[current_dialogue].handle_message(
