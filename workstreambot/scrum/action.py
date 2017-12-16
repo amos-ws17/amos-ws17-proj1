@@ -8,7 +8,7 @@ theme_dict = {"roles": "PO, SM, DEV", "stories": "", "sprint": "", "ceremonies":
               "estimations": "", "release": "", "burndown": "", "velocity": "", "extras": "",
               "spike": "", "goals": ""}
 
-global current_theme = "roles"
+global current_theme = theme_list[0]
 
 
 # get the next element to explain

@@ -28,6 +28,6 @@ templates:
 
 # actions must be named after an utterance or specified in a file
 actions:
-  - action.ActionAskContinue
-  - action.ActionExplain
-  - action.ActionEndGuide
+  - scrum.action.ActionAskContinue
+  - scrum.action.ActionExplain
+  - scrum.action.ActionEndGuide
