@@ -8,6 +8,8 @@ theme_dict = {"roles": "PO, SM, DEV", "stories": "", "sprint": "", "ceremonies":
               "estimations": "", "release": "", "burndown": "", "velocity": "", "extras": "",
               "spike": "", "goals": ""}
 
+global current_theme = "roles"
+
 
 # get the next element to explain
 def getNextElement(theme):
@@ -24,15 +26,15 @@ class ActionAskContinue(Action):
         return 'utter_continue'
 
     def run(self, dispatcher, tracker, domain):
-        # get the current theme
-        current_theme = tracker.get_slot('theme')
         # find the next theme
         next_theme = getNextElement(current_theme)
+        # pass it to the global variable
+        current_theme = next_theme
         # if all themes are explained end the guide otherwise ask for the next one
         if not next_theme:
             dispatcher.utter_message("That is it for the crash course in scrum")
         else:
-            dispatcher.utter_message("Would you like to know about " + next_theme + "?")
+            dispatcher.utter_message("Would you like to know about " + current_theme + "?")
         return []
 
 class ActionExplain(Action):
@@ -40,9 +42,7 @@ class ActionExplain(Action):
         return 'utter_explain'
 
     def run(self, dispatcher, tracker, domain):
-        # get the current theme
-        current_theme = tracker.get_slot('theme')
-        # explain the current theme 
+        # explain the current theme
         dispatcher.utter_message(theme_dict[current_theme])
         return []
 
