@@ -58,6 +58,10 @@ def run(interpreter, agents):
     print agents[current_dialogue].handle_message(
         '_' + nlu_jsonResponse['intent']['name'] + '[' + ','.join(map(str, entities)) + ']')
 
+    #TODO Customize response
+    # data['sender'] = tracker.sender_id
+    # data['message'] = tracker.latest_message.parse_data
+
 
 if __name__ == '__main__':
     arg_parser = utils.create_argument_parser()
