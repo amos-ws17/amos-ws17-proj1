@@ -1,10 +1,6 @@
 # slots are the criterion for the scrum topic answers
 slots:
-  description:
-    type: text
   theme:
-    type: text
-  specific:
     type: text
 
 
@@ -17,9 +13,7 @@ intents:
 
 # entities are how bot interprets the user intents
 entities:
- - description
  - theme
- - specific
 
 # templates are static responses to actions
 templates:
