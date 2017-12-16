@@ -1,27 +1,10 @@
-# slots are the criterion for the scrum topic answers
-slots:
-  theme:
-    type: text
-
-
 # intents are what the user can send
 intents:
  - inform_scrum
  - affirm
  - deny
 
-
-# entities are how bot interprets the user intents
-entities:
- - theme
-
-# templates are static responses to actions
-templates:
-  utter_default:
-    - "What are we doing?"
-
 # actions must be named after an utterance or specified in a file
 actions:
-  - scrum.action.ActionAskContinue
+  - scrum.action.ActionContinue
   - scrum.action.ActionExplain
-  - scrum.action.ActionEndGuide
