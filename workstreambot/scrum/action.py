@@ -34,7 +34,7 @@ def getResponse(action_name, tracker, response):
     return json.dumps(data)
 
 # ask to continue to the next theme
-class ActionAskContinue(Action):
+class ActionContinue(Action):
     def name(self):
         return 'utter_continue'
 
@@ -48,7 +48,8 @@ class ActionAskContinue(Action):
 
         # if all themes are explained end the guide otherwise ask for the next one
         if not next_theme:
-            response = "That is it for the crash course in scrum"
+            response = "That is it for the crash course in scrum. Would you like to restart?"
+            current_theme = theme_list[0]
         else:
             response = "Would you like to know about " + current_theme + "?"
 
@@ -61,6 +62,11 @@ class ActionExplain(Action):
         return 'utter_explain'
 
     def run(self, dispatcher, tracker, domain):
+        global current_theme
+
+        if tracker.latest_message.parse_data['intent']['name'] == 'inform_scrum':
+            current_theme = theme_list[0]
+
         # explain the current theme
         dispatcher.utter_message(getResponse(self.name(), tracker, theme_dict[current_theme]))
         return []
