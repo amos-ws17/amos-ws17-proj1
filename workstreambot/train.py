@@ -11,7 +11,7 @@ def train_nlu():
     from rasa_nlu.converters import load_data
     from rasa_nlu.model import Trainer
 
-    training_data = load_data('data/train_full.json')
+    training_data = load_data('data/nlu_training_data.json')
     trainer = Trainer(RasaNLUConfig('nlu_model_config.json'))
     trainer.train(training_data)
     trainer.persist('models/nlu/', fixed_model_name='current')

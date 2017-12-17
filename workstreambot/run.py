@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 import utils
+import json
 
 nlu_model_path = 'models/nlu/default/current'
 dialogue_path = '/models/dialogue'
@@ -32,9 +33,9 @@ def load_agents(topics):
     return agents
 
 
-def run(interpreter, agents):
+def run(interpreter, agents, message):
     # parse user input
-    nlu_jsonResponse = interpreter.parse('What will the weather be in Berlin?')
+    nlu_jsonResponse = interpreter.parse(message)
 
     entities = []
 
@@ -55,12 +56,20 @@ def run(interpreter, agents):
                 #TODO Restart current dialogue
 
     # handle user input
-    print agents[current_dialogue].handle_message(
+    dialogue = agents[current_dialogue].handle_message(
         '_' + nlu_jsonResponse['intent']['name'] + '[' + ','.join(map(str, entities)) + ']')
 
-    #TODO Customize response
-    # data['sender'] = tracker.sender_id
-    # data['message'] = tracker.latest_message.parse_data
+
+    data = {}
+    data['nlu'] = nlu_jsonResponse
+
+    data['dialogue'] = []
+    for i in range(0, len(dialogue)):
+        data['dialogue'].append(json.loads(dialogue[i]))
+    data['sender'] = 'Session ID' #TODO Replace with session Id
+    data['message'] = message
+
+    print json.dumps(data)
 
 
 if __name__ == '__main__':
@@ -71,4 +80,4 @@ if __name__ == '__main__':
     topics = utils.parse_dialogue_argument(args.dialogues)
     agents = load_agents(topics)
 
-    run(interpreter, agents)
+    run(interpreter, agents, 'What is Scrum about?')
