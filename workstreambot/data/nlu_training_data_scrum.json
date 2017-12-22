@@ -92,107 +92,107 @@
       },
       {
         "text": "explain to me what is scrum?",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "tell me about scrum",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "tell me more about scrum",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "give me informations about scrum",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "give me more informations about scrum",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "what is scrum?",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "what is scrum about?",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "what's scrum?",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "what's scrum about?",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "what do you know about scrum?",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "i need an introduction about scrum",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "do you know what is scrum?",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "explain scrum briefly",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "explain scrum",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "how you explain scrum",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "how you define scrum",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "define scrum",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "what is the definition of scrum",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "what does scrum stand for",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "what do you mean by scrum",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       },
       {
         "text": "why would you use scrum?",
-        "intent": "inform_scrum",
+        "intent": "switch_scrum",
         "entities": []
       }
     ]

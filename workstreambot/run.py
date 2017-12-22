@@ -1,14 +1,30 @@
 from __future__ import unicode_literals
 
-import utils
+import argparse
 import json
 
 nlu_model_path = 'models/nlu/default/current'
 dialogue_path = '/models/dialogue'
-
-topic_switching_intent_prefix = 'inform_'
+separator = '+'
+topic_switching_intent_prefix = 'switch_'
 
 current_dialogue = None
+
+def create_argument_parser():
+
+    parser = argparse.ArgumentParser(
+        description='starts the bot')
+    parser.add_argument(
+        '-d', '--dialogues',
+        required=True,
+        type=str,
+        help='dialogues to load')
+
+    return parser
+
+
+def parse_dialogue_argument(argument):
+    return argument.split(separator)
 
 
 def load_interpreter():
@@ -73,11 +89,11 @@ def run(interpreter, agents, message):
 
 
 if __name__ == '__main__':
-    arg_parser = utils.create_argument_parser()
+    arg_parser = create_argument_parser()
     args = arg_parser.parse_args()
 
     interpreter = load_interpreter()
-    topics = utils.parse_dialogue_argument(args.dialogues)
+    topics = parse_dialogue_argument(args.dialogues)
     agents = load_agents(topics)
 
     run(interpreter, agents, 'What is Scrum about?')

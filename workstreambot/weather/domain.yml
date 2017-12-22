@@ -7,28 +7,15 @@ slots:
 
 # intents are what the user can send
 intents:
- - greet
+ - switch_weather
  - inform
- - goodbye
 
 # entities are how bot interprets the user intents
 entities:
  - location
  - time
 
-# templates are static responses to actions
-templates:
-  utter_default:
-  - "What are we doing?"
-
 # actions must be named after an utterance or specified in a file
 actions:
-  - action.ActionGreet
-  - action.ActionGoodbye
-  - utter_default
-  - action.ActionAskHowCanIHelp
-  - action.ActionOnIt
-  - action.ActionAskLocation
-  - action.ActionAckDoSearch
-  - action.ActionAskHelpMore
-  - action.ActionSearchWeather
+  - weather.action.ActionAskLocation
+  - weather.action.ActionSearchWeather

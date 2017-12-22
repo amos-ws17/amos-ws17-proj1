@@ -1,15 +1,15 @@
 ## multiple info path
-* _inform_scrum[]
-  - utter_explain
-  - utter_continue
+* _switch_scrum[]
+  - action_explain
+  - action_continue
 * _affirm[]
-  - utter_explain
-  - utter_continue
+  - action_explain
+  - action_continue
 * _deny[]
 
 ## single info path
-* _inform_scrum[]
-  - utter_explain
-  - utter_continue
+* _switch_scrum[]
+  - action_explain
+  - action_continue
 * _deny[]
   

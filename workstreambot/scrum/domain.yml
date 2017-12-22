@@ -1,6 +1,6 @@
 # intents are what the user can send
 intents:
- - inform_scrum
+ - switch_scrum
  - affirm
  - deny
 

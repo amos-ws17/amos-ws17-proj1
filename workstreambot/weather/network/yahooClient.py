@@ -1,5 +1,5 @@
 from .apiClient import APIClient
-from model.weather import Weather
+from weather.model.weather import Weather
 
 class YahooClient(object):
     # define the base url for the API
