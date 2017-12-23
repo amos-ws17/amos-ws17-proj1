@@ -6,7 +6,6 @@ def getResponse(action_name, tracker, response):
     data['action_name'] = action_name
     data['paused'] = tracker.is_paused()
     data['slots'] = tracker.current_slot_values()
-    data['dialogue_message'] = tracker.latest_message.parse_data
     data['response'] = response
 
     return json.dumps(data)

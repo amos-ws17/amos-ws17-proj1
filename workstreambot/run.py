@@ -71,20 +71,23 @@ def run(interpreter, agents, message):
                 current_dialogue = topic
                 # TODO Restart current dialogue
 
+    dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
+
     # handle user input
-    dialogue = agents[current_dialogue].handle_message(
-        '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']')
+    dialogue = agents[current_dialogue].handle_message(dialogue_message)
 
     data = {}
+    data['sender'] = 'Session ID'  # TODO Replace with session Id
+    data['message'] = message
+    data['dialogue_message'] = dialogue_message
+
     data['nlu'] = nlu_json_response
 
     data['dialogue'] = []
     for i in range(0, len(dialogue)):
         data['dialogue'].append(json.loads(dialogue[i]))
-    data['sender'] = 'Session ID'  # TODO Replace with session Id
-    data['message'] = message
 
-    print json.dumps(data)
+    return json.dumps(data)
 
 
 if __name__ == '__main__':
@@ -95,4 +98,10 @@ if __name__ == '__main__':
     topics = parse_dialogue_argument(args.dialogues)
     agents = load_agents(topics)
 
-    run(interpreter, agents, 'What is Scrum about?')
+    data = {}
+    data['steps'] = []
+    data['steps'].append(json.loads(run(interpreter, agents, 'What is Scrum about?')))
+    data['steps'].append(json.loads(run(interpreter, agents, 'What will the weather be in Berlin?')))
+    data['steps'].append(json.loads(run(interpreter, agents, 'Yes')))
+
+    print json.dumps(data)
