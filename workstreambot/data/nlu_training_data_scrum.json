@@ -1,7 +1,6 @@
 {
   "rasa_nlu_data": {
     "common_examples": [
-
       {
         "text": "yes",
         "intent": "affirm",
@@ -48,11 +47,11 @@
         "entities": []
       },
       {
-        "text": "uh no", 
+        "text": "uh no",
         "intent": "deny"
       },
       {
-        "text": "no", 
+        "text": "no",
         "intent": "deny"
       },
       {

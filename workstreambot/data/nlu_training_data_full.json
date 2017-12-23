@@ -329,6 +329,486 @@
             "entity": "location"
           }
         ]
+      },
+      {
+        "text": "what will the weather be in hamburg?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 28,
+            "end": 35,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will the weather forecast be for hamburg?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 38,
+            "end": 45,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what is the forecast for hamburg?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather forecast for hamburg?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 32,
+            "end": 39,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "how is the weather in hamburg?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 22,
+            "end": 29,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "how is the weather forecast for hamburg?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 32,
+            "end": 39,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather expected to be in hamburg?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 38,
+            "end": 45,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather forecast expected to be for hamburg?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 48,
+            "end": 55,
+            "value": "hamburg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "what will the weather be at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 28,
+            "end": 38,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what will the weather forecast be for 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 38,
+            "end": 48,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the forecast for 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 25,
+            "end": 35,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather forecast for 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 32,
+            "end": 42,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "how is the weather at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 22,
+            "end": 32,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "how is the weather forecast for 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 32,
+            "end": 42,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather expected to be at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 38,
+            "end": 48,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather forecast expected to be at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 47,
+            "end": 57,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what will the weather be in berlin at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 28,
+            "end": 34,
+            "value": "berlin",
+            "entity": "location"
+          },
+          {
+            "start": 38,
+            "end": 48,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what will the weather forecast be for berlin at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 38,
+            "end": 44,
+            "value": "berlin",
+            "entity": "location"
+          },
+          {
+            "start": 48,
+            "end": 58,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the forecast for berlin at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 25,
+            "end": 31,
+            "value": "berlin",
+            "entity": "location"
+          },
+          {
+            "start": 35,
+            "end": 45,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather forecast for berlin at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 32,
+            "end": 38,
+            "value": "berlin",
+            "entity": "location"
+          },
+          {
+            "start": 42,
+            "end": 45,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "how is the weather in berlin at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 22,
+            "end": 28,
+            "value": "berlin",
+            "entity": "location"
+          },
+          {
+            "start": 32,
+            "end": 42,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "how is the weather forecast for berlin at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 32,
+            "end": 38,
+            "value": "berlin",
+            "entity": "location"
+          },
+          {
+            "start": 42,
+            "end": 52,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather expected to be in berlin at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 38,
+            "end": 44,
+            "value": "berlin",
+            "entity": "location"
+          },
+          {
+            "start": 48,
+            "end": 58,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather forecast expected to be for berlin at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 48,
+            "end": 54,
+            "value": "berlin",
+            "entity": "location"
+          },
+          {
+            "start": 58,
+            "end": 68,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what will the weather be in hamburg at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 28,
+            "end": 35,
+            "value": "hamburg",
+            "entity": "location"
+          },
+          {
+            "start": 39,
+            "end": 49,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what will the weather forecast be for hamburg at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 38,
+            "end": 45,
+            "value": "hamburg",
+            "entity": "location"
+          },
+          {
+            "start": 49,
+            "end": 59,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the forecast for hamburg at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
+            "value": "hamburg",
+            "entity": "location"
+          },
+          {
+            "start": 36,
+            "end": 46,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather forecast for hamburg at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 32,
+            "end": 39,
+            "value": "hamburg",
+            "entity": "location"
+          },
+          {
+            "start": 43,
+            "end": 53,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "how is the weather in hamburg at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 22,
+            "end": 29,
+            "value": "hamburg",
+            "entity": "location"
+          },
+          {
+            "start": 33,
+            "end": 43,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "how is the weather forecast for hamburg at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 32,
+            "end": 39,
+            "value": "hamburg",
+            "entity": "location"
+          },
+          {
+            "start": 43,
+            "end": 53,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather expected to be in hamburg at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 38,
+            "end": 45,
+            "value": "hamburg",
+            "entity": "location"
+          },
+          {
+            "start": 49,
+            "end": 59,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "what is the weather forecast expected to be for hamburg at 2017-01-01?",
+        "intent": "switch_weather",
+        "entities": [
+          {
+            "start": 48,
+            "end": 55,
+            "value": "hamburg",
+            "entity": "location"
+          },
+          {
+            "start": 59,
+            "end": 69,
+            "value": "2017-01-01",
+            "entity": "time"
+          }
+        ]
       }
     ]
   }

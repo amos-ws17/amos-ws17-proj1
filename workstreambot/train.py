@@ -8,6 +8,7 @@ dialogue_model_path = '/models/dialogue'
 stories_file_path = '/data/stories.md'
 separator = '+'
 
+
 def create_argument_parser():
     parser = argparse.ArgumentParser(
         description='starts the bot')

@@ -2,6 +2,7 @@ from datetime import datetime
 from network.yahooClient import YahooClient
 from rasa_core.actions import Action
 
+import locale
 import utils
 
 
@@ -18,40 +19,42 @@ class ActionSearchWeather(Action):
     # the name should match the action to the utterance
     def name(self):
         return 'action_search_weather'
+
     # the run executes when the action is called
     def run(self, dispatcher, tracker, domain):
         # get the location entity from the console
         location = tracker.get_slot('location')
         date = tracker.get_slot('time')
         # init the weather Client
-        weatherClient = YahooClient()
+        weather_client = YahooClient()
         # fetch the weather data
-        weather = weatherClient.fetch_weather_for_city(str(location))
+        weather = weather_client.fetch_weather_for_city(str(location))
 
         response = 'No data could be found.'
 
         if str(date) == 'None':
-           # get the weather factors
-           description = weather.getWeatherDescription()
-           condition = weather.getWeatherConditionFactors()
-           conditionDesc = condition.getConditionDescription()
-           conditionTemp = condition.getConditionCurrentTemperature()
-           conditionDate = condition.getLastUpdatedConditionDate()
+            # get the weather factors
+            description = weather.getWeatherDescription()
+            condition = weather.getWeatherConditionFactors()
+            condition_desc = condition.getConditionDescription()
+            condition_temp = condition.getConditionCurrentTemperature()
+            condition_date = condition.getLastUpdatedConditionDate()
 
-           response = description + '\nCondition: ' + conditionDesc + '\nThe currrent temperature is ' + conditionTemp + ' degree\nLast updated ' + conditionDate
+            response = description + '\nCondition: ' + condition_desc + '\nThe currrent temperature is ' + condition_temp + ' degree\nLast updated ' + condition_date
         else:
-           date = datetime.strptime(date, '%Y-%m-%dT%H:%M:%S.%fZ')
-           for num in range(0, len(weather.getWeatherForecastFactors())):
-              forecast = weather.getWeatherForecastFactors()[num]
-              if date.strftime('%d %b %Y') == forecast.getLastUpdatedForecastDate():
-                 # get the weather factors
-                 description = weather.getWeatherDescription()
-                 forecastDesc = forecast.getForecastDescription()
-                 forecastHigh = forecast.getForecastHighTemperature()
-                 forecastLow = forecast.getForecastLowTemperature()
-                 forecastDate = forecast.getLastUpdatedForecastDate()
+            locale.setlocale(locale.LC_ALL, 'en_US.utf8')
+            date = datetime.strptime(date, '%Y-%m-%dT%H:%M:%S.%fZ')
+            for num in range(0, len(weather.getWeatherForecastFactors())):
+                forecast = weather.getWeatherForecastFactors()[num]
+                forecast_date = forecast.getLastUpdatedForecastDate()
+                if date.strftime('%d %b %Y') == forecast_date:
+                    # get the weather factors
+                    description = weather.getWeatherDescription()
+                    forecast_desc = forecast.getForecastDescription()
+                    forecast_high = forecast.getForecastHighTemperature()
+                    forecast_low = forecast.getForecastLowTemperature()
 
-                 response = description + ' on ' + forecastDate + '\nCondition: ' + forecastDesc + '\nThe temperature is between ' + forecastLow + ' and ' + forecastHigh + ' degree'
+                    response = description + ' on ' + forecast_date + '\nCondition: ' + forecast_desc + '\nThe temperature is between ' + forecast_low + ' and ' + forecast_high + ' degree'
 
         dispatcher.utter_message(utils.getResponse(self.name(), tracker, response))
         return []

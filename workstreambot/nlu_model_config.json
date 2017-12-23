@@ -1,12 +1,14 @@
 {
-  "pipeline": ["nlp_spacy",
+  "pipeline": [
+    "nlp_spacy",
     "tokenizer_spacy",
     "intent_featurizer_spacy",
     "intent_entity_featurizer_regex",
     "ner_crf",
     "ner_synonyms",
     "intent_classifier_sklearn",
-    "ner_duckling"],
-  "path" : "./models",
+    "ner_duckling"
+  ],
+  "path": "./models",
   "project": "nlu"
 }

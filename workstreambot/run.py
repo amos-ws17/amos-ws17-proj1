@@ -10,8 +10,8 @@ topic_switching_intent_prefix = 'switch_'
 
 current_dialogue = None
 
-def create_argument_parser():
 
+def create_argument_parser():
     parser = argparse.ArgumentParser(
         description='starts the bot')
     parser.add_argument(
@@ -51,14 +51,14 @@ def load_agents(topics):
 
 def run(interpreter, agents, message):
     # parse user input
-    nlu_jsonResponse = interpreter.parse(message)
+    nlu_json_response = interpreter.parse(message)
 
     entities = []
 
-    if len(nlu_jsonResponse['entities']) > 0:
+    if len(nlu_json_response['entities']) > 0:
 
-        for e in nlu_jsonResponse['entities']:
-            entity = e['entity'] + '=' + e['value']
+        for e in nlu_json_response['entities']:
+            entity = e['entity'] + '=' + str(e['value'])
             entities.append(entity)
 
     global current_dialogue
@@ -66,23 +66,22 @@ def run(interpreter, agents, message):
     for topic in agents:
         topic_switching_intent = topic_switching_intent_prefix + topic
 
-        if topic_switching_intent == nlu_jsonResponse['intent']['name']:
+        if topic_switching_intent == nlu_json_response['intent']['name']:
             if current_dialogue != topic:
                 current_dialogue = topic
-                #TODO Restart current dialogue
+                # TODO Restart current dialogue
 
     # handle user input
     dialogue = agents[current_dialogue].handle_message(
-        '_' + nlu_jsonResponse['intent']['name'] + '[' + ','.join(map(str, entities)) + ']')
-
+        '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']')
 
     data = {}
-    data['nlu'] = nlu_jsonResponse
+    data['nlu'] = nlu_json_response
 
     data['dialogue'] = []
     for i in range(0, len(dialogue)):
         data['dialogue'].append(json.loads(dialogue[i]))
-    data['sender'] = 'Session ID' #TODO Replace with session Id
+    data['sender'] = 'Session ID'  # TODO Replace with session Id
     data['message'] = message
 
     print json.dumps(data)
