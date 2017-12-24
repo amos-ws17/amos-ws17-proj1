@@ -11,7 +11,8 @@ class ActionAskLocation(Action):
         return 'utter_ask_location'
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message(utils.getResponse(self.name(), tracker, 'Please enter the city you`re interested in.'))
+        dispatcher.utter_message(
+            utils.prepare_action_response(self.name(), tracker, 'Please enter the city you`re interested in.'))
         return []
 
 
@@ -56,5 +57,5 @@ class ActionSearchWeather(Action):
 
                     response = description + ' on ' + forecast_date + '\nCondition: ' + forecast_desc + '\nThe temperature is between ' + forecast_low + ' and ' + forecast_high + ' degree'
 
-        dispatcher.utter_message(utils.getResponse(self.name(), tracker, response))
+        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, response))
         return []

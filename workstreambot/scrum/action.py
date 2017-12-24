@@ -68,7 +68,7 @@ class ActionContinue(Action):
         else:
             response = 'Would you like to know about ' + current_theme + '?'
 
-        dispatcher.utter_message(utils.getResponse(self.name(), tracker, response))
+        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, response))
         return []
 
 
@@ -83,5 +83,5 @@ class ActionExplain(Action):
             current_theme = theme_list[0]
 
         # explain the current theme
-        dispatcher.utter_message(utils.getResponse(self.name(), tracker, theme_dict[current_theme]))
+        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, theme_dict[current_theme]))
         return []

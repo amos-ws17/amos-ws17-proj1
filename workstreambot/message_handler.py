@@ -2,46 +2,74 @@ from __future__ import unicode_literals
 from rasa_nlu.config import RasaNLUConfig
 from rasa_nlu.model import Metadata, Interpreter
 from rasa_core.agent import Agent
+from session import Session
 
 import json
 
 
 class MessageHandler:
     interpreter = None
-    agents = None
+    dialogue_topics = None
 
-    current_dialogue = None
+    sessions = {}
 
     nlu_model_path = 'models/nlu/default/current'
-    dialogue_path = '/models/dialogue'
-    topic_switching_intent_prefix = 'switch_'
+    dialogue_model_path = '/models/dialogue'
+    switching_intent_prefix = 'switch_'
 
-    def __init__(self, topics):
-        self.interpreter = self.load_interpreter()
-        self.agents = self.load_agents(topics)
+    def __init__(self, dialogue_topics):
+        self.interpreter = Interpreter.load(self.nlu_model_path, RasaNLUConfig('nlu_model_config.json'))
+        self.dialogue_topics = dialogue_topics
 
+    def load_dialogue_models(self, dialogue_topics):
+        dialogue_models = {}
 
-    def load_interpreter(self):
-        # where `model_directory points to the folder the model is persisted in
-        interpreter = Interpreter.load(self.nlu_model_path, RasaNLUConfig('nlu_model_config.json'))
+        for dialogue_topic in dialogue_topics:
+            dialogue_model = self.load_dialogue_model(dialogue_topic)
+            dialogue_models[dialogue_topic] = dialogue_model
 
-        return interpreter
+        return dialogue_models
 
-
-    def load_agents(self, topics):
-        agents = {}
-
-        for topic in topics:
-            agent = Agent.load(topic + self.dialogue_path)
-            agents[topic] = agent
-
-        return agents
-
+    def load_dialogue_model(self, topic):
+        return Agent.load(topic + self.dialogue_model_path)
 
     def converse(self, message, session_id):
-        # parse user input
+        # Parse user input
         nlu_json_response = self.interpreter.parse(message)
+        entities = self.prepare_entities(nlu_json_response)
 
+        # Select session
+        if session_id in self.sessions:
+            dialogue_models = self.sessions[session_id].get_dialogue_models()
+            current_dialogue_topic = self.sessions[session_id].get_current_dialogue_topic()
+        else:
+            dialogue_models = self.load_dialogue_models(self.dialogue_topics)
+            current_dialogue_topic = None
+
+            self.sessions[session_id] = Session(dialogue_models)
+
+        # Select current dialogue topic
+        for dialogue_topic in dialogue_models:
+            switching_intent = self.switching_intent_prefix + dialogue_topic
+
+            if switching_intent == nlu_json_response['intent']['name']:
+                if current_dialogue_topic != dialogue_topic:
+                    current_dialogue_topic = dialogue_topic
+                    # Reset dialogue model
+                    dialogue_models[current_dialogue_topic] = self.load_dialogue_model(current_dialogue_topic)
+                    # TODO Inject slots
+
+        # Handle user input
+        dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
+        dialogue = dialogue_models[current_dialogue_topic].handle_message(dialogue_message)
+
+        # Save changes in session
+        self.sessions[session_id].set_dialogue_models(dialogue_models)
+        self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
+
+        return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue)
+
+    def prepare_entities(self, nlu_json_response):
         entities = []
 
         if len(nlu_json_response['entities']) > 0:
@@ -50,23 +78,11 @@ class MessageHandler:
                 entity = e['entity'] + '=' + str(e['value'])
                 entities.append(entity)
 
-        global current_dialogue
+        return entities
 
-        for topic in self.agents:
-            topic_switching_intent = self.topic_switching_intent_prefix + topic
-
-            if topic_switching_intent == nlu_json_response['intent']['name']:
-                if self.current_dialogue != topic:
-                    self.current_dialogue = topic
-                    # TODO Restart current dialogue
-
-        dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
-
-        # handle user input
-        dialogue = self.agents[self.current_dialogue].handle_message(dialogue_message)
-
+    def prepare_response(self, session_id, message, dialogue_message, nlu_json_response, dialogue):
         data = {}
-        data['sender'] = session_id  # TODO Replace with session Id
+        data['sender'] = session_id
         data['message'] = message
         data['dialogue_message'] = dialogue_message
 
