@@ -90,6 +90,54 @@
         "entities": []
       },
       {
+        "text": "berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "in berlin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 9,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "hamburg",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "in hamburg",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "berlin",
+            "entity": "location"
+          }
+        ]
+      },
+      {
         "text": "explain to me what is scrum?",
         "intent": "switch_scrum",
         "entities": []
