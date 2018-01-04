@@ -37,7 +37,8 @@ theme_dict = {
     			+ '\nThe release plan that is created takes into account the requirements of the customer, the market, as well as sponsors or funding authorities.'
     			+ '\nAll sprint releases should be equal in time, such that the start and end times for each sprint release is clearly documented in the release plan. The sequence of the sprint releases define the overall product roadmap.',
     'burndown': 'In scrum, a product owner is the only collaborator, who typically monitors a sprint burndown.'
-    			+ '',
+    			+ '\nThe burndown chart is used to assist the product owner in capturing an image of the progress of the sprint'
+    			+ '\nThe burndown chart includes the predicted size of stories and the corresponding predicted burndown, based on the story points that have been assigned in the sprint planning. As well as the actual values, which the developers provide at the sprint review.',
     'velocity': '',
     'extras': '',
     'spike': '',
