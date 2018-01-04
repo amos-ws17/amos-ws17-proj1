@@ -27,9 +27,17 @@ theme_dict = {
                   + '\nSprint retrospective: Also at the end of each sprint, the team conducts a sprint retrospective, which is a meeting during which the team (including its Scrum Master and Product Owner) reflect on how well Scrum is working for them and what changes they may wish to make for it to work even better.',
     'backlog': 'Product backlog: The agile product backlog is a list of prioritized features, containing short descriptions (user stories) of all functionality (discovered so far) that customer wants to be implemented as the final product.'
                + '\nSprint backlog: The sprint backlog is the list of user stories identified by the customer/team for development in the current sprint. The user stories are taken from the product backlog.',
-    'estimations': '',
-    'release': '',
-    'burndown': '',
+    'estimations': 'Part of planning an upcoming Sprint is undergoing an estimation of the stories that can be found in the sprint backlog.'
+    				+ '\nThe user stories that are have been included within the sprint by the product owner have to be assigned to a number that indicates their complexity.'
+    				+ '\nThe numbers that are assigned follow the beginning of a Fibonacci pattern, such that: 1,2,3,5,8,13 are typically assigned, taking the fact aside that the Fibonacci sequence is infinite. In terms of complexity, 1 represents the lowest complexity going ascendingly up to 13, which indicates a very high complexity.'
+    				+ '\nThe complexity that is being evaluated depends on various factors, such as: expected time to accomlish the task, number of sub-tasks, as well as the know-how of developers regarding the handled topics.'
+    				+ '\nThe collaborators who participate in the voting, which is often performed with poker cards, is the developers team. Upon the votes of the developers, the product owner assigns each user story its story points.',
+    'release': 'A sprint release includes all new features that have been successfully built, tested, and deployed throughout a particular sprint'
+    			+ '\nThe product owner is typically responsible for scheduling all sprint releases and document them in a release plan.'
+    			+ '\nThe release plan that is created takes into account the requirements of the customer, the market, as well as sponsors or funding authorities.'
+    			+ '\nAll sprint releases should be equal in time, such that the start and end times for each sprint release is clearly documented in the release plan. The sequence of the sprint releases define the overall product roadmap.',
+    'burndown': 'In scrum, a product owner is the only collaborator, who typically monitors a sprint burndown.'
+    			+ '',
     'velocity': '',
     'extras': '',
     'spike': '',
