@@ -39,7 +39,8 @@ theme_dict = {
     'burndown': 'In scrum, a product owner is the only collaborator, who typically monitors a sprint burndown.'
     			+ '\nThe burndown chart is used to assist the product owner in capturing an image of the progress of the sprint'
     			+ '\nThe burndown chart includes the predicted size of stories and the corresponding predicted burndown, based on the story points that have been assigned in the sprint planning. As well as the actual values, which the developers provide at the sprint review.',
-    'velocity': '',
+    'velocity': 'Velocity is an indicator, which shows the rate at which development is progressing within the Team.'
+    			+ '\nIt is basically calculated through the follwing formula: The sum of user story points of features / time (#sprints)',
     'extras': '',
     'spike': '',
     'goals': ''}
