@@ -40,10 +40,14 @@ theme_dict = {
     			+ '\nThe burndown chart is used to assist the product owner in capturing an image of the progress of the sprint'
     			+ '\nThe burndown chart includes the predicted size of stories and the corresponding predicted burndown, based on the story points that have been assigned in the sprint planning. As well as the actual values, which the developers provide at the sprint review.',
     'velocity': 'Velocity is an indicator, which shows the rate at which development is progressing within the Team.'
-    			+ '\nIt is basically calculated through the follwing formula: The sum of user story points of features / time (#sprints)',
+    			+ '\nIt is basically calculated through the follwing formula: The sum of user story points of features / time (#sprints).',
     'extras': '',
-    'spike': '',
-    'goals': ''}
+    'spike': 'Spike is a type of a ticket that can be included within a certain sprint backlog.'
+    			+ '\nThe aim of a Spike is to conduct a research on a topic, which mostly analyses the feasability of using or deploying a certain technology for development within a team.'
+    			+ '\nThe result of a spike can usually be found in a form of a documentation.',
+    'goals': 'The goal of scrum is to ensure that the development of the product, which takes place throughout the consecutive sprints, completely fullfills the requirements of the customer/industrial partner.'
+    		 + '\nScrum is one of the most significant IT project management strategies that if correctly and efficiently applied, guarantees to provide highly qualitative and feasabily costing product, which satisfies all requirements in an organized fashion, accompanied by continuous maintenance and a long lasting development lifecycle.',	
+    			}
 
 current_theme = theme_list[0]
 
