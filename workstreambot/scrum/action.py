@@ -41,7 +41,8 @@ theme_dict = {
     			+ '\nThe burndown chart includes the predicted size of stories and the corresponding predicted burndown, based on the story points that have been assigned in the sprint planning. As well as the actual values, which the developers provide at the sprint review.',
     'velocity': 'Velocity is an indicator, which shows the rate at which development is progressing within the Team.'
     			+ '\nIt is basically calculated through the follwing formula: The sum of user story points of features / time (#sprints).',
-    'extras': '',
+    'extras': 'Within a sprint, if the developers are done with their work, such that their work has been tested and finally committed, they typically spend a so called "slack time" till the end of their ongoing sprint.'
+                + '\nThis slack time can be used in adapting the working environment, writing needed and recommended documentations, as well as attempting to process any task that is located in the backlog to be prepared or completely finished before the upcoming sprint(s) start(s).',
     'spike': 'Spike is a type of a ticket that can be included within a certain sprint backlog.'
     			+ '\nThe aim of a Spike is to conduct a research on a topic, which mostly analyses the feasability of using or deploying a certain technology for development within a team.'
     			+ '\nThe result of a spike can usually be found in a form of a documentation.',
