@@ -1,6 +1,7 @@
 from .condition import Condition
 from .forecast import Forecast
 
+
 class Weather(object):
     # init method
     def __init__(self, weather_data):
