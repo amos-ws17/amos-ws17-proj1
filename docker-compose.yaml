@@ -2,7 +2,7 @@ version: '3'
 services:
   weatherbot:
     container_name: weatherbot
-    entrypoint: python -m rasa_core.run -d project/dialogue -u project/nlu/current -c bot --persistence redis
+    entrypoint: python -m rasa_core.run -d project/dialogue -u project/nlu/current -c bot --persistence redis --redis 172.17.0.2
     image: amoschatbot/weatherbot
     ports:
       - 5012:5002
@@ -16,7 +16,7 @@ services:
   sightseeingbot:
     container_name: sightseeingbot
     image: amoschatbot/sightseeingbot
-    entrypoint: python -m rasa_core.run -d models/dialogue -u project/nlu/current -c bot --persistence redis
+    entrypoint: python -m rasa_core.run -d models/dialogue -u project/nlu/current -c bot
     ports:
       - 5022:5002
       - 5025:5005
@@ -28,8 +28,13 @@ services:
   restaurantbot:
     container_name: restaurantbot
     image: amoschatbot/restaurantbot
-    entrypoint: python -m rasa_core.run -d project/dialogue -u project/nlu/current -c bot --persistence redis
+    entrypoint: python -m rasa_core.run -d project/dialogue -u project/nlu/current -c bot
     ports:
       - 5032:5002
     expose:
       - 5032
+
+networks:
+  default:
+    external:
+      name: redis-network

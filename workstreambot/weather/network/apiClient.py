@@ -1,5 +1,6 @@
 import requests
 
+
 class APIClient(object):
     # function that makes the call to an api
     def fetch(self, url):
