@@ -1,7 +1,7 @@
 version: '3'
 services:
   scrumbot:
-    container_name: scrumbot
+    container_name: workstreambot
     build: .
     ports:
       - 5012:5000

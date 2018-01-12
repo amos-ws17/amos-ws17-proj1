@@ -29,3 +29,6 @@ def converse(session_id):
 
     response = handler.converse(query, session_id)
     return response
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=True)

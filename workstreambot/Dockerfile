@@ -1,15 +1,13 @@
 FROM amoschatbot/rasabase:latest
 
-RUN mkdir scrum
+RUN mkdir bot
 
-ADD . /rasa_core/scrum
+ADD . /rasa_core/bot
 
-WORKDIR /rasa_core/scrum
+WORKDIR /rasa_core/bot
 
 RUN pip install -r requirements.txt
 
 RUN python train.py -d scrum -n nlu_training_data_scrum.json
 
-ENV FLASK_APP=http_service.py
-
-ENTRYPOINT python -m flask run 
+ENTRYPOINT python -m http_service 
