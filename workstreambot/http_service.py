@@ -25,7 +25,7 @@ def converse(session_id):
         return 'Services is not started.'
 
     response = handler.converse(query, session_id)
-    return response
+    return response, {'Content-Type': 'application/json'}
 
 if __name__ == "__main__":
     arg_parser = create_argument_parser()
@@ -35,4 +35,4 @@ if __name__ == "__main__":
 
     handler = MessageHandler(topics)
 
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', debug=False)
