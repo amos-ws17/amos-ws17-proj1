@@ -50,7 +50,15 @@ theme_dict = {
     		 + '\nScrum is one of the most significant IT project management strategies that if correctly and efficiently applied, guarantees to provide highly qualitative and feasabily costing product, which satisfies all requirements in an organized fashion, accompanied by continuous maintenance and a long lasting development lifecycle.',	
     			}
 
+# the specific that themes can talk about, should be persisted in the DB
+specific_list = ['agile', 'business value','product owner', 'scrum master', 'developers', 'functional requirements', 'non-functional requirements', 'daily', 'planning meeting', 'review meeting',
+              'retrospective meeting', 'product backlog', 'sprint backlog', 'predicted burndown', 'actual burndown', 'release plan']
+# the explanations of the specific topics
+specific_dict = {
+    			}
+
 current_theme = theme_list[0]
+current_specific = specific_list[0]
 
 
 # get the next element to explain
