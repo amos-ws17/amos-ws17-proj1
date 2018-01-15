@@ -243,6 +243,1031 @@
         "entities": []
       },
       {
+        "text": "tell me about the roles in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 18,
+            "end": 23,
+            "value": "roles",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the user stories in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 23,
+            "end": 30,
+            "value": "stories",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "continue",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "stop",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "i want to know about roles",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 21,
+            "end": 26,
+            "value": "roles",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "i want to know about extras",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 21,
+            "end": 27,
+            "value": "extras",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the user stories",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 23,
+            "end": 30,
+            "value": "stories",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "explain me one more time what is a sprint",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 35,
+            "end": 41,
+            "value": "sprint",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a sprint?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "sprint",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the ceremonies?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "ceremonies",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the backlog?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "backlog",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the estimations?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 24,
+            "value": "estimations",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me what the release is?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "release",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "go ahead",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "tell me about what velocity is",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 27,
+            "value": "velocity",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me what burndown is",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 21,
+            "value": "burndown",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a spike?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 15,
+            "value": "spike",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what do goals mean?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 13,
+            "value": "goals",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what does agile exactly mean?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 16,
+            "end": 23,
+            "value": "exactly",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is business value?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 22,
+            "value": "business value",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the product owner?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 25,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what exactly is the role of the product owner?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 32,
+            "end": 45,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the role of the product owner?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 37,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what does the product owner do?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 27,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what does the scrum master do?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 26,
+            "value": "scrum master",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the role of the scrum master?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 36,
+            "value": "scrum master",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the role of the developers?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 34,
+            "value": "developers",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what do the developers do?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 22,
+            "value": "developers",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the functional requirements?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 36,
+            "value": "functional requirements",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the non-functional requirements?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 40,
+            "value": "non-functional requirements",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the daily?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "daily",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the daily scrum?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "daily",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the planning meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 28,
+            "value": "planning meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is done in the planning meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 36,
+            "value": "planning meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is done during the planning meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 40,
+            "value": "planning meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is done during the review meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 38,
+            "value": "review meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what exactly is being discussed during the review meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 43,
+            "end": 57,
+            "value": "review meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what's done in the retrospective meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 40,
+            "value": "retrospective meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the point of the retrospective meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 46,
+            "value": "retrospective meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is stored in the product backlog?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 22,
+            "end": 37,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the product backlog?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 27,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what do you put in the product backlog?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 23,
+            "end": 38,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is saved in the sprint backlog?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 21,
+            "end": 35,
+            "value": "sprint backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the predicted burndown?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 30,
+            "value": "predicted burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how do you calculate the predicted burndown?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 43,
+            "value": "predicted burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the actual burndown?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 27,
+            "value": "actual burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how do you calculate the actual burndown?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 40,
+            "value": "actual burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how is the actual burndown computed?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 26,
+            "value": "actual burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the release plan?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 24,
+            "value": "release plan",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how do you make the release plan?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 32,
+            "value": "release plan",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the release plan used for?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 24,
+            "value": "release plan",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the roles in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 13,
+            "end": 18,
+            "value": "roles",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "i want to know about extras in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 21,
+            "end": 27,
+            "value": "extras",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the ceremonies in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "ceremonies",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about what velocity in the context of scrum is",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 19,
+            "end": 27,
+            "value": "velocity",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a scrum spike?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 16,
+            "end": 21,
+            "value": "spike",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the goals in the scrum context?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 13,
+            "end": 18,
+            "value": "goals",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what estimations are done in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 5,
+            "end": 16,
+            "value": "estimations",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the daily in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "daily",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the planning meeting in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 28,
+            "value": "planning meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the product backlog in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 27,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is written in the product backlog in the context of scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 23,
+            "end": 38,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the functional requirements in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 13,
+            "end": 36,
+            "value": "functional requirements",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the non-functional requirements in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 13,
+            "end": 40,
+            "value": "non-functional requirements",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me what the product owner role in scrum is",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 17,
+            "end": 30,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me what the product owner role in scrum is all about",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 17,
+            "end": 30,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me what the scrum master role in scrum is",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 17,
+            "end": 29,
+            "value": "scrum master",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the role of the developers in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 24,
+            "end": 34,
+            "value": "developers",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the business value in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "business value",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is to be understood as agile in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 28,
+            "end": 33,
+            "value": "agile",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is agile in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 8,
+            "end": 13,
+            "value": "agile",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the actual burndown in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 27,
+            "value": "actual burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how do you make the release plan in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 20,
+            "end": 32,
+            "value": "release plan",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what do you put in the release plan in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 23,
+            "end": 35,
+            "value": "release plan",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is discussed in the retrospective meeting in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 25,
+            "end": 46,
+            "value": "retrospective meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the sprint backlog in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "sprint backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how do you calculate the predicted burndown in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 25,
+            "end": 43,
+            "value": "predicted burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is contained in the scrum sprint backlog?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 31,
+            "end": 45,
+            "value": "sprint backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the scrum backlog?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "backlog",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what do you write down in the scrum backlog?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 36,
+            "end": 43,
+            "value": "backlog",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a scrum sprint?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 16,
+            "end": 22,
+            "value": "sprint",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a sprint in the context of scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "sprint",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the scrum in general?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "scrum",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "please continue",
+        "intent": "continue",
+        "entities": []
+      },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {
         "text": "what will the weather be like?",
         "intent": "switch_weather",
         "entities": []
