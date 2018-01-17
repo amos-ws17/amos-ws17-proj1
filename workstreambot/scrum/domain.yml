@@ -19,7 +19,7 @@ entities:
 
 # actions must be named after an utterance or specified in a file
 actions:
-  - scrum.action.ActionExplain
-  - scrum.action.ActionContinue
-  - scrum.action.ActionExplainDetail
-  - scrum.action.ActionContinueDetail
+  - scrum.action.Explain
+  - scrum.action.Continue
+  - scrum.action.ExplainDetail
+  - scrum.action.ContinueDetail
