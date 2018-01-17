@@ -2,24 +2,24 @@
 slots:
   theme:
     type: text
+  detail:
+    type: text
 
 # intents are what the user can send
 intents:
  - switch_scrum
- - affirm
  - deny
- - stop
- - inform_detailed
  - continue
  - inform
 
 # entities are how bot interprets the user intents
 entities:
  - theme
+ - detail
 
 # actions must be named after an utterance or specified in a file
 actions:
   - scrum.action.ActionExplain
-  - scrum.action.ActionAskContinue
-  - scrum.action.ActionExplainedDetailed
-  - scrum.action.ActionAskHelpmore
+  - scrum.action.ActionContinue
+  - scrum.action.ActionExplainDetail
+  - scrum.action.ActionContinueDetail
