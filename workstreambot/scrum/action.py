@@ -51,18 +51,24 @@ theme_dict = {
     			}
 
 # the specific that themes can talk about, should be persisted in the DB
-specific_list = ['agile', 'business value','product owner', 'scrum master', 'developers', 'functional requirements', 'non-functional requirements', 'daily', 'planning meeting', 'review meeting',
-              'retrospective meeting', 'product backlog', 'sprint backlog', 'predicted burndown', 'actual burndown', 'release plan']
+detail_list = ['scrum':{['agile','business value']}, 'roles':{['product owner', 'scrum master', 'developers']}, 'stories':{['functional requirements', 'non-functional requirements']}, 'ceremonies':{['daily', 'planning meeting', 'review meeting',
+              'retrospective meeting']}, 'backlog':{['product backlog', 'sprint backlog']}, 'burndown':{['predicted burndown', 'actual burndown']}, 'release':{['release plan']}]
 # the explanations of the specific topics
-specific_dict = {
+detail_dict = {'scrum':['agile':'Agile is a technique used for organizing and coordinating Software projects.','business value':'An observable behaviour, feature or function that the user can watch and use upon interacting with the software after the end of a certain development stage.'],
+                'roles':['product owner':'A product owner has the major role for promoting the success of a software development project that is based on scrum. His duties include: formulating customer requirements into tasks, grooming the backlog, prioritizing tasks accordingly, and monitoring the all aspects relating to the releases as well as the visibility of the business value after having finished a development phase.', 'scrum master':'A scrum master is the key person that is responsible for organizing ceremonies to the scrum team, as well as monitoring burndown charts and general progress of the development team. His duties include: preparing all requirements for the meeting, such as the venue, the deployment and development environment, as well as guiding the development team through their meetings and conducting notes to summarize all important remarks during different ceremonies. A scrum master is the key person in terms of communication between the product owner and the software developers.', 'developers':'The Team that is responsible for implementing and developing a technical solution in order to fulfill the requirements that have been specified by the product owner.'],
+                'stories':['functional requirements':'', 'non-functional requirements':''],
+                'ceremonies':['daily':'', 'planning meeting':'', 'review meeting':'', 'retrospective meeting':''],
+                'backlog':['product backlog':'', 'sprint backlog':''],
+                'burndown':['predicted burndown':'', 'actual burndown':''],
+                'release':['release plan':'']
     			}
 
 current_theme = theme_list[0]
-current_specific = specific_list[0]
+current_detail = detail_list[0]
 
 
 # get the next element to explain
-def getNextElement(theme):
+def getNextThemeElement(theme):
     current_index = theme_list.index(theme)
     try:
         current_index += 1
@@ -70,17 +76,25 @@ def getNextElement(theme):
     except IndexError:
         return None
 
+def getNextDetailElement(detail):
+    current_index = theme_list.index(detail)
+    try:
+        current_index += 1
+        return detail_list[current_index]
+    except IndexError:
+        return None
+
 
 # ask to continue to the next theme
-class ActionContinue(Action):
+class Continue(Action):
     def name(self):
-        return 'action_continue'
+        return 'continue'
 
     def run(self, dispatcher, tracker, domain):
         global current_theme
 
         # find the next theme
-        next_theme = getNextElement(current_theme)
+        next_theme = getNextThemeElement(current_theme)
         # pass it to the global variable
         current_theme = next_theme
 
@@ -95,9 +109,9 @@ class ActionContinue(Action):
         return []
 
 
-class ActionExplain(Action):
+class Explain(Action):
     def name(self):
-        return 'action_explain'
+        return 'explain'
 
     def run(self, dispatcher, tracker, domain):
         global current_theme
@@ -107,4 +121,43 @@ class ActionExplain(Action):
 
         # explain the current theme
         dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, theme_dict[current_theme]))
+        return []
+
+
+# ask to continue to the next detailed information
+class ContinueDetail(Action):
+    def name(self):
+        return 'continue_detail'
+
+    def run(self, dispatcher, tracker, domain):
+        global current_detail
+
+        # find the next detail
+        next_detail = getNextDetailElement(current_detail)
+        # pass it to the global variable
+        current_detail = next_detail
+
+        # if all details are explained end the guide otherwise ask for the next one
+        if not next_detail:
+            response = 'That is it for the crash course regarding this aspect. Would you like to restart?'
+            current_detail = detail_list[0]
+        else:
+            response = 'Would you like to know about ' + current_detail + '?'
+
+        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, response))
+        return []
+
+
+class ExplainDetail(Action):
+    def name(self):
+        return 'explain_detail'
+
+    def run(self, dispatcher, tracker, domain):
+        global current_detail
+
+        if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
+            current_detail = detail_list[0]
+
+        # explain the current detail
+        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, theme_dict[current_detail]))
         return []
