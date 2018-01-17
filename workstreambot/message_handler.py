@@ -3,6 +3,9 @@ from rasa_nlu.config import RasaNLUConfig
 from rasa_nlu.model import Metadata, Interpreter
 from rasa_core.agent import Agent
 from session import Session
+from rasa_core.tracker_store import *
+from rasa_core.domain import TemplateDomain
+import os
 
 import json
 
@@ -18,7 +21,8 @@ class MessageHandler:
     dialogue_model_path = '/models/dialogue'
     switching_intent_prefix = 'switch_'
 
-    def __init__(self, dialogue_topics):
+    def __init__(self, dialogue_topics, persistance = False):
+        self.persistance = persistance
         self.interpreter = Interpreter.load(self.nlu_model_path, RasaNLUConfig('nlu_model_config.json'))
         self.dialogue_topics = dialogue_topics
         self.dialogue_models = self.load_dialogue_models(dialogue_topics)
@@ -32,7 +36,14 @@ class MessageHandler:
         return dialogue_models
 
     def load_dialogue_model(self, topic):
-        return Agent.load(topic + self.dialogue_model_path)
+        if self.persistance:
+            # Load with persistance tracker
+            domain = TemplateDomain.load(os.path.join("/rasa_core/bot/scrum/", "domain.yml"))
+            redis_tracker_store = RedisTrackerStore(domain=domain, host="redis-container")
+            return Agent.load(topic + self.dialogue_model_path, tracker_store=redis_tracker_store)
+        else:
+            # Load with default tracker
+            return Agent.load(topic + self.dialogue_model_path)
 
     def converse(self, message, session_id):
         # Parse user input
