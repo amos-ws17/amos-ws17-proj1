@@ -1175,6 +1175,223 @@
         "text": "please continue",
         "intent": "continue",
         "entities": []
+      },
+      {
+        "text": "go on",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "please go on",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "inform me about the scrum agile process",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "scrum agile process",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "scrum",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "tell me about the roles",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 23,
+            "value": "roles",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the sprint",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 24,
+            "value": "sprint",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the backlog",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "backlog",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the extras",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 24,
+            "value": "extras",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the goals",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 23,
+            "value": "goals",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the velocity",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 26,
+            "value": "velocity",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a burndown",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 18,
+            "value": "burndown",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the ceremonies",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "ceremonies",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the estimations",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 24,
+            "value": "estimations",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a release in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 10,
+            "end": 17,
+            "value": "release",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what about the release",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 22,
+            "value": "release",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the sprint backlog",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "sprint backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the product backlog",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 27,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the sprint backlog in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 18,
+            "end": 32,
+            "value": "sprint backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the product backlog in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 18,
+            "end": 33,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the product owner in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 18,
+            "end": 31,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
       }
     ]
   }
