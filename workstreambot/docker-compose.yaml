@@ -1,39 +1,9 @@
 version: '3'
 services:
-  weatherbot:
-    container_name: weatherbot
-    build: weather
+  scrumbot:
+    container_name: workstreambot
+    build: .
     ports:
-      - 5012:5002
-      - 5015:5005
-      - 5010:5000
+      - 5012:5000
     expose:
       - 5012
-      - 5015
-      - 5010
-
-  sightseeingbot:
-    container_name: sightseeingbot
-    build: sightseeing
-    ports:
-      - 5022:5002
-      - 5025:5005
-      - 5020:5000
-    expose:
-      - 5022
-      - 5025
-      - 5020
-  restaurantbot:
-    container_name: restaurantbot
-    build: restaurant
-    ports:
-      - 5032:5002
-    expose:
-      - 5032
-  mongo:
-    image: mongo
-    entrypoint: mongod
-    ports:
-      - 27017:27017
-    volumes:
-      - /data:/data/db

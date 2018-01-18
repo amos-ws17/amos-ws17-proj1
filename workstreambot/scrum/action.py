@@ -3,6 +3,8 @@ from rasa_core.actions import Action
 import utils
 
 # the themes that scrum can talk about, should be persisted in the DB
+sessions = {}
+
 theme_list = ['scrum', 'roles', 'stories', 'sprint', 'ceremonies', 'backlog', 'estimations',
               'release', 'burndown', 'velocity', 'extras', 'spike', 'goals']
 # the explanations of the themes
@@ -50,8 +52,6 @@ theme_dict = {
     		 + '\nScrum is one of the most significant IT project management strategies that if correctly and efficiently applied, guarantees to provide highly qualitative and feasabily costing product, which satisfies all requirements in an organized fashion, accompanied by continuous maintenance and a long lasting development lifecycle.',	
     			}
 
-current_theme = theme_list[0]
-
 
 # get the next element to explain
 def getNextElement(theme):
@@ -69,19 +69,19 @@ class ActionContinue(Action):
         return 'action_continue'
 
     def run(self, dispatcher, tracker, domain):
-        global current_theme
+        global sessions
 
         # find the next theme
-        next_theme = getNextElement(current_theme)
+        next_theme = getNextElement(sessions[tracker.sender_id])
         # pass it to the global variable
-        current_theme = next_theme
+        sessions[tracker.sender_id] = next_theme
 
         # if all themes are explained end the guide otherwise ask for the next one
         if not next_theme:
             response = 'That is it for the crash course in scrum. Would you like to restart?'
-            current_theme = theme_list[0]
+            sessions[tracker.sender_id] = theme_list[0]
         else:
-            response = 'Would you like to know about ' + current_theme + '?'
+            response = 'Would you like to know about ' + sessions[tracker.sender_id] + '?'
 
         dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, response))
         return []
@@ -92,10 +92,17 @@ class ActionExplain(Action):
         return 'action_explain'
 
     def run(self, dispatcher, tracker, domain):
-        global current_theme
+        global sessions
+
+        if tracker.sender_id in sessions:
+            current_theme = sessions[tracker.sender_id]
+        else:
+            current_theme = theme_list[0]
 
         if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
             current_theme = theme_list[0]
+
+        sessions[tracker.sender_id] = current_theme
 
         # explain the current theme
         dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, theme_dict[current_theme]))
