@@ -614,6 +614,102 @@
             "entity": "detail"
           }
         ]
+      },
+      {
+        "text": "how are the backlog items ordered?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 25,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "who invented kanban?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 4,
+            "end": 12,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "where does kanban come from?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 18,
+            "end": 27,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the roles in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 18,
+            "value": "kanban",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is root cause?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "violation",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the pull principle?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "pull principle",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the pull principle in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "pull principle",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "explain me the pull principle",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 29,
+            "value": "pull principle",
+            "entity": "theme"
+          }
+        ]
       }
     ]
   }
