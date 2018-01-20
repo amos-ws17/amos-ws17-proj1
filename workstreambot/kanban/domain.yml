@@ -1,0 +1,10 @@
+# intents are what the user can send
+intents:
+ - switch_scrum
+ - affirm
+ - deny
+
+# actions must be named after an utterance or specified in a file
+actions:
+  - scrum.action.ActionContinue
+  - scrum.action.ActionExplain
