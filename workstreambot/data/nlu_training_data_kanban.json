@@ -17,7 +17,7 @@
         "entities": []
       },
       {
-        "text": "give me informations about kanban",
+        "text": "give me information about kanban",
         "intent": "switch_kanban",
         "entities": []
       },
@@ -39,7 +39,14 @@
       {
         "text": "what's kanban?",
         "intent": "switch_kanban",
-        "entities": []
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "kanban",
+            "entity": "theme"
+          }
+        ]
       },
       {
         "text": "what's kanban about?",
@@ -72,12 +79,12 @@
         "entities": []
       },
       {
-        "text": "how you explain kanban",
+        "text": "how do you explain kanban?",
         "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "how you define kanban",
+        "text": "how is kanban defined?",
         "intent": "switch_kanban",
         "entities": []
       },
@@ -87,17 +94,17 @@
         "entities": []
       },
       {
-        "text": "what is the definition of kanban",
+        "text": "what is the definition of kanban?",
         "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "what does kanban stand for",
+        "text": "what does kanban stand for?",
         "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "what do you mean by kanban",
+        "text": "what do you mean by kanban?",
         "intent": "switch_kanban",
         "entities": []
       },
@@ -107,1199 +114,600 @@
         "entities": []
       },
       {
-        "text": "tell me about the roles in scrum",
+        "text": "how does kanban work?",
         "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 18,
-            "end": 23,
-            "value": "roles",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "tell me about the user stories in scrum",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 23,
-            "end": 30,
-            "value": "stories",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "continue",
-        "intent": "continue",
         "entities": []
       },
       {
-        "text": "stop",
-        "intent": "deny",
+        "text": "what are the roles in kanban?",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "i want to know about roles",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 21,
-            "end": 26,
-            "value": "roles",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "i want to know about extras",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 21,
-            "end": 27,
-            "value": "extras",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "tell me about the user stories",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 23,
-            "end": 30,
-            "value": "stories",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "explain me one more time what is a sprint",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 35,
-            "end": 41,
-            "value": "sprint",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what is a sprint?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 10,
-            "end": 16,
-            "value": "sprint",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what are the ceremonies?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 13,
-            "end": 23,
-            "value": "ceremonies",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what is the backlog?",
-        "intent": "inform",
+        "text": "what is the history of kanban?",
+        "intent": "switch_kanban",
         "entities": [
           {
             "start": 12,
             "end": 19,
-            "value": "backlog",
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the history of kanban",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is kaizen?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is kaizen in the context of kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is kaizen in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how is kaizen implemented?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how is kaizen implemented in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the artefacts in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 22,
+            "value": "artefact",
             "entity": "theme"
           }
         ]
       },
       {
-        "text": "what are the estimations?",
+        "text": "what are the artefacts?",
         "intent": "inform",
         "entities": [
           {
             "start": 13,
-            "end": 24,
-            "value": "estimations",
+            "end": 22,
+            "value": "artefact",
             "entity": "theme"
           }
         ]
       },
       {
-        "text": "tell me what the release is?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 17,
-            "end": 24,
-            "value": "release",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "go ahead",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "tell me about what velocity is",
+        "text": "what is the kanban board?",
         "intent": "inform",
         "entities": [
           {
             "start": 19,
-            "end": 27,
-            "value": "velocity",
+            "end": 24,
+            "value": "board",
             "entity": "theme"
           }
         ]
       },
       {
-        "text": "tell me what burndown is",
+        "text": "what is the board in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "board",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the board in kanban used for?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "board",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the cycle time?",
         "intent": "inform",
         "entities": [
           {
-            "start": 13,
-            "end": 21,
-            "value": "burndown",
-            "entity": "theme"
+            "start": 12,
+            "end": 22,
+            "value": "cycle time",
+            "entity": "detail"
           }
         ]
       },
       {
-        "text": "what is a spike?",
+        "text": "what is cycle time?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "cycle time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is cycle time in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "cycle time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is lead time?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "lead time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is lead time in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "lead time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is lead time in the context of kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "lead time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is stop the line?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 21,
+            "value": "stop the line",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is stop the line in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 21,
+            "value": "stop the line",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is a ticket?",
         "intent": "inform",
         "entities": [
           {
             "start": 10,
-            "end": 15,
-            "value": "spike",
+            "end": 16,
+            "value": "ticket",
             "entity": "theme"
           }
         ]
       },
       {
-        "text": "what do goals mean?",
-        "intent": "inform",
+        "text": "what is a kanban ticket?",
+        "intent": "switch_kanban",
         "entities": [
           {
-            "start": 8,
-            "end": 13,
-            "value": "goals",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what does agile exactly mean?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 16,
+            "start": 17,
             "end": 23,
-            "value": "exactly",
-            "entity": "detail"
+            "value": "ticket",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "what is business value?",
+        "text": "what is a ticket in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is meant by type of ticket?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 31,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "how are tickets ordered?",
         "intent": "inform",
         "entities": [
           {
             "start": 8,
-            "end": 22,
-            "value": "business value",
-            "entity": "detail"
+            "end": 15,
+            "value": "ticket",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "what is the product owner?",
+        "text": "how are estimations handled in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 19,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "how are estimations done?",
         "intent": "inform",
         "entities": [
           {
-            "start": 12,
-            "end": 25,
-            "value": "product owner",
-            "entity": "detail"
+            "start": 8,
+            "end": 19,
+            "value": "estimation",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "what exactly is the role of the product owner?",
-        "intent": "inform",
+        "text": "how are estimations done in kanban?",
+        "intent": "switch_kanban",
         "entities": [
           {
-            "start": 32,
-            "end": 45,
-            "value": "product owner",
-            "entity": "detail"
+            "start": 8,
+            "end": 19,
+            "value": "estimation",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "what is the role of the product owner?",
-        "intent": "inform",
+        "text": "what is an estimation in kanban?",
+        "intent": "switch_kanban",
         "entities": [
           {
-            "start": 24,
-            "end": 37,
-            "value": "product owner",
-            "entity": "detail"
+            "start": 11,
+            "end": 21,
+            "value": "estimation",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "what does the product owner do?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 14,
-            "end": 27,
-            "value": "product owner",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what does the scrum master do?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 14,
-            "end": 26,
-            "value": "scrum master",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the role of the scrum master?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 24,
-            "end": 36,
-            "value": "scrum master",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the role of the developers?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 24,
-            "end": 34,
-            "value": "developers",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what do the developers do?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 12,
-            "end": 22,
-            "value": "developers",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what are the functional requirements?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 13,
-            "end": 36,
-            "value": "functional requirements",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what are the non-functional requirements?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 13,
-            "end": 40,
-            "value": "non-functional requirements",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the daily?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 12,
-            "end": 17,
-            "value": "daily",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the daily scrum?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 12,
-            "end": 17,
-            "value": "daily",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the planning meeting?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 12,
-            "end": 28,
-            "value": "planning meeting",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is done in the planning meeting?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 20,
-            "end": 36,
-            "value": "planning meeting",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is done during the planning meeting?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 24,
-            "end": 40,
-            "value": "planning meeting",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is done during the review meeting?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 24,
-            "end": 38,
-            "value": "review meeting",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what exactly is being discussed during the review meeting?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 43,
-            "end": 57,
-            "value": "review meeting",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what's done in the retrospective meeting?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 19,
-            "end": 40,
-            "value": "retrospective meeting",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the point of the retrospective meeting?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 25,
-            "end": 46,
-            "value": "retrospective meeting",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is stored in the product backlog?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 22,
-            "end": 37,
-            "value": "product backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the product backlog?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 12,
-            "end": 27,
-            "value": "product backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what do you put in the product backlog?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 23,
-            "end": 38,
-            "value": "product backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is saved in the sprint backlog?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 21,
-            "end": 35,
-            "value": "sprint backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the predicted burndown?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 12,
-            "end": 30,
-            "value": "predicted burndown",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "how do you calculate the predicted burndown?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 25,
-            "end": 43,
-            "value": "predicted burndown",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the actual burndown?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 12,
-            "end": 27,
-            "value": "actual burndown",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "how do you calculate the actual burndown?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 25,
-            "end": 40,
-            "value": "actual burndown",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "how is the actual burndown computed?",
+        "text": "what is an estimation?",
         "intent": "inform",
         "entities": [
           {
             "start": 11,
-            "end": 26,
-            "value": "actual burndown",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the release plan?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 12,
-            "end": 24,
-            "value": "release plan",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "how do you make the release plan?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 20,
-            "end": 32,
-            "value": "release plan",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the release plan used for?",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 12,
-            "end": 24,
-            "value": "release plan",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what are the roles in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 13,
-            "end": 18,
-            "value": "roles",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "i want to know about extras in scrum",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 21,
-            "end": 27,
-            "value": "extras",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what are the ceremonies in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 13,
-            "end": 23,
-            "value": "ceremonies",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "tell me about what velocity in the context of scrum is",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 19,
-            "end": 27,
-            "value": "velocity",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what is a scrum spike?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 16,
             "end": 21,
-            "value": "spike",
+            "value": "estimation",
             "entity": "theme"
           }
         ]
       },
       {
-        "text": "what are the goals in the scrum context?",
+        "text": "what is meant by type of ticket?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 31,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a wip limit?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 13,
+            "value": "wip",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is wip?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 11,
+            "value": "wip",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is kanban wip?",
         "intent": "switch_kanban",
         "entities": [
           {
-            "start": 13,
+            "start": 15,
             "end": 18,
-            "value": "goals",
+            "value": "wip",
             "entity": "theme"
           }
         ]
       },
       {
-        "text": "what estimations are done in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 5,
-            "end": 16,
-            "value": "estimations",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what is the daily in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 12,
-            "end": 17,
-            "value": "daily",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the planning meeting in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 12,
-            "end": 28,
-            "value": "planning meeting",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the product backlog in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 12,
-            "end": 27,
-            "value": "product backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is written in the product backlog in the context of scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 23,
-            "end": 38,
-            "value": "product backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what are the functional requirements in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 13,
-            "end": 36,
-            "value": "functional requirements",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what are the non-functional requirements in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 13,
-            "end": 40,
-            "value": "non-functional requirements",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "tell me what the product owner role in scrum is",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 17,
-            "end": 30,
-            "value": "product owner",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "tell me what the product owner role in scrum is all about",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 17,
-            "end": 30,
-            "value": "product owner",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "tell me what the scrum master role in scrum is",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 17,
-            "end": 29,
-            "value": "scrum master",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the role of the developers in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 24,
-            "end": 34,
-            "value": "developers",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the business value in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 12,
-            "end": 26,
-            "value": "business value",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is to be understood as agile in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 28,
-            "end": 33,
-            "value": "agile",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is agile in scrum?",
+        "text": "what is wip in kanban?",
         "intent": "switch_kanban",
         "entities": [
           {
             "start": 8,
-            "end": 13,
-            "value": "agile",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the actual burndown in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 12,
-            "end": 27,
-            "value": "actual burndown",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "how do you make the release plan in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 20,
-            "end": 32,
-            "value": "release plan",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what do you put in the release plan in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 23,
-            "end": 35,
-            "value": "release plan",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is discussed in the retrospective meeting in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 25,
-            "end": 46,
-            "value": "retrospective meeting",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the sprint backlog in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 12,
-            "end": 26,
-            "value": "sprint backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "how do you calculate the predicted burndown in scrum?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 25,
-            "end": 43,
-            "value": "predicted burndown",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is contained in the scrum sprint backlog?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 31,
-            "end": 45,
-            "value": "sprint backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the scrum backlog?",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 18,
-            "end": 25,
-            "value": "backlog",
+            "end": 11,
+            "value": "wip",
             "entity": "theme"
           }
         ]
       },
       {
-        "text": "what do you write down in the scrum backlog?",
+        "text": "are buffers allowed in kanban?",
         "intent": "switch_kanban",
         "entities": [
           {
-            "start": 36,
-            "end": 43,
-            "value": "backlog",
-            "entity": "theme"
+            "start": 4,
+            "end": 11,
+            "value": "buffer",
+            "entity": "detail"
           }
         ]
       },
       {
-        "text": "what is a scrum sprint?",
+        "text": "what is a kanban buffer?",
         "intent": "switch_kanban",
         "entities": [
           {
-            "start": 16,
-            "end": 22,
-            "value": "sprint",
-            "entity": "theme"
+            "start": 17,
+            "end": 23,
+            "value": "buffer",
+            "entity": "detail"
           }
         ]
       },
       {
-        "text": "what is a sprint in the context of scrum?",
-        "intent": "switch_kanban",
+        "text": "what is a buffer?",
+        "intent": "inform",
         "entities": [
           {
             "start": 10,
             "end": 16,
-            "value": "sprint",
+            "value": "buffer",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how are estimates handled in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "estimation",
             "entity": "theme"
           }
         ]
       },
       {
-        "text": "what is the scrum in general?",
+        "text": "what has to be provided to apply kanban in my company?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 33,
+            "end": 39,
+            "value": "kanban",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what happens when a wip limit is violated?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 33,
+            "end": 41,
+            "value": "violation",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how are the backlog items ordered?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 25,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "who invented kanban?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 4,
+            "end": 12,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "where does kanban come from?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 18,
+            "end": 27,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the roles in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 18,
+            "value": "kanban",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is root cause?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "violation",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the pull principle?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "pull principle",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the pull principle in kanban?",
         "intent": "switch_kanban",
         "entities": [
           {
             "start": 12,
-            "end": 17,
-            "value": "scrum",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "please continue",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "go on",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "please go on",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "inform me about the scrum agile process",
-        "intent": "switch_kanban",
-        "entities": []
-      },
-      {
-        "text": "scrum agile process",
-        "intent": "switch_kanban",
-        "entities": []
-      },
-      {
-        "text": "scrum",
-        "intent": "switch_kanban",
-        "entities": []
-      },
-      {
-        "text": "tell me about the roles",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 18,
-            "end": 23,
-            "value": "roles",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "tell me about the sprint",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 18,
-            "end": 24,
-            "value": "sprint",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "tell me about the backlog",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 18,
-            "end": 25,
-            "value": "backlog",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "tell me about the extras",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 18,
-            "end": 24,
-            "value": "extras",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "tell me about the goals",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 18,
-            "end": 23,
-            "value": "goals",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "tell me about the velocity",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 18,
             "end": 26,
-            "value": "velocity",
+            "value": "pull principle",
             "entity": "theme"
           }
         ]
       },
       {
-        "text": "what is a burndown",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 10,
-            "end": 18,
-            "value": "burndown",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what are the ceremonies",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 13,
-            "end": 23,
-            "value": "ceremonies",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what are the estimations",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 13,
-            "end": 24,
-            "value": "estimations",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what is a release in scrum",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 10,
-            "end": 17,
-            "value": "release",
-            "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what about the release",
+        "text": "explain me the pull principle",
         "intent": "inform",
         "entities": [
           {
             "start": 15,
-            "end": 22,
-            "value": "release",
+            "end": 29,
+            "value": "pull principle",
             "entity": "theme"
-          }
-        ]
-      },
-      {
-        "text": "what is the sprint backlog",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 12,
-            "end": 26,
-            "value": "sprint backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "what is the product backlog",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 12,
-            "end": 27,
-            "value": "product backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "tell me about the sprint backlog in scrum",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 18,
-            "end": 32,
-            "value": "sprint backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "tell me about the product backlog in scrum",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 18,
-            "end": 33,
-            "value": "product backlog",
-            "entity": "detail"
-          }
-        ]
-      },
-      {
-        "text": "tell me about the product owner in scrum",
-        "intent": "switch_kanban",
-        "entities": [
-          {
-            "start": 18,
-            "end": 31,
-            "value": "product owner",
-            "entity": "detail"
           }
         ]
       }
