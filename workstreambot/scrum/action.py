@@ -1,48 +1,48 @@
 from rasa_core.actions import Action
-
+import scrumConstants as S
 import utils
 
-current_theme = theme_list[0]
-current_detail = detail_list[0]
+current_index = 0
 
-
-# get the next element to explain
-def getNextThemeElement(theme):
-    current_index = theme_list.index(theme)
+# get the next key to explain
+def getNextScrumKey(index):
     try:
-        current_index += 1
-        return theme_list[current_index]
+        key = S.scrumGeneralKeys[index]
+        return key
     except IndexError:
         return None
 
-def getNextDetailElement(detail):
-    current_index = theme_list.index(detail)
-    try:
-        current_index += 1
-        return detail_list[current_index]
-    except IndexError:
+# find a specific key to explain
+def findScrumKey(key):
+    scrum_key = ""
+    if key in S.scrumGeneralKeysValues:
+        scrum_key = key
+        return scrum_key
+    else if key in S.scrumDetailsKeysValues:
+        scrum_key = key
+        return key
+    else:
         return None
 
-
-# ask to continue to the next theme
+# ask to continue to the next key
 class Continue(Action):
     def name(self):
         return 'continue'
 
     def run(self, dispatcher, tracker, domain):
-        global current_theme
-
-        # find the next theme
-        next_theme = getNextThemeElement(current_theme)
-        # pass it to the global variable
-        current_theme = next_theme
-
+        global current_index
+        # increment current index
+        current_index += 1
+        # find the next key
+        next_key = getNextScrumKey(current_index)
+        # make it the current one
+        current_key = net_key
         # if all themes are explained end the guide otherwise ask for the next one
-        if not next_theme:
+        if not current_key:
             response = 'That is it for the crash course in scrum. Would you like to restart?'
-            current_theme = theme_list[0]
+            current_key = S.scrumGeneralKeys[0]
         else:
-            response = 'Would you like to know about ' + current_theme + '?'
+            response = 'Would you like to know about ' + current_key + '?'
 
         dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, response))
         return []
@@ -53,37 +53,15 @@ class Explain(Action):
         return 'explain'
 
     def run(self, dispatcher, tracker, domain):
-        global current_theme
+        global current_index
 
         if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
-            current_theme = theme_list[0]
-
-        # explain the current theme
-        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, theme_dict[current_theme]))
-        return []
-
-
-# ask to continue to the next detailed information
-class ContinueDetail(Action):
-    def name(self):
-        return 'continue_detail'
-
-    def run(self, dispatcher, tracker, domain):
-        global current_detail
-
-        # find the next detail
-        next_detail = getNextDetailElement(current_detail)
-        # pass it to the global variable
-        current_detail = next_detail
-
-        # if all details are explained end the guide otherwise ask for the next one
-        if not next_detail:
-            response = 'That is it for the crash course regarding this aspect. Would you like to restart?'
-            current_detail = detail_list[0]
+            current_key = S.scrumGeneralKeys[0]
         else:
-            response = 'Would you like to know about ' + current_detail + '?'
+            current_key = S.scrumGeneralKeys[current_index]
 
-        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, response))
+        # explain the current key
+        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, S.scrumGeneralKeysValues[current_key]))
         return []
 
 
@@ -92,11 +70,31 @@ class ExplainDetail(Action):
         return 'explain_detail'
 
     def run(self, dispatcher, tracker, domain):
-        global current_detail
+        global current_index
 
         if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
-            current_detail = detail_list[0]
+            current_detail_keys = scrumDetailsKeys[0]
+        else:
+            current_detail_keys = scrumDetailsKeys[current_index]
 
-        # explain the current detail
-        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, theme_dict[current_detail]))
+        # explain the current key details
+        for detail in current_detail_keys:
+            dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, S.scrumDetailsKeysValues[detail]))
+        return []
+
+class ExplainSpecific(Action):
+    def name(self):
+        return 'explain_specific'
+
+    def run(self, dispatcher, tracker, domain):
+        # get the theme entity from the console
+        key = tracker.get_slot('theme')
+        # check if it exists in scrum
+        scrum_key = findScrumKey(key)
+        # build response
+        if not scrum_key:
+            response = "That term does not belong to the scrum framework"
+        else:
+            response = 'Here is what i found' + '\n' + scrum_key
+        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, response))
         return []

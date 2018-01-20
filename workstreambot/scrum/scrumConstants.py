@@ -58,7 +58,7 @@ scrumDetailsKeys = [['agile','business value'],
                     ['release plan']]
 
 # the explanations of the detailed topics
-scrumGeneralKeysDetailsValues = {
+scrumDetailsKeysValues = {
     'agile': 'Agile is a technique used for organizing and coordinating Software projects.',
     'business value': 'An observable behaviour, feature or function that the user can watch and use upon interacting with the software after the end of a certain development stage.',
     'product owner': 'A product owner has the major role for promoting the success of a software development project that is based on scrum. His duties include: formulating customer requirements into tasks, grooming the backlog, prioritizing tasks accordingly, and monitoring the all aspects relating to the releases as well as the visibility of the business value after having finished a development phase.',
