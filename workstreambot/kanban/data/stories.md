@@ -11,19 +11,19 @@
 * _deny[]
 
 ## Story 0
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _deny[]
 
 ## Story 0
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _deny[]
 
 ## Story 0
-* _switch_kanban[theme=tickets]
+* _switch_kanban[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -35,19 +35,19 @@
 * _deny[]
 
 ## Story 0
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _deny[]
 
 ## Story 0
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _deny[]
 
 ## Story 0
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -89,7 +89,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -101,7 +101,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
@@ -113,7 +113,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -137,7 +137,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _deny[]
@@ -173,7 +173,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
@@ -185,7 +185,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -197,7 +197,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -239,7 +239,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -248,7 +248,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
@@ -257,7 +257,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -275,7 +275,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _deny[]
@@ -302,7 +302,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
@@ -311,7 +311,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -320,7 +320,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -686,7 +686,7 @@
 * _deny[]
 
 ## Story 41
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -701,7 +701,7 @@
 * _deny[]
 
 ## Story 42
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -719,7 +719,7 @@
 * _deny[]
 
 ## Story 43
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -740,7 +740,7 @@
 * _deny[]
 
 ## Story 44
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -767,7 +767,7 @@
 * _deny[]
 
 ## Story 45
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -800,7 +800,7 @@
 * _deny[]
 
 ## Story 46
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -842,7 +842,7 @@
 * _deny[]
 
 ## Story 47
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -851,7 +851,7 @@
 * _deny[]
 
 ## Story 48
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -863,7 +863,7 @@
 * _deny[]
 
 ## Story 49
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -878,7 +878,7 @@
 * _deny[]
 
 ## Story 50
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -896,7 +896,7 @@
 * _deny[]
 
 ## Story 51
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -917,7 +917,7 @@
 * _deny[]
 
 ## Story 52
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -944,7 +944,7 @@
 * _deny[]
 
 ## Story 53
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -977,7 +977,7 @@
 * _deny[]
 
 ## Story 54
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -1019,7 +1019,7 @@
 * _deny[]
 
 ## Story 55
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -1028,7 +1028,7 @@
 * _deny[]
 
 ## Story 56
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -1040,7 +1040,7 @@
 * _deny[]
 
 ## Story 57
-* _switch_kanban[theme=tickets]
+* _switch_kanban[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -1055,7 +1055,7 @@
 * _deny[]
 
 ## Story 58
-* _switch_kanban[theme=tickets]
+* _switch_kanban[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -1073,7 +1073,7 @@
 * _deny[]
 
 ## Story 59
-* _switch_kanban[theme=tickets]
+* _switch_kanban[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -1094,7 +1094,7 @@
 * _deny[]
 
 ## Story 60
-* _switch_kanban[theme=tickets]
+* _switch_kanban[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -1121,7 +1121,7 @@
 * _deny[]
 
 ## Story 61
-* _switch_kanban[theme=tickets]
+* _switch_kanban[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -1154,7 +1154,7 @@
 * _deny[]
 
 ## Story 62
-* _switch_kanban[theme=tickets]
+* _switch_kanban[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -1196,7 +1196,7 @@
 * _deny[]
 
 ## Story 63
-* _switch_kanban[theme=tickets]
+* _switch_kanban[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -1205,7 +1205,7 @@
 * _deny[]
 
 ## Story 64
-* _switch_kanban[theme=tickets]
+* _switch_kanban[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -1217,7 +1217,7 @@
 * _deny[]
 
 ## Story 65
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _continue[]
@@ -1232,7 +1232,7 @@
 * _deny[]
 
 ## Story 66
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _continue[]
@@ -1250,7 +1250,7 @@
 * _deny[]
 
 ## Story 67
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _continue[]
@@ -1271,7 +1271,7 @@
 * _deny[]
 
 ## Story 68
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _continue[]
@@ -1298,7 +1298,7 @@
 * _deny[]
 
 ## Story 69
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _continue[]
@@ -1331,7 +1331,7 @@
 * _deny[]
 
 ## Story 70
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _continue[]
@@ -1373,7 +1373,7 @@
 * _deny[]
 
 ## Story 71
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _continue[]
@@ -1382,7 +1382,7 @@
 * _deny[]
 
 ## Story 72
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _continue[]
@@ -1571,7 +1571,7 @@
 * _deny[]
 
 ## Story 81
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -1586,7 +1586,7 @@
 * _deny[]
 
 ## Story 82
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -1604,7 +1604,7 @@
 * _deny[]
 
 ## Story 83
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -1625,7 +1625,7 @@
 * _deny[]
 
 ## Story 84
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -1652,7 +1652,7 @@
 * _deny[]
 
 ## Story 85
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -1685,7 +1685,7 @@
 * _deny[]
 
 ## Story 86
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -1727,7 +1727,7 @@
 * _deny[]
 
 ## Story 87
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -1736,7 +1736,7 @@
 * _deny[]
 
 ## Story 88
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
 * _continue[]
@@ -1772,7 +1772,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -1787,7 +1787,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
@@ -1802,7 +1802,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -1832,7 +1832,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _deny[]
@@ -1877,7 +1877,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
@@ -1892,7 +1892,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -1907,7 +1907,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -1973,7 +1973,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -1991,7 +1991,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
@@ -2009,7 +2009,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -2045,7 +2045,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _deny[]
@@ -2099,7 +2099,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
@@ -2117,7 +2117,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -2135,7 +2135,7 @@
 * _continue[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -2192,7 +2192,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -2204,7 +2204,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _continue[]
@@ -2216,7 +2216,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -2240,7 +2240,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _continue[]
@@ -2276,7 +2276,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _continue[]
@@ -2288,7 +2288,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -2300,7 +2300,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -2351,7 +2351,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -2366,7 +2366,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _continue[]
@@ -2381,7 +2381,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -2411,7 +2411,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _continue[]
@@ -2456,7 +2456,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _continue[]
@@ -2471,7 +2471,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -2486,7 +2486,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -2549,7 +2549,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -2567,7 +2567,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _continue[]
@@ -2585,7 +2585,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -2621,7 +2621,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _continue[]
@@ -2675,7 +2675,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _continue[]
@@ -2693,7 +2693,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -2711,7 +2711,7 @@
 * _switch_kanban[]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -2768,19 +2768,19 @@
 * _inform[theme=kanban]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _inform[theme=wip]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _inform[theme=estimations]
@@ -2789,13 +2789,13 @@
 * _inform[theme=pull principle]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _inform[theme=pull principle]
@@ -2813,7 +2813,7 @@
 * _inform[theme=kanban]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -2825,10 +2825,10 @@
 * _inform[theme=kanban]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
@@ -2840,13 +2840,13 @@
 * _inform[theme=kanban]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -2858,13 +2858,13 @@
 * _inform[theme=kanban]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _inform[theme=wip]
@@ -2879,7 +2879,7 @@
 * _inform[theme=kanban]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _continue[]
@@ -2894,10 +2894,10 @@
 * _inform[theme=kanban]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _continue[]
@@ -2912,13 +2912,13 @@
 * _inform[theme=kanban]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -2933,13 +2933,13 @@
 * _inform[theme=kanban]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _inform[theme=wip]
@@ -2954,25 +2954,25 @@
 * _switch_kanban[theme=kanban]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
 
 ## Story 164
-* _switch_kanban[theme=kanban board]
+* _switch_kanban[theme=board]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _deny[]
 
 ## Story 165
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -2981,7 +2981,7 @@
 * _switch_kanban[theme=wip]
   - explain
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -3008,10 +3008,10 @@
 * _deny[]
 
 ## Story 169
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _continue[]
@@ -3020,7 +3020,7 @@
 * _deny[]
 
 ## Story 170
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[theme=wip]
@@ -3032,25 +3032,25 @@
 * _deny[]
 
 ## Story 171
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[theme=wip]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _deny[]
 
 ## Story 172
-* _switch_kanban[theme=tickets]
+* _switch_kanban[theme=ticket]
   - explain
   - continue
 * _inform[theme=wip]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _inform[theme=pull principle]
@@ -3059,19 +3059,19 @@
 * _deny[]
 
 ## Story 173
-* _switch_kanban[theme=tickets]
+* _switch_kanban[theme=ticket]
   - explain
   - continue
 * _inform[theme=wip]
   - explain
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _inform[theme=pull principle]
   - explain
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
@@ -3115,7 +3115,7 @@
 * _deny[]
 
 ## Story 176
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=kaizen]
@@ -3126,7 +3126,7 @@
 * _deny[]
 
 ## Story 177
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=cycle time]
@@ -3137,7 +3137,7 @@
 * _deny[]
 
 ## Story 178
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=lead time]
@@ -3148,7 +3148,7 @@
 * _deny[]
 
 ## Story 179
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _inform[detail=stop the line]
@@ -3159,7 +3159,7 @@
 * _deny[]
 
 ## Story 180
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _inform[detail=buffer]
@@ -3184,7 +3184,7 @@
 * _deny[]
 
 ## Story 182
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=kaizen]
@@ -3198,7 +3198,7 @@
 * _deny[]
 
 ## Story 183
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=cycle time]
@@ -3212,7 +3212,7 @@
 * _deny[]
 
 ## Story 184
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=lead time]
@@ -3226,7 +3226,7 @@
 * _deny[]
 
 ## Story 185
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _inform[detail=stop the line]
@@ -3240,7 +3240,7 @@
 * _deny[]
 
 ## Story 186
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _inform[detail=buffer]
@@ -3271,7 +3271,7 @@
 * _deny[]
 
 ## Story 188
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=kaizen]
@@ -3288,7 +3288,7 @@
 * _deny[]
 
 ## Story 189
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=cycle time]
@@ -3305,7 +3305,7 @@
 * _deny[]
 
 ## Story 190
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=lead time]
@@ -3322,7 +3322,7 @@
 * _deny[]
 
 ## Story 191
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _inform[detail=stop the line]
@@ -3339,7 +3339,7 @@
 * _deny[]
 
 ## Story 192
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _inform[detail=buffer]
@@ -3364,13 +3364,13 @@
   - continue_detail
 * _deny[]
   - continue
-* _inform[theme=ceremonies]
+* _inform[theme=ceremony]
   - explain
   - continue
 * _deny[]
 
 ## Story 194
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=kaizen]
@@ -3378,13 +3378,13 @@
   - continue_detail
 * _deny[]
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
 
 ## Story 195
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=cycle time]
@@ -3392,13 +3392,13 @@
   - continue_detail
 * _deny[]
   - continue
-* _inform[theme=kanban board]
+* _inform[theme=board]
   - explain
   - continue
 * _deny[]
 
 ## Story 196
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=lead time]
@@ -3412,7 +3412,7 @@
 * _deny[]
 
 ## Story 197
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _inform[detail=stop the line]
@@ -3420,13 +3420,13 @@
   - continue_detail
 * _deny[]
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
 
 ## Story 198
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _inform[detail=buffer]
@@ -3434,13 +3434,13 @@
   - continue_detail
 * _deny[]
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
 
 ## Story 199
-* _switch_kanban[theme=ceremonies]
+* _switch_kanban[theme=ceremony]
   - explain
   - continue
 * _inform[detail=buffer]
@@ -3451,7 +3451,7 @@
   - continue_detail
 * _deny[]
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -3468,13 +3468,13 @@
   - continue_detail
 * _deny[]
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
 
 ## Story 201
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=lead time]
@@ -3491,7 +3491,7 @@
 * _deny[]
 
 ## Story 202
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=lead time]
@@ -3505,7 +3505,7 @@
 * _deny[]
 
 ## Story 203
-* _switch_kanban[theme=artefacts]
+* _switch_kanban[theme=artefact]
   - explain
   - continue
 * _inform[detail=cycle time]
@@ -3652,7 +3652,7 @@
   - continue_detail
 * _deny[]
   - continue
-* _inform[theme=tickets]
+* _inform[theme=ticket]
   - explain
   - continue
 * _deny[]
@@ -3666,7 +3666,7 @@
   - continue_detail
 * _deny[]
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
@@ -3694,7 +3694,7 @@
   - continue_detail
 * _deny[]
   - continue
-* _inform[theme=artefacts]
+* _inform[theme=artefact]
   - explain
   - continue
 * _deny[]
