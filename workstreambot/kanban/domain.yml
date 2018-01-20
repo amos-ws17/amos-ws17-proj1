@@ -1,0 +1,25 @@
+# slots are the criterion for the scrum target
+slots:
+  theme:
+    type: text
+  detail:
+    type: text
+
+# intents are what the user can send
+intents:
+ - switch_scrum
+ - deny
+ - continue
+ - inform
+
+# entities are how bot interprets the user intents
+entities:
+ - theme
+ - detail
+
+# actions must be named after an utterance or specified in a file
+actions:
+  - scrum.action.Explain
+  - scrum.action.Continue
+  - scrum.action.ExplainDetail
+  - scrum.action.ExplainSpecific

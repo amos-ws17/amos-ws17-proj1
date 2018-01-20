@@ -10,6 +10,11 @@ def create_argument_parser():
     parser = argparse.ArgumentParser(
         description='starts the bot')
     parser.add_argument(
+        '-t', '--tracker',
+        required=False,
+        type=str,
+        help='Use a custom tracker (Only <redis> supported at the moment.')
+    parser.add_argument(
         '-d', '--dialogues',
         required=True,
         type=str,
@@ -33,6 +38,11 @@ if __name__ == "__main__":
 
     topics = args.dialogues.split('+')
 
-    handler = MessageHandler(topics)
+    tracker = args.tracker
+    if tracker == "redis":
+        print("Redis persistence activated! \n")
+        handler = MessageHandler(topics, persistance=True)
+    else:
+        handler = MessageHandler(topics)
 
     app.run(host='0.0.0.0', debug=False)
