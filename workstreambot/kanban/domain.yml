@@ -7,7 +7,7 @@ slots:
 
 # intents are what the user can send
 intents:
- - switch_scrum
+ - switch_kanban
  - deny
  - continue
  - inform
@@ -19,7 +19,7 @@ entities:
 
 # actions must be named after an utterance or specified in a file
 actions:
-  - scrum.action.Explain
-  - scrum.action.Continue
-  - scrum.action.ExplainDetail
-  - scrum.action.ExplainSpecific
+  - kanban.action.Explain
+  - kanban.action.Continue
+  - kanban.action.ExplainDetail
+  - kanban.action.ExplainSpecific
