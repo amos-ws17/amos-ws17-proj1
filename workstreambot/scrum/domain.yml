@@ -22,4 +22,4 @@ actions:
   - scrum.action.Explain
   - scrum.action.Continue
   - scrum.action.ExplainDetail
-  - scrum.action.ContinueDetail
+  - scrum.action.ExplainSpecific
