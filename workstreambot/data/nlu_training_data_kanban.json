@@ -710,6 +710,114 @@
             "entity": "theme"
           }
         ]
+      },
+      {
+        "text": "what are the ceremonies in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a ceremony?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 18,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a kanban ceremony?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "list me the kanban ceremonies?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 19,
+            "end": 29,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a replenishment meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 31,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a replenishment meeting in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 10,
+            "end": 31,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "Is there a need to estimate in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 19,
+            "end": 27,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "Are there estimations in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 10,
+            "end": 21,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "name the artefacts in kanban",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 9,
+            "end": 18,
+            "value": "artefact",
+            "entity": "theme"
+          }
+        ]
       }
     ]
   }
