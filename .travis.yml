@@ -18,13 +18,9 @@ jobs:
   include:
     - stage: test
       if: branch = dev
-      before_script:
-        - docker-compose up --build -d
       script:
         - cd workstreambot
         - python -m pytest test/
-      after_script:
-        - docker-compose down
     - stage: build rasa base
       if: branch = persistance_integration
       script:
