@@ -20,7 +20,7 @@ jobs:
       if: branch = dev
       script:
         - cd workstreambot
-        - python -m pytest test/scrum.py
+        - python -m pytest test/
     - stage: build rasa base
       if: branch = persistance_integration
       script:
