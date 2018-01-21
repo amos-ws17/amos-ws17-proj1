@@ -7,7 +7,7 @@ RUN git clone https://github.com/RasaHQ/rasa_core.git -b 0.7.8
 
 WORKDIR /rasa_core
 
-RUN pip install -e . && pip install klein && pip install rasa_nlu &&\
+RUN pip install -r requirements.txt && pip install -e . && pip install klein && pip install rasa_nlu &&\
     pip install spacy sklearn sklearn_crfsuite && python -m spacy download en && pip install flask && pip install -U pytest
 
 ADD . rasa_core/
