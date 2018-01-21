@@ -6,6 +6,7 @@ kanbanGeneralKeys = ['kanban', 'artefact', 'board', 'ticket',
 # the explanations of the general topics
 kanbanGeneralKeysValues = {
     'kanban': 'Kanban is an agile method to improve productivity of a team and quality of a product by applying the Theory Of Constraints to teamwork.'
+             + '\nSurprisingly, the history of Kanban initially goes back to automotive industry and not software development.'
              + '\nParallel Tasks are minimised to maximise focus, Kaizen is requested to be performed when defects are recognised.'
              + '\nKanban does not define any roles.'
              + '\nYou have to have at least one team which is responsible to get things done.'
@@ -13,6 +14,7 @@ kanbanGeneralKeysValues = {
     'artefact': 'The kanban board with its cards, the Cumulative Flow Diagram (CFD), Run Chart, Lead Time Distribution Chart.',
     'board': 'A Kanban Board has at least three columns and at least two rows.'
              + '\nOne column for tickets to be processed on the left, one column for tickets which are done on the right and one column for every workstation in between.'
+             + '\nWorkers process given Tickets depending on the indicators "cycle time", "lead time", and "stop the line".'
              + '\nTickets move from the left to the right passing every workstation.'
              + '\nThey are pulled by the workers into their column.'
 			 + '\nAfter processing, they mark the ticket so that the next worker knows, that this ticket may be pulled further.'
@@ -30,7 +32,8 @@ kanbanGeneralKeysValues = {
 			 + '\nKanban supports this by limiting the tickets being processed simultaneously.'
 			 + '\nThus every workstation column may only contain a limited number of tickets, regardless if they are done or currently in progress.'
 			 + '\nDifferent workstation columns may use different WIP limits.'
-			 + '\nThe WIP limits are reduced if they are not violated for a longer period of time.',
+			 + '\nIt is possible to use Buffers in WIPs. This could however, does handle WIPs in a different mechanism.'
+			 + '\nThe WIP limits are reduced if they are not violated for a longer period of time. In case of violation in WIPS however, handling becomes more complicated.',
     'pull principle': 'It is said, that Toyota developed it by having a closer look at the supply chain in their super markets.'
     		 + '\nCustomers pull goods out of the store by grabbing them out of the shelfs.'
     		 + '\nThe shelfs are refilled by pulling goods out of the storage.'
@@ -43,26 +46,24 @@ kanbanGeneralKeysValues = {
     		 + '\nThe team ensures that they know everything they need to know to fulfil these tasks.',
     		}
 
-
-# TODO FOR OMAR FROM DANIEL.
-# The entity names that the NLU will give you are named as follows: 
-toBeFixedOmar = ['history', 'kaizen', 'stop the line', 'lead time', 'cycle time', 'buffer', 'violation']
-
 # the detailed topics that kanban can talk about
-kanbanDetailsKeys = [['agile','business value'],
-                    ['product owner', 'scrum master', 'developers'],
-                    ['functional requirements', 'non-functional requirements'],
-                    ['daily', 'planning meeting', 'review meeting','retrospective meeting'],
-                    ['product backlog', 'sprint backlog'],
-                    ['predicted burndown', 'actual burndown'],
-                    ['release plan']]
+kanbanDetailsKeys = [['history','kaizen'],
+                    ['lead time', 'cycle time', 'stop the line'],
+                    ['buffer', 'violation']]
 
 # the explanations of the detailed topics
 kanbanDetailsKeysValues = {
-    'agile': 'Agile is a technique used for organizing and coordinating Software projects.',
-    'business value': 'An observable behaviour, feature or function that the user can watch and use upon interacting with the software after the end of a certain development stage.',
-    'product owner': 'A product owner has the major role for promoting the success of a software development project that is based on scrum. His duties include: formulating customer requirements into tasks, grooming the backlog, prioritizing tasks accordingly, and monitoring the all aspects relating to the releases as well as the visibility of the business value after having finished a development phase.',
-    'scrum master': 'A scrum master is the key person that is responsible for organizing ceremonies to the scrum team, as well as monitoring burndown charts and general progress of the development team. His duties include: preparing all requirements for the meeting, such as the venue, the deployment and development environment, as well as guiding the development team through their meetings and conducting notes to summarize all important remarks during different ceremonies.'
-                    + '\nA scrum master is the key person in terms of communication between the product owner and the software developers',
-    'developers': 'The Team that is responsible for implementing and developing a technical solution in order to fulfill the requirements that have been specified by the product owner.',
+    'history': 'Kanban was developed at Toyota as a method to optimise the car production applying the theory of constraints an drum buffer rope to achieve just in time delivery.'
+    			+ '\nLater on it was adopted and modified to fit to the requirements of software development.'
+    			+ '\nTaiichi Ohno published it back in 1988 as part of the „Toyota Production System.',
+    'kaizen': 'Kaizen is the culture or mindset to improve everything you do step by step and to not give up improving continuously.'
+    			+ '\nIn Kanban you „stop the line“ when you encounter a quality mismatch or a underflow, which means that a person can not work because one is not allowed to exceed a WIP limit.',
+    'lead time': 'The lead time is the time a ticket needs from showing up on the board until it reaches the done column.',
+    'cycle time': 'The cycle time is the time a ticket needs from being pulled out of the todo column until reaching the done column.',
+    'stop the line': 'When at a workstation a defect is noticed, so that the quality does not fit to the expectation, the work is stopped at all workstations to do a root cause analysis.',
+    'buffer': 'When you introduce buffers, you invalidate the WIP limit of the workstation column before.'
+    			+ '\nYou may introduce a buffer column next to a workstation column to distinguish between tickets in progress from processed tickets, but you have to count these into the WIP of this workstation.',
+    'violation': 'A “stop the line” is performed, the root cause of the violation has to be searched, An experiment to fight this root cause is established, the WIP limit is temporarily changed so that no violation is currently visible and the jam can be dissolved.'
+    			+ '\nIf you observe a problem, there is usually a obvious reason. But this reason may have a cause itself, with a obvious reason.'
+    			+ '\nWhen hunting down a root cause, one searches for the first element of a causality chain, that would prevent a problem to escalate if removed.',
 }
