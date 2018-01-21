@@ -86,7 +86,7 @@ class ExplainSpecific(Action):
     def run(self, dispatcher, tracker, domain):
         # get the theme entity from the console
         key = tracker.get_slot('theme')
-        # check if it exists in scrum
+        # check if it exists in kanban
         kanban_key = findKanbanKey(key)
         # build response
         if not kanban_key:
