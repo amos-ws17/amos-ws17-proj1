@@ -81,20 +81,3 @@ class ExplainDetail(Action):
         for detail in current_detail_keys:
             dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, S.scrumDetailsKeysValues[detail]))
         return []
-
-class ExplainSpecific(Action):
-    def name(self):
-        return 'explain_specific'
-
-    def run(self, dispatcher, tracker, domain):
-        # get the theme entity from the console
-        key = tracker.get_slot('theme')
-        # check if it exists in scrum
-        scrum_key = findScrumKey(key)
-        # build response
-        if not scrum_key:
-            response = "That term does not belong to the scrum framework"
-        else:
-            response = 'Here is what i found' + '\n' + scrum_key
-        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, response))
-        return []
