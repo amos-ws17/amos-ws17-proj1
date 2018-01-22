@@ -8,8 +8,7 @@ from rasa_core.domain import TemplateDomain
 from rasa_core.tracker_store import *
 from rasa_nlu.config import RasaNLUConfig
 from rasa_nlu.model import Interpreter
-
-from workstreambot.session import Session
+from session import Session
 
 
 class MessageHandler:

@@ -1,11 +1,15 @@
 import json
 
 
-def prepare_action_response(action_name, tracker, response):
+def prepare_action_response(action_name, title, content, reply_options, slots):
     data = {}
-    data['action_name'] = action_name
-    data['paused'] = tracker.is_paused()
-    data['slots'] = tracker.current_slot_values()
-    data['response'] = response
+    data['action_type'] = action_name
+    data['content'] = content
+    if title is not None:
+        data['title'] = title
+    if reply_options is not None and len(reply_options) > 0:
+        data['replyOptions'] = reply_options
+    if slots is not None and len(slots) > 0:
+        data['slots'] = slots
 
     return json.dumps(data)

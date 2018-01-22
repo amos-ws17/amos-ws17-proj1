@@ -82,7 +82,10 @@ class ActionContinue(Action):
         else:
             response = 'Would you like to know about ' + sessions[tracker.sender_id] + '?'
 
-        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, response))
+        reply_options = [{"text": "yes"}, {"text": "no"}]
+
+        dispatcher.utter_message(
+            utils.prepare_action_response(self.name(), None, response, reply_options, tracker.current_slot_values()))
         return []
 
 
@@ -104,5 +107,7 @@ class ActionExplain(Action):
         sessions[tracker.sender_id] = current_theme
 
         # explain the current theme
-        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, theme_dict[current_theme]))
+        dispatcher.utter_message(
+            utils.prepare_action_response(self.name(), current_theme, theme_dict[current_theme], None,
+                                          tracker.current_slot_values(), ))
         return []
