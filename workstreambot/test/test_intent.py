@@ -1,6 +1,7 @@
+import json
+
 from workstreambot.message_handler import MessageHandler
 
-import json
 
 def test_switch_scrum_intent():
     assert perform_initial_input("What is about Scrum?") == "switch_scrum"
@@ -13,7 +14,7 @@ def test_switch_scrum_intent():
 
 def test_affirms_intent():
     assert perform_single_continue("Yes") == "affirm"
-    #TODO Add to training data: assert perform_single_continue("What is about Scrum?", "Continue") == "affirm"
+    # TODO Add to training data: assert perform_single_continue("What is about Scrum?", "Continue") == "affirm"
     assert perform_single_continue("Ok") == "affirm"
     assert perform_single_continue("Please yes") == "affirm"
     assert perform_single_continue("Yes please") == "affirm"
@@ -21,8 +22,8 @@ def test_affirms_intent():
 
 def test_denys_intent():
     assert perform_single_continue("No") == "deny"
-    #TODO Add to training data: assert perform_single_continue("Don't continue") == "deny"
-    #TODO Add to training data: assert perform_single_continue("Stop") == "deny"
+    # TODO Add to training data: assert perform_single_continue("Don't continue") == "deny"
+    # TODO Add to training data: assert perform_single_continue("Stop") == "deny"
     assert perform_single_continue("No thanks") == "deny"
 
 
@@ -41,4 +42,4 @@ def perform_single_continue(continue_input):
 
 
 def send_message(handler, message, session_id):
-    return json.loads(handler.converse(unicode(message), session_id))
+    return json.loads(handler.converse(message, session_id))
