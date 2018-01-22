@@ -19,10 +19,6 @@ Then navigate to the newly created _amos-ws17-proj1_ folder and type in the foll
 ```
 docker-compose up
 ```
-Now all bots are running and are accesssible on those ports:
-* **Weather bot:** 5012, 5015, 5010
-* **Sightseeing bot:** 5022, 5025, 5020
-* **Restaurant bot:** 5032
 
 ### Manual installation and deployment
 
@@ -53,7 +49,8 @@ pip install requests
 pip install -U spacy
 python -m spacy download en
 pip install -U scikit-learn scipy sklearn-crfsuite
-python -m pip install duckling
+pip install flask
+pip install -U pytest
 ```
 
 Install Rasa Core
