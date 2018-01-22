@@ -1,8 +1,9 @@
+import scrum.scrumConstants as S
+import utils as utils
 from rasa_core.actions import Action
-import scrumConstants as S
-import utils
 
 current_index = 0
+
 
 # get the next key to explain
 def getNextScrumKey(index):
@@ -12,17 +13,19 @@ def getNextScrumKey(index):
     except IndexError:
         return None
 
+
 # find a specific key to explain
 def findScrumKey(key):
     scrum_key = ""
     if key in S.scrumGeneralKeysValues:
         scrum_key = key
         return scrum_key
-    else if key in S.scrumDetailsKeysValues:
+    elif key in S.scrumDetailsKeysValues:
         scrum_key = key
         return key
     else:
         return None
+
 
 # ask to continue to the next key
 class Continue(Action):
@@ -61,7 +64,8 @@ class Explain(Action):
             current_key = S.scrumGeneralKeys[current_index]
 
         # explain the current key
-        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, S.scrumGeneralKeysValues[current_key]))
+        dispatcher.utter_message(
+            utils.prepare_action_response(self.name(), tracker, S.scrumGeneralKeysValues[current_key]))
         return []
 
 
@@ -73,11 +77,12 @@ class ExplainDetail(Action):
         global current_index
 
         if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
-            current_detail_keys = scrumDetailsKeys[0]
+            current_detail_keys = S.scrumDetailsKeys[0]
         else:
-            current_detail_keys = scrumDetailsKeys[current_index]
+            current_detail_keys = S.scrumDetailsKeys[current_index]
 
         # explain the current key details
         for detail in current_detail_keys:
-            dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, S.scrumDetailsKeysValues[detail]))
+            dispatcher.utter_message(
+                utils.prepare_action_response(self.name(), tracker, S.scrumDetailsKeysValues[detail]))
         return []
