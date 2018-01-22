@@ -1,13 +1,14 @@
 from __future__ import unicode_literals
-from rasa_nlu.config import RasaNLUConfig
-from rasa_nlu.model import Metadata, Interpreter
-from rasa_core.agent import Agent
-from session import Session
-from rasa_core.tracker_store import *
-from rasa_core.domain import TemplateDomain
-import os
 
 import json
+import os
+
+from rasa_core.agent import Agent
+from rasa_core.domain import TemplateDomain
+from rasa_core.tracker_store import *
+from rasa_nlu.config import RasaNLUConfig
+from rasa_nlu.model import Interpreter
+from session import Session
 
 
 class MessageHandler:
@@ -21,7 +22,7 @@ class MessageHandler:
     dialogue_model_path = '/models/dialogue'
     switching_intent_prefix = 'switch_'
 
-    def __init__(self, dialogue_topics, persistance = False):
+    def __init__(self, dialogue_topics, persistance=False):
         self.persistance = persistance
         self.interpreter = Interpreter.load(self.nlu_model_path, RasaNLUConfig('nlu_model_config.json'))
         self.dialogue_topics = dialogue_topics
@@ -69,12 +70,14 @@ class MessageHandler:
 
         # Handle user input
         dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
-        dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message, sender_id=session_id)
+        dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
+                                                                               sender_id=session_id)
 
         # Save changes in session
         self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
 
-        return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue, current_dialogue_topic)
+        return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue,
+                                     current_dialogue_topic)
 
     def prepare_entities(self, nlu_json_response):
         entities = []

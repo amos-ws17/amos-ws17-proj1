@@ -1,10 +1,11 @@
+import argparse
+
 from flask import Flask, request
 from message_handler import MessageHandler
 
-import argparse
-
 app = Flask(__name__)
 handler = None
+
 
 def create_argument_parser():
     parser = argparse.ArgumentParser(
@@ -22,6 +23,7 @@ def create_argument_parser():
 
     return parser
 
+
 @app.route("/service/converse/<session_id>", methods=['GET', 'POST'])
 def converse(session_id):
     query = request.args.get('query')
@@ -31,6 +33,7 @@ def converse(session_id):
 
     response = handler.converse(query, session_id)
     return response, {'Content-Type': 'application/json'}
+
 
 if __name__ == "__main__":
     arg_parser = create_argument_parser()
