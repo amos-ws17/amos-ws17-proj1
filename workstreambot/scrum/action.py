@@ -28,7 +28,7 @@ def findScrumKey(key):
 
 def findScrumDetailIndex(key):
     for details in S.scrumDetailsKeys:
-        if current_detail in details:
+        if key in details:
             return S.scrumDetailsKeys.index[details]
     return None
 
