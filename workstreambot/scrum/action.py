@@ -77,7 +77,8 @@ class Explain(Action):
 
         # explain the current key
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), current_key, S.scrumGeneralKeysValues[current_key], reply_options,
+            utils.prepare_action_response(self.name(), current_key, S.scrumGeneralKeysValues[current_key],
+                                          reply_options,
                                           tracker.current_slot_values(), "scrum"))
         return []
 
@@ -94,6 +95,11 @@ class ExplainDetail(Action):
         # declare reply options
         reply_options = []
 
+        for details in S.scrumDetailsKeys:
+            for detail in details:
+                if detail == current_detail:
+                    current_index = S.scrumDetailsKeys.index[details]
+
         if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
             current_detail_keys = S.scrumDetailsKeys[0]
         else:
@@ -104,10 +110,9 @@ class ExplainDetail(Action):
             if detail != current_detail:
                 reply_options.append({"text": detail})
 
-
-        # explain the current key details
-        for detail in current_detail_keys:
-            dispatcher.utter_message(
-                utils.prepare_action_response(self.name(), detail, S.scrumDetailsKeysValues[detail], None,
-                                              tracker.current_slot_values(), "scrum"))
+        # explain the current detail
+        dispatcher.utter_message(
+            utils.prepare_action_response(self.name(), current_detail, S.scrumDetailsKeysValues[current_detail],
+                                          reply_options,
+                                          tracker.current_slot_values(), "scrum"))
         return []
