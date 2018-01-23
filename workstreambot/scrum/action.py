@@ -39,7 +39,7 @@ class Continue(Action):
         # find the next key
         next_key = getNextScrumKey(current_index)
         # make it the current one
-        current_key = net_key
+        current_key = next_key
         # if all themes are explained end the guide otherwise ask for the next one
         if not current_key:
             response = 'That is it for the crash course in scrum. Would you like to restart?'
@@ -47,7 +47,10 @@ class Continue(Action):
         else:
             response = 'Would you like to know about ' + current_key + '?'
 
-        dispatcher.utter_message(utils.prepare_action_response(self.name(), tracker, response))
+        reply_options = [{"text": "yes"}, {"text": "no"}]
+
+        dispatcher.utter_message(
+            utils.prepare_action_response(self.name(), None, response, reply_options, tracker.current_slot_values()))
         return []
 
 
@@ -65,7 +68,8 @@ class Explain(Action):
 
         # explain the current key
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), tracker, S.scrumGeneralKeysValues[current_key]))
+            utils.prepare_action_response(self.name(), current_key, S.scrumGeneralKeysValues[current_key], None,
+                                          tracker.current_slot_values()))
         return []
 
 
@@ -84,5 +88,6 @@ class ExplainDetail(Action):
         # explain the current key details
         for detail in current_detail_keys:
             dispatcher.utter_message(
-                utils.prepare_action_response(self.name(), tracker, S.scrumDetailsKeysValues[detail]))
+                utils.prepare_action_response(self.name(), detail, S.scrumDetailsKeysValues[detail], None,
+                                              tracker.current_slot_values()))
         return []
