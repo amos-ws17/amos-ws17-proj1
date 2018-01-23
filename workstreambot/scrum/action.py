@@ -63,10 +63,12 @@ class Explain(Action):
 
     def run(self, dispatcher, tracker, domain):
         global current_index
-
+        # get current intent
         intent = tracker.latest_message.parse_data['intent']['name']
+        # get entities if any
         entities = tracker.latest_message.parse_data['entities']
 
+        # check if entities exist and decide on the flow 
         if intent == 'switch_scrum' and len(entities) == 0:
             # get the first general key
             current_key = S.scrumGeneralKeys[0]
