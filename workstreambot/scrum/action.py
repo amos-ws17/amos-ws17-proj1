@@ -14,24 +14,6 @@ def getNextScrumKey(index):
         return None
 
 
-# find a specific key to explain
-def findScrumKey(key):
-    scrum_key = ""
-    if key in S.scrumGeneralKeysValues:
-        scrum_key = key
-        return scrum_key
-    elif key in S.scrumDetailsKeysValues:
-        scrum_key = key
-        return key
-    else:
-        return None
-
-def findScrumIndex(key):
-    if key in S.scrumDetailsKeysValues:
-        return S.scrumDetailsKeysValues.index(key)
-    return None
-
-
 # ask to continue to the next key
 class Continue(Action):
     def name(self):
@@ -102,7 +84,7 @@ class ExplainDetail(Action):
 
         for details in S.scrumDetailsKeys:
             if current_detail in details:
-                current_index = S.scrumDetailsKeys.index[details]
+                current_index = S.scrumDetailsKeys.index(details)
 
         current_detail_keys = S.scrumDetailsKeys[current_index]
 
