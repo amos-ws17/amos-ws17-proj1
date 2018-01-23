@@ -76,8 +76,7 @@ class MessageHandler:
         # Save changes in session
         self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
 
-        return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue,
-                                     current_dialogue_topic)
+        return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue)
 
     def prepare_entities(self, nlu_json_response):
         entities = []
@@ -90,7 +89,7 @@ class MessageHandler:
 
         return entities
 
-    def prepare_response(self, session_id, message, dialogue_message, nlu_json_response, dialogue, topic):
+    def prepare_response(self, session_id, message, dialogue_message, nlu_json_response, dialogue):
         data = {}
         data['sender'] = session_id
         data['message'] = message
