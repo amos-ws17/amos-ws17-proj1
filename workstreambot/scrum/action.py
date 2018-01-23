@@ -64,9 +64,16 @@ class Explain(Action):
 
         if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
             current_key = S.scrumGeneralKeys[0]
+            current_detail_keys = S.scrumDetailsKeys[0]
         else:
             current_key = S.scrumGeneralKeys[current_index]
+            current_detail_keys = S.scrumDetailsKeys[current_index]
 
+        # declare reply options
+        reply_options = []
+        # check if there available options and add them to the reply options
+        for detail in current_detail_keys:
+            print(S.scrumDetailsKeysValues[detail])
         # explain the current key
         dispatcher.utter_message(
             utils.prepare_action_response(self.name(), current_key, S.scrumGeneralKeysValues[current_key], None,
