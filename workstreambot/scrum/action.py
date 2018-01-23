@@ -4,6 +4,7 @@ from rasa_core.actions import Action
 
 current_index = 0
 
+
 # get the next key to explain
 def get_next_scrum_key(index):
     try:
@@ -12,12 +13,14 @@ def get_next_scrum_key(index):
     except IndexError:
         return None
 
+
 # get the index of the details being explained
 def find_scrum_detail_index(key):
     for details in S.scrumDetailsKeys:
         if key in details:
             return S.scrumDetailsKeys.index[details]
     return None
+
 
 # get the index of the theme being explained
 def find_scrum_general_index(key):
@@ -61,12 +64,15 @@ class Explain(Action):
     def run(self, dispatcher, tracker, domain):
         global current_index
 
-        if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
+        intent = tracker.latest_message.parse_data['intent']['name']
+        entities = tracker.latest_message.parse_data['entities']
+
+        if intent == 'switch_scrum' and len(entities) == 0:
             # get the first general key
             current_key = S.scrumGeneralKeys[0]
             # get the details for that key
             current_detail_keys = S.scrumDetailsKeys[0]
-        elif tracker.latest_message.parse_data['intent']['name'] == 'inform':
+        elif (intent == 'switch_scrum' and len(entities) > 0) or intent == 'inform':
             # get the current key from the user input
             current_key = tracker.get_slot('theme')
             # get the current index
