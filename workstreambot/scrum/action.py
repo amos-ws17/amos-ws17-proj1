@@ -26,9 +26,10 @@ def findScrumKey(key):
     else:
         return None
 
-def findScrumIndex(key):
-    if key in S.scrumDetailsKeysValues:
-        return S.scrumDetailsKeysValues.index(key)
+def findScrumDetailIndex(key):
+    for details in S.scrumDetailsKeys:
+        if current_detail in details:
+            return S.scrumDetailsKeys.index[details]
     return None
 
 
@@ -97,21 +98,17 @@ class ExplainDetail(Action):
 
         # get the detail entity from the one of the buttons offered as options in reply options above
         current_detail = tracker.get_slot('detail')
+        # make sure the current index is the right one
+        current_index = findScrumDetailIndex(current_detail)
+        # get the list of details based on the index
+        current_detail_keys = S.scrumDetailsKeys[current_index]
         # declare reply options
         reply_options = []
-
-        for details in S.scrumDetailsKeys:
-            if current_detail in details:
-                current_index = S.scrumDetailsKeys.index[details]
-
-        current_detail_keys = S.scrumDetailsKeys[current_index]
-
-        # build the reply options while filtering out the current details
+        # build the reply options while filtering out the current detail
         for detail in current_detail_keys:
             if detail != current_detail:
                 reply_options.append({"text": detail})
-
-        # explain the current detail
+        # build the response based on the reply keys 
         dispatcher.utter_message(
             utils.prepare_action_response(self.name(), current_detail, S.scrumDetailsKeysValues[current_detail],
                                           reply_options,
