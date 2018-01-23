@@ -49,7 +49,7 @@ class Continue(Action):
         # if all themes are explained end the guide otherwise ask for the next one
         if not current_key:
             response = 'That is it for the crash course in scrum. Would you like to restart?'
-            current_key = S.scrumGeneralKeys[0]
+            current_index = 0
         else:
             response = 'Would you like to know about ' + current_key + '?'
 
@@ -111,6 +111,5 @@ class ExplainDetail(Action):
         # build the response based on the reply keys
         dispatcher.utter_message(
             utils.prepare_action_response(self.name(), current_detail, S.scrumDetailsKeysValues[current_detail],
-                                          reply_options,
-                                          tracker.current_slot_values(), "scrum"))
+                                          reply_options, tracker.current_slot_values(), "scrum"))
         return []
