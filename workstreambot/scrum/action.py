@@ -2,7 +2,7 @@ import scrum.scrumConstants as S
 import utils as utils
 from rasa_core.actions import Action
 
-current_index = 0
+sessions = {}
 
 
 # get the next key to explain
@@ -35,9 +35,9 @@ class Continue(Action):
         return 'continue'
 
     def run(self, dispatcher, tracker, domain):
-        global current_index
+        global sessions
         # increment current index
-        current_index += 1
+        current_index = sessions[tracker.sender_id] + 1
         # find the next key
         next_key = get_next_scrum_key(current_index)
         # make it the current one
@@ -45,9 +45,10 @@ class Continue(Action):
         # if all themes are explained end the guide otherwise ask for the next one
         if not current_key:
             response = 'That is it for the crash course in scrum. Would you like to restart?'
-            current_index = 0
+            sessions[tracker.sender_id] = 0
         else:
             response = 'Would you like to know about ' + current_key + '?'
+            sessions[tracker.sender_id] = current_index
 
         reply_options = [{"text": "yes"}, {"text": "no"}]
 
@@ -62,7 +63,8 @@ class Explain(Action):
         return 'explain'
 
     def run(self, dispatcher, tracker, domain):
-        global current_index
+        global sessions
+
         # get current intent
         intent = tracker.latest_message.parse_data['intent']['name']
         # get entities if any
@@ -70,22 +72,25 @@ class Explain(Action):
 
         # check if entities exist and decide on the flow 
         if intent == 'switch_scrum' and len(entities) == 0:
+            current_index = 0
             # get the first general key
-            current_key = S.scrumGeneralKeys[0]
-            # get the details for that key
-            current_detail_keys = S.scrumDetailsKeys[0]
+            current_key = S.scrumGeneralKeys[current_index]
         elif (intent == 'switch_scrum' and len(entities) > 0) or intent == 'inform':
             # get the current key from the user input
             current_key = tracker.get_slot('theme')
             # get the current index
             current_index = find_scrum_general_index(current_key)
-            # get the details for that key
-            current_detail_keys = S.scrumDetailsKeys[current_index]
         else:
+            if tracker.sender_id in sessions:
+                current_index = sessions[tracker.sender_id]
+            else:
+                current_index = 0
             # get the current key from the index
             current_key = S.scrumGeneralKeys[current_index]
-            # get the details for that key
-            current_detail_keys = S.scrumDetailsKeys[current_index]
+
+        current_detail_keys = S.scrumDetailsKeys[current_index]
+
+        sessions[tracker.sender_id] = current_index
 
         # declare reply options
         reply_options = []
