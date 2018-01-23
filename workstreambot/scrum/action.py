@@ -104,11 +104,11 @@ class ExplainDetail(Action):
         current_detail_keys = S.scrumDetailsKeys[current_index]
         # declare reply options
         reply_options = []
-        # build the reply options while filtering out the current detail
+        # build the reply options while filtering out the current details
         for detail in current_detail_keys:
             if detail != current_detail:
                 reply_options.append({"text": detail})
-        # build the response based on the reply keys 
+        # build the response based on the reply keys
         dispatcher.utter_message(
             utils.prepare_action_response(self.name(), current_detail, S.scrumDetailsKeysValues[current_detail],
                                           reply_options,
