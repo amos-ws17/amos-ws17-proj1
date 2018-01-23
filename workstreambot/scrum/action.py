@@ -6,7 +6,7 @@ current_index = 0
 
 
 # get the next key to explain
-def getNextScrumKey(index):
+def get_next_scrum_key(index):
     try:
         key = S.scrumGeneralKeys[index]
         return key
@@ -15,7 +15,7 @@ def getNextScrumKey(index):
 
 
 # find a specific key to explain
-def findScrumKey(key):
+def find_scrum_key(key):
     scrum_key = ""
     if key in S.scrumGeneralKeysValues:
         scrum_key = key
@@ -26,16 +26,19 @@ def findScrumKey(key):
     else:
         return None
 
-def findScrumDetailIndex(key):
+
+def find_scrum_detail_index(key):
     for details in S.scrumDetailsKeys:
         if key in details:
             return S.scrumDetailsKeys.index[details]
     return None
 
-def findScrumGeneralIndex(key):
+
+def find_scrum_general_index(key):
     if key in S.scrumGeneralKeys:
         return S.scrumGeneralKeys.index[key]
     return None
+
 
 # ask to continue to the next key
 class Continue(Action):
@@ -47,7 +50,7 @@ class Continue(Action):
         # increment current index
         current_index += 1
         # find the next key
-        next_key = getNextScrumKey(current_index)
+        next_key = get_next_scrum_key(current_index)
         # make it the current one
         current_key = next_key
         # if all themes are explained end the guide otherwise ask for the next one
@@ -81,7 +84,7 @@ class Explain(Action):
             # get the current key from the user input
             current_key = tracker.get_slot('theme')
             # get the current index
-            current_index = findScrumGeneralIndex(current_key)
+            current_index = find_scrum_general_index(current_key)
             # get the details for that key
             current_detail_keys = S.scrumDetailsKeys[current_index]
         else:
@@ -99,8 +102,7 @@ class Explain(Action):
         # explain the current key
         dispatcher.utter_message(
             utils.prepare_action_response(self.name(), current_key, S.scrumGeneralKeysValues[current_key],
-                                          reply_options,
-                                          tracker.current_slot_values(), "scrum"))
+                                          reply_options, tracker.current_slot_values(), "scrum"))
         return []
 
 
@@ -114,7 +116,7 @@ class ExplainDetail(Action):
         # get the detail entity from the one of the buttons offered as options in reply options above
         current_detail = tracker.get_slot('detail')
         # make sure the current index is the right one
-        current_index = findScrumDetailIndex(current_detail)
+        current_index = find_scrum_detail_index(current_detail)
         # get the list of details based on the index
         current_detail_keys = S.scrumDetailsKeys[current_index]
         # declare reply options
