@@ -26,6 +26,11 @@ def findScrumKey(key):
     else:
         return None
 
+def findScrumIndex(key):
+    if key in S.scrumDetailsKeysValues
+        return S.scrumDetailsKeysValues.index(key)
+    return None
+
 
 # ask to continue to the next key
 class Continue(Action):
@@ -96,9 +101,8 @@ class ExplainDetail(Action):
         reply_options = []
 
         for details in S.scrumDetailsKeys:
-            for detail in details:
-                if detail == current_detail:
-                    current_index = S.scrumDetailsKeys.index[details]
+            if current_detail in details:
+                current_index = findScrumIndex(details)
 
         if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
             current_detail_keys = S.scrumDetailsKeys[0]
