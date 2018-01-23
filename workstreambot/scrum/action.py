@@ -71,6 +71,10 @@ class Explain(Action):
         if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
             current_key = S.scrumGeneralKeys[0]
             current_detail_keys = S.scrumDetailsKeys[0]
+        elif tracker.latest_message.parse_data['intent']['name'] == 'inform':
+            # TODO
+            current_key = S.scrumGeneralKeys[current_index]
+            current_detail_keys = S.scrumDetailsKeys[current_index]
         else:
             current_key = S.scrumGeneralKeys[current_index]
             current_detail_keys = S.scrumDetailsKeys[current_index]
