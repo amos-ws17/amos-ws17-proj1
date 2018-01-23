@@ -1,7 +1,7 @@
 import json
 
 
-def prepare_action_response(action_name, title, content, reply_options, slots):
+def prepare_action_response(action_name, title, content, reply_options, slots, topic):
     data = {}
     data['action_type'] = action_name
     data['content'] = content
@@ -11,5 +11,6 @@ def prepare_action_response(action_name, title, content, reply_options, slots):
         data['replyOptions'] = reply_options
     if slots is not None and len(slots) > 0:
         data['slots'] = slots
+    data['topic'] = topic
 
     return json.dumps(data)

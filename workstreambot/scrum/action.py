@@ -50,7 +50,8 @@ class Continue(Action):
         reply_options = [{"text": "yes"}, {"text": "no"}]
 
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), None, response, reply_options, tracker.current_slot_values()))
+            utils.prepare_action_response(self.name(), None, response, reply_options, tracker.current_slot_values(),
+                                          "scrum"))
         return []
 
 
@@ -69,7 +70,7 @@ class Explain(Action):
         # explain the current key
         dispatcher.utter_message(
             utils.prepare_action_response(self.name(), current_key, S.scrumGeneralKeysValues[current_key], None,
-                                          tracker.current_slot_values()))
+                                          tracker.current_slot_values(), "scrum"))
         return []
 
 
@@ -89,5 +90,5 @@ class ExplainDetail(Action):
         for detail in current_detail_keys:
             dispatcher.utter_message(
                 utils.prepare_action_response(self.name(), detail, S.scrumDetailsKeysValues[detail], None,
-                                              tracker.current_slot_values()))
+                                              tracker.current_slot_values(), "scrum"))
         return []
