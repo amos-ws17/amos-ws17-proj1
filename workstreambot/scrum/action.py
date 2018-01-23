@@ -4,7 +4,6 @@ from rasa_core.actions import Action
 
 current_index = 0
 
-
 # get the next key to explain
 def get_next_scrum_key(index):
     try:
@@ -13,27 +12,14 @@ def get_next_scrum_key(index):
     except IndexError:
         return None
 
-
-# find a specific key to explain
-def find_scrum_key(key):
-    scrum_key = ""
-    if key in S.scrumGeneralKeysValues:
-        scrum_key = key
-        return scrum_key
-    elif key in S.scrumDetailsKeysValues:
-        scrum_key = key
-        return key
-    else:
-        return None
-
-
+# get the index of the details being explained
 def find_scrum_detail_index(key):
     for details in S.scrumDetailsKeys:
         if key in details:
             return S.scrumDetailsKeys.index[details]
     return None
 
-
+# get the index of the theme being explained
 def find_scrum_general_index(key):
     if key in S.scrumGeneralKeys:
         return S.scrumGeneralKeys.index[key]
@@ -90,7 +76,7 @@ class Explain(Action):
         else:
             # get the current key from the index
             current_key = S.scrumGeneralKeys[current_index]
-            # get the details for that key 
+            # get the details for that key
             current_detail_keys = S.scrumDetailsKeys[current_index]
 
         # declare reply options
