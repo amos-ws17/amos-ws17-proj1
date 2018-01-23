@@ -32,6 +32,10 @@ def findScrumDetailIndex(key):
             return S.scrumDetailsKeys.index[details]
     return None
 
+def findScrumGeneralIndex(key):
+    if key in S.scrumGeneralKeys:
+        return S.scrumGeneralKeys.index[key]
+    return None
 
 # ask to continue to the next key
 class Continue(Action):
@@ -69,14 +73,21 @@ class Explain(Action):
         global current_index
 
         if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
+            # get the first general key
             current_key = S.scrumGeneralKeys[0]
+            # get the details for that key
             current_detail_keys = S.scrumDetailsKeys[0]
         elif tracker.latest_message.parse_data['intent']['name'] == 'inform':
-            # TODO
-            current_key = S.scrumGeneralKeys[current_index]
+            # get the current key from the user input
+            current_key = tracker.get_slot('theme')
+            # get the current index
+            current_index = findScrumGeneralIndex(current_key)
+            # get the details for that key
             current_detail_keys = S.scrumDetailsKeys[current_index]
         else:
+            # get the current key from the index
             current_key = S.scrumGeneralKeys[current_index]
+            # get the details for that key 
             current_detail_keys = S.scrumDetailsKeys[current_index]
 
         # declare reply options
