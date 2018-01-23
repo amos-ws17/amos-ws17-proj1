@@ -89,10 +89,21 @@ class ExplainDetail(Action):
     def run(self, dispatcher, tracker, domain):
         global current_index
 
+        # get the detail entity from the one of the buttons offered as options in reply options above
+        current_detail = tracker.get_slot('detail')
+        # declare reply options
+        reply_options = []
+
         if tracker.latest_message.parse_data['intent']['name'] == 'switch_scrum':
             current_detail_keys = S.scrumDetailsKeys[0]
         else:
             current_detail_keys = S.scrumDetailsKeys[current_index]
+
+        # build the reply options while filtering out the current details
+        for detail in current_detail_keys:
+            if detail != current_detail:
+                reply_options.append({"text": detail})
+
 
         # explain the current key details
         for detail in current_detail_keys:
