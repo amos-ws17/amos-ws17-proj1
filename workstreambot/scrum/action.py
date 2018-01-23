@@ -73,10 +73,11 @@ class Explain(Action):
         reply_options = []
         # check if there available options and add them to the reply options
         for detail in current_detail_keys:
-            print(S.scrumDetailsKeysValues[detail])
+            reply_options.append({"text": S.scrumDetailsKeysValues[detail]})
+
         # explain the current key
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), current_key, S.scrumGeneralKeysValues[current_key], None,
+            utils.prepare_action_response(self.name(), current_key, S.scrumGeneralKeysValues[current_key], reply_options,
                                           tracker.current_slot_values(), "scrum"))
         return []
 
