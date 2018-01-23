@@ -100,8 +100,6 @@ class MessageHandler:
 
         data['dialogue'] = []
         for i in range(0, len(dialogue)):
-            d = json.loads(dialogue[i])
-            d["topic"] = topic
-            data['dialogue'].append(d)
+            data['dialogue'].append(json.loads(dialogue[i]))
 
         return json.dumps(data)

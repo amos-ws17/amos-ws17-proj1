@@ -85,7 +85,8 @@ class ActionContinue(Action):
         reply_options = [{"text": "yes"}, {"text": "no"}]
 
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), None, response, reply_options, tracker.current_slot_values()))
+            utils.prepare_action_response(self.name(), None, response, reply_options, tracker.current_slot_values(),
+                                          "scrum"))
         return []
 
 
@@ -109,5 +110,5 @@ class ActionExplain(Action):
         # explain the current theme
         dispatcher.utter_message(
             utils.prepare_action_response(self.name(), current_theme, theme_dict[current_theme], None,
-                                          tracker.current_slot_values(), ))
+                                          tracker.current_slot_values(), "scrum"))
         return []
