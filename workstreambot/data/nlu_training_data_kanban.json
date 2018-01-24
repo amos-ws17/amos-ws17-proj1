@@ -1,0 +1,824 @@
+﻿{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "explain to me what is kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "tell me about kanban",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "tell me more about kanban",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "give me information about kanban",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "give me more information about kanban",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what is kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what is kanban about?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what's kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "kanban",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what's kanban about?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what do you know about kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "i need an introduction about kanban",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "do you know what is kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "explain kanban briefly",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "explain kanban",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "how do you explain kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "how is kanban defined?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "define kanban",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what is the definition of kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what does kanban stand for?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what do you mean by kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "why would you use kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "how does kanban work?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what are the roles in kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what is the history of kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the history of kanban",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is kaizen?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is kaizen in the context of kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is kaizen in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how is kaizen implemented?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how is kaizen implemented in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the artefacts in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 22,
+            "value": "artefact",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the artefacts?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 22,
+            "value": "artefact",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the kanban board?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 24,
+            "value": "board",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the board in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "board",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the board in kanban used for?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "board",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the cycle time?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 22,
+            "value": "cycle time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is cycle time?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "cycle time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is cycle time in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "cycle time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is lead time?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "lead time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is lead time in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "lead time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is lead time in the context of kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "lead time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is stop the line?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 21,
+            "value": "stop the line",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is stop the line in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 21,
+            "value": "stop the line",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is a ticket?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a kanban ticket?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 17,
+            "end": 23,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a ticket in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is meant by type of ticket?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 31,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "how are tickets ordered?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 15,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "how are estimations handled in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 19,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "how are estimations done?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 19,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "how are estimations done in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 19,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is an estimation in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 11,
+            "end": 21,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is an estimation?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 21,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is meant by type of ticket?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 31,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a wip limit?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 13,
+            "value": "wip",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is wip?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 11,
+            "value": "wip",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is kanban wip?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 15,
+            "end": 18,
+            "value": "wip",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is wip in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 11,
+            "value": "wip",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "are buffers allowed in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 4,
+            "end": 11,
+            "value": "buffer",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is a kanban buffer?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 17,
+            "end": 23,
+            "value": "buffer",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is a buffer?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "buffer",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how are estimates handled in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what has to be provided to apply kanban in my company?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 33,
+            "end": 39,
+            "value": "kanban",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what happens when a wip limit is violated?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 33,
+            "end": 41,
+            "value": "violation",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how are the backlog items ordered?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 25,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "who invented kanban?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 4,
+            "end": 12,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "where does kanban come from?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 18,
+            "end": 27,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the roles in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 18,
+            "value": "kanban",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is root cause?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "violation",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the pull principle?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "pull principle",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the pull principle in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "pull principle",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "explain me the pull principle",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 29,
+            "value": "pull principle",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the ceremonies in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a ceremony?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 18,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a kanban ceremony?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "list me the kanban ceremonies?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 19,
+            "end": 29,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a replenishment meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 31,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a replenishment meeting in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 10,
+            "end": 31,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "Is there a need to estimate in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 19,
+            "end": 27,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "Are there estimations in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 10,
+            "end": 21,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "name the artefacts in kanban",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 9,
+            "end": 18,
+            "value": "artefact",
+            "entity": "theme"
+          }
+        ]
+      }
+    ]
+  }
+}
