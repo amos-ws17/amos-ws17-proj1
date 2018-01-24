@@ -3,47 +3,47 @@
     "common_examples": [
       {
         "text": "yes",
-        "intent": "affirm",
+        "intent": "continue",
         "entities": []
       },
       {
         "text": "yes please",
-        "intent": "affirm",
+        "intent": "continue",
         "entities": []
       },
       {
         "text": "yeah",
-        "intent": "affirm",
+        "intent": "continue",
         "entities": []
       },
       {
         "text": "yeah please",
-        "intent": "affirm",
+        "intent": "continue",
         "entities": []
       },
       {
         "text": "yup",
-        "intent": "affirm",
+        "intent": "continue",
         "entities": []
       },
       {
         "text": "please",
-        "intent": "affirm",
+        "intent": "continue",
         "entities": []
       },
       {
         "text": "sure",
-        "intent": "affirm",
+        "intent": "continue",
         "entities": []
       },
       {
         "text": "okay",
-        "intent": "affirm",
+        "intent": "continue",
         "entities": []
       },
       {
         "text": "why not",
-        "intent": "affirm",
+        "intent": "continue",
         "entities": []
       },
       {
