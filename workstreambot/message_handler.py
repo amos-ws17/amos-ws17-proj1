@@ -21,6 +21,7 @@ class MessageHandler:
     nlu_model_path = 'models/nlu/default/current'
     dialogue_model_path = '/models/dialogue'
     switching_intent_prefix = 'switch_'
+    domain_path="/domain.yml"
 
     def __init__(self, dialogue_topics, persistance=False):
         self.persistance = persistance
@@ -39,7 +40,7 @@ class MessageHandler:
     def load_dialogue_model(self, topic):
         if self.persistance:
             # Load with persistance tracker
-            domain = TemplateDomain.load(os.path.join("/rasa_core/bot/scrum/", "domain.yml"))
+            domain = TemplateDomain.load(topic + self.domain_path)
             redis_tracker_store = RedisTrackerStoreAgentized(domain=domain, host="redis-container")
             redis_tracker_store.set_topic(topic)
             return Agent.load(topic + self.dialogue_model_path, tracker_store=redis_tracker_store)
