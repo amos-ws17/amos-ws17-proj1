@@ -134,3 +134,7 @@ class RedisTrackerStoreAgentized(TrackerStore):
             return self.deserialise_tracker(key, stored)
         else:
             return None
+
+    def clean(self):
+        for key in self.red.scan_iter(self.topic + "*"):
+            self.red.delete(key)
