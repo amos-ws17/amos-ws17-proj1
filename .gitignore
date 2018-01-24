@@ -3,5 +3,6 @@ project/
 models/
 
 *.pyc
+.cache
 
 .idea/

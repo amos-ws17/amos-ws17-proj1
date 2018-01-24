@@ -7,6 +7,7 @@ branches:
     - persistance_integration
 
 python:
+  - "2.7"
   - "3.5"
 
 services:
@@ -16,8 +17,10 @@ services:
 jobs:
   include:
     - stage: test
+      if: branch = dev
       script:
-        - echo "No tests yet"
+        - cd workstreambot
+        - python -m pytest test/
     - stage: build rasa base
       if: branch = persistance_integration
       script:
@@ -25,27 +28,6 @@ jobs:
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - docker build -t amoschatbot/rasabase:latest .
       - docker push amoschatbot/rasabase
-    - stage: build weatherbot
-      if: branch = dev
-      script:
-      - cd workstreambot/weather
-      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-      - docker build -t amoschatbot/weatherbot:latest .
-      - docker push amoschatbot/weatherbot
-    - stage: build sightseeinbgot
-      if: branch = dev
-      script:
-      - cd workstreambot/sightseeing
-      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-      - docker build -t amoschatbot/sightseeingbot:latest .
-      - docker push amoschatbot/sightseeingbot
-    - stage: build restaurantbot
-      if: branch = dev
-      script:
-      - cd workstreambot/restaurant
-      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-      - docker build -t amoschatbot/restaurantbot:latest .
-      - docker push amoschatbot/restaurantbot
     - stage: release
       if: branch = master
       script:
