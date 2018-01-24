@@ -33,7 +33,6 @@ if __name__ == '__main__':
     args = arg_parser.parse_args()
 
     topics = parse_dialogue_argument(args.dialogues)
-
     handler = MessageHandler(topics)
 
     data = {}

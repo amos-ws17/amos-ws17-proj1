@@ -3,6 +3,9 @@ from rasa_nlu.config import RasaNLUConfig
 from rasa_nlu.model import Metadata, Interpreter
 from rasa_core.agent import Agent
 from session import Session
+from rasa_core.tracker_store import *
+from rasa_core.domain import TemplateDomain
+import os
 
 import json
 
@@ -18,7 +21,8 @@ class MessageHandler:
     dialogue_model_path = '/models/dialogue'
     switching_intent_prefix = 'switch_'
 
-    def __init__(self, dialogue_topics):
+    def __init__(self, dialogue_topics, persistance = False):
+        self.persistance = persistance
         self.interpreter = Interpreter.load(self.nlu_model_path, RasaNLUConfig('nlu_model_config.json'))
         self.dialogue_topics = dialogue_topics
         self.dialogue_models = self.load_dialogue_models(dialogue_topics)
@@ -32,7 +36,15 @@ class MessageHandler:
         return dialogue_models
 
     def load_dialogue_model(self, topic):
-        return Agent.load(topic + self.dialogue_model_path)
+        if self.persistance:
+            # Load with persistance tracker
+            domain = TemplateDomain.load(os.path.join("/rasa_core/bot/scrum/", "domain.yml"))
+            redis_tracker_store = RedisTrackerStoreAgentized(domain=domain, host="redis-container")
+            redis_tracker_store.set_topic(topic)
+            return Agent.load(topic + self.dialogue_model_path, tracker_store=redis_tracker_store)
+        else:
+            # Load with default tracker
+            return Agent.load(topic + self.dialogue_model_path)
 
     def converse(self, message, session_id):
         # Parse user input
@@ -63,7 +75,7 @@ class MessageHandler:
         # Save changes in session
         self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
 
-        return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue)
+        return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue, current_dialogue_topic)
 
     def prepare_entities(self, nlu_json_response):
         entities = []
@@ -76,7 +88,7 @@ class MessageHandler:
 
         return entities
 
-    def prepare_response(self, session_id, message, dialogue_message, nlu_json_response, dialogue):
+    def prepare_response(self, session_id, message, dialogue_message, nlu_json_response, dialogue, topic):
         data = {}
         data['sender'] = session_id
         data['message'] = message
@@ -86,6 +98,43 @@ class MessageHandler:
 
         data['dialogue'] = []
         for i in range(0, len(dialogue)):
-            data['dialogue'].append(json.loads(dialogue[i]))
+            d = json.loads(dialogue[i])
+            d["topic"] = topic
+            data['dialogue'].append(d)
 
         return json.dumps(data)
+
+
+class RedisTrackerStoreAgentized(TrackerStore):
+
+    def __init__(self, domain, mock=False, host='localhost',
+                 port=6379, db=0, password=None):
+
+        if mock:
+            import fakeredis
+            self.red = fakeredis.FakeStrictRedis()
+        else:  # pragma: no cover
+            import redis
+            self.red = redis.StrictRedis(host=host, port=port, db=db,
+                                         password=password)
+        super(RedisTrackerStoreAgentized, self).__init__(domain)
+        self.topic = ""
+
+    def set_topic(self, topic):
+        self.topic = topic
+
+    def save(self, tracker, timeout=None):
+        serialised_tracker = RedisTrackerStore.serialise_tracker(tracker)
+        self.red.set(self.topic + "_" + tracker.sender_id, serialised_tracker, ex=timeout)
+
+    def retrieve(self, sender_id):
+        key = self.topic + "_" + sender_id
+        stored = self.red.get(key)
+        if stored is not None:
+            return self.deserialise_tracker(key, stored)
+        else:
+            return None
+
+    def clean(self):
+        for key in self.red.scan_iter(self.topic + "*"):
+            self.red.delete(key)

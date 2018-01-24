@@ -1,9 +1,13 @@
 version: '3'
 services:
-  scrumbot:
+  workstreambot:
     container_name: workstreambot
     build: .
     ports:
       - 5012:5000
     expose:
       - 5012
+networks:
+  default:
+    external:
+      name: redis-network
