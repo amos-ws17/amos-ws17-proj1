@@ -40,7 +40,8 @@ class MessageHandler:
         if self.persistance:
             # Load with persistance tracker
             domain = TemplateDomain.load(os.path.join("/rasa_core/bot/scrum/", "domain.yml"))
-            redis_tracker_store = RedisTrackerStore(domain=domain, host="redis-container")
+            redis_tracker_store = RedisTrackerStoreAgentized(domain=domain, host="redis-container")
+            redis_tracker_store.set_topic(topic)
             return Agent.load(topic + self.dialogue_model_path, tracker_store=redis_tracker_store)
         else:
             # Load with default tracker
@@ -102,3 +103,38 @@ class MessageHandler:
             data['dialogue'].append(json.loads(dialogue[i]))
 
         return json.dumps(data)
+
+
+class RedisTrackerStoreAgentized(TrackerStore):
+
+    def __init__(self, domain, mock=False, host='localhost',
+                 port=6379, db=0, password=None):
+
+        if mock:
+            import fakeredis
+            self.red = fakeredis.FakeStrictRedis()
+        else:  # pragma: no cover
+            import redis
+            self.red = redis.StrictRedis(host=host, port=port, db=db,
+                                         password=password)
+        super(RedisTrackerStoreAgentized, self).__init__(domain)
+        self.topic = ""
+
+    def set_topic(self, topic):
+        self.topic = topic
+
+    def save(self, tracker, timeout=None):
+        serialised_tracker = RedisTrackerStore.serialise_tracker(tracker)
+        self.red.set(self.topic + "_" + tracker.sender_id, serialised_tracker, ex=timeout)
+
+    def retrieve(self, sender_id):
+        key = self.topic + "_" + sender_id
+        stored = self.red.get(key)
+        if stored is not None:
+            return self.deserialise_tracker(key, stored)
+        else:
+            return None
+
+    def clean(self):
+        for key in self.red.scan_iter(self.topic + "*"):
+            self.red.delete(key)
