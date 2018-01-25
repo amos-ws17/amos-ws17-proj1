@@ -13,11 +13,11 @@ def test_switch_scrum_intent():
 
 
 def test_affirms_intent():
-    assert perform_single_continue("Yes") == "affirm"
+    assert perform_single_continue("Yes") == "continue"
     # TODO Add to training data: assert perform_single_continue("What is about Scrum?", "Continue") == "affirm"
-    assert perform_single_continue("Ok") == "affirm"
-    assert perform_single_continue("Please yes") == "affirm"
-    assert perform_single_continue("Yes please") == "affirm"
+    assert perform_single_continue("Ok") == "continue"
+    assert perform_single_continue("Please yes") == "continue"
+    assert perform_single_continue("Yes please") == "continue"
 
 
 def test_denys_intent():
