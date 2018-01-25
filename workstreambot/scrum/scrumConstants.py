@@ -53,7 +53,14 @@ scrumDetailsKeys = [['agile', 'business value'],
                     ['functional requirements', 'non-functional requirements'],
                     ['daily', 'planning meeting', 'review meeting', 'retrospective meeting'],
                     ['product backlog', 'sprint backlog'],
-                    ['release plan']]
+                    ['release plan'],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []]
 
 # the explanations of the detailed topics
 scrumDetailsKeysValues = {

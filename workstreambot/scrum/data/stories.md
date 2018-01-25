@@ -280,9 +280,6 @@
   - continue
 * _deny[]
 
-
-
-
 ## Story deny
 * _switch_scrum[detail=scrum]
   - explain_detail

@@ -70,7 +70,7 @@ class Explain(Action):
         # get entities if any
         entities = tracker.latest_message.parse_data['entities']
 
-        # check if entities exist and decide on the flow 
+        # check if entities exist and decide on the flow
         if intent == 'switch_scrum' and len(entities) == 0:
             current_index = 0
             # get the first general key
@@ -88,15 +88,19 @@ class Explain(Action):
             # get the current key from the index
             current_key = S.scrumGeneralKeys[current_index]
 
-        current_detail_keys = S.scrumDetailsKeys[current_index]
+        try:
+            current_detail_keys = S.scrumDetailsKeys[current_index]
+        except IndexError:
+            current_detail_keys = None
 
         sessions[tracker.sender_id] = current_index
 
         # declare reply options
         reply_options = []
         # check if there available options and add them to the reply options
-        for detail in current_detail_keys:
-            reply_options.append({"text": detail})
+        if current_detail_keys is not None:
+            for detail in current_detail_keys:
+                reply_options.append({"text": detail})
 
         # explain the current key
         dispatcher.utter_message(
@@ -110,8 +114,6 @@ class ExplainDetail(Action):
         return 'explain_detail'
 
     def run(self, dispatcher, tracker, domain):
-        global current_index
-
         # get the detail entity from the one of the buttons offered as options in reply options above
         current_detail = tracker.get_slot('detail')
         # make sure the current index is the right one
