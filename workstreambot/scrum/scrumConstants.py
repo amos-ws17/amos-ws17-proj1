@@ -65,48 +65,48 @@ scrumDetailsKeys = [['agile', 'business value'],
 # the explanations of the detailed topics
 scrumDetailsKeysValues = {
     'agile': 'Agile software development describes an approach to software development under which requirements and solutions evolve through the collaborative effort of self-organizing cross-functional teams and their customer(s)/end users.'
-    		+ '\nIt advocates adaptive planning, evolutionary development, early delivery, and continuous improvement, and it encourages rapid and flexible response to change.'
-    		+ '\nThe term agile was popularized, in this context, by the Manifesto for Agile Software Development.'
-    		+ '\nThe values and principles espoused in this manifesto were derived from and underpin a broad range of software development frameworks, including Scrum and Kanban.',
+             + '\nIt advocates adaptive planning, evolutionary development, early delivery, and continuous improvement, and it encourages rapid and flexible response to change.'
+             + '\nThe term agile was popularized, in this context, by the Manifesto for Agile Software Development.'
+             + '\nThe values and principles espoused in this manifesto were derived from and underpin a broad range of software development frameworks, including Scrum and Kanban.',
     'business value': 'Business value often embraces intangible assets not necessarily attributable to any stakeholder group.'
-    		+ '\nAn intangible asset is an asset that lacks physical substance and usually is very hard to evaluate. It includes patents, copyrights, franchises, goodwill, trademarks, trade names, the general interpretation also includes software and other intangible computer based assets.'
-    		+ '\nIn software development, sprints are directed towards incremental improvements to business value. The goals of each iteration of product delivery are prioritised on what delivers highest business value drives.',
+                      + '\nAn intangible asset is an asset that lacks physical substance and usually is very hard to evaluate. It includes patents, copyrights, franchises, goodwill, trademarks, trade names, the general interpretation also includes software and other intangible computer based assets.'
+                      + '\nIn software development, sprints are directed towards incremental improvements to business value. The goals of each iteration of product delivery are prioritised on what delivers highest business value drives.',
     'product owner': 'A Scrum Product Owner is responsible for maximizing the value of the product resulting from the work of the Development Team. How this is done may vary widely across organizations, Scrum Teams, and individuals.'
-    		+ '\nThe Product Owner is the sole person responsible for managing the Product Backlog.'
-    		+ '\nThe Product Owner is one person, not a committee. The Product Owner may represent the desires of a committee in the Product Backlog, but those wanting to change a Product Backlog item’s priority must address the Product Owner.',
+                     + '\nThe Product Owner is the sole person responsible for managing the Product Backlog.'
+                     + '\nThe Product Owner is one person, not a committee. The Product Owner may represent the desires of a committee in the Product Backlog, but those wanting to change a Product Backlog item’s priority must address the Product Owner.',
     'scrum master': 'The Scrum Master is a servant-leader for the Scrum Team.'
-    		+ '\nThe Scrum Master helps those outside the Scrum Team understand which of their interactions with the Scrum Team are helpful and which aren’t.'
-    		+ '\nThe Scrum Master helps everyone change these interactions to maximize the value created by the Scrum Team.',
+                    + '\nThe Scrum Master helps those outside the Scrum Team understand which of their interactions with the Scrum Team are helpful and which aren’t.'
+                    + '\nThe Scrum Master helps everyone change these interactions to maximize the value created by the Scrum Team.',
     'developers': 'A Development Team consists of professionals who do the work of delivering a potentially releasable Increment of “Done” product at the end of each Sprint.'
-    		+ '\nA "Done" increment is required at the Sprint Review. Only members of the Development Team create the Increment.'
-    		+ '\nDevelopment Teams are structured and empowered by the organization to organize and manage their own work. The resulting synergy optimizes the Development Team’s overall efficiency and effectiveness.',
-    'functional requirements': 'In Software engineering and systems engineering, a functional requirement defines a function of a system or its component.' 
-    		+ '\nA function is described as a set of inputs, the behavior, and outputs.'
-			+ '\nFunctional requirements may be calculations, technical details, data manipulation and processing and other specific functionality that define what a system is supposed to accomplish.',
-    'non-functional requirements': 'Nonfunctional Requirements define system attributes such as security, reliability, performance, maintainability, scalability, and usability.' 
-    		+ '\nThey serve as constraints or restrictions on the design of the system across the different backlogs.',
-    'daily': 'Daily Scrum is a 15-minute time-boxed event for the Development Team to synchronize activities and create a plan for the next 24 hours.' 
-    		+ '\nThe Daily Scrum is held every day of the Sprint.'
-    		+ '\nAt it, the Development Team plans work for the next 24 hours.'
-    		+ '\nThis optimizes team collaboration and performance by inspecting the work since the last Daily Scrum and forecasting upcoming Sprint work.' 
-    		+ '\nThe Daily Scrum is held at the same time and place each day to reduce complexity.',
-    'planning meeting': 'At the beginning of each Sprint the Sprint Planning Meeting takes place as a kick-off.' 
-    		+ '\nIt takes a day (time box 8 hrs.) and serves to tie the work package of the scrum team for the upcoming Sprint (Sprint Backlog).',
+                  + '\nA "Done" increment is required at the Sprint Review. Only members of the Development Team create the Increment.'
+                  + '\nDevelopment Teams are structured and empowered by the organization to organize and manage their own work. The resulting synergy optimizes the Development Team’s overall efficiency and effectiveness.',
+    'functional requirements': 'In Software engineering and systems engineering, a functional requirement defines a function of a system or its component.'
+                               + '\nA function is described as a set of inputs, the behavior, and outputs.'
+                               + '\nFunctional requirements may be calculations, technical details, data manipulation and processing and other specific functionality that define what a system is supposed to accomplish.',
+    'non-functional requirements': 'Nonfunctional Requirements define system attributes such as security, reliability, performance, maintainability, scalability, and usability.'
+                                   + '\nThey serve as constraints or restrictions on the design of the system across the different backlogs.',
+    'daily': 'Daily Scrum is a 15-minute time-boxed event for the Development Team to synchronize activities and create a plan for the next 24 hours.'
+             + '\nThe Daily Scrum is held every day of the Sprint.'
+             + '\nAt it, the Development Team plans work for the next 24 hours.'
+             + '\nThis optimizes team collaboration and performance by inspecting the work since the last Daily Scrum and forecasting upcoming Sprint work.'
+             + '\nThe Daily Scrum is held at the same time and place each day to reduce complexity.',
+    'planning meeting': 'At the beginning of each Sprint the Sprint Planning Meeting takes place as a kick-off.'
+                        + '\nIt takes a day (time box 8 hrs.) and serves to tie the work package of the scrum team for the upcoming Sprint (Sprint Backlog).',
     'review meeting': 'A Sprint Review is held at the end of the Sprint to inspect the Increment and adapt the Product Backlog if needed.'
-    		+ '\nThere could have been a single Sprint Reviewdeployment or many deployments during a Sprint which lead up to that Increment to be inspected.',
+                      + '\nThere could have been a single Sprint Reviewdeployment or many deployments during a Sprint which lead up to that Increment to be inspected.',
     'retrospective meeting': 'The Sprint Retrospective occurs after the Sprint Review and prior to the next Sprint Planning.'
-    		+ '\nThis is at most a three-hour meeting for one-month Sprints.' 
-    		+ '\nFor shorter Sprints, the event is usually shorter.' 
-    		+ '\nThe Scrum Master ensures that the event takes place and that attendants understand its purpose.' 
-    		+ '\nThis is the opportunity for the Scrum Team to improve and all member should be in attendance.',
-    'product backlog': 'Prioritized list of requirements with estimated values that reflect relative to the respective functions, if not its complexity, to each other.' 
-    		+ '\nIt is important that it is about a "perceived value", not an absolute cost estimate in person days, etc.'
-    		+ '\nAs a unit of the estimates is often the so-called Story Point.'
-    		+ '\nThe higher the priority of a request, the fine-grained tend to be the estimated values, as the product backlog is processed substantially in descending order of priority.',
+                             + '\nThis is at most a three-hour meeting for one-month Sprints.'
+                             + '\nFor shorter Sprints, the event is usually shorter.'
+                             + '\nThe Scrum Master ensures that the event takes place and that attendants understand its purpose.'
+                             + '\nThis is the opportunity for the Scrum Team to improve and all member should be in attendance.',
+    'product backlog': 'Prioritized list of requirements with estimated values that reflect relative to the respective functions, if not its complexity, to each other.'
+                       + '\nIt is important that it is about a "perceived value", not an absolute cost estimate in person days, etc.'
+                       + '\nAs a unit of the estimates is often the so-called Story Point.'
+                       + '\nThe higher the priority of a request, the fine-grained tend to be the estimated values, as the product backlog is processed substantially in descending order of priority.',
     'sprint backlog': 'The Sprint Backlog is the set of Product Backlog items selected for the Sprint, plus a plan for delivering the product Increment and realizing the Sprint Goal.'
-    		+ '\nThe Sprint Backlog is a forecast by the Development Team about what functionality will be in the next Increment and the work needed to deliver that functionality into a “Done” Increment.',
-    'release plan': 'A very high-level plan for multiple Sprints is created during the Release planning.' 
-    		+ '\nIt is a guideline that reflects expectations about which features will be implemented and when they are completed.' 
-    		+ '\nIt also serves as a base to monitor progress within the project.' 
-    		+ '\nReleases can be intermediate deliveries done during the project or the final delivery at the end.'
+                      + '\nThe Sprint Backlog is a forecast by the Development Team about what functionality will be in the next Increment and the work needed to deliver that functionality into a “Done” Increment.',
+    'release plan': 'A very high-level plan for multiple Sprints is created during the Release planning.'
+                    + '\nIt is a guideline that reflects expectations about which features will be implemented and when they are completed.'
+                    + '\nIt also serves as a base to monitor progress within the project.'
+                    + '\nReleases can be intermediate deliveries done during the project or the final delivery at the end.'
 }
