@@ -25,8 +25,10 @@ def find_scrum_detail_index(key):
 
 # get the index of the theme being explained
 def find_scrum_general_index(key):
-    if key in dict.scrum_general_keys:
-        return dict.scrum_general_keys.index[key]
+    keys = dict.scrum_general_keys
+    for i in range(len(keys)):
+        if key in keys[i]:
+            return i
     return None
 
 
@@ -48,11 +50,7 @@ class Continue(Action):
     def run(self, dispatcher, tracker, domain):
         global sessions
         # increment current index
-        if entities_contain_detail(tracker.latest_message.parse_data['entities']):
-            current_index = sessions[tracker.sender_id]
-        else:
-            current_index = sessions[tracker.sender_id] + 1
-
+        current_index = sessions[tracker.sender_id] + 1
         # find the next key
         next_key = get_next_scrum_key(current_index)
         # make it the current one
@@ -130,11 +128,10 @@ class ExplainDetail(Action):
 
     def run(self, dispatcher, tracker, domain):
         # get the detail entity from the one of the buttons offered as options in reply options above
-        print("Explain")
         current_detail = tracker.get_slot('detail')
         # make sure the current index is the right one
         current_index = find_scrum_detail_index(current_detail)
-        print(current_index)
+        sessions[tracker.sender_id] = current_index
         # get the list of details based on the index
         current_detail_keys = dict.scrum_details_keys[current_index]
         # declare reply options
