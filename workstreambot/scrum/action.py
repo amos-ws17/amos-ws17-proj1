@@ -16,9 +16,10 @@ def get_next_scrum_key(index):
 
 # get the index of the details being explained
 def find_scrum_detail_index(key):
-    for details in S.scrumDetailsKeys:
-        if key in details:
-            return S.scrumDetailsKeys.index[details]
+    keys = S.scrumDetailsKeys
+    for i in range(len(keys)):
+        if key in keys[i]:
+            return i
     return None
 
 
@@ -29,6 +30,16 @@ def find_scrum_general_index(key):
     return None
 
 
+def entities_contain_detail(entities):
+    if len(entities) == 0:
+        return False
+    else:
+        for entity in entities:
+            if entity['entity'] == 'detail':
+                return True
+        return False
+
+
 # ask to continue to the next key
 class Continue(Action):
     def name(self):
@@ -37,7 +48,11 @@ class Continue(Action):
     def run(self, dispatcher, tracker, domain):
         global sessions
         # increment current index
-        current_index = sessions[tracker.sender_id] + 1
+        if entities_contain_detail(tracker.latest_message.parse_data['entities']):
+            current_index = sessions[tracker.sender_id]
+        else:
+            current_index = sessions[tracker.sender_id] + 1
+
         # find the next key
         next_key = get_next_scrum_key(current_index)
         # make it the current one
@@ -115,9 +130,11 @@ class ExplainDetail(Action):
 
     def run(self, dispatcher, tracker, domain):
         # get the detail entity from the one of the buttons offered as options in reply options above
+        print("Explain")
         current_detail = tracker.get_slot('detail')
         # make sure the current index is the right one
         current_index = find_scrum_detail_index(current_detail)
+        print(current_index)
         # get the list of details based on the index
         current_detail_keys = S.scrumDetailsKeys[current_index]
         # declare reply options

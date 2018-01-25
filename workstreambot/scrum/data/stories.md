@@ -27,7 +27,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
 
@@ -60,7 +60,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _continue[]
   - explain
@@ -96,7 +96,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _inform[theme=scrum]
   - explain
@@ -111,7 +111,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
 
@@ -123,7 +123,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
 
@@ -132,10 +132,10 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
 
@@ -168,7 +168,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
 
@@ -201,7 +201,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _continue[]
   - explain
@@ -237,7 +237,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _inform[theme=scrum]
   - explain
@@ -252,7 +252,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
 
@@ -264,7 +264,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
 
@@ -273,10 +273,10 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
 
@@ -309,7 +309,7 @@
   - explain_detail
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
 
@@ -342,7 +342,7 @@
   - explain_detail
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _continue[]
   - explain
@@ -378,7 +378,7 @@
   - explain_detail
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _inform[theme=scrum]
   - explain
@@ -393,7 +393,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
 
@@ -405,7 +405,7 @@
   - explain
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
 
@@ -414,9 +414,9 @@
   - explain_detail
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _inform[detail=developer]
-  - explain
+  - explain_detail
   - continue
 * _deny[]
