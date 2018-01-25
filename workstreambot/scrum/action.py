@@ -1,4 +1,4 @@
-import scrum.scrumConstants as S
+import scrum.dictionary as dict
 import utils as utils
 from rasa_core.actions import Action
 
@@ -8,7 +8,7 @@ sessions = {}
 # get the next key to explain
 def get_next_scrum_key(index):
     try:
-        key = S.scrumGeneralKeys[index]
+        key = dict.scrum_general_keys[index]
         return key
     except IndexError:
         return None
@@ -16,17 +16,30 @@ def get_next_scrum_key(index):
 
 # get the index of the details being explained
 def find_scrum_detail_index(key):
-    for details in S.scrumDetailsKeys:
-        if key in details:
-            return S.scrumDetailsKeys.index[details]
+    keys = dict.scrum_details_keys
+    for i in range(len(keys)):
+        if key in keys[i]:
+            return i
     return None
 
 
 # get the index of the theme being explained
 def find_scrum_general_index(key):
-    if key in S.scrumGeneralKeys:
-        return S.scrumGeneralKeys.index[key]
+    keys = dict.scrum_general_keys
+    for i in range(len(keys)):
+        if key in keys[i]:
+            return i
     return None
+
+
+def entities_contain_detail(entities):
+    if len(entities) == 0:
+        return False
+    else:
+        for entity in entities:
+            if entity['entity'] == 'detail':
+                return True
+        return False
 
 
 # ask to continue to the next key
@@ -70,11 +83,11 @@ class Explain(Action):
         # get entities if any
         entities = tracker.latest_message.parse_data['entities']
 
-        # check if entities exist and decide on the flow 
+        # check if entities exist and decide on the flow
         if intent == 'switch_scrum' and len(entities) == 0:
             current_index = 0
             # get the first general key
-            current_key = S.scrumGeneralKeys[current_index]
+            current_key = dict.scrum_general_keys[current_index]
         elif (intent == 'switch_scrum' and len(entities) > 0) or intent == 'inform':
             # get the current key from the user input
             current_key = tracker.get_slot('theme')
@@ -86,21 +99,25 @@ class Explain(Action):
             else:
                 current_index = 0
             # get the current key from the index
-            current_key = S.scrumGeneralKeys[current_index]
+            current_key = dict.scrum_general_keys[current_index]
 
-        current_detail_keys = S.scrumDetailsKeys[current_index]
+        try:
+            current_detail_keys = dict.scrum_details_keys[current_index]
+        except IndexError:
+            current_detail_keys = None
 
         sessions[tracker.sender_id] = current_index
 
         # declare reply options
         reply_options = []
         # check if there available options and add them to the reply options
-        for detail in current_detail_keys:
-            reply_options.append({"text": detail})
+        if current_detail_keys is not None:
+            for detail in current_detail_keys:
+                reply_options.append({"text": detail})
 
         # explain the current key
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), current_key, S.scrumGeneralKeysValues[current_key],
+            utils.prepare_action_response(self.name(), current_key, dict.scrum_general_keys_values[current_key],
                                           reply_options, tracker.current_slot_values(), "scrum"))
         return []
 
@@ -110,14 +127,13 @@ class ExplainDetail(Action):
         return 'explain_detail'
 
     def run(self, dispatcher, tracker, domain):
-        global current_index
-
         # get the detail entity from the one of the buttons offered as options in reply options above
         current_detail = tracker.get_slot('detail')
         # make sure the current index is the right one
         current_index = find_scrum_detail_index(current_detail)
+        sessions[tracker.sender_id] = current_index
         # get the list of details based on the index
-        current_detail_keys = S.scrumDetailsKeys[current_index]
+        current_detail_keys = dict.scrum_details_keys[current_index]
         # declare reply options
         reply_options = []
         # build the reply options while filtering out the current details
@@ -126,6 +142,6 @@ class ExplainDetail(Action):
                 reply_options.append({"text": detail})
         # build the response based on the reply keys
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), current_detail, S.scrumDetailsKeysValues[current_detail],
+            utils.prepare_action_response(self.name(), current_detail, dict.scrum_details_keys_values[current_detail],
                                           reply_options, tracker.current_slot_values(), "scrum"))
         return []
