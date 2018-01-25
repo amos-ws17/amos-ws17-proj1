@@ -1,9 +1,9 @@
 # the general topics that scrum can talk about
-scrumGeneralKeys = ['scrum', 'roles', 'stories', 'sprint', 'ceremonies', 'backlog', 'estimations',
-                    'release', 'burndown', 'velocity', 'extras', 'spike', 'goals']
+scrum_general_keys = ['scrum', 'roles', 'stories', 'sprint', 'ceremonies', 'backlog', 'estimations',
+                      'release', 'burndown', 'velocity', 'extras', 'spike', 'goals']
 
 # the explanations of the general topics
-scrumGeneralKeysValues = {
+scrum_general_keys_values = {
     'scrum': 'Scrum is an agile process that allows us to focus on delivering the highest business value in the shortest time.'
              + '\nIt allows us to rapidly and repeatedly deliver actual working software (Every two weeks to one month - a sprint).'
              + '\nThe customer sets the priorities for what features are important.'
@@ -48,22 +48,22 @@ scrumGeneralKeysValues = {
 }
 
 # the detailed topics that scrum can talk about
-scrumDetailsKeys = [['agile', 'business value'],
-                    ['product owner', 'scrum master', 'developers'],
-                    ['functional requirements', 'non-functional requirements'],
-                    ['daily', 'planning meeting', 'review meeting', 'retrospective meeting'],
-                    ['product backlog', 'sprint backlog'],
-                    ['release plan'],
-                    [],
-                    [],
-                    [],
-                    [],
-                    [],
-                    [],
-                    []]
+scrum_details_keys = [['agile', 'business value'],
+                      ['product owner', 'scrum master', 'developers'],
+                      ['functional requirements', 'non-functional requirements'],
+                      ['daily', 'planning meeting', 'review meeting', 'retrospective meeting'],
+                      ['product backlog', 'sprint backlog'],
+                      ['release plan'],
+                      [],
+                      [],
+                      [],
+                      [],
+                      [],
+                      [],
+                      []]
 
 # the explanations of the detailed topics
-scrumDetailsKeysValues = {
+scrum_details_keys_values = {
     'agile': 'Agile software development describes an approach to software development under which requirements and solutions evolve through the collaborative effort of self-organizing cross-functional teams and their customer(s)/end users.'
              + '\nIt advocates adaptive planning, evolutionary development, early delivery, and continuous improvement, and it encourages rapid and flexible response to change.'
              + '\nThe term agile was popularized, in this context, by the Manifesto for Agile Software Development.'

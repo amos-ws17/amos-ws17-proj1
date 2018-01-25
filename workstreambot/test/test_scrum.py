@@ -1,6 +1,6 @@
 import json
 
-import workstreambot.scrum.scrumConstants as Dict
+import workstreambot.scrum.dictionary as Dict
 from workstreambot.message_handler import MessageHandler
 
 
@@ -10,10 +10,10 @@ def test_guide_endless():
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
     assert response['dialogue'][0]['action_type'] == "explain"
-    assert response['dialogue'][0]['title'] == Dict.scrumGeneralKeys[0]
-    assert response['dialogue'][0]['content'] == Dict.scrumGeneralKeysValues[Dict.scrumGeneralKeys[0]]
+    assert response['dialogue'][0]['title'] == Dict.scrum_general_keys[0]
+    assert response['dialogue'][0]['content'] == Dict.scrum_general_keys_values[Dict.scrum_general_keys[0]]
     assert response['dialogue'][1]['action_type'] == "continue"
-    assert response['dialogue'][1]['content'].endswith(Dict.scrumGeneralKeys[1] + '?')
+    assert response['dialogue'][1]['content'].endswith(Dict.scrum_general_keys[1] + '?')
     assert response['dialogue'][1]['replyOptions'] == [{"text": "yes"}, {"text": "no"}]
 
     for i in range(1, 12):
@@ -21,8 +21,8 @@ def test_guide_endless():
         assert response['sender'] == "test_session"
         assert len(response['dialogue']) == 2
         assert response['dialogue'][0]['action_type'] == "explain"
-        assert response['dialogue'][0]['title'] == Dict.scrumGeneralKeys[i]
-        assert response['dialogue'][0]['content'] == Dict.scrumGeneralKeysValues[Dict.scrumGeneralKeys[i]]
+        assert response['dialogue'][0]['title'] == Dict.scrum_general_keys[i]
+        assert response['dialogue'][0]['content'] == Dict.scrum_general_keys_values[Dict.scrum_general_keys[i]]
         assert response['dialogue'][1]['action_type'] == "continue"
         # TODO Check content
         assert response['dialogue'][1]['replyOptions'] == [{"text": "yes"}, {"text": "no"}]
@@ -31,8 +31,8 @@ def test_guide_endless():
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
     assert response['dialogue'][0]['action_type'] == "explain"
-    assert response['dialogue'][0]['title'] == Dict.scrumGeneralKeys[12]
-    assert response['dialogue'][0]['content'] == Dict.scrumGeneralKeysValues[Dict.scrumGeneralKeys[12]]
+    assert response['dialogue'][0]['title'] == Dict.scrum_general_keys[12]
+    assert response['dialogue'][0]['content'] == Dict.scrum_general_keys_values[Dict.scrum_general_keys[12]]
     assert response['dialogue'][1]['action_type'] == "continue"
     assert response['dialogue'][1]['content'] == 'That is it for the crash course in scrum. Would you like to restart?'
     assert response['dialogue'][1]['replyOptions'] == [{"text": "yes"}, {"text": "no"}]
@@ -44,19 +44,19 @@ def test_guide_restart():
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
     assert response['dialogue'][0]['action_type'] == "explain"
-    assert response['dialogue'][0]['title'] == Dict.scrumGeneralKeys[0]
-    assert response['dialogue'][0]['content'] == Dict.scrumGeneralKeysValues[Dict.scrumGeneralKeys[0]]
+    assert response['dialogue'][0]['title'] == Dict.scrum_general_keys[0]
+    assert response['dialogue'][0]['content'] == Dict.scrum_general_keys_values[Dict.scrum_general_keys[0]]
     assert response['dialogue'][1]['action_type'] == "continue"
-    assert response['dialogue'][1]['content'].endswith(Dict.scrumGeneralKeys[1] + '?')
+    assert response['dialogue'][1]['content'].endswith(Dict.scrum_general_keys[1] + '?')
     assert response['dialogue'][1]['replyOptions'] == [{"text": "yes"}, {"text": "no"}]
 
     response = send_message(handler, "Yes", "test_session")
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
     assert response['dialogue'][0]['action_type'] == "explain"
-    assert response['dialogue'][0]['title'] == Dict.scrumGeneralKeys[1]
-    assert response['dialogue'][0]['content'] == Dict.scrumGeneralKeysValues[Dict.scrumGeneralKeys[1]]
-    assert response['dialogue'][1]['content'].endswith(Dict.scrumGeneralKeys[2] + '?')
+    assert response['dialogue'][0]['title'] == Dict.scrum_general_keys[1]
+    assert response['dialogue'][0]['content'] == Dict.scrum_general_keys_values[Dict.scrum_general_keys[1]]
+    assert response['dialogue'][1]['content'].endswith(Dict.scrum_general_keys[2] + '?')
     assert response['dialogue'][1]['replyOptions'] == [{"text": "yes"}, {"text": "no"}]
 
     response = send_message(handler, "No", "test_session")
@@ -67,10 +67,10 @@ def test_guide_restart():
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
     assert response['dialogue'][0]['action_type'] == "explain"
-    assert response['dialogue'][0]['title'] == Dict.scrumGeneralKeys[0]
-    assert response['dialogue'][0]['content'] == Dict.scrumGeneralKeysValues[Dict.scrumGeneralKeys[0]]
+    assert response['dialogue'][0]['title'] == Dict.scrum_general_keys[0]
+    assert response['dialogue'][0]['content'] == Dict.scrum_general_keys_values[Dict.scrum_general_keys[0]]
     assert response['dialogue'][1]['action_type'] == "continue"
-    assert response['dialogue'][1]['content'].endswith(Dict.scrumGeneralKeys[1] + '?')
+    assert response['dialogue'][1]['content'].endswith(Dict.scrum_general_keys[1] + '?')
     assert response['dialogue'][1]['replyOptions'] == [{"text": "yes"}, {"text": "no"}]
 
 
