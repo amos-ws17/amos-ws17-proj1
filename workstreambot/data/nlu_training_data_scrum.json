@@ -1392,6 +1392,174 @@
             "entity": "detail"
           }
         ]
+      },
+      {
+        "text": "agile",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "agile",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "business value",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 14,
+            "value": "business value",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "product owner",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 13,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "scrum master",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "scrum master",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "developers",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "developers",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "functional requirements",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 23,
+            "value": "functional requirements",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "non-functional requirements",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 27,
+            "value": "non-functional requirements",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "daily",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "daily",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "planning meeting",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 16,
+            "value": "planning meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "review meeting",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 14,
+            "value": "review meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "retrospective meeting",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 21,
+            "value": "retrospective meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "product backlog",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "sprint backlog",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 14,
+            "value": "sprint backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "release plan",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "release plan",
+            "entity": "detail"
+          }
+        ]
       }
     ]
   }
