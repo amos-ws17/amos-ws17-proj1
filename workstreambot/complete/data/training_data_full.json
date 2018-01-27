@@ -1,95 +1,823 @@
 {
   "rasa_nlu_data": {
-    "regex_features": [
-      {
-        "name": "time",
-        "pattern": "[0-9]{2}[-]{1}[0-9]{2}[-]{1}[0-9]{4}"
-      }
-    ],
     "common_examples": [
       {
-        "text": "hey",
-        "intent": "greet",
+        "text": "explain to me what is kanban?",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "howdy",
-        "intent": "greet",
+        "text": "tell me about kanban",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "hey there",
-        "intent": "greet",
+        "text": "tell me more about kanban",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "hello",
-        "intent": "greet",
+        "text": "give me information about kanban",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "hi",
-        "intent": "greet",
+        "text": "give me more information about kanban",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "good morning",
-        "intent": "greet",
+        "text": "what is kanban?",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "good evening",
-        "intent": "greet",
+        "text": "what is kanban about?",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "dear sir",
-        "intent": "greet",
+        "text": "what's kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "kanban",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what's kanban about?",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "yes, i like it", 
-        "intent": "affirm"
-      },
-      {
-        "text": "i like it", 
-        "intent": "affirm"
-      },
-      {
-        "text": "it is fine", 
-        "intent": "affirm"
-      },
-      {
-        "text": "it is ok", 
-        "intent": "affirm"
-      },
-      {
-        "text": "it is fine, thanks", 
-        "intent": "affirm"
-      },
-      {
-        "text": "i like it, thanks", 
-        "intent": "affirm"
-      },
-      {
-        "text": "great!",
-        "intent": "affirm",
+        "text": "what do you know about kanban?",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "that sounds like a great plan",
-        "intent": "affirm",
+        "text": "i need an introduction about kanban",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "sounds good",
-        "intent": "affirm",
+        "text": "do you know what is kanban?",
+        "intent": "switch_kanban",
         "entities": []
       },
       {
-        "text": "nice i like it",
-        "intent": "affirm",
+        "text": "explain kanban briefly",
+        "intent": "switch_kanban",
         "entities": []
+      },
+      {
+        "text": "explain kanban",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "how do you explain kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "how is kanban defined?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "define kanban",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what is the definition of kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what does kanban stand for?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what do you mean by kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "why would you use kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "how does kanban work?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what are the roles in kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what is the history of kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the history of kanban",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is kaizen?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is kaizen in the context of kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is kaizen in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how is kaizen implemented?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how is kaizen implemented in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the artefacts in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 22,
+            "value": "artefact",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the artefacts?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 22,
+            "value": "artefact",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the kanban board?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 24,
+            "value": "board",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the board in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "board",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the board in kanban used for?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "board",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the cycle time?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 22,
+            "value": "cycle time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is cycle time?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "cycle time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is cycle time in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "cycle time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is lead time?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "lead time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is lead time in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "lead time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is lead time in the context of kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "lead time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is stop the line?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 21,
+            "value": "stop the line",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is stop the line in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 21,
+            "value": "stop the line",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is a ticket?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a kanban ticket?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 17,
+            "end": 23,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a ticket in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is meant by type of ticket?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 31,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "how are tickets ordered?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 15,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "how are estimations handled in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 19,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "how are estimations done?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 19,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "how are estimations done in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 19,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is an estimation in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 11,
+            "end": 21,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is an estimation?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 21,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is meant by type of ticket?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 31,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a wip limit?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 13,
+            "value": "wip",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is wip?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 11,
+            "value": "wip",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is kanban wip?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 15,
+            "end": 18,
+            "value": "wip",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is wip in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 11,
+            "value": "wip",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "are buffers allowed in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 4,
+            "end": 11,
+            "value": "buffer",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is a kanban buffer?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 17,
+            "end": 23,
+            "value": "buffer",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is a buffer?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "buffer",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how are estimates handled in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 17,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what has to be provided to apply kanban in my company?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 33,
+            "end": 39,
+            "value": "kanban",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what happens when a wip limit is violated?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 33,
+            "end": 41,
+            "value": "violation",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how are the backlog items ordered?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 25,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "who invented kanban?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 4,
+            "end": 12,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "where does kanban come from?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 18,
+            "end": 27,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the roles in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 18,
+            "value": "kanban",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is root cause?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "violation",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the pull principle?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "pull principle",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the pull principle in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "pull principle",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "explain me the pull principle",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 29,
+            "value": "pull principle",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the ceremonies in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a ceremony?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 18,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a kanban ceremony?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "list me the kanban ceremonies?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 19,
+            "end": 29,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a replenishment meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 31,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a replenishment meeting in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 10,
+            "end": 31,
+            "value": "ceremony",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "Is there a need to estimate in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 19,
+            "end": 27,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "Are there estimations in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 10,
+            "end": 21,
+            "value": "estimation",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "name the artefacts in kanban",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 9,
+            "end": 18,
+            "value": "artefact",
+            "entity": "theme"
+          }
+        ]
       },
       {
         "text": "yes",
@@ -97,64 +825,52 @@
         "entities": []
       },
       {
-        "text": "uh no", 
-        "intent": "deny"
+        "text": "yes please",
+        "intent": "affirm",
+        "entities": []
       },
       {
-        "text": "no", 
-        "intent": "deny"
+        "text": "yeah",
+        "intent": "affirm",
+        "entities": []
       },
       {
-        "text": "i don't like it", 
-        "intent": "deny"
+        "text": "yeah please",
+        "intent": "affirm",
+        "entities": []
       },
       {
-        "text": "suggest me some other place", 
-        "intent": "deny"
+        "text": "yup",
+        "intent": "affirm",
+        "entities": []
       },
       {
-        "text": "another suggestion please", 
-        "intent": "deny"
+        "text": "please",
+        "intent": "affirm",
+        "entities": []
       },
       {
-        "text": "another suggestion", 
-        "intent": "deny"
+        "text": "sure",
+        "intent": "affirm",
+        "entities": []
       },
       {
-        "text": "that place sucks", 
-        "intent": "deny"
+        "text": "okay",
+        "intent": "affirm",
+        "entities": []
       },
       {
-        "text": "some other place", 
-        "intent": "deny"
+        "text": "why not",
+        "intent": "affirm",
+        "entities": []
       },
       {
-        "text": "suggestion", 
-        "intent": "deny"
-      },
-      {
-        "text": "suggest", 
-        "intent": "deny"
-      },
-      {
-        "text": "find something else", 
-        "intent": "deny"
-      },
-      {
-        "text": "another place", 
-        "intent": "deny"
-      },
-      {
-        "text": "find another one", 
-        "intent": "deny"
-      },
-      {
-        "text": "can you recommend somewhere else?",
+        "text": "uh no",
         "intent": "deny",
         "entities": []
       },
       {
-        "text": "can you suggest another place?",
+        "text": "no",
         "intent": "deny",
         "entities": []
       },
@@ -169,1790 +885,1329 @@
         "entities": []
       },
       {
-        "text": "no",
+        "text": "thanks",
         "intent": "deny",
         "entities": []
       },
       {
-        "text": "in berlin",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 3,
-            "end": 9,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i am in berlin",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 8,
-            "end": 14,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "for berlin",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 4,
-            "end": 10,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "berlin",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 6,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "mexican",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 7,
-            "value": "mexican",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "cheap",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 5,
-            "value": "cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "indian",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 6,
-            "value": "indian",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "italian",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 7,
-            "value": "italian",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "chinese",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 7,
-            "value": "chinese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "vietnamese",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 10,
-            "value": "chinese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "american",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 8,
-            "value": "chinese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "expensive",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 9,
-            "value": "expensive",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "moderately cheap",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 16,
-            "value": "moderately cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "moderately expensive",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 20,
-            "value": "moderately expensive",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "expensive",
-        "intent": "inform",
-        "entities": [
-          {
-            "start": 0,
-            "end": 9,
-            "value": "expensive",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some indian cuisine, it should be cheap.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 31,
-            "value": "indian",
-            "entity": "cuisine"
-          },
-          {
-            "start": 54,
-            "end": 59,
-            "value": "cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some italian cuisine, it should be cheap.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 32,
-            "value": "italian",
-            "entity": "cuisine"
-          },
-          {
-            "start": 55,
-            "end": 60,
-            "value": "cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some american cuisine, it should be cheap.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 33,
-            "value": "american",
-            "entity": "cuisine"
-          },
-          {
-            "start": 56,
-            "end": 61,
-            "value": "cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some chinese cuisine, it should be cheap.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 32,
-            "value": "chinese",
-            "entity": "cuisine"
-          },
-          {
-            "start": 55,
-            "end": 60,
-            "value": "cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some vietnamese cuisine, it should be cheap.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 35,
-            "value": "vietnamese",
-            "entity": "cuisine"
-          },
-          {
-            "start": 58,
-            "end": 63,
-            "value": "cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i want a cheap indian restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 9,
-            "end": 14,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 15,
-            "end": 21,
-            "value": "indian",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i want a cheap italian restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 9,
-            "end": 14,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 15,
-            "end": 22,
-            "value": "italian",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i want a cheap american restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 9,
-            "end": 14,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 15,
-            "end": 23,
-            "value": "american",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i want a cheap vietnamese restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 9,
-            "end": 14,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 15,
-            "end": 25,
-            "value": "vietnamese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i want a cheap chinese restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 9,
-            "end": 14,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 15,
-            "end": 22,
-            "value": "chinese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i want an expensive italian restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 10,
-            "end": 19,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 20,
-            "end": 27,
-            "value": "italian",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i want an expensive indian restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 10,
-            "end": 19,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 20,
-            "end": 26,
-            "value": "indian",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i want an expensive american restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 10,
-            "end": 19,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 20,
-            "end": 28,
-            "value": "american",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i want an expensive chinese restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 10,
-            "end": 19,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 20,
-            "end": 27,
-            "value": "chinese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i want an expensive vietnamese restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 10,
-            "end": 19,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 20,
-            "end": 30,
-            "value": "vietnamese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some expensive italian cuisine.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 34,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 35,
-            "end": 42,
-            "value": "italian",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some expensive indian cuisine.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 34,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 35,
-            "end": 41,
-            "value": "indian",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some expensive chinese cuisine.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 34,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 35,
-            "end": 42,
-            "value": "chinese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some expensive vietnamese cuisine.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 34,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 35,
-            "end": 45,
-            "value": "vietnamese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some expensive american cuisine.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 34,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 35,
-            "end": 43,
-            "value": "american",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some expensive mexican cuisine.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 34,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 35,
-            "end": 42,
-            "value": "mexican",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i want an expensive mexican restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 10,
-            "end": 19,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 20,
-            "end": 27,
-            "value": "mexican",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try some mexican cuisine, it should be cheap.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 25,
-            "end": 32,
-            "value": "mexican",
-            "entity": "cuisine"
-          },
-          {
-            "start": 55,
-            "end": 60,
-            "value": "cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i want a cheap mexican restaurant.",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 9,
-            "end": 14,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 15,
-            "end": 22,
-            "value": "mexican",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 3,
-            "end": 9,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i am in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 8,
-            "end": 14,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "for berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 4,
-            "end": 10,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 6,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "in hamburg",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 3,
-            "end": 10,
-            "value": "hamburg",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "hamburg",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 7,
-            "value": "hamburg",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i am in hamburg",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 8,
-            "end": 15,
-            "value": "hamburg",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "for hamburg",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 4,
-            "end": 11,
-            "value": "hamburg",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "mexican",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 7,
-            "value": "mexican",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "indian",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 6,
-            "value": "indian",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "italian",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 7,
-            "value": "italian",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "chinese",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 7,
-            "value": "chinese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "vietnamese",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 10,
-            "value": "chinese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "american",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 8,
-            "value": "chinese",
-            "entity": "cuisine"
-          }
-        ]
-      },
-      {
-        "text": "cheap",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 5,
-            "value": "cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "expensive",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 9,
-            "value": "expensive",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "moderately cheap",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 16,
-            "value": "moderately cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "moderately expensive",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 20,
-            "value": "moderately expensive",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "expensive",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 0,
-            "end": 9,
-            "value": "expensive",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try a restaurant in berlin, it should be cheap",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 36,
-            "end": 42,
-            "value": "berlin",
-            "entity": "location"
-          },
-          {
-            "start": 57,
-            "end": 62,
-            "value": "cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try a restaurant in berlin, it should be moderately cheap",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 36,
-            "end": 42,
-            "value": "berlin",
-            "entity": "location"
-          },
-          {
-            "start": 57,
-            "end": 73,
-            "value": "moderately cheap",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try a restaurant in berlin, it should be expensive",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 36,
-            "end": 42,
-            "value": "berlin",
-            "entity": "location"
-          },
-          {
-            "start": 57,
-            "end": 66,
-            "value": "expensive",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try a restaurant in berlin, it should be moderately expensive",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 36,
-            "end": 42,
-            "value": "berlin",
-            "entity": "location"
-          },
-          {
-            "start": 57,
-            "end": 77,
-            "value": "moderately expensive",
-            "entity": "price"
-          }
-        ]
-      },
-      {
-        "text": "i want a cheap restaurant in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 9,
-            "end": 14,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 29,
-            "end": 35,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i want a moderately cheap restaurant in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 9,
-            "end": 25,
-            "value": "moderately cheap",
-            "entity": "price"
-          },
-          {
-            "start": 40,
-            "end": 46,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i want a moderately expensive restaurant in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 9,
-            "end": 29,
-            "value": "moderately expensive",
-            "entity": "price"
-          },
-          {
-            "start": 44,
-            "end": 50,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i want an expensive restaurant in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 10,
-            "end": 19,
-            "value": "moderately expensive",
-            "entity": "price"
-          },
-          {
-            "start": 34,
-            "end": 40,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-
-
-
-
-
-
-
-
-
-      {
-        "text": "i would like to try an italian cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 23,
-            "end": 30,
-            "value": "italian",
-            "entity": "cuisine"
-          },
-          {
-            "start": 35,
-            "end": 41,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try a chinese cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 22,
-            "end": 29,
-            "value": "chinese",
-            "entity": "cuisine"
-          },
-          {
-            "start": 34,
-            "end": 40,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try a vietnamese cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 22,
-            "end": 32,
-            "value": "vietnamese",
-            "entity": "cuisine"
-          },
-          {
-            "start": 37,
-            "end": 43,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try a american cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 22,
-            "end": 30,
-            "value": "american",
-            "entity": "cuisine"
-          },
-          {
-            "start": 35,
-            "end": 41,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try an indian cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 23,
-            "end": 29,
-            "value": "indian",
-            "entity": "cuisine"
-          },
-          {
-            "start": 34,
-            "end": 40,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try a mexican cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 22,
-            "end": 29,
-            "value": "mexican",
-            "entity": "cuisine"
-          },
-          {
-            "start": 34,
-            "end": 40,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try an expensive italian cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 23,
-            "end": 32,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 33,
-            "end": 40,
-            "value": "italian",
-            "entity": "cuisine"
-          },
-          {
-            "start": 53,
-            "end": 59,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try an expensive chinese cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 23,
-            "end": 32,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 33,
-            "end": 40,
-            "value": "chinese",
-            "entity": "cuisine"
-          },
-          {
-            "start": 53,
-            "end": 59,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try an expensive vietnamese cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 23,
-            "end": 32,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 33,
-            "end": 43,
-            "value": "vietnamese",
-            "entity": "cuisine"
-          },
-          {
-            "start": 56,
-            "end": 62,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try an expensive american cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 23,
-            "end": 32,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 33,
-            "end": 41,
-            "value": "american",
-            "entity": "cuisine"
-          },
-          {
-            "start": 54,
-            "end": 60,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try an expensive indian cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 23,
-            "end": 32,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 33,
-            "end": 39,
-            "value": "indian",
-            "entity": "cuisine"
-          },
-          {
-            "start": 52,
-            "end": 58,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try an expensive mexican cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 23,
-            "end": 32,
-            "value": "expensive",
-            "entity": "price"
-          },
-          {
-            "start": 33,
-            "end": 40,
-            "value": "mexican",
-            "entity": "cuisine"
-          },
-          {
-            "start": 53,
-            "end": 59,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-
-
-
-
-      {
-        "text": "i would like to try a cheap italian cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 22,
-            "end": 27,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 28,
-            "end": 35,
-            "value": "italian",
-            "entity": "cuisine"
-          },
-          {
-            "start": 48,
-            "end": 54,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i would like to try a cheap chinese cuisine, in berlin",
-        "intent": "inform_restaurant",
-        "entities": [
-          {
-            "start": 22,
-            "end": 27,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 28,
-            "end": 35,
-            "value": "chinese",
-            "entity": "cuisine"
-          },
-          {
-            "start": 48,
-            "end": 54,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i want a restaurant",
-        "intent": "inform_restaurant",
+        "text": "nope",
+        "intent": "deny",
         "entities": []
       },
       {
-        "text": "i would like to try a cheap vietnamese cuisine, in berlin",
-        "intent": "inform_restaurant",
+        "text": "nay",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "nah",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "that is enough",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "explain to me what is scrum?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "tell me about scrum",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "tell me more about scrum",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "give me information about scrum",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "give me more information about scrum",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "what is scrum?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "what is scrum about?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "what's scrum?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "what's scrum about?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "what do you know about scrum?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "i need an introduction about scrum",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "do you know what is scrum?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "explain scrum briefly",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "explain scrum",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "how you explain scrum?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "how you define scrum?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "define scrum",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "what is the definition of scrum?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "what does scrum stand for?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "what do you mean by scrum?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "why would you use scrum?",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "tell me about the roles in scrum",
+        "intent": "switch_scrum",
         "entities": [
           {
-            "start": 22,
+            "start": 18,
+            "end": 23,
+            "value": "roles",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the user stories in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 23,
+            "end": 30,
+            "value": "stories",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "continue",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "stop",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "i want to know about roles",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 21,
+            "end": 26,
+            "value": "roles",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "i want to know about extras",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 21,
             "end": 27,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 28,
-            "end": 38,
-            "value": "vietnamese",
-            "entity": "cuisine"
-          },
-          {
-            "start": 51,
-            "end": 57,
-            "value": "berlin",
-            "entity": "location"
+            "value": "extras",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "i would like to try a cheap american cuisine, in berlin",
-        "intent": "inform_restaurant",
+        "text": "tell me about the user stories",
+        "intent": "inform",
         "entities": [
           {
-            "start": 22,
-            "end": 27,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 28,
-            "end": 36,
-            "value": "american",
-            "entity": "cuisine"
-          },
-          {
-            "start": 49,
-            "end": 55,
-            "value": "berlin",
-            "entity": "location"
+            "start": 23,
+            "end": 30,
+            "value": "stories",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "i would like to try a cheap indian cuisine, in berlin",
-        "intent": "inform_restaurant",
+        "text": "explain me one more time what is a sprint",
+        "intent": "inform",
         "entities": [
           {
-            "start": 22,
-            "end": 27,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 28,
-            "end": 34,
-            "value": "indian",
-            "entity": "cuisine"
-          },
-          {
-            "start": 47,
-            "end": 53,
-            "value": "berlin",
-            "entity": "location"
+            "start": 35,
+            "end": 41,
+            "value": "sprint",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "i would like to try a cheap mexican cuisine, in berlin",
-        "intent": "inform_restaurant",
+        "text": "what is a sprint?",
+        "intent": "inform",
         "entities": [
           {
-            "start": 22,
-            "end": 27,
-            "value": "cheap",
-            "entity": "price"
-          },
-          {
-            "start": 28,
-            "end": 35,
-            "value": "mexican",
-            "entity": "cuisine"
-          },
-          {
-            "start": 48,
-            "end": 54,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-
-
-      {
-        "text": "where should I start my sightseeing in berlin?",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 39,
-            "end": 45,
-            "value": "berlin",
-            "entity": "location"
+            "start": 10,
+            "end": 16,
+            "value": "sprint",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "what is the popular park in berlin?",
-        "intent": "inform_sightseeing",
+        "text": "what are the ceremonies?",
+        "intent": "inform",
         "entities": [
           {
-            "start": 20,
+            "start": 13,
+            "end": 23,
+            "value": "ceremonies",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the backlog?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "backlog",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the estimations?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
             "end": 24,
-            "value": "park",
-            "entity": "type_specific"
-          },
-          {
-            "start": 28,
-            "end": 34,
-            "value": "berlin",
-            "entity": "location"
+            "value": "estimations",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "what is the famous museum in berlin?",
-        "intent": "inform_sightseeing",
+        "text": "tell me what the release is?",
+        "intent": "inform",
         "entities": [
-          {
-            "start": 19,
-            "end": 25,
-            "value": "museum",
-            "entity": "type_specific"
-          },
-          {
-            "start": 29,
-            "end": 35,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what is the famous park?",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 19,
-            "end": 23,
-            "value": "park",
-            "entity": "type_specific"
-          }
-        ]
-      },
-      {
-        "text": "what is the popular museum?",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 20,
-            "end": 26,
-            "value": "museum",
-            "entity": "type_specific"
-          }
-        ]
-      },
-      {
-        "text": "i need some recommendations for indoor places in berlin.",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 32,
-            "end": 38,
-            "value": "indoor",
-            "entity": "type"
-          },
-          {
-            "start": 49,
-            "end": 55,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i need some recommendations for outdoor places in berlin.",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 32,
-            "end": 39,
-            "value": "outdoor",
-            "entity": "type"
-          },
-          {
-            "start": 50,
-            "end": 56,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "i need some recommendations for outdoor places.",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 32,
-            "end": 39,
-            "value": "outdoor",
-            "entity": "type"
-          }
-        ]
-      },
-      {
-        "text": "i need some recommendations for indoor places.",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 32,
-            "end": 38,
-            "value": "indoor",
-            "entity": "type"
-          }
-        ]
-      },
-      {
-        "text": "what is the best place to visit in berlin?",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 35,
-            "end": 41,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "recommend me a monument in berlin.",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 15,
-            "end": 23,
-            "value": "monument",
-            "entity": "type_specific"
-          },
-          {
-            "start": 27,
-            "end": 33,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "recommend me a museum in berlin",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 15,
-            "end": 21,
-            "value": "museum",
-            "entity": "type_specific"
-          },
-          {
-            "start": 25,
-            "end": 31,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "recommend me a palace in berlin",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 15,
-            "end": 21,
-            "value": "palace",
-            "entity": "type_specific"
-          },
-          {
-            "start": 25,
-            "end": 31,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "can you recommend me a monument in berlin?",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 23,
-            "end": 31,
-            "value": "monument",
-            "entity": "type_specific"
-          },
-          {
-            "start": 35,
-            "end": 41,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "give me some nice place",
-        "intent": "inform_sightseeing",
-        "entities": []
-      },
-      {
-        "text": "i would like to visit an outdoor attraction in basel",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 47,
-            "end": 52,
-            "value": "basel",
-            "entity": "location"
-          },
-          {
-            "start": 25,
-            "end": 32,
-            "value": "outdoor",
-            "entity": "type"
-          }
-        ]
-      },
-      {
-        "text": "can you recommend me a museum in berlin?",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 33,
-            "end": 39,
-            "value": "berlin",
-            "entity": "location"
-          },
-          {
-            "start": 23,
-            "end": 29,
-            "value": "museum",
-            "entity": "type_specific"
-          }
-        ]
-      },
-      {
-        "text": "what is the best palace in berlin?",
-        "intent": "inform_sightseeing",
-        "entities": [
-          {
-            "start": 27,
-            "end": 33,
-            "value": "berlin",
-            "entity": "location"
-          },
           {
             "start": 17,
-            "end": 23,
-            "value": "palace",
-            "entity": "type_specific"
-          }
-        ]
-      },
-      
-      {
-        "text": "what will the weather be in berlin?",
-        "intent": "inform_weather",
-        "entities": [
-          {
-            "start": 28,
-            "end": 34,
-            "value": "berlin",
-            "entity": "location"
+            "end": 24,
+            "value": "release",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "what will it be like in berlin?",
-        "intent": "inform_weather",
-        "entities": [
-          {
-            "start": 24,
-            "end": 30,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather forecast be in berlin?",
-        "intent": "inform_weather",
-        "entities": [
-          {
-            "start": 37,
-            "end": 43,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what's the forecast for berlin?",
-        "intent": "inform_weather",
-        "entities": [
-          {
-            "start": 24,
-            "end": 30,
-            "value": "berlin",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "what will the weather be like on 2017-01-01?",
-        "intent": "inform_weather",
-        "entities": [
-          {
-            "start": 33,
-            "end": 43,
-            "value": "2017-01-01",
-            "entity": "time"
-          }
-        ]
-      },
-      {
-        "text": "what is the weather like?",
-        "intent": "inform_weather",
+        "text": "go ahead",
+        "intent": "continue",
         "entities": []
       },
       {
-        "text": "what will the weather be like on 2017-01-01?",
-        "intent": "inform_weather",
+        "text": "tell me about what velocity is",
+        "intent": "inform",
         "entities": [
           {
-            "start": 33,
-            "end": 43,
-            "value": "2017-01-01",
-            "entity": "time"
+            "start": 19,
+            "end": 27,
+            "value": "velocity",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "what will it feel like on 2017-01-01?",
-        "intent": "inform_weather",
+        "text": "tell me what burndown is",
+        "intent": "inform",
         "entities": [
           {
-            "start": 26,
-            "end": 36,
-            "value": "2017-01-01",
-            "entity": "time"
+            "start": 13,
+            "end": 21,
+            "value": "burndown",
+            "entity": "theme"
           }
         ]
       },
       {
-        "text": "what will it feel like on 2017-01-01 in berlin?",
-        "intent": "inform_weather",
+        "text": "what is a spike?",
+        "intent": "inform",
         "entities": [
           {
-            "start": 26,
-            "end": 36,
-            "value": "2017-01-01",
-            "entity": "time"
-          },
+            "start": 10,
+            "end": 15,
+            "value": "spike",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what do goals mean?",
+        "intent": "inform",
+        "entities": [
           {
-            "start": 40,
+            "start": 8,
+            "end": 13,
+            "value": "goals",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what does agile exactly mean?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 16,
+            "end": 23,
+            "value": "exactly",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is business value?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 22,
+            "value": "business value",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the product owner?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 25,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what exactly is the role of the product owner?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 32,
+            "end": 45,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the role of the product owner?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 37,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what does the product owner do?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 27,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what does the scrum master do?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 26,
+            "value": "scrum master",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the role of the scrum master?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 36,
+            "value": "scrum master",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the role of the developers?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 34,
+            "value": "developers",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what do the developers do?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 22,
+            "value": "developers",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the functional requirements?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 36,
+            "value": "functional requirements",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the non-functional requirements?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 40,
+            "value": "non-functional requirements",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the daily?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "daily",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the daily scrum?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "daily",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the planning meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 28,
+            "value": "planning meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is done in the planning meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 36,
+            "value": "planning meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is done during the planning meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 40,
+            "value": "planning meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is done during the review meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 38,
+            "value": "review meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what exactly is being discussed during the review meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 43,
+            "end": 57,
+            "value": "review meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what's done in the retrospective meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 40,
+            "value": "retrospective meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the point of the retrospective meeting?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
             "end": 46,
-            "value": "berlin",
-            "entity": "location"
+            "value": "retrospective meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is stored in the product backlog?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 22,
+            "end": 37,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the product backlog?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 27,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what do you put in the product backlog?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 23,
+            "end": 38,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is saved in the sprint backlog?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 21,
+            "end": 35,
+            "value": "sprint backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the predicted burndown?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 30,
+            "value": "predicted burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how do you calculate the predicted burndown?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 43,
+            "value": "predicted burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the actual burndown?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 27,
+            "value": "actual burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how do you calculate the actual burndown?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 40,
+            "value": "actual burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how is the actual burndown computed?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 26,
+            "value": "actual burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the release plan?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 24,
+            "value": "release plan",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how do you make the release plan?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 32,
+            "value": "release plan",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the release plan used for?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 24,
+            "value": "release plan",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the roles in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 13,
+            "end": 18,
+            "value": "roles",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "i want to know about extras in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 21,
+            "end": 27,
+            "value": "extras",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the ceremonies in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "ceremonies",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about what velocity in the context of scrum is",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 19,
+            "end": 27,
+            "value": "velocity",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a scrum spike?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 16,
+            "end": 21,
+            "value": "spike",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the goals in the scrum context?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 13,
+            "end": 18,
+            "value": "goals",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what estimations are done in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 5,
+            "end": 16,
+            "value": "estimations",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the daily in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "daily",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the planning meeting in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 28,
+            "value": "planning meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the product backlog in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 27,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is written in the product backlog in the context of scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 23,
+            "end": 38,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the functional requirements in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 13,
+            "end": 36,
+            "value": "functional requirements",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what are the non-functional requirements in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 13,
+            "end": 40,
+            "value": "non-functional requirements",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me what the product owner role in scrum is",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 17,
+            "end": 30,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me what the product owner role in scrum is all about",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 17,
+            "end": 30,
+            "value": "product owner",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me what the scrum master role in scrum is",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 17,
+            "end": 29,
+            "value": "scrum master",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the role of the developers in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 24,
+            "end": 34,
+            "value": "developers",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the business value in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "business value",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is to be understood as agile in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 28,
+            "end": 33,
+            "value": "agile",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is agile in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 8,
+            "end": 13,
+            "value": "agile",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the actual burndown in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 27,
+            "value": "actual burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how do you make the release plan in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 20,
+            "end": 32,
+            "value": "release plan",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what do you put in the release plan in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 23,
+            "end": 35,
+            "value": "release plan",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is discussed in the retrospective meeting in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 25,
+            "end": 46,
+            "value": "retrospective meeting",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the sprint backlog in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "sprint backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "how do you calculate the predicted burndown in scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 25,
+            "end": 43,
+            "value": "predicted burndown",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is contained in the scrum sprint backlog?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 31,
+            "end": 45,
+            "value": "sprint backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the scrum backlog?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "backlog",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what do you write down in the scrum backlog?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 36,
+            "end": 43,
+            "value": "backlog",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a scrum sprint?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 16,
+            "end": 22,
+            "value": "sprint",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a sprint in the context of scrum?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "sprint",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the scrum in general?",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "scrum",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "please continue",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "go on",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "please go on",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "inform me about the scrum agile process",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "scrum agile process",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "scrum",
+        "intent": "switch_scrum",
+        "entities": []
+      },
+      {
+        "text": "tell me about the roles",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 23,
+            "value": "roles",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the sprint",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 24,
+            "value": "sprint",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the backlog",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "backlog",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the extras",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 24,
+            "value": "extras",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the goals",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 23,
+            "value": "goals",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the velocity",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 26,
+            "value": "velocity",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a burndown",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 18,
+            "value": "burndown",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the ceremonies",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "ceremonies",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what are the estimations",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 24,
+            "value": "estimations",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is a release in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 10,
+            "end": 17,
+            "value": "release",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what about the release",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 22,
+            "value": "release",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is the sprint backlog",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 26,
+            "value": "sprint backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "what is the product backlog",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 27,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the sprint backlog in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 18,
+            "end": 32,
+            "value": "sprint backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the product backlog in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 18,
+            "end": 33,
+            "value": "product backlog",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me about the product owner in scrum",
+        "intent": "switch_scrum",
+        "entities": [
+          {
+            "start": 18,
+            "end": 31,
+            "value": "product owner",
+            "entity": "detail"
           }
         ]
       }
