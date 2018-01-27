@@ -4,6 +4,7 @@ import utils as utils
 
 sessions = {}
 
+
 # get the next key to explain
 def get_next_kanban_key(index):
     try:
@@ -11,6 +12,7 @@ def get_next_kanban_key(index):
         return key
     except IndexError:
         return None
+
 
 # get the index of the details being explained
 def find_kanban_detail_index(key):
@@ -30,15 +32,6 @@ def find_kanban_general_index(key):
     return None
 
 
-# find a specific key to explain
-# def find_kanban_key(key):
-#     if key in K.kanbanGeneralKeysValues:
-#         return key
-#     else if key in K.kanbanDetailsKeysValues:
-#         return key
-#     else:
-#         return None
-
 def entities_contain_detail(entities):
     if len(entities) == 0:
         return False
@@ -47,6 +40,7 @@ def entities_contain_detail(entities):
             if entity['entity'] == 'detail':
                 return True
         return False
+
 
 # ask to continue to the next key
 class Continue(Action):
