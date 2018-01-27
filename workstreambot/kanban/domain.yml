@@ -22,4 +22,4 @@ actions:
   - kanban.action.Explain
   - kanban.action.Continue
   - kanban.action.ExplainDetail
-  - kanban.action.ExplainSpecific
+
