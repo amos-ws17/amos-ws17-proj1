@@ -1,40 +1,45 @@
 from rasa_core.actions import Action
-import kanban.kanbanConstants as K
+import kanban.dictionary as dict
 import utils as utils
 
 sessions = {}
 
+
 # get the next key to explain
 def get_next_kanban_key(index):
     try:
-        key = K.kanbanGeneralKeys[index]
+        key = dict.kanban_general_keys[index]
         return key
     except IndexError:
         return None
 
+
 # get the index of the details being explained
 def find_kanban_detail_index(key):
-    for details in K.kanbanDetailsKeys:
-        if key in details:
-            return K.kanbanDetailsKeys.index[details]
+    keys = dict.kanban_details_keys
+    for i in range(len(keys)):
+        if key in keys[i]:
+            return i
     return None
 
 
 # get the index of the theme being explained
 def find_kanban_general_index(key):
-    if key in K.kanbanGeneralKeys:
-        return K.kanbanGeneralKeys.index[key]
+    keys = dict.kanban_general_keys
+    for i in range(len(keys)):
+        if key in keys[i]:
+            return i
     return None
 
 
-# find a specific key to explain
-def find_kanban_key(key):
-    if key in K.kanbanGeneralKeysValues:
-        return key
-    else if key in K.kanbanDetailsKeysValues:
-        return key
+def entities_contain_detail(entities):
+    if len(entities) == 0:
+        return False
     else:
-        return None
+        for entity in entities:
+            if entity['entity'] == 'detail':
+                return True
+        return False
 
 
 # ask to continue to the next key
@@ -82,7 +87,7 @@ class Explain(Action):
         if intent == 'switch_kanban' and len(entities) == 0:
             current_index = 0
             # get the first general key
-            current_key = K.kanbanGeneralKeys[current_index]
+            current_key = dict.kanban_general_keys[current_index]
         elif (intent == 'switch_kanban' and len(entities) > 0) or intent == 'inform':
             # get the current key from the user input
             current_key = tracker.get_slot('theme')
@@ -94,21 +99,25 @@ class Explain(Action):
             else:
                 current_index = 0
             # get the current key from the index
-            current_key = K.kanbanGeneralKeys[current_index]
+            current_key = dict.kanban_general_keys[current_index]
 
-        current_detail_keys = K.kanbanDetailsKeys[current_index]
+        try:
+            current_detail_keys = dict.kanban_details_keys[current_index]
+        except IndexError:
+            current_detail_keys = None
 
         sessions[tracker.sender_id] = current_index
 
         # declare reply options
         reply_options = []
         # check if there available options and add them to the reply options
-        for detail in current_detail_keys:
-            reply_options.append({"text": detail})
+        if current_detail_keys is not None:
+            for detail in current_detail_keys:
+                reply_options.append({"text": detail})
 
         # explain the current key
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), current_key, K.kanbanGeneralKeysValues[current_key],
+            utils.prepare_action_response(self.name(), current_key, dict.kanban_general_keys_values[current_key],
                                           reply_options, tracker.current_slot_values(), "kanban"))
         return []
 
@@ -118,14 +127,13 @@ class ExplainDetail(Action):
         return 'explain_detail'
 
     def run(self, dispatcher, tracker, domain):
-        global current_index
-
         # get the detail entity from the one of the buttons offered as options in reply options above
         current_detail = tracker.get_slot('detail')
         # make sure the current index is the right one
         current_index = find_kanban_detail_index(current_detail)
+        sessions[tracker.sender_id] = current_index
         # get the list of details based on the index
-        current_detail_keys = K.kanbanDetailsKeys[current_index]
+        current_detail_keys = dict.kanban_details_keys[current_index]
         # declare reply options
         reply_options = []
         # build the reply options while filtering out the current details
@@ -134,7 +142,6 @@ class ExplainDetail(Action):
                 reply_options.append({"text": detail})
         # build the response based on the reply keys
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), current_detail, K.kanbanDetailsKeysValues[current_detail],
+            utils.prepare_action_response(self.name(), current_detail, dict.kanban_details_keys_values[current_detail],
                                           reply_options, tracker.current_slot_values(), "kanban"))
         return []
-
