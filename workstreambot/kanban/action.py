@@ -1,45 +1,28 @@
-from rasa_core.actions import Action
 import kanban.dictionary as dict
 import utils as utils
+from rasa_core.actions import Action
 
 sessions = {}
 
 
-# get the next key to explain
-def get_next_kanban_key(index):
-    try:
-        key = dict.kanban_general_keys[index]
-        return key
-    except IndexError:
-        return None
+def get_first_theme():
+    for theme in dict.kanban:
+        if dict.kanban[theme]['position'] == 1:
+            return theme
 
 
-# get the index of the details being explained
-def find_kanban_detail_index(key):
-    keys = dict.kanban_details_keys
-    for i in range(len(keys)):
-        if key in keys[i]:
-            return i
+def get_next_theme(current_theme):
+    for theme in dict.kanban:
+        if dict.kanban[theme]['position'] == dict.kanban[current_theme]['position'] + 1:
+            return theme
     return None
 
 
-# get the index of the theme being explained
-def find_kanban_general_index(key):
-    keys = dict.kanban_general_keys
-    for i in range(len(keys)):
-        if key in keys[i]:
-            return i
+def find_theme(current_detail):
+    for theme in dict.kanban:
+        if 'details' in dict.kanban[theme] and current_detail in dict.kanban[theme]['details']:
+            return theme
     return None
-
-
-def entities_contain_detail(entities):
-    if len(entities) == 0:
-        return False
-    else:
-        for entity in entities:
-            if entity['entity'] == 'detail':
-                return True
-        return False
 
 
 # ask to continue to the next key
@@ -49,24 +32,20 @@ class Continue(Action):
 
     def run(self, dispatcher, tracker, domain):
         global sessions
-        # increment current index
-        current_index = sessions[tracker.sender_id] + 1
-        # find the next key
-        next_key = get_next_kanban_key(current_index)
-        # make it the current one
-        current_key = next_key
-        # if all themes are explained end the guide otherwise ask for the next one
-        if not current_key:
-            response = 'That is it for the crash course in kanban. Would you like to restart?'
-            sessions[tracker.sender_id] = 0
-        else:
-            response = 'Would you like to know about ' + current_key + '?'
-            sessions[tracker.sender_id] = current_index
 
-        reply_options = [{"text": "yes"}, {"text": "no"}]
+        next_theme = get_next_theme(sessions[tracker.sender_id])
+
+        if not next_theme:
+            content = 'That is it for the crash course in kanban. Would you like to restart?'
+            sessions[tracker.sender_id] = get_first_theme()
+        else:
+            content = 'Would you like to know about ' + next_theme + '?'
+            sessions[tracker.sender_id] = next_theme
+
+        reply_options = [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
 
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), None, response, reply_options, tracker.current_slot_values(),
+            utils.prepare_action_response(self.name(), None, content, reply_options, tracker.current_slot_values(),
                                           "kanban"))
         return []
 
@@ -78,46 +57,36 @@ class Explain(Action):
     def run(self, dispatcher, tracker, domain):
         global sessions
 
-        # get current intent
         intent = tracker.latest_message.parse_data['intent']['name']
-        # get entities if any
         entities = tracker.latest_message.parse_data['entities']
 
-        # check if entities exist and decide on the flow 
         if intent == 'switch_kanban' and len(entities) == 0:
-            current_index = 0
-            # get the first general key
-            current_key = dict.kanban_general_keys[current_index]
+            current_theme = get_first_theme()
         elif (intent == 'switch_kanban' and len(entities) > 0) or intent == 'inform':
-            # get the current key from the user input
-            current_key = tracker.get_slot('theme')
-            # get the current index
-            current_index = find_kanban_general_index(current_key)
+            current_theme = tracker.get_slot('theme')
         else:
             if tracker.sender_id in sessions:
-                current_index = sessions[tracker.sender_id]
+                current_theme = sessions[tracker.sender_id]
             else:
-                current_index = 0
-            # get the current key from the index
-            current_key = dict.kanban_general_keys[current_index]
+                current_theme = get_first_theme()
 
         try:
-            current_detail_keys = dict.kanban_details_keys[current_index]
-        except IndexError:
-            current_detail_keys = None
+            current_details = dict.kanban[current_theme]['details']
+        except KeyError:
+            current_details = None
 
-        sessions[tracker.sender_id] = current_index
+        sessions[tracker.sender_id] = current_theme
 
         # declare reply options
         reply_options = []
         # check if there available options and add them to the reply options
-        if current_detail_keys is not None:
-            for detail in current_detail_keys:
-                reply_options.append({"text": detail})
+        if current_details is not None:
+            for key in current_details.keys():
+                reply_options.append({"text": key, 'reply': key})
 
         # explain the current key
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), current_key, dict.kanban_general_keys_values[current_key],
+            utils.prepare_action_response(self.name(), current_theme, dict.kanban[current_theme]['general'],
                                           reply_options, tracker.current_slot_values(), "kanban"))
         return []
 
@@ -127,21 +96,18 @@ class ExplainDetail(Action):
         return 'explain_detail'
 
     def run(self, dispatcher, tracker, domain):
-        # get the detail entity from the one of the buttons offered as options in reply options above
+        global sessions
+
         current_detail = tracker.get_slot('detail')
-        # make sure the current index is the right one
-        current_index = find_kanban_detail_index(current_detail)
-        sessions[tracker.sender_id] = current_index
-        # get the list of details based on the index
-        current_detail_keys = dict.kanban_details_keys[current_index]
-        # declare reply options
+        current_theme = find_theme(current_detail)
+        sessions[tracker.sender_id] = current_theme
+
         reply_options = []
-        # build the reply options while filtering out the current details
-        for detail in current_detail_keys:
-            if detail != current_detail:
-                reply_options.append({"text": detail})
-        # build the response based on the reply keys
-        dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), current_detail, dict.kanban_details_keys_values[current_detail],
-                                          reply_options, tracker.current_slot_values(), "kanban"))
+        for key in dict.kanban[current_theme]['details']:
+            if key != current_detail:
+                reply_options.append({"text": key, "reply": key})
+
+        dispatcher.utter_message(utils.prepare_action_response(self.name(), current_detail,
+                                                               dict.kanban[current_theme]['details'][current_detail],
+                                                               reply_options, tracker.current_slot_values(), "kanban"))
         return []
