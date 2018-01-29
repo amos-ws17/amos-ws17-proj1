@@ -25,9 +25,9 @@ docker-compose up
 Install a virtualenv in a desired location
 
 ```
-sudo pip install virtualenv
+sudo pip3 install virtualenv
 #cd to our desired location
-virtualenv -p python venv
+virtualenv -p python3 venv
 ```
 
 Start your venv
@@ -39,27 +39,25 @@ source venv/bin/activate
 Install Rasa NLU
 
 ```
-pip install rasa_nlu
+pip3 install rasa_nlu
 ```
 
 Install necessary libraries
 
 ```
-pip install requests 
-pip install -U spacy
-python -m spacy download en
-pip install -U scikit-learn scipy sklearn-crfsuite
-pip install flask
-pip install -U pytest
+pip3 install -U spacy
+python3 -m spacy download en
+pip3 install -U scikit-learn scipy sklearn-crfsuite
+pip3 install flask
+pip3 install -U pytest
 ```
 
 Install Rasa Core
 
 ```
-pip install rasa_core
+pip3 install rasa_core
 ```
 
-Now you should be able to run the [weather bot](https://github.com/amos-ws17/amos-ws17-proj1/wiki/Weather-bot).  
 For more details on installing Rasa take a look into the [Rasa NLU](http://nlu.rasa.ai/installation.html) and [Rasa Core](https://core.rasa.ai/installation.html) documentation.
 
 ## Running the tests
@@ -83,10 +81,6 @@ Give an example
 ```
 
 ## Models
-
-* [Weather Model](https://github.com/amos-ws17/amos-ws17-proj1/wiki/Weather-bot) whose data is provided by [Yahoo](https://developer.yahoo.com/weather/documentation.html) - Weather API Documentation
-* Sightseeing Model whose data is provided by [Foursquare](https://developer.foursquare.com/docs) - Foursquare API Documentation
-* Restaurant Model whose data is provided by [Foursquare](https://developer.foursquare.com/docs) - Foursquare API Documentation
 
 ## Built With
 
