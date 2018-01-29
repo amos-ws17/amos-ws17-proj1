@@ -4,11 +4,9 @@ branches:
   only:
     - dev
     - master
-    - persistance_integration
 
 python:
-  - "2.7"
-  - "3.5"
+  - "3.6.3"
 
 services:
   - docker
@@ -21,7 +19,7 @@ jobs:
       script:
         - cd workstreambot
         - docker build -t amoschatbot/worksteambot:latest .
-        - docker run -it --entrypoint "python -m pytest test/" amoschatbot/worksteambot
+        - docker run -it --entrypoint bash amoschatbot/worksteambot -a test.sh
     - stage: release
       if: branch = master
       script:
