@@ -20,8 +20,8 @@ jobs:
       if: branch = dev
       script:
         - cd workstreambot
-	- docker build -t amoschatbot/worksteambot:latest .
-	- docker run -it --entrypoint "python -m pytest test/" amoschatbot/worksteambot
+        - docker build -t amoschatbot/worksteambot:latest .
+        - docker run -it --entrypoint "python -m pytest test/" amoschatbot/worksteambot
     - stage: release
       if: branch = master
       script:
