@@ -13,7 +13,6 @@ from session import Session
 
 class MessageHandler:
     interpreter = None
-    dialogue_topics = None
     dialogue_models = {}
 
     sessions = {}
@@ -26,7 +25,6 @@ class MessageHandler:
     def __init__(self, dialogue_topics, persistance=False):
         self.persistance = persistance
         self.interpreter = Interpreter.load(self.nlu_model_path, RasaNLUConfig('nlu_model_config.json'))
-        self.dialogue_topics = dialogue_topics
         self.dialogue_models = self.load_dialogue_models(dialogue_topics)
 
     def load_dialogue_models(self, dialogue_topics):

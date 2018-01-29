@@ -98,7 +98,6 @@ class ExplainDetail(Action):
     def run(self, dispatcher, tracker, domain):
         global sessions
 
-        print("ExplainDetail")
         current_detail = tracker.get_slot('detail')
         current_theme = find_theme(current_detail)
         sessions[tracker.sender_id] = current_theme

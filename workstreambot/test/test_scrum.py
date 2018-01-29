@@ -6,7 +6,7 @@ from workstreambot.message_handler import MessageHandler
 
 def test_guide_endless():
     handler = MessageHandler({"scrum"})
-    response = send_message(handler, "What is about scrum?", "test_session")
+    response = send_message(handler, "What is Scrum about?", "test_session")
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
     assert response['dialogue'][0]['action_type'] == "explain"
@@ -44,7 +44,7 @@ def test_guide_endless():
 
 def test_guide_restart():
     handler = MessageHandler({"scrum"})
-    response = send_message(handler, "What is about scrum?", "test_session")
+    response = send_message(handler, "What is Scrum about?", "test_session")
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
     assert response['dialogue'][0]['action_type'] == "explain"
@@ -70,7 +70,7 @@ def test_guide_restart():
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 0
 
-    response = send_message(handler, "What is about Scrum?", "test_session")
+    response = send_message(handler, "What is Scrum about?", "test_session")
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
     assert response['dialogue'][0]['action_type'] == "explain"
@@ -85,7 +85,7 @@ def test_guide_restart():
 
 def test_guide_reenter():
     handler = MessageHandler({"scrum"})
-    response = send_message(handler, "What is about scrum?", "test_session")
+    response = send_message(handler, "What is Scrum about?", "test_session")
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
     assert response['dialogue'][0]['action_type'] == "explain"
