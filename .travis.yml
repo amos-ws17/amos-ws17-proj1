@@ -20,14 +20,8 @@ jobs:
       if: branch = dev
       script:
         - cd workstreambot
-        - python -m pytest test/
-    - stage: build rasa base
-      if: branch = persistance_integration
-      script:
-      - cd workstreambot/base_rasa_core
-      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-      - docker build -t amoschatbot/rasabase:latest .
-      - docker push amoschatbot/rasabase
+	- docker build -t amoschatbot/worksteambot:latest .
+	- docker run -it --entrypoint "python -m pytest test/" amoschatbot/worksteambot
     - stage: release
       if: branch = master
       script:

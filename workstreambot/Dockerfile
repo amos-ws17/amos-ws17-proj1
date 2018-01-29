@@ -1,10 +1,10 @@
 FROM amoschatbot/rasabase:latest
 
-RUN mkdir bot
+RUN mkdir workstreambot
 
-ADD . /rasa_core/bot
+ADD . /rasa_core/workstreambot
 
-WORKDIR /rasa_core/bot
+WORKDIR /rasa_core/workstreambot
 
 RUN pip install -r requirements.txt
 
