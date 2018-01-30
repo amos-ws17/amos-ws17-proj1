@@ -17,7 +17,7 @@ def test_guide_endless():
     assert response['dialogue'][0]['action_type'] == "explain"
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
-    assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
+    assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
 
     # Continue
     theme = get_next_theme(theme)
@@ -35,7 +35,7 @@ def test_guide_endless():
         assert response['dialogue'][0]['title'] == theme
         assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
         if 'replyOptions' in response['dialogue'][0]:
-            assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
+            assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
 
         # Continue
         theme = get_next_theme(theme)
@@ -53,7 +53,7 @@ def test_guide_endless():
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
-        assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
+        assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
 
     # Continue
     assert response['dialogue'][1]['action_type'] == "continue"
@@ -73,7 +73,7 @@ def test_guide_restart():
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
-        assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
+        assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
 
     # Continue
     theme = get_next_theme(theme)
@@ -90,7 +90,7 @@ def test_guide_restart():
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
-        assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
+        assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
 
     # Continue
     theme = get_next_theme(theme)
@@ -112,7 +112,7 @@ def test_guide_restart():
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
-        assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
+        assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
 
     # Continue
     theme = get_next_theme(theme)
@@ -157,7 +157,7 @@ def test_details():
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
-        assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
+        assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
 
     # Continue
     theme = get_next_theme(theme)
@@ -166,7 +166,7 @@ def test_details():
     assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
 
     detail = "agile"
-    response = send_message(handler, detail, "test_session")
+    response = send_message(handler, "Tell me more about " + detail, "test_session")
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
 
@@ -176,7 +176,7 @@ def test_details():
     assert response['dialogue'][0]['title'] == detail
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['details'][detail]
     if 'replyOptions' in response['dialogue'][0]:
-        assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
+        assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
 
     # Continue
     theme = get_next_theme(theme)
@@ -197,7 +197,7 @@ def test_continue_details():
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
-        assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
+        assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
 
     # Continue
     theme = get_next_theme(theme)
@@ -206,7 +206,7 @@ def test_continue_details():
     assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
 
     detail = "agile"
-    response = send_message(handler, detail, "test_session")
+    response = send_message(handler, "Tell me more about " + detail, "test_session")
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
 
@@ -215,7 +215,7 @@ def test_continue_details():
     assert response['dialogue'][0]['action_type'] == "explain_detail"
     assert response['dialogue'][0]['title'] == detail
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['details'][detail]
-    assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
+    assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
 
     # Continue
     theme = get_next_theme(theme)
@@ -224,7 +224,7 @@ def test_continue_details():
     assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
 
     detail = "business value"
-    response = send_message(handler, detail, "test_session")
+    response = send_message(handler, "Tell me more about " + detail, "test_session")
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
 
@@ -233,7 +233,7 @@ def test_continue_details():
     assert response['dialogue'][0]['action_type'] == "explain_detail"
     assert response['dialogue'][0]['title'] == detail
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['details'][detail]
-    assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
+    assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
 
     # Continue
     theme = get_next_theme(theme)
@@ -254,7 +254,7 @@ def test_continue_after_detail():
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
-        assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
+        assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
 
     # Continue
     theme = get_next_theme(theme)
@@ -263,7 +263,7 @@ def test_continue_after_detail():
     assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
 
     detail = "agile"
-    response = send_message(handler, detail, "test_session")
+    response = send_message(handler, "Tell me more about " + detail, "test_session")
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
 
@@ -272,7 +272,7 @@ def test_continue_after_detail():
     assert response['dialogue'][0]['action_type'] == "explain_detail"
     assert response['dialogue'][0]['title'] == detail
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['details'][detail]
-    assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
+    assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
 
     # Continue
     theme = get_next_theme(theme)
@@ -288,7 +288,7 @@ def test_continue_after_detail():
     assert response['dialogue'][0]['action_type'] == "explain"
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
-    assert reply_option_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
+    assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
 
     # Continue
     theme = get_next_theme(theme)
@@ -318,16 +318,17 @@ def filter_details(current_theme, current_detail):
     details = []
     for detail in dict.scrum[current_theme]['details']:
         if detail != current_detail:
-            details.append(detail)  #
+            details.append(detail)
 
     return details
 
 
-def reply_option_contain_details(reply_options, details):
+def reply_options_contain_details(reply_options, details):
     for detail in details:
         detail_exists = False
+        print(reply_options)
         for reply in reply_options:
-            if reply['reply'] == detail:
+            if reply['reply'] == "Tell me more about " + detail:
                 detail_exists = True
         if not detail_exists:
             return False

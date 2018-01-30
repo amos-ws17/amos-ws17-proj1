@@ -35,43 +35,43 @@ def test_switch_scrum_theme():
     assert nlu['intent']['name'] == "switch_scrum"
     assert len(nlu['entities']) == 1
     assert entities_contain_theme(nlu['entities'])
-    assert theme_value_is_equal(nlu['entities'], 'roles')
+    assert get_theme_value(nlu['entities']) == 'roles'
 
     nlu = perform_initial_input("What are the meetings in Scrum?")
     assert nlu['intent']['name'] == "switch_scrum"
     assert len(nlu['entities']) == 1
     assert entities_contain_theme(nlu['entities'])
-    # TODO assert theme_value_is_equal(nlu['entities'], 'ceremonies')
+    # TODO assert theme_value_is_equal(nlu['entities'], 'ceremonies'), "Theme value is " + nlu['entities'][0]['value'] + ", instead of ceremonies"
 
     nlu = perform_initial_input("What are the ceremonies in Scrum?")
     # TODO assert nlu['intent']['name'] == "switch_scrum"
     assert len(nlu['entities']) == 1
     assert entities_contain_theme(nlu['entities'])
-    assert theme_value_is_equal(nlu['entities'], 'ceremonies')
+    assert get_theme_value(nlu['entities']) == 'ceremonies'
 
 
 def test_switch_scrum_detail():
     # TODO
-    nlu = perform_initial_input("Tell me what the Product Owner role in Scrum is")
+    nlu = perform_initial_input("What is the role of the developers in scrum?")
     assert nlu['intent']['name'] == "switch_scrum"
     assert len(nlu['entities']) == 1
     assert entities_contain_detail(nlu['entities'])
-    assert detail_value_is_equal(nlu['entities'], 'Product Owner')
+    assert get_detail_value(nlu['entities']) == 'developers'
 
     nlu = perform_initial_input("What does the Product Owner in Scrum?")
     # TODO assert nlu['intent']['name'] == "switch_scrum"
     assert len(nlu['entities']) == 1
     assert entities_contain_detail(nlu['entities'])
-    assert detail_value_is_equal(nlu['entities'], 'Product Owner')
+    assert get_detail_value(nlu['entities']) == 'Product Owner'
 
 
 def test_inform_theme():
     # TODO
-    nlu = perform_initial_input("Tell me something about roles")
+    nlu = perform_initial_input("Tell me about the roles")
     assert nlu['intent']['name'] == "inform"
     assert len(nlu['entities']) == 1
     assert entities_contain_theme(nlu['entities'])
-    assert theme_value_is_equal(nlu['entities'], 'roles')
+    assert get_theme_value(nlu['entities']) == 'roles'
 
 
 def test_inform_detail():
@@ -80,16 +80,16 @@ def test_inform_detail():
     assert nlu['intent']['name'] == "inform"
     assert len(nlu['entities']) == 1
     assert entities_contain_detail(nlu['entities'])
-    assert detail_value_is_equal(nlu['entities'], 'Product Owner')
+    assert get_detail_value(nlu['entities']) == 'Product Owner'
 
 
 def test_details():
     for detail in get_all_details():
-        nlu = perform_initial_input(detail)
+        nlu = perform_inform("Tell me more about " + detail)
         assert nlu['intent']['name'] == "inform", "Expected intent for " + detail + " is incorrect"
         assert len(nlu['entities']) == 1, "Expected entities for " + detail + " are incorrect"
         assert entities_contain_detail(nlu['entities']), "Expected entity for " + detail + " is incorrect"
-        assert detail_value_is_equal(nlu['entities'], detail), "Expected entity value for " + detail + " is incorrect"
+        assert get_detail_value(nlu['entities']) == detail
 
 
 def test_continue():
@@ -140,11 +140,11 @@ def entities_contain_theme(entities):
     return False
 
 
-def theme_value_is_equal(entities, value):
+def get_theme_value(entities):
     for entity in entities:
-        if entity['entity'] == 'theme' and entity['value'] == value:
-            return True
-    return False
+        if entity['entity'] == 'theme':
+            return entity['value']
+    return None
 
 
 def entities_contain_detail(entities):
@@ -154,11 +154,11 @@ def entities_contain_detail(entities):
     return False
 
 
-def detail_value_is_equal(entities, value):
+def get_detail_value(entities):
     for entity in entities:
-        if entity['entity'] == 'detail' and entity['value'] == value:
-            return True
-    return False
+        if entity['entity'] == 'detail':
+            return entity['value']
+    return None
 
 
 def get_all_details():

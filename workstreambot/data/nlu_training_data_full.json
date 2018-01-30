@@ -1394,168 +1394,168 @@
         ]
       },
       {
-        "text": "agile",
+        "text": "tell me more about agile",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 5,
+            "start": 19,
+            "end": 24,
             "value": "agile",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "business value",
+        "text": "tell me more about business value",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 14,
+            "start": 19,
+            "end": 33,
             "value": "business value",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "product owner",
+        "text": "tell me more about product owner",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 13,
+            "start": 19,
+            "end": 32,
             "value": "product owner",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "scrum master",
+        "text": "tell me more about scrum master",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 12,
+            "start": 19,
+            "end": 31,
             "value": "scrum master",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "developers",
+        "text": "tell me more about developers",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 10,
+            "start": 19,
+            "end": 29,
             "value": "developers",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "functional requirements",
+        "text": "tell me more about functional requirements",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 23,
+            "start": 19,
+            "end": 42,
             "value": "functional requirements",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "non-functional requirements",
+        "text": "tell me more about non-functional requirements",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 27,
+            "start": 19,
+            "end": 46,
             "value": "non-functional requirements",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "daily",
+        "text": "tell me more about daily standup",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 5,
-            "value": "daily",
+            "start": 19,
+            "end": 32,
+            "value": "daily standup",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "planning meeting",
+        "text": "tell me more about planning meeting",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 16,
+            "start": 19,
+            "end": 35,
             "value": "planning meeting",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "review meeting",
+        "text": "tell me more about review meeting",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 14,
+            "start": 19,
+            "end": 33,
             "value": "review meeting",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "retrospective meeting",
+        "text": "tell me more about retrospective meeting",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 21,
+            "start": 19,
+            "end": 40,
             "value": "retrospective meeting",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "product backlog",
+        "text": "tell me more about product backlog",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 15,
+            "start": 19,
+            "end": 34,
             "value": "product backlog",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "sprint backlog",
+        "text": "tell me more about sprint backlog",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 14,
+            "start": 19,
+            "end": 33,
             "value": "sprint backlog",
             "entity": "detail"
           }
         ]
       },
       {
-        "text": "release plan",
+        "text": "tell me more about release plan",
         "intent": "inform",
         "entities": [
           {
-            "start": 0,
-            "end": 12,
+            "start": 19,
+            "end": 31,
             "value": "release plan",
             "entity": "detail"
           }

@@ -82,7 +82,7 @@ class Explain(Action):
         # check if there available options and add them to the reply options
         if current_details is not None:
             for key in current_details.keys():
-                reply_options.append({"text": key, 'reply': key})
+                reply_options.append({"text": key, 'reply': "Tell me more about " + key})
 
         # explain the current key
         dispatcher.utter_message(
@@ -105,7 +105,7 @@ class ExplainDetail(Action):
         reply_options = []
         for key in dict.scrum[current_theme]['details']:
             if key != current_detail:
-                reply_options.append({"text": key, "reply": key})
+                reply_options.append({"text": key, "reply": "Tell me more about " + key})
 
         dispatcher.utter_message(utils.prepare_action_response(self.name(), current_detail,
                                                                dict.scrum[current_theme]['details'][current_detail],
