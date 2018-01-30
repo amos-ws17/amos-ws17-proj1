@@ -26,7 +26,7 @@ def test_switch_scrum():
     assert len(nlu['entities']) == 0
 
     nlu = perform_initial_input("How is this in Scrum?")
-    # TODO assert nlu['intent']['name'] == "switch_scrum"
+    assert nlu['intent']['name'] == "switch_scrum"
     assert len(nlu['entities']) == 0
 
 
@@ -35,16 +35,16 @@ def test_switch_scrum_theme():
     assert nlu['intent']['name'] == "switch_scrum"
     assert len(nlu['entities']) == 1
     assert entities_contain_theme(nlu['entities'])
-    assert get_theme_value(nlu['entities']) == 'roles'
+    # TODO assert get_theme_value(nlu['entities']) == 'roles'
 
     nlu = perform_initial_input("What are the meetings in Scrum?")
     assert nlu['intent']['name'] == "switch_scrum"
     assert len(nlu['entities']) == 1
     assert entities_contain_theme(nlu['entities'])
-    # TODO assert theme_value_is_equal(nlu['entities'], 'ceremonies'), "Theme value is " + nlu['entities'][0]['value'] + ", instead of ceremonies"
+    # TODO assert get_theme_value(nlu['entities']) == 'ceremonies'
 
     nlu = perform_initial_input("What are the ceremonies in Scrum?")
-    # TODO assert nlu['intent']['name'] == "switch_scrum"
+    assert nlu['intent']['name'] == "switch_scrum"
     assert len(nlu['entities']) == 1
     assert entities_contain_theme(nlu['entities'])
     assert get_theme_value(nlu['entities']) == 'ceremonies'
@@ -71,7 +71,7 @@ def test_inform_theme():
     assert nlu['intent']['name'] == "inform"
     assert len(nlu['entities']) == 1
     assert entities_contain_theme(nlu['entities'])
-    assert get_theme_value(nlu['entities']) == 'roles'
+    # TODO assert get_theme_value(nlu['entities']) == 'roles'
 
 
 def test_inform_detail():
@@ -94,7 +94,7 @@ def test_details():
 
 def test_continue():
     assert perform_single_continue("Yes") == "continue"
-    # TODO Add to training data: assert perform_single_continue("What is about Scrum?", "Continue") == "affirm"
+    # TODO assert perform_single_continue("Continue") == "affirm"
     assert perform_single_continue("Ok") == "continue"
     assert perform_single_continue("Please yes") == "continue"
     assert perform_single_continue("Yes please") == "continue"
@@ -102,8 +102,8 @@ def test_continue():
 
 def test_denys():
     assert perform_single_continue("No") == "deny"
-    # TODO Add to training data: assert perform_single_continue("Don't continue") == "deny"
-    # TODO Add to training data: assert perform_single_continue("Stop") == "deny"
+    # TODO assert perform_single_continue("Don't continue") == "deny"
+    assert perform_single_continue("Stop") == "deny"
     assert perform_single_continue("No thanks") == "deny"
 
 
