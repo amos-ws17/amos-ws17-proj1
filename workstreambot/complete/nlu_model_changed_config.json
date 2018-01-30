@@ -10,20 +10,8 @@
     "ner_duckling"
   ],
   "path": "./models",
-  "project": "nlu"
-}
-{
-  "pipeline": [
-    "nlp_spacy",
-    "tokenizer_spacy",
-    "intent_featurizer_spacy",
-    "intent_entity_featurizer_regex",
-    "ner_crf",
-    "ner_synonyms",
-    "intent_classifier_sklearn",
-    "ner_duckling"
-  ],
-  "language": "en",
+  "project": "nlu",
+  "language":"en",
   "max_training_processes": 2,
   "path": "./models",
   "ner_crf": {
