@@ -1654,7 +1654,7 @@
           {
             "start": 13,
             "end": 22,
-            "value": "artefact",
+            "value": "artefacts",
             "entity": "theme"
           }
         ]
@@ -1666,7 +1666,7 @@
           {
             "start": 13,
             "end": 22,
-            "value": "artefact",
+            "value": "artefacts",
             "entity": "theme"
           }
         ]
@@ -2254,7 +2254,7 @@
           {
             "start": 9,
             "end": 18,
-            "value": "artefact",
+            "value": "artefacts",
             "entity": "theme"
           }
         ]
@@ -2332,13 +2332,13 @@
         ]
       },
       {
-        "text": "tell me more about violation",
+        "text": "tell me more about wip violation",
         "intent": "inform",
         "entities": [
           {
             "start": 19,
-            "end": 28,
-            "value": "violation",
+            "end": 32,
+            "value": "wip violation",
             "entity": "detail"
           }
         ]
