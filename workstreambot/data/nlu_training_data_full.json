@@ -1,4 +1,4 @@
-{
+﻿{
   "rasa_nlu_data": {
     "common_examples": [
       {
@@ -396,9 +396,9 @@
         "intent": "inform",
         "entities": [
           {
-            "start": 16,
-            "end": 23,
-            "value": "exactly",
+            "start": 10,
+            "end": 15,
+            "value": "agile",
             "entity": "detail"
           }
         ]
@@ -1561,50 +1561,6 @@
           }
         ]
       },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {
         "text": "explain to me what is kanban?",
         "intent": "switch_kanban",
