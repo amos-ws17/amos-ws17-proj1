@@ -2,96 +2,6 @@
   "rasa_nlu_data": {
     "common_examples": [
       {
-        "text": "yes",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "yes please",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "yeah",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "yeah please",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "yup",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "please",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "sure",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "okay",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "why not",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "uh no",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "no",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "no thank you",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "no thanks",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "thanks",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "nope",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "nay",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "nah",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "that is enough",
-        "intent": "deny",
-        "entities": []
-      },
-      {
         "text": "explain to me what is scrum?",
         "intent": "switch_scrum",
         "entities": []
@@ -221,16 +131,6 @@
         ]
       },
       {
-        "text": "continue",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "stop",
-        "intent": "deny",
-        "entities": []
-      },
-      {
         "text": "i want to know about roles",
         "intent": "inform",
         "entities": [
@@ -337,11 +237,6 @@
             "entity": "theme"
           }
         ]
-      },
-      {
-        "text": "go ahead",
-        "intent": "continue",
-        "entities": []
       },
       {
         "text": "tell me about what velocity is",
@@ -1172,21 +1067,6 @@
         ]
       },
       {
-        "text": "please continue",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "go on",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "please go on",
-        "intent": "continue",
-        "entities": []
-      },
-      {
         "text": "inform me about the scrum agile process",
         "intent": "switch_scrum",
         "entities": []
@@ -1560,6 +1440,126 @@
             "entity": "detail"
           }
         ]
+      },
+      {
+        "text": "yes",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "yes please",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "yeah",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "yeah please",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "yup",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "please",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "sure",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "okay",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "why not",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "please continue",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "go on",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "please go on",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "go ahead",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "continue",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "uh no",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "no",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "no thank you",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "no thanks",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "thanks",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "nope",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "nay",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "nah",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "stop",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "that is enough",
+        "intent": "deny",
+        "entities": []
       }
     ]
   }

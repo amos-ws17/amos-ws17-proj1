@@ -52,7 +52,7 @@ def test_switch_scrum_theme():
 
 def test_switch_scrum_detail():
     # TODO
-    nlu = perform_initial_input("What is the role of the developers in scrum?")
+    nlu = perform_initial_input("What is the role of the developers in Scrum?")
     assert nlu['intent']['name'] == "switch_scrum"
     assert len(nlu['entities']) == 1
     assert entities_contain_detail(nlu['entities'])
