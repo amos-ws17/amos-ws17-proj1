@@ -214,7 +214,7 @@
           {
             "start": 13,
             "end": 22,
-            "value": "artefact",
+            "value": "artefacts",
             "entity": "theme"
           }
         ]
@@ -226,7 +226,7 @@
           {
             "start": 13,
             "end": 22,
-            "value": "artefact",
+            "value": "artefacts",
             "entity": "theme"
           }
         ]
@@ -718,7 +718,7 @@
           {
             "start": 13,
             "end": 23,
-            "value": "ceremony",
+            "value": "ceremonies",
             "entity": "theme"
           }
         ]
@@ -730,7 +730,7 @@
           {
             "start": 10,
             "end": 18,
-            "value": "ceremony",
+            "value": "ceremonies",
             "entity": "theme"
           }
         ]
@@ -742,7 +742,7 @@
           {
             "start": 17,
             "end": 25,
-            "value": "ceremony",
+            "value": "ceremonies",
             "entity": "theme"
           }
         ]
@@ -754,7 +754,7 @@
           {
             "start": 19,
             "end": 29,
-            "value": "ceremony",
+            "value": "ceremonies",
             "entity": "theme"
           }
         ]
@@ -766,7 +766,7 @@
           {
             "start": 10,
             "end": 31,
-            "value": "ceremony",
+            "value": "ceremonies",
             "entity": "theme"
           }
         ]
@@ -778,7 +778,7 @@
           {
             "start": 10,
             "end": 31,
-            "value": "ceremony",
+            "value": "ceremonies",
             "entity": "theme"
           }
         ]
@@ -814,10 +814,214 @@
           {
             "start": 9,
             "end": 18,
-            "value": "artefact",
+            "value": "artefacts",
             "entity": "theme"
           }
         ]
+      },
+      {
+        "text": "tell me more about history",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 26,
+            "value": "history",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me more about kaizen",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 25,
+            "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me more about cycle time",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 29,
+            "value": "cycle time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me more about lead time",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 28,
+            "value": "lead time",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me more about stop the line",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 32,
+            "value": "stop the line",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me more about buffer",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 25,
+            "value": "buffer",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me more about wip violation",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 32,
+            "value": "wip violation",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "uh no",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "no",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "no thank you",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "no thanks",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "thanks",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "nope",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "nay",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "nah",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "that is enough",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "stop",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "continue",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "go ahead",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "please continue",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "go on",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "please go on",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "yes",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "yes please",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "yeah",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "yeah please",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "yup",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "please",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "sure",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "okay",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "why not",
+        "intent": "continue",
+        "entities": []
       }
     ]
   }
