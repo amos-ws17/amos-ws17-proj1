@@ -1,3 +1,2 @@
 ## Py requirements
-duckling
 pytest
