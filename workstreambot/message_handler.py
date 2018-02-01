@@ -13,7 +13,6 @@ from session import Session
 
 class MessageHandler:
     interpreter = None
-    dialogue_topics = None
     dialogue_models = {}
 
     sessions = {}
@@ -26,7 +25,6 @@ class MessageHandler:
     def __init__(self, dialogue_topics, persistance=False):
         self.persistance = persistance
         self.interpreter = Interpreter.load(self.nlu_model_path, RasaNLUConfig('nlu_model_config.json'))
-        self.dialogue_topics = dialogue_topics
         self.dialogue_models = self.load_dialogue_models(dialogue_topics)
 
     def load_dialogue_models(self, dialogue_topics):
@@ -72,11 +70,13 @@ class MessageHandler:
 
         # Handle user input
         dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
-        dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
+        if current_dialogue_topic != None:
+            dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
                                                                                sender_id=session_id)
-
-        # Save changes in session
-        self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
+            # Save changes in session
+            self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
+        else:
+            dialogue = ['{"action_type":"", "content":"Sorry, I did not understand you!", "title":"None", "replyOptions": []}']
 
         return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue)
 

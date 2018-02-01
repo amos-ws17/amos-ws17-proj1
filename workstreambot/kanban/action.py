@@ -1,4 +1,4 @@
-import scrum.dictionary as dict
+import kanban.dictionary as dict
 import utils as utils
 from rasa_core.actions import Action
 
@@ -6,21 +6,21 @@ sessions = {}
 
 
 def get_first_theme():
-    for theme in dict.scrum:
-        if dict.scrum[theme]['position'] == 1:
+    for theme in dict.kanban:
+        if dict.kanban[theme]['position'] == 1:
             return theme
 
 
 def get_next_theme(current_theme):
-    for theme in dict.scrum:
-        if dict.scrum[theme]['position'] == dict.scrum[current_theme]['position'] + 1:
+    for theme in dict.kanban:
+        if dict.kanban[theme]['position'] == dict.kanban[current_theme]['position'] + 1:
             return theme
     return None
 
 
 def find_theme(current_detail):
-    for theme in dict.scrum:
-        if 'details' in dict.scrum[theme] and current_detail in dict.scrum[theme]['details']:
+    for theme in dict.kanban:
+        if 'details' in dict.kanban[theme] and current_detail in dict.kanban[theme]['details']:
             return theme
     return None
 
@@ -36,7 +36,7 @@ class Continue(Action):
         next_theme = get_next_theme(sessions[tracker.sender_id])
 
         if not next_theme:
-            content = 'That is it for the crash course in scrum. Would you like to restart?'
+            content = 'That is it for the crash course in kanban. Would you like to restart?'
             sessions[tracker.sender_id] = get_first_theme()
         else:
             content = 'Would you like to know about ' + next_theme + '?'
@@ -46,7 +46,7 @@ class Continue(Action):
 
         dispatcher.utter_message(
             utils.prepare_action_response(self.name(), None, content, reply_options, tracker.current_slot_values(),
-                                          "scrum"))
+                                          "kanban"))
         return []
 
 
@@ -60,9 +60,9 @@ class Explain(Action):
         intent = tracker.latest_message.parse_data['intent']['name']
         entities = tracker.latest_message.parse_data['entities']
 
-        if intent == 'switch_scrum' and len(entities) == 0:
+        if intent == 'switch_kanban' and len(entities) == 0:
             current_theme = get_first_theme()
-        elif (intent == 'switch_scrum' and len(entities) > 0) or intent == 'inform':
+        elif (intent == 'switch_kanban' and len(entities) > 0) or intent == 'inform':
             current_theme = tracker.get_slot('theme')
         else:
             if tracker.sender_id in sessions:
@@ -71,7 +71,7 @@ class Explain(Action):
                 current_theme = get_first_theme()
 
         try:
-            current_details = dict.scrum[current_theme]['details']
+            current_details = dict.kanban[current_theme]['details']
         except KeyError:
             current_details = None
 
@@ -86,8 +86,8 @@ class Explain(Action):
 
         # explain the current key
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), current_theme, dict.scrum[current_theme]['general'],
-                                          reply_options, tracker.current_slot_values(), "scrum"))
+            utils.prepare_action_response(self.name(), current_theme, dict.kanban[current_theme]['general'],
+                                          reply_options, tracker.current_slot_values(), "kanban"))
         return []
 
 
@@ -103,11 +103,11 @@ class ExplainDetail(Action):
         sessions[tracker.sender_id] = current_theme
 
         reply_options = []
-        for key in dict.scrum[current_theme]['details']:
+        for key in dict.kanban[current_theme]['details']:
             if key != current_detail:
                 reply_options.append({"text": key, "reply": "Tell me more about " + key})
 
         dispatcher.utter_message(utils.prepare_action_response(self.name(), current_detail,
-                                                               dict.scrum[current_theme]['details'][current_detail],
-                                                               reply_options, tracker.current_slot_values(), "scrum"))
+                                                               dict.kanban[current_theme]['details'][current_detail],
+                                                               reply_options, tracker.current_slot_values(), "kanban"))
         return []
