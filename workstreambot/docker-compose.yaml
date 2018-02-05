@@ -7,6 +7,9 @@ services:
       - 5012:5000
     expose:
       - 5012
+    environment:
+      - PYTHONUNBUFFERED=0
+      
 networks:
   default:
     external:

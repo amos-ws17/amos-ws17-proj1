@@ -47,38 +47,79 @@ class MessageHandler:
             return Agent.load(topic + self.dialogue_model_path)
 
     def converse(self, message, session_id):
-        # Parse user input
-        nlu_json_response = self.interpreter.parse(message)
-        entities = self.prepare_entities(nlu_json_response)
 
-        # Select session
-        if session_id not in self.sessions:
+        if (message == "reset"):
+            print("RESET CONVO")
+            # Clean local session
             self.sessions[session_id] = Session()
 
-        current_dialogue_topic = self.sessions[session_id].get_current_dialogue_topic()
+            # Clean persistance session for all topics
+            for dialogue_topic in self.dialogue_models:
+                domain = TemplateDomain.load(dialogue_topic + self.domain_path)
+                redis_tracker_store = RedisTrackerStoreAgentized(domain=domain, host="redis-container")
+                redis_tracker_store.clean(session_id)
 
-        # Select current dialogue topic
-        for dialogue_topic in self.dialogue_models:
-            switching_intent = self.switching_intent_prefix + dialogue_topic
+            #dialogue = []
+            #dialogueObj = {}
+            #dialogueObj['action_type'] = 'reset'
+            #dialogueObj['content'] = "The conversation history is successfully deleted"
+            #dialogueObj['title'] = "reset"
+            #dialogue.append(dialogueObj)
+            #dialogue = json.dumps(dialogue)
+            dialogue = ['{"action_type":"reset", "content":"The conversation history is successfully deleted", "title":"None", "replyOptions": []}']
 
-            if switching_intent == nlu_json_response['intent']['name']:
-                if current_dialogue_topic != dialogue_topic:
-                    current_dialogue_topic = dialogue_topic
-                    # Reset dialogue model
-                    self.dialogue_models[current_dialogue_topic] = self.load_dialogue_model(current_dialogue_topic)
-                    # TODO Inject slots
+            #nlu_json_response = {}
+            #nlu_intent = {}
+            #nlu_intent['name'] = "_reset"
+            #nlu_intent['confidence'] = 1.0
+            #nlu_json_response['intent'] = nlu_intent
+            #nlu_json_response['entities'] = []
+            #nlu_json_response['intent_ranking'] = []
+            #nlu_json_response['text'] = message
+            #nlu_json_response = json.dumps(nlu_json_response)
+            nlu_json_response = '{"intent": {"name": "_reset", "confidence": 1.0}, "entities": [], "intent_ranking":[], "text": "reset"}'
 
-        # Handle user input
-        dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
-        if current_dialogue_topic != None:
-            dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
-                                                                               sender_id=session_id)
-            # Save changes in session
-            self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
+            dialogue_message = '_reset'
+            #dialogue_message = json.dumps(dialogue_message)
+
+            print(dialogue)
+            print(nlu_json_response)
+            print(dialogue_message)
         else:
-            dialogue = ['{"action_type":"", "content":"Sorry, I did not understand you!", "title":"None", "replyOptions": []}']
+            # Parse user input
+            nlu_json_response = self.interpreter.parse(message)
+            entities = self.prepare_entities(nlu_json_response)
+
+            # Select session
+            if session_id not in self.sessions:
+                self.sessions[session_id] = Session()
+
+            current_dialogue_topic = self.sessions[session_id].get_current_dialogue_topic()
+
+            # Select current dialogue topic
+            for dialogue_topic in self.dialogue_models:
+                switching_intent = self.switching_intent_prefix + dialogue_topic
+
+                if switching_intent == nlu_json_response['intent']['name']:
+                    if current_dialogue_topic != dialogue_topic:
+                        current_dialogue_topic = dialogue_topic
+                        # Reset dialogue model
+                        self.dialogue_models[current_dialogue_topic] = self.load_dialogue_model(current_dialogue_topic)
+                        # TODO Inject slots
+
+            # Handle user input
+            dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
+            if current_dialogue_topic != None:
+                dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
+                                                                                   sender_id=session_id)
+                # Save changes in session
+                self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
+            else:
+                dialogue = ['{"action_type":"", "content":"Sorry, I did not understand you!", "title":"None", "replyOptions": []}']
 
         return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue)
+
+        
 
     def prepare_entities(self, nlu_json_response):
         entities = []
@@ -136,6 +177,6 @@ class RedisTrackerStoreAgentized(TrackerStore):
         else:
             return None
 
-    def clean(self):
-        for key in self.red.scan_iter(self.topic + "*"):
-            self.red.delete(key)
+    def clean(self, sender_id):
+        key = self.topic + "_" + sender_id
+        self.red.delete(key)
