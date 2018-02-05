@@ -49,7 +49,6 @@ class MessageHandler:
     def converse(self, message, session_id):
 
         if (message == "reset"):
-            print("RESET CONVO")
             # Clean local session
             self.sessions[session_id] = Session()
 
@@ -59,13 +58,7 @@ class MessageHandler:
                 redis_tracker_store = RedisTrackerStoreAgentized(domain=domain, host="redis-container")
                 redis_tracker_store.clean(session_id)
 
-            #dialogue = []
-            #dialogueObj = {}
-            #dialogueObj['action_type'] = 'reset'
-            #dialogueObj['content'] = "The conversation history is successfully deleted"
-            #dialogueObj['title'] = "reset"
-            #dialogue.append(dialogueObj)
-            #dialogue = json.dumps(dialogue)
+            # Create the JSON that would be returned to the user
             dialogue = ['{"action_type":"reset", "content":"The conversation history is successfully deleted", "title":"None", "replyOptions": []}']
 
             nlu_json_response = {}
@@ -76,14 +69,10 @@ class MessageHandler:
             nlu_json_response['entities'] = []
             nlu_json_response['intent_ranking'] = []
             nlu_json_response['text'] = message
-            #nlu_json_response = json.dumps(nlu_json_response)
-            #nlu_json_response = '{"intent": {"name": "_reset", "confidence": 1.0}, "entities": [], "intent_ranking":[], "text": "reset"}'
 
             dialogue_message = '_reset[]'
-
-            print(dialogue)
-            print(nlu_json_response)
-            print(dialogue_message)
+            
+            print("Conversation with session_id: ", session_id, ", successfully reset ")
         else:
             # Parse user input
             nlu_json_response = self.interpreter.parse(message)
