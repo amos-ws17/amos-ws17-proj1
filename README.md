@@ -76,13 +76,13 @@ Train the models (in this case all)
 python -m train -d scrum+kanban -n nlu_training_data_full.json
 ```
 
-Run the service (in this case with all dialogue topics included)
+Run the service
 
 ```
 python -m http_service -d scrum+kanban
 ```
 
-## Running the tests
+### Running the tests
 
 Start your venv
 
@@ -91,7 +91,7 @@ Start your venv
 source venv/bin/activate
 ```
 
-Train the models (in this case all)
+Train the models
 
 ```
 # cd to amos-ws17/workstreambot
@@ -103,6 +103,10 @@ Run the tests
 ```
 python -m pytest test/ # execute all component tests
 ```
+
+## Modify the dialogue
+
+Due to the choice to use a micro service approach instead of a monolithic one the modification of the dialogue is much more simpler. It is possible to load different dialogue combinations during the start how this is done is explained in [Dialogue Topic Creation](https://github.com/amos-ws17/amos-ws17-proj1/wiki/Dialogue-Topic-Creation)
 
 ## Built With
 
