@@ -68,19 +68,18 @@ class MessageHandler:
             #dialogue = json.dumps(dialogue)
             dialogue = ['{"action_type":"reset", "content":"The conversation history is successfully deleted", "title":"None", "replyOptions": []}']
 
-            #nlu_json_response = {}
-            #nlu_intent = {}
-            #nlu_intent['name'] = "_reset"
-            #nlu_intent['confidence'] = 1.0
-            #nlu_json_response['intent'] = nlu_intent
-            #nlu_json_response['entities'] = []
-            #nlu_json_response['intent_ranking'] = []
-            #nlu_json_response['text'] = message
+            nlu_json_response = {}
+            nlu_intent = {}
+            nlu_intent['name'] = "_reset"
+            nlu_intent['confidence'] = 1.0
+            nlu_json_response['intent'] = nlu_intent
+            nlu_json_response['entities'] = []
+            nlu_json_response['intent_ranking'] = []
+            nlu_json_response['text'] = message
             #nlu_json_response = json.dumps(nlu_json_response)
-            nlu_json_response = '{"intent": {"name": "_reset", "confidence": 1.0}, "entities": [], "intent_ranking":[], "text": "reset"}'
+            #nlu_json_response = '{"intent": {"name": "_reset", "confidence": 1.0}, "entities": [], "intent_ranking":[], "text": "reset"}'
 
-            dialogue_message = '_reset'
-            #dialogue_message = json.dumps(dialogue_message)
+            dialogue_message = '_reset[]'
 
             print(dialogue)
             print(nlu_json_response)
