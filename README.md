@@ -1,6 +1,6 @@
 # Conversational Chatbot
 
-A project for the 2017 AMOS Course in collaboration with Actano
+A project for the 2017 AMOS Course in collaboration with Actano to give work teams a hand in agile methods related topics. The chat bot converses with the user about agile methods like Scrum and Kanban. It guides the user through the topics by giving him brief overview of the terminology used in those processes.
 
 ## Getting Started
 
@@ -20,14 +20,14 @@ Then navigate to the newly created _amos-ws17-proj1_ folder and type in the foll
 docker-compose up
 ```
 
-### Manual installation and deployment
+### Manual installation
 
 Install a virtualenv in a desired location
 
 ```
-sudo pip3 install virtualenv
-#cd to our desired location
-virtualenv -p python3 venv
+sudo pip install virtualenv
+# cd to our desired location
+virtualenv -p python venv
 ```
 
 Start your venv
@@ -39,48 +39,70 @@ source venv/bin/activate
 Install Rasa NLU
 
 ```
-pip3 install rasa_nlu
+pip install rasa_nlu
 ```
 
 Install necessary libraries
 
 ```
-pip3 install -U spacy
-python3 -m spacy download en
-pip3 install -U scikit-learn scipy sklearn-crfsuite
-pip3 install flask
-pip3 install -U pytest
+pip install -U spacy
+python -m spacy download en
+pip install -U scikit-learn scipy sklearn-crfsuite
+pip install flask
+pip install -U pytest
 ```
 
 Install Rasa Core
 
 ```
-pip3 install rasa_core
+pip install rasa_core
 ```
 
 For more details on installing Rasa take a look into the [Rasa NLU](http://nlu.rasa.ai/installation.html) and [Rasa Core](https://core.rasa.ai/installation.html) documentation.
 
+### Train and run the service
+
+Start your venv
+
+```
+# cd to our desired location
+source venv/bin/activate
+```
+
+Train the models (in this case all)
+
+```
+# cd to amos-ws17/workstreambot
+python -m train -d scrum+kanban -n nlu_training_data_full.json
+```
+
+Run the service (in this case with all dialogue topics included)
+
+```
+python -m http_service -d scrum+kanban
+```
+
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Start your venv
 
 ```
-Give an example
+# cd to our desired location
+source venv/bin/activate
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+Train the models (in this case all)
 
 ```
-Give an example
+# cd to amos-ws17/workstreambot
+python -m train -d scrum+kanban -n nlu_training_data_full.json
 ```
 
-## Models
+Run the tests
+
+```
+python -m pytest test/ # execute all component tests
+```
 
 ## Built With
 
@@ -112,8 +134,3 @@ See also the contributing section
 ## License
 
 This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
