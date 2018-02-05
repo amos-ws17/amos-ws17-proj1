@@ -1,6 +1,6 @@
 # Conversational Chatbot
 
-A project for the 2017 AMOS Course in collaboration with Actano to give work teams a hand in agile methods related topics. The chat bot converses with the user about agile methods like Scrum and Kanban. It guides the user through the topics by giving him brief overview of the terminology used in those processes.
+Conversational Chatbot (amos-ws17-pro1) is a project for the 2017 AMOS Course of the Technical University of Berlin in collaboration with the Actano GmbH ([actano.com](http://www.actano.com)) to give work teams a hand in agile methods related topics. The chat bot converses with the user about agile methods like Scrum and Kanban. It guides the user through the topics by giving him brief overview of the terminology used in those processes.
 
 ## Getting Started
 
