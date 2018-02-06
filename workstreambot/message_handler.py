@@ -70,8 +70,6 @@ class MessageHandler:
                     if current_dialogue_topic in self.sessions[session_id].all_topics:
                         #Ask user about restart or continue
                         dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
-                        dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
-                            sender_id=session_id)
                         dialogue = ['{"action_type":"", "content":"Would you like to restart or continue?", "title":"None", '
                                     '"replyOptions": [{"text": "restart", "reply": "restart"}, {"text": "continue", "reply": "continue"}]}']
                         # Save changes in session
@@ -122,7 +120,7 @@ class MessageHandler:
 
 class RedisTrackerStoreAgentized(TrackerStore):
 
-    def __init__(self, domain, mock=False, host='192.168.99.100',
+    def __init__(self, domain, mock=False, host='localhost',
                  port=6379, db=0, password=None):
 
         if mock:
