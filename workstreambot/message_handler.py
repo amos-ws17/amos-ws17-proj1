@@ -67,10 +67,24 @@ class MessageHandler:
                     # Reset dialogue model
                     self.dialogue_models[current_dialogue_topic] = self.load_dialogue_model(current_dialogue_topic)
                     # TODO Inject slots
+                    if current_dialogue_topic in self.sessions[session_id].all_topics:
+                        #Ask user about restart or continue
+                        dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
+                        dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
+                            sender_id=session_id)
+                        dialogue = ['{"action_type":"", "content":"Would you like to restart or continue?", "title":"None", '
+                                    '"replyOptions": [{"text": "restart", "reply": "restart"}, {"text": "continue", "reply": "continue"}]}']
+                        # Save changes in session
+                        self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
+                        return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue)
+                    else:
+                        self.sessions[session_id].add_new_topic(current_dialogue_topic)
 
         # Handle user input
         dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
         if current_dialogue_topic != None:
+            if message == 'restart':
+                dialogue_message = '_switch_' + current_dialogue_topic + '[]'
             dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
                                                                                sender_id=session_id)
             # Save changes in session
@@ -108,7 +122,7 @@ class MessageHandler:
 
 class RedisTrackerStoreAgentized(TrackerStore):
 
-    def __init__(self, domain, mock=False, host='localhost',
+    def __init__(self, domain, mock=False, host='192.168.99.100',
                  port=6379, db=0, password=None):
 
         if mock:
