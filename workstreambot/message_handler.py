@@ -48,7 +48,7 @@ class MessageHandler:
 
     def converse(self, message, session_id):
 
-        if message == "reset":
+        if message == "reset dialogue":
             # Clean local session
             self.sessions[session_id] = Session()
 
@@ -66,8 +66,6 @@ class MessageHandler:
             nlu_json_response = None
 
             dialogue_message = message
-
-            print("Conversation with session_id: ", session_id, ", successfully reset ")
         else:
             # Parse user input
             nlu_json_response = self.interpreter.parse(message)
@@ -88,17 +86,45 @@ class MessageHandler:
                         current_dialogue_topic = dialogue_topic
                         # Reset dialogue model
                         self.dialogue_models[current_dialogue_topic] = self.load_dialogue_model(current_dialogue_topic)
-                        # TODO Inject slots
+                        if current_dialogue_topic in self.sessions[session_id].get_active_topics():
+                            # Ask user about restart or continue
+                            dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
+                            dialogue = [utils.prepare_action_response(action_type="info",
+                                                                      content="Would you like to restart or continue?",
+                                                                      reply_options=[{"text": "restart", "reply": "restart"}, {"text": "continue", "reply": "continue"}])]
+                            # Save changes in session
+                            self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
+                            self.sessions[session_id].set_reset_flag(True)
+                            return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue)
+                        else:
+                            self.sessions[session_id].add_active_topic(current_dialogue_topic)
 
             # Handle user input
-            dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
             if current_dialogue_topic is not None:
-                dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
-                                                                                       sender_id=session_id)
+                if self.sessions[session_id].reset_flag:
+                    if message == 'restart':
+                        self.sessions[session_id].set_reset_flag(False)
+                        dialogue_message = '_switch_' + current_dialogue_topic + '[]'
+                        dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
+                                                                                               sender_id=session_id)
+                    elif message == 'continue':
+                        self.sessions[session_id].set_reset_flag(False)
+                        dialogue_message = '_continue[]'
+                        dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
+                                                                                               sender_id=session_id)
+                    else:
+                        dialogue_message = message
+                        dialogue = [utils.prepare_action_response(action_type="warning",
+                                                                  content="Sorry, I did not understand you!")]
+                else:
+                    dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
+                    dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
+                                                                                           sender_id=session_id)
                 # Save changes in session
                 self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
             else:
-                dialogue = [utils.prepare_action_response(action_type="error",
+                dialogue_message = message
+                dialogue = [utils.prepare_action_response(action_type="warning",
                                                           content="Sorry, I did not understand you!")]
 
         return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue)
