@@ -15,6 +15,7 @@ def test_guide_endless():
     # Explain
     theme = get_first_theme()
     assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain"
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], dict.scrum[theme]['details'])
@@ -22,8 +23,9 @@ def test_guide_endless():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
     for i in range(0, len(dict.scrum) - 2):
         response = send_message(handler, "Yes", "test_session")
@@ -32,6 +34,7 @@ def test_guide_endless():
 
         # Explain
         assert response['dialogue'][0]['action_type'] == "explain"
+        assert response['dialogue'][0]['action_name'] == "explain"
         assert response['dialogue'][0]['title'] == theme
         assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
         if 'replyOptions' in response['dialogue'][0]:
@@ -40,9 +43,9 @@ def test_guide_endless():
         # Continue
         theme = get_next_theme(theme)
         assert response['dialogue'][1]['action_type'] == "continue"
+        assert response['dialogue'][1]['action_name'] == "continue"
         assert response['dialogue'][1]['content'].endswith(theme + '?')
-        assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"},
-                                                           {"text": "no", "reply": "no"}]
+        assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
     response = send_message(handler, "Yes", "test_session")
     assert response['sender'] == "test_session"
@@ -50,6 +53,7 @@ def test_guide_endless():
 
     # Explain
     assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain"
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
@@ -57,8 +61,9 @@ def test_guide_endless():
 
     # Continue
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'] == 'That is it for the crash course in scrum. Would you like to restart?'
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
 
 def test_guide_restart():
@@ -70,6 +75,7 @@ def test_guide_restart():
     # Explain
     theme = get_first_theme()
     assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain"
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
@@ -78,8 +84,9 @@ def test_guide_restart():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
     response = send_message(handler, "Yes", "test_session")
     assert response['sender'] == "test_session"
@@ -87,6 +94,7 @@ def test_guide_restart():
 
     # Explain
     assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain"
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
@@ -95,8 +103,9 @@ def test_guide_restart():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
     response = send_message(handler, "No", "test_session")
     assert response['sender'] == "test_session"
@@ -109,6 +118,7 @@ def test_guide_restart():
     # Explain
     theme = get_first_theme()
     assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain"
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
@@ -117,8 +127,9 @@ def test_guide_restart():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
 
 @pytest.mark.skip(reason="This test will fail, because the behavior is currently not supported")
@@ -128,13 +139,17 @@ def test_guide_reenter():
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
     assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain"
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
 
     response = send_message(handler, "Yes", "test_session")
     assert response['sender'] == "test_session"
     assert len(response['dialogue']) == 2
     assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain"
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
 
     response = send_message(handler, "No", "test_session")
     assert response['sender'] == "test_session"
@@ -154,6 +169,7 @@ def test_details():
     # Explain
     theme = get_first_theme()
     assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain"
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
@@ -162,8 +178,9 @@ def test_details():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
     detail = "agile"
     response = send_message(handler, "Tell me more about " + detail, "test_session")
@@ -172,7 +189,8 @@ def test_details():
 
     # Explain Detail
     theme = get_first_theme()
-    assert response['dialogue'][0]['action_type'] == "explain_detail"
+    assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain_detail"
     assert response['dialogue'][0]['title'] == detail
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['details'][detail]
     if 'replyOptions' in response['dialogue'][0]:
@@ -181,8 +199,9 @@ def test_details():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
 
 def test_continue_details():
@@ -194,6 +213,7 @@ def test_continue_details():
     # Explain
     theme = get_first_theme()
     assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain"
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
@@ -202,8 +222,9 @@ def test_continue_details():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
     detail = "agile"
     response = send_message(handler, "Tell me more about " + detail, "test_session")
@@ -212,7 +233,8 @@ def test_continue_details():
 
     # Explain Detail
     theme = get_first_theme()
-    assert response['dialogue'][0]['action_type'] == "explain_detail"
+    assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain_detail"
     assert response['dialogue'][0]['title'] == detail
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['details'][detail]
     assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
@@ -220,8 +242,9 @@ def test_continue_details():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
     detail = "business value"
     response = send_message(handler, "Tell me more about " + detail, "test_session")
@@ -230,7 +253,8 @@ def test_continue_details():
 
     # Explain Detail
     theme = get_first_theme()
-    assert response['dialogue'][0]['action_type'] == "explain_detail"
+    assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain_detail"
     assert response['dialogue'][0]['title'] == detail
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['details'][detail]
     assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
@@ -238,8 +262,9 @@ def test_continue_details():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
 
 def test_continue_after_detail():
@@ -251,6 +276,7 @@ def test_continue_after_detail():
     # Explain
     theme = get_first_theme()
     assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain"
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
@@ -259,8 +285,9 @@ def test_continue_after_detail():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
     detail = "agile"
     response = send_message(handler, "Tell me more about " + detail, "test_session")
@@ -269,7 +296,8 @@ def test_continue_after_detail():
 
     # Explain Detail
     theme = get_first_theme()
-    assert response['dialogue'][0]['action_type'] == "explain_detail"
+    assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain_detail"
     assert response['dialogue'][0]['title'] == detail
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['details'][detail]
     assert reply_options_contain_details(response['dialogue'][0]['replyOptions'], filter_details(theme, detail))
@@ -277,8 +305,9 @@ def test_continue_after_detail():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
     response = send_message(handler, "Yes", "test_session")
     assert response['sender'] == "test_session"
@@ -286,6 +315,7 @@ def test_continue_after_detail():
 
     # Explain
     assert response['dialogue'][0]['action_type'] == "explain"
+    assert response['dialogue'][0]['action_name'] == "explain"
     assert response['dialogue'][0]['title'] == theme
     assert response['dialogue'][0]['content'] == dict.scrum[theme]['general']
     if 'replyOptions' in response['dialogue'][0]:
@@ -294,8 +324,9 @@ def test_continue_after_detail():
     # Continue
     theme = get_next_theme(theme)
     assert response['dialogue'][1]['action_type'] == "continue"
+    assert response['dialogue'][1]['action_name'] == "continue"
     assert response['dialogue'][1]['content'].endswith(theme + '?')
-    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+    assert response['dialogue'][1]['replyOptions'] == [{"text": "yes", "reply": "yes"}]
 
 
 def send_message(handler, message, session_id):
