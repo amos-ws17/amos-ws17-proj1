@@ -1,8 +1,8 @@
 from __future__ import unicode_literals
 
 import json
-import os
 
+import utils as utils
 from rasa_core.agent import Agent
 from rasa_core.domain import TemplateDomain
 from rasa_core.tracker_store import *
@@ -13,22 +13,22 @@ from session import Session
 
 class MessageHandler:
     interpreter = None
-    dialogue_models = {}
+    dialogue_models = dict()
 
-    sessions = {}
+    sessions = dict()
 
     nlu_model_path = 'models/nlu/default/current'
     dialogue_model_path = '/models/dialogue'
     switching_intent_prefix = 'switch_'
-    domain_path="/domain.yml"
+    domain_path = "/domain.yml"
 
-    def __init__(self, dialogue_topics, persistance=False):
-        self.persistance = persistance
+    def __init__(self, dialogue_topics, persistence=False):
+        self.persistence = persistence
         self.interpreter = Interpreter.load(self.nlu_model_path, RasaNLUConfig('nlu_model_config.json'))
         self.dialogue_models = self.load_dialogue_models(dialogue_topics)
 
     def load_dialogue_models(self, dialogue_topics):
-        dialogue_models = {}
+        dialogue_models = dict()
 
         for dialogue_topic in dialogue_topics:
             dialogue_models[dialogue_topic] = self.load_dialogue_model(dialogue_topic)
@@ -36,8 +36,8 @@ class MessageHandler:
         return dialogue_models
 
     def load_dialogue_model(self, topic):
-        if self.persistance:
-            # Load with persistance tracker
+        if self.persistence:
+            # Load with persistence tracker
             domain = TemplateDomain.load(topic + self.domain_path)
             redis_tracker_store = RedisTrackerStoreAgentized(domain=domain, host="redis-container")
             redis_tracker_store.set_topic(topic)
@@ -48,30 +48,25 @@ class MessageHandler:
 
     def converse(self, message, session_id):
 
-        if (message == "reset"):
+        if message == "reset":
             # Clean local session
             self.sessions[session_id] = Session()
 
-            # Clean persistance session for all topics
-            for dialogue_topic in self.dialogue_models:
-                domain = TemplateDomain.load(dialogue_topic + self.domain_path)
-                redis_tracker_store = RedisTrackerStoreAgentized(domain=domain, host="redis-container")
-                redis_tracker_store.clean(session_id)
+            # Clean persistence session for all topics
+            if self.persistence:
+                for dialogue_topic in self.dialogue_models:
+                    domain = TemplateDomain.load(dialogue_topic + self.domain_path)
+                    redis_tracker_store = RedisTrackerStoreAgentized(domain=domain, host="redis-container")
+                    redis_tracker_store.clean(session_id)
 
             # Create the JSON that would be returned to the user
-            dialogue = ['{"action_type":"reset", "content":"The conversation history is successfully deleted", "title":"None", "replyOptions": []}']
+            dialogue = [utils.prepare_action_response(action_type="info",
+                                                      content="The conversation history is successfully deleted")]
 
-            nlu_json_response = {}
-            nlu_intent = {}
-            nlu_intent['name'] = "_reset"
-            nlu_intent['confidence'] = 1.0
-            nlu_json_response['intent'] = nlu_intent
-            nlu_json_response['entities'] = []
-            nlu_json_response['intent_ranking'] = []
-            nlu_json_response['text'] = message
+            nlu_json_response = None
 
-            dialogue_message = '_reset[]'
-            
+            dialogue_message = message
+
             print("Conversation with session_id: ", session_id, ", successfully reset ")
         else:
             # Parse user input
@@ -97,17 +92,16 @@ class MessageHandler:
 
             # Handle user input
             dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
-            if current_dialogue_topic != None:
+            if current_dialogue_topic is not None:
                 dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
-                                                                                   sender_id=session_id)
+                                                                                       sender_id=session_id)
                 # Save changes in session
                 self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
             else:
-                dialogue = ['{"action_type":"", "content":"Sorry, I did not understand you!", "title":"None", "replyOptions": []}']
+                dialogue = [utils.prepare_action_response(action_type="error",
+                                                          content="Sorry, I did not understand you!")]
 
         return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue)
-
-        
 
     def prepare_entities(self, nlu_json_response):
         entities = []
@@ -121,12 +115,13 @@ class MessageHandler:
         return entities
 
     def prepare_response(self, session_id, message, dialogue_message, nlu_json_response, dialogue):
-        data = {}
+        data = dict()
         data['sender'] = session_id
         data['message'] = message
         data['dialogue_message'] = dialogue_message
 
-        data['nlu'] = nlu_json_response
+        if nlu_json_response is not None:
+            data['nlu'] = nlu_json_response
 
         data['dialogue'] = []
         for i in range(0, len(dialogue)):
