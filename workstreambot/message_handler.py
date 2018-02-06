@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 import json
-import os
+import utils as utils
 
 from rasa_core.agent import Agent
 from rasa_core.domain import TemplateDomain
@@ -68,27 +68,42 @@ class MessageHandler:
                     self.dialogue_models[current_dialogue_topic] = self.load_dialogue_model(current_dialogue_topic)
                     # TODO Inject slots
                     if current_dialogue_topic in self.sessions[session_id].all_topics:
-                        #Ask user about restart or continue
+                        # Ask user about restart or continue
                         dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
-                        dialogue = ['{"action_type":"", "content":"Would you like to restart or continue?", "title":"None", '
-                                    '"replyOptions": [{"text": "restart", "reply": "restart"}, {"text": "continue", "reply": "continue"}]}']
+                        dialogue = [utils.prepare_action_response(None, None, "Would you like to restart or continue?", [{"text": "restart", "reply": "restart"}, {"text": "continue", "reply": "continue"}], None, None)]
                         # Save changes in session
                         self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
+                        self.sessions[session_id].set_reset_flag(True)
                         return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue)
                     else:
                         self.sessions[session_id].add_new_topic(current_dialogue_topic)
 
         # Handle user input
-        dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
-        if current_dialogue_topic != None:
-            if message == 'restart':
-                dialogue_message = '_switch_' + current_dialogue_topic + '[]'
-            dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
-                                                                               sender_id=session_id)
+
+        if current_dialogue_topic is not None:
+            if self.sessions[session_id].reset_flag:
+                if message == 'restart':
+                    self.sessions[session_id].set_reset_flag(False)
+                    dialogue_message = '_switch_' + current_dialogue_topic + '[]'
+                    dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
+                                                                                           sender_id=session_id)
+                elif message == 'continue':
+                    self.sessions[session_id].set_reset_flag(False)
+                    dialogue_message = '_continue[]'
+                    dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
+                                                                                           sender_id=session_id)
+                else:
+                    dialogue_message = message
+                    dialogue = [utils.prepare_action_response(None, None, "Sorry, I did not understand you!", None, None, None)]
+            else:
+                dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(map(str, entities)) + ']'
+                dialogue = self.dialogue_models[current_dialogue_topic].handle_message(text_message=dialogue_message,
+                                                                                       sender_id=session_id)
             # Save changes in session
             self.sessions[session_id].set_current_dialogue_topic(current_dialogue_topic)
         else:
-            dialogue = ['{"action_type":"", "content":"Sorry, I did not understand you!", "title":"None", "replyOptions": []}']
+            dialogue_message = message
+            dialogue = [utils.prepare_action_response(None, None, "Sorry, I did not understand you!", None, None, None)]
 
         return self.prepare_response(session_id, message, dialogue_message, nlu_json_response, dialogue)
 
