@@ -44,7 +44,7 @@ if __name__ == "__main__":
     tracker = args.tracker
     if tracker == "redis":
         print("Redis persistence activated! \n")
-        handler = MessageHandler(topics, persistance=True)
+        handler = MessageHandler(topics, persistence=True)
     else:
         handler = MessageHandler(topics)
 

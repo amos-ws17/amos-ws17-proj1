@@ -42,11 +42,15 @@ class Continue(Action):
             content = 'Would you like to know about ' + next_theme + '?'
             sessions[tracker.sender_id] = next_theme
 
-        reply_options = [{"text": "yes", "reply": "yes"}, {"text": "no", "reply": "no"}]
+        reply_options = [{"text": "yes", "reply": "yes"}]
 
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), None, content, reply_options, tracker.current_slot_values(),
-                                          "kanban"))
+            utils.prepare_action_response(action_type="continue",
+                                          content=content,
+                                          action_name=self.name(),
+                                          reply_options=reply_options,
+                                          slots=tracker.current_slot_values(),
+                                          topic="kanban"))
         return []
 
 
@@ -86,8 +90,13 @@ class Explain(Action):
 
         # explain the current key
         dispatcher.utter_message(
-            utils.prepare_action_response(self.name(), current_theme, dict.kanban[current_theme]['general'],
-                                          reply_options, tracker.current_slot_values(), "kanban"))
+            utils.prepare_action_response(action_type="explain",
+                                          content=dict.kanban[current_theme]['general'],
+                                          action_name=self.name(),
+                                          title=current_theme,
+                                          reply_options=reply_options,
+                                          slots=tracker.current_slot_values(),
+                                          topic="kanban"))
         return []
 
 
@@ -107,7 +116,12 @@ class ExplainDetail(Action):
             if key != current_detail:
                 reply_options.append({"text": key, "reply": "Tell me more about " + key})
 
-        dispatcher.utter_message(utils.prepare_action_response(self.name(), current_detail,
-                                                               dict.kanban[current_theme]['details'][current_detail],
-                                                               reply_options, tracker.current_slot_values(), "kanban"))
+        dispatcher.utter_message(utils.prepare_action_response(action_type="explain",
+                                                               content=dict.kanban[current_theme]['details'][
+                                                                   current_detail],
+                                                               action_name=self.name(),
+                                                               title=current_detail,
+                                                               reply_options=reply_options,
+                                                               slots=tracker.current_slot_values(),
+                                                               topic="kanban"))
         return []
