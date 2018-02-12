@@ -107,7 +107,7 @@ def test_details():
     for detail in get_all_details():
         nlu = perform_inform("Tell me more about " + detail)
         assert nlu['intent']['name'] == "inform", "Expected intent for " + detail + " is incorrect"
-        assert nlu['intent']['confidence'] > confidence_level
+        assert nlu['intent']['confidence'] > confidence_level, "Confidence for " + detail + " is to low"
         assert len(nlu['entities']) == 1, "Expected entities for " + detail + " are incorrect"
         assert entities_contain_detail(nlu['entities']), "Expected entity for " + detail + " is incorrect"
         assert get_detail_value(nlu['entities']) == detail
