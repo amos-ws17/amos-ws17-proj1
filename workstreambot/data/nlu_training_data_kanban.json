@@ -37,6 +37,16 @@
         "entities": []
       },
       {
+        "text": "how is this in kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what about kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
         "text": "what's kanban?",
         "intent": "switch_kanban",
         "entities": [
@@ -724,6 +734,18 @@
         ]
       },
       {
+        "text": "what are the meetings in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 21,
+            "value": "ceremonies",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
         "text": "what is a ceremony?",
         "intent": "inform",
         "entities": [
@@ -904,81 +926,6 @@
         ]
       },
       {
-        "text": "uh no",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "no",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "no thank you",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "no thanks",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "thanks",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "nope",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "nay",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "nah",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "that is enough",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "stop",
-        "intent": "deny",
-        "entities": []
-      },
-      {
-        "text": "continue",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "go ahead",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "please continue",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "go on",
-        "intent": "continue",
-        "entities": []
-      },
-      {
-        "text": "please go on",
-        "intent": "continue",
-        "entities": []
-      },
-      {
         "text": "yes",
         "intent": "continue",
         "entities": []
@@ -1021,6 +968,86 @@
       {
         "text": "why not",
         "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "please continue",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "go on",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "please go on",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "go ahead",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "continue",
+        "intent": "continue",
+        "entities": []
+      },
+      {
+        "text": "uh no",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "no",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "no thank you",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "no thanks",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "thanks",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "nope",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "nay",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "nah",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "stop",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "that is enough",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "don't continue",
+        "intent": "deny",
         "entities": []
       }
     ]

@@ -1457,6 +1457,11 @@
         "entities": []
       },
       {
+        "text": "tell me something about kanban",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
         "text": "give me information about kanban",
         "intent": "switch_kanban",
         "entities": []
@@ -1473,6 +1478,16 @@
       },
       {
         "text": "what is kanban about?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "how is this in kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what about kanban?",
         "intent": "switch_kanban",
         "entities": []
       },
@@ -2164,6 +2179,18 @@
         ]
       },
       {
+        "text": "what are the meetings in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 21,
+            "value": "ceremonies",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
         "text": "what is a ceremony?",
         "intent": "inform",
         "entities": [
@@ -2460,6 +2487,11 @@
       },
       {
         "text": "that is enough",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "don't continue",
         "intent": "deny",
         "entities": []
       }

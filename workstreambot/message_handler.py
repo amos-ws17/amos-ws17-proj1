@@ -48,6 +48,8 @@ class MessageHandler:
 
     def converse(self, message, session_id):
 
+        message = message.lower()
+
         if message == "reset dialogue":
             # Clean local session
             self.sessions[session_id] = Session()
@@ -69,6 +71,7 @@ class MessageHandler:
         else:
             # Parse user input
             nlu_json_response = self.interpreter.parse(message)
+            intent = nlu_json_response['intent']
             entities = self.prepare_entities(nlu_json_response)
 
             # Select session
@@ -77,18 +80,25 @@ class MessageHandler:
 
             current_dialogue_topic = self.sessions[session_id].get_current_dialogue_topic()
 
+            if intent['confidence'] <= 0.77:
+                dialogue_message = message
+                dialogue = [utils.prepare_action_response(action_type="warning",
+                                                          content="Sorry, I did not understand you!")]
+                return self.prepare_response(session_id, message, dialogue_message, nlu_json_response,
+                                             dialogue)
+
             # Select current dialogue topic
             for dialogue_topic in self.dialogue_models:
                 switching_intent = self.switching_intent_prefix + dialogue_topic
 
-                if switching_intent == nlu_json_response['intent']['name']:
+                if switching_intent == intent['name']:
                     if current_dialogue_topic != dialogue_topic:
                         current_dialogue_topic = dialogue_topic
                         # Reset dialogue model
                         self.dialogue_models[current_dialogue_topic] = self.load_dialogue_model(current_dialogue_topic)
                         if current_dialogue_topic in self.sessions[session_id].get_active_topics():
                             # Ask user about restart or continue
-                            dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(
+                            dialogue_message = '_' + intent['name'] + '[' + ','.join(
                                 map(str, entities)) + ']'
                             dialogue = [utils.prepare_action_response(action_type="info",
                                                                       content="Would you like to restart or continue?",
@@ -123,7 +133,7 @@ class MessageHandler:
                         dialogue = [utils.prepare_action_response(action_type="warning",
                                                                   content="Sorry, I did not understand you!")]
                 else:
-                    dialogue_message = '_' + nlu_json_response['intent']['name'] + '[' + ','.join(
+                    dialogue_message = '_' + intent['name'] + '[' + ','.join(
                         map(str, entities)) + ']'
                     dialogue = self.dialogue_models[current_dialogue_topic].handle_message(
                         text_message=dialogue_message,
