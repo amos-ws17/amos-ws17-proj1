@@ -37,6 +37,11 @@ def test_switch_scrum():
     assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 0
 
+    nlu = perform_initial_input("What is Scrum?")
+    assert nlu['intent']['name'] == "switch_scrum"
+    assert nlu['intent']['confidence'] > confidence_level
+    assert len(nlu['entities']) == 0
+
 
 def test_switch_scrum_theme():
     nlu = perform_initial_input("What are the roles in Scrum?")

@@ -37,6 +37,11 @@ def test_switch_kanban():
     assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 0
 
+    nlu = perform_initial_input("What is Kanban?")
+    assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['confidence'] > confidence_level
+    assert len(nlu['entities']) == 0
+
 
 def test_switch_kanban_theme():
     nlu = perform_initial_input("What are the meetings in Kanban?")
