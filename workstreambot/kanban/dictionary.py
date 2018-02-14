@@ -9,6 +9,11 @@ kanban = {
     },
     'artefacts': {
         'general': 'The kanban board with its cards, the Cumulative Flow Diagram (CFD), Run Chart, Lead Time Distribution Chart.',
+        'details': {
+            'cumulative flow diagram': 'This diagram shows the number of tasks at the different working stations over time. Different dysfunctions can be seen at a glance since the Work in Progress can be seen at any time in the vertical direction while lead time and cycle time can be seen in the horizontal direction for every point in time after the first task was done.',
+            'run chart': 'This chart shows the lead and cycle times in the order tickets got done. This chart helps to see tendencies in the processing time optimisation.',
+            'lead time distribution chart': 'The Lead Time Distribution Chart is a histogram of lead times. It can be used to come up with a probability of a task to be finished in a specific amount of time. It is the graphic tool of Kanban which enables its users to come up with a forecast.'
+        },
         'position': 2
     },
     'board': {

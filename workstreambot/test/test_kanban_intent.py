@@ -3,42 +3,57 @@ import json
 import workstreambot.kanban.dictionary as dict
 from workstreambot.message_handler import MessageHandler
 
+confidence_level = 0.77
+
 
 def test_switch_kanban():
     nlu = perform_initial_input("What is Kanban about?")
-    # TODO assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 0
 
     nlu = perform_initial_input("What's Kanban about?")
-    # TODO assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 0
 
     nlu = perform_initial_input("What about Kanban?")
     assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 0
 
     nlu = perform_initial_input("Tell me more about Kanban")
-    # TODO assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 0
 
     nlu = perform_initial_input("Tell me something about Kanban")
-    # TODO assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 0
 
     nlu = perform_initial_input("How is this in Kanban?")
     assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['confidence'] > confidence_level
+    assert len(nlu['entities']) == 0
+
+    nlu = perform_initial_input("What is Kanban?")
+    assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 0
 
 
 def test_switch_kanban_theme():
     nlu = perform_initial_input("What are the meetings in Kanban?")
     assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 1
     assert entities_contain_theme(nlu['entities'])
-    # TODO assert get_theme_value(nlu['entities']) == 'ceremonies'
+    assert get_theme_value(nlu['entities']) == 'ceremonies'
 
     nlu = perform_initial_input("What are the ceremonies in Kanban?")
     assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 1
     assert entities_contain_theme(nlu['entities'])
     assert get_theme_value(nlu['entities']) == 'ceremonies'
@@ -48,6 +63,7 @@ def test_switch_kanban_detail():
     # TODO
     nlu = perform_initial_input("What is the history of Kanban?")
     assert nlu['intent']['name'] == "switch_kanban"
+    assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 1
     assert entities_contain_detail(nlu['entities'])
     assert get_detail_value(nlu['entities']) == 'history'
@@ -57,6 +73,7 @@ def test_inform_theme():
     # TODO
     nlu = perform_initial_input("What are the artefacts?")
     assert nlu['intent']['name'] == "inform"
+    assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 1
     assert entities_contain_theme(nlu['entities'])
     assert get_theme_value(nlu['entities']) == 'artefacts'
@@ -66,6 +83,7 @@ def test_inform_detail():
     # TODO
     nlu = perform_initial_input("What is the cycle time?")
     assert nlu['intent']['name'] == "inform"
+    assert nlu['intent']['confidence'] > confidence_level
     assert len(nlu['entities']) == 1
     assert entities_contain_detail(nlu['entities'])
     assert get_detail_value(nlu['entities']) == 'cycle time'
@@ -75,25 +93,50 @@ def test_details():
     for detail in get_all_details():
         nlu = perform_inform("Tell me more about " + detail)
         assert nlu['intent']['name'] == "inform", "Expected intent for " + detail + " is incorrect"
+        assert nlu['intent']['confidence'] > confidence_level, "Confidence for " + detail + " is to low"
         assert len(nlu['entities']) == 1, "Expected entities for " + detail + " are incorrect"
-        print(nlu['entities'])
         assert entities_contain_detail(nlu['entities']), "Expected entity for " + detail + " is incorrect"
         assert get_detail_value(nlu['entities']) == detail
 
 
 def test_continue():
-    assert perform_single_continue("Yes") == "continue"
-    # TODO assert perform_single_continue("Continue") == "affirm"
-    assert perform_single_continue("Ok") == "continue"
-    assert perform_single_continue("Please yes") == "continue"
-    assert perform_single_continue("Yes please") == "continue"
+    nlu = perform_single_continue("Yes")
+    assert nlu['intent']['name'] == "continue"
+    assert nlu['intent']['confidence'] > confidence_level
+
+    nlu = perform_single_continue("Continue")
+    assert nlu['intent']['name'] == "continue"
+    assert nlu['intent']['confidence'] > confidence_level
+
+    nlu = perform_single_continue("Ok")
+    assert nlu['intent']['name'] == "continue"
+    assert nlu['intent']['confidence'] > confidence_level
+
+    nlu = perform_single_continue("Please yes")
+    assert nlu['intent']['name'] == "continue"
+    assert nlu['intent']['confidence'] > confidence_level
+
+    nlu = perform_single_continue("Yes please")
+    assert nlu['intent']['name'] == "continue"
+    assert nlu['intent']['confidence'] > confidence_level
 
 
 def test_denys():
-    assert perform_single_continue("No") == "deny"
-    # TODO assert perform_single_continue("Don't continue") == "deny"
-    assert perform_single_continue("Stop") == "deny"
-    assert perform_single_continue("No thanks") == "deny"
+    nlu = perform_single_continue("No")
+    assert nlu['intent']['name'] == "deny"
+    assert nlu['intent']['confidence'] > confidence_level
+
+    nlu = perform_single_continue("Don't continue")
+    assert nlu['intent']['name'] == "deny"
+    assert nlu['intent']['confidence'] > confidence_level
+
+    nlu = perform_single_continue("Stop")
+    assert nlu['intent']['name'] == "deny"
+    assert nlu['intent']['confidence'] > confidence_level
+
+    nlu = perform_single_continue("No thanks")
+    assert nlu['intent']['name'] == "deny"
+    assert nlu['intent']['confidence'] > confidence_level
 
 
 def perform_initial_input(initial_input):
@@ -107,7 +150,7 @@ def perform_single_continue(continue_input):
     send_message(handler, "What is Kanban about?", "test_session")
 
     response = send_message(handler, continue_input, "test_session")
-    return response['nlu']['intent']['name']
+    return response['nlu']
 
 
 def perform_inform(inform_input):

@@ -1457,6 +1457,11 @@
         "entities": []
       },
       {
+        "text": "tell me something about kanban",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
         "text": "give me information about kanban",
         "intent": "switch_kanban",
         "entities": []
@@ -1473,6 +1478,16 @@
       },
       {
         "text": "what is kanban about?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "how is this in kanban?",
+        "intent": "switch_kanban",
+        "entities": []
+      },
+      {
+        "text": "what about kanban?",
         "intent": "switch_kanban",
         "entities": []
       },
@@ -1660,6 +1675,18 @@
         ]
       },
       {
+        "text": "what are the artefacts of kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 22,
+            "value": "artefacts",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
         "text": "what are the artefacts?",
         "intent": "inform",
         "entities": [
@@ -1792,6 +1819,18 @@
         ]
       },
       {
+        "text": "what is a stop the line?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 9,
+            "end": 22,
+            "value": "stop the line",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
         "text": "what is stop the line in kanban?",
         "intent": "switch_kanban",
         "entities": [
@@ -1846,6 +1885,18 @@
           {
             "start": 25,
             "end": 31,
+            "value": "ticket",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
+        "text": "what is meant by type of a ticket?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 26,
+            "end": 32,
             "value": "ticket",
             "entity": "theme"
           }
@@ -2164,6 +2215,18 @@
         ]
       },
       {
+        "text": "what are the meetings in kanban?",
+        "intent": "switch_kanban",
+        "entities": [
+          {
+            "start": 13,
+            "end": 21,
+            "value": "ceremonies",
+            "entity": "theme"
+          }
+        ]
+      },
+      {
         "text": "what is a ceremony?",
         "intent": "inform",
         "entities": [
@@ -2279,6 +2342,42 @@
             "start": 19,
             "end": 25,
             "value": "kaizen",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me more about cumulative flow diagram",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 42,
+            "value": "cumulative flow diagram",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me more about run chart",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 28,
+            "value": "run chart",
+            "entity": "detail"
+          }
+        ]
+      },
+      {
+        "text": "tell me more about lead time distribution chart",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 47,
+            "value": "lead time distribution chart",
             "entity": "detail"
           }
         ]
@@ -2460,6 +2559,11 @@
       },
       {
         "text": "that is enough",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "don't continue",
         "intent": "deny",
         "entities": []
       }
